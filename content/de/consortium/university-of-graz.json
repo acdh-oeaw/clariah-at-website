@@ -1,0 +1,59 @@
+{
+	"name": "University of Graz",
+	"href": "https://www.uni-graz.at/en/",
+	"logo": "/assets/content/en/consortium/university-of-graz/logo.png",
+	"institutions": [
+		{
+			"name": "Centre for Information Modelling",
+			"href": "https://informationsmodellierung.uni-graz.at/en/",
+			"logo": "/assets/content/en/consortium/university-of-graz/institutions/0/logo.png"
+		},
+		{
+			"name": "University of Graz Library",
+			"href": "https://ub.uni-graz.at/en/",
+			"logo": "/assets/content/en/consortium/university-of-graz/institutions/1/logo.png"
+		}
+	],
+	"people": [
+		{
+			"name": "Walter Scholger",
+			"image": "/assets/content/en/consortium/university-of-graz/people/0/image.png"
+		},
+		{
+			"name": "Elisabeth Raunig",
+			"image": "/assets/content/en/consortium/university-of-graz/people/1/image.png"
+		},
+		{
+			"name": "Helmut W. Klug",
+			"image": "/assets/content/en/consortium/university-of-graz/people/2/image.png"
+		},
+		{
+			"name": "Elisabeth Steiner",
+			"image": "/assets/content/en/consortium/university-of-graz/people/3/image.png"
+		},
+		{
+			"name": "Martina Scholger",
+			"image": "/assets/content/en/consortium/university-of-graz/people/4/image.png"
+		},
+		{
+			"name": "Georg Vogeler",
+			"image": "/assets/content/en/consortium/university-of-graz/people/5/image.png"
+		},
+		{
+			"name": "Sarah Lang",
+			"image": "/assets/content/en/consortium/university-of-graz/people/6/image.png"
+		},
+		{
+			"name": "Sean M. Winslow",
+			"image": "/assets/content/en/consortium/university-of-graz/people/7/image.png"
+		},
+		{
+			"name": "Christopher Pollin",
+			"image": "/assets/content/en/consortium/university-of-graz/people/8/image.png"
+		},
+		{
+			"name": "Dr Chiara Zuanni",
+			"image": "/assets/content/en/consortium/university-of-graz/people/9/image.png"
+		}
+	]
+}

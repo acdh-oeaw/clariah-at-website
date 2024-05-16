@@ -1,0 +1,180 @@
+---
+interface Props {
+	class?: string;
+	label: string;
+}
+
+const { class: className, label } = Astro.props;
+---
+
+<nav-bar>
+	<nav aria-label={label} class:list={["inline-flex items-center gap-x-4", className]}>
+		<slot />
+	</nav>
+</nav-bar>
+
+<script is:inline>
+	/**
+	 * In the initial html, all menus are open, so they work when javascript is disabled.
+	 * Close them as soon as javascript loads.
+	 */
+	document.querySelectorAll("div[data-nav-menu]").forEach((element) => {
+		// @ts-ignore
+		element.dataset.open = "false";
+	});
+	document.querySelectorAll("button[data-nav-menu-trigger]").forEach((element) => {
+		// @ts-ignore
+		element.setAttribute("aria-expanded", "false");
+	});
+</script>
+
+<script>
+	import { generateUniqueId } from "@/lib/generate-unique-id";
+	import { assert } from "@acdh-oeaw/lib";
+	import { computePosition, shift } from "@floating-ui/dom";
+
+	interface NavLink {
+		kind: "link";
+		link: HTMLAnchorElement;
+	}
+
+	interface NavMenu {
+		kind: "menu";
+		menu: HTMLDivElement;
+		trigger: HTMLButtonElement;
+		popover: HTMLDivElement;
+	}
+
+	type NavItem = NavLink | NavMenu;
+
+	class NavBar extends HTMLElement {
+		constructor() {
+			super();
+
+			const root = this.querySelector<HTMLElement>("nav");
+			assert(root);
+
+			let current: NavMenu | null = null;
+
+			const items: Array<NavItem> = [];
+
+			this.querySelectorAll<HTMLAnchorElement | HTMLDivElement>(
+				"a[data-nav-link], div[data-nav-menu]",
+			).forEach((element) => {
+				if (element instanceof HTMLAnchorElement) {
+					const link = element;
+
+					const item: NavLink = { kind: "link", link };
+					items.push(item);
+				} else {
+					const menu = element;
+					const trigger = element.querySelector<HTMLButtonElement>("button[data-nav-menu-trigger]");
+					const popover = element.querySelector<HTMLDivElement>("div[data-popover]");
+					assert(trigger);
+					assert(popover);
+
+					const id = generateUniqueId();
+					trigger.setAttribute("aria-controls", id);
+					popover.setAttribute("id", id);
+
+					const item: NavMenu = { kind: "menu", menu, trigger, popover };
+					items.push(item);
+
+					closeMenu(item);
+
+					trigger.addEventListener("click", onTriggerClick);
+					root.addEventListener("focusout", onBlur);
+				}
+			});
+
+			function isMenuOpen(item: NavMenu) {
+				return item.menu.dataset.open === "true";
+			}
+
+			function openMenu(item: NavMenu) {
+				if (current != null) {
+					closeMenu(current);
+				}
+
+				document.addEventListener("click", onClickOutside);
+				document.addEventListener("keydown", onEscapeKey);
+				item.trigger.setAttribute("aria-expanded", "true");
+				item.menu.dataset.open = "true";
+				// item.popover.hidden = false;
+				current = item;
+
+				computePosition(item.trigger, item.popover, {
+					middleware: [shift({ padding: 8 })],
+					placement: "bottom",
+					strategy: "absolute",
+				}).then(({ x, y }) => {
+					Object.assign(item.popover.style, {
+						left: `${x}px`,
+						top: `${y}px`,
+					});
+				});
+			}
+
+			function closeMenu(item: NavMenu) {
+				document.removeEventListener("click", onClickOutside);
+				document.removeEventListener("keydown", onEscapeKey);
+				item.trigger.setAttribute("aria-expanded", "false");
+				item.menu.dataset.open = "false";
+				// item.popover.hidden = true;
+				current = null;
+			}
+
+			function toggleMenu(item: NavMenu) {
+				if (isMenuOpen(item)) {
+					closeMenu(item);
+				} else {
+					openMenu(item);
+				}
+			}
+
+			function onTriggerClick(event: MouseEvent) {
+				const trigger = event.currentTarget as HTMLButtonElement;
+				const item = items.find(
+					(item): item is NavMenu => item.kind === "menu" && item.trigger === trigger,
+				);
+				assert(item);
+
+				toggleMenu(item);
+			}
+
+			function onClickOutside(event: MouseEvent) {
+				if (current == null) return;
+
+				const element = event.target as Node | null;
+				if (!current.menu.contains(element)) {
+					closeMenu(current);
+				}
+			}
+
+			function onEscapeKey(event: KeyboardEvent) {
+				if (current == null) return;
+
+				if (event.key === "Escape") {
+					closeMenu(current);
+				}
+			}
+
+			function onBlur(event: FocusEvent) {
+				if (current == null) return;
+
+				const element = event.relatedTarget as Node | null;
+				if (!root!.contains(element)) {
+					closeMenu(current);
+				}
+			}
+		}
+	}
+
+	customElements.define("nav-bar", NavBar);
+</script>
+
+<style is:global>
+	nav-bar {
+		display: contents;
+	}
+</style>

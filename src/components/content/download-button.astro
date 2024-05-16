@@ -1,0 +1,16 @@
+---
+interface Props {
+	href: string;
+	label: string;
+}
+
+const { href, label } = Astro.props;
+---
+
+<a
+	class="my-2 inline-flex rounded-full bg-brand px-6 py-2 text-white no-underline transition hover:bg-brand-intent"
+	download
+	href={href}
+>
+	{label}
+</a>

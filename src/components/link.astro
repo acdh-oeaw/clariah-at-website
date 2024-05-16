@@ -1,0 +1,21 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { defaultLocale, type Locale } from "@/config/i18n.config";
+import { ensureTrailingSlash } from "@/lib/ensure-trailing-slash";
+
+interface Props extends HTMLAttributes<"a"> {
+	locale?: Locale;
+}
+
+const { href, locale, ...rest } = Astro.props;
+
+const localisedHref =
+	typeof href === "string" && href.startsWith("/")
+		? "/" + (locale ?? Astro.currentLocale ?? defaultLocale) + ensureTrailingSlash(href)
+		: href;
+---
+
+<a {...rest} href={localisedHref}>
+	<slot />
+</a>

@@ -1,0 +1,42 @@
+---
+import Link from "@/components/link.astro";
+import { defaultLocale, type Locale, locales } from "@/config/i18n.config";
+import { getUnprefixedPathname } from "@/lib/get-unprefixed-pathname";
+import { createI18n } from "@/lib/i18n";
+
+const currentLocale = (Astro.currentLocale as Locale | undefined) ?? defaultLocale;
+
+const { t } = await createI18n(currentLocale);
+
+const label = new Intl.DisplayNames(currentLocale, { type: "language" });
+
+const currentPathname = getUnprefixedPathname(Astro.url.pathname);
+---
+
+<div class="flex items-center gap-x-2">
+	{
+		locales.map((locale) => {
+			const isCurrent = locale === currentLocale;
+
+			if (isCurrent) {
+				return (
+					<span class="cursor-default font-medium underline">
+						<span aria-hidden="true">{locale.toUpperCase()}</span>
+						<span class="sr-only">
+							{t("LocaleSwitcher.current-locale", { locale: label.of(locale) })}
+						</span>
+					</span>
+				);
+			}
+
+			return (
+				<Link href={currentPathname} locale={locale}>
+					<span aria-hidden="true">{locale.toUpperCase()}</span>
+					<span class="sr-only">
+						{t("LocaleSwitcher.switch-locale-to", { locale: label.of(locale) })}
+					</span>
+				</Link>
+			);
+		})
+	}
+</div>

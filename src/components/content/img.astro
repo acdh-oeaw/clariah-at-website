@@ -1,0 +1,15 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { Image } from "astro:assets";
+
+import { getImageImport } from "@/lib/get-image-import";
+
+interface Props extends HTMLAttributes<"img"> {}
+
+const { alt = "", src, ...rest } = Astro.props;
+---
+
+{
+	/** @ts-expect-error @see https://github.com/withastro/astro/issues/10780 */
+	src != null ? <Image {...rest} alt={alt} src={getImageImport(src)} /> : null
+}

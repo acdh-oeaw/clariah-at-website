@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+
+import { getImageImport } from "@/lib/get-image-import";
+
+interface Props {
+	alt?: string;
+	href: string;
+}
+
+const { alt = "", href } = Astro.props;
+---
+
+<figure>
+	{
+		/* TODO: consider adding the image import in a rehype plugin, similar to `rehype-mdx-import-media`. */
+	}
+	<Image alt={alt} src={getImageImport(href)} />
+	<figcaption>
+		<slot />
+	</figcaption>
+</figure>

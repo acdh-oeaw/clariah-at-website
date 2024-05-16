@@ -1,0 +1,212 @@
+---
+import { Image } from "astro:assets";
+
+import Card from "@/components/card.astro";
+import MainContent from "@/components/main-content.astro";
+import SectionTitle from "@/components/section-title.astro";
+import { locales } from "@/config/i18n.config";
+import PageLayout from "@/layouts/page-layout.astro";
+import { getCollectionName } from "@/lib/content/get-collection-name";
+import { getSingletonName } from "@/lib/content/get-singleton-name";
+import { reader } from "@/lib/content/reader";
+import { getImageImport } from "@/lib/get-image-import";
+import { createI18n } from "@/lib/i18n";
+
+export function getStaticPaths() {
+	return Promise.all(
+		locales.map(async (locale) => {
+			const singleton = getSingletonName("indexPage", locale);
+			const page = await reader().singletons[singleton].readOrThrow();
+
+			return { params: { locale }, props: { page } };
+		}),
+	);
+}
+
+const { locale } = Astro.params;
+
+const { page } = Astro.props;
+
+const { t } = await createI18n(locale);
+
+const documentTitle = t("IndexPage.meta.title");
+const { hero } = page;
+---
+
+<PageLayout locale={locale} title={documentTitle}>
+	<MainContent>
+		<section class="relative border-y border-brand">
+			<div class="absolute inset-0 size-full">
+				<Image alt="" class="size-full object-cover" src={getImageImport(hero.image)} />
+				<div class="absolute inset-0 size-full bg-[#6c757dbf]"></div>
+			</div>
+			<div class="relative mx-auto grid w-full max-w-screen-lg gap-y-6 px-4 py-16">
+				<h1 class="text-5xl font-medium text-neutral-0">{hero.title}</h1>
+				<p class="max-w-[52rem] text-2xl text-neutral-0">
+					{hero.subtitle}
+				</p>
+			</div>
+		</section>
+
+		<div class="grid gap-y-12 py-12">
+			{
+				page.main.sections.map((section) => {
+					switch (section.discriminant) {
+						case "cardsSection": {
+							const sectionStyles = {
+								fluid: "grid-fluid-cols-80",
+								"two-columns": "grid-cols-2",
+								"three-columns": "grid-cols-3",
+								"four-columns": "grid-cols-4",
+							};
+
+							return (
+								<section class="mx-auto grid w-full max-w-screen-lg gap-y-8 px-4">
+									<SectionTitle>{section.value.title}</SectionTitle>
+									<ul class:list={["grid gap-8", sectionStyles[section.value.variant]]} role="list">
+										{section.value.cards.map(async (card) => {
+											switch (card.discriminant) {
+												case "custom": {
+													return (
+														<li>
+															<Card {...card.value} />
+														</li>
+													);
+												}
+
+												case "event": {
+													const id = card.value.reference as string;
+													const collectionName = getCollectionName("events", locale);
+													const event = await reader().collections[collectionName].readOrThrow(id);
+
+													return (
+														<Card
+															image={event.image}
+															title={event.title}
+															summary={event.summary}
+															link={{ label: t("IndexPage.card.read-more"), href: `/events/${id}` }}
+														/>
+													);
+												}
+
+												case "news": {
+													const id = card.value.reference as string;
+													const collectionName = getCollectionName("news", locale);
+													const newsItem =
+														await reader().collections[collectionName].readOrThrow(id);
+
+													return (
+														<Card
+															image={newsItem.image}
+															title={newsItem.title}
+															summary={newsItem.summary}
+															link={{ label: t("IndexPage.card.read-more"), href: `/news/${id}` }}
+														/>
+													);
+												}
+
+												case "page": {
+													const id = card.value.reference as string;
+													const collectionName = getCollectionName("pages", locale);
+													const page = await reader().collections[collectionName].readOrThrow(id);
+
+													return (
+														<Card
+															image={page.image}
+															title={page.title}
+															summary={page.summary || t("IndexPage.card.no-summary")}
+															link={{ label: t("IndexPage.card.read-more"), href: `/${id}` }}
+														/>
+													);
+												}
+
+												default: {
+													return null;
+												}
+											}
+										})}
+									</ul>
+								</section>
+							);
+						}
+
+						case "carouselSection": {
+							return (
+								<section class="mx-auto grid w-full max-w-screen-lg gap-y-8 px-4">
+									<SectionTitle>{section.value.title}</SectionTitle>
+									<ul class="grid gap-8 grid-fluid-cols-80" role="list">
+										{section.value.slides.map(async (slide) => {
+											switch (slide.discriminant) {
+												case "custom": {
+													return (
+														<li>
+															<Card {...slide.value} />
+														</li>
+													);
+												}
+
+												case "event": {
+													const id = slide.value.reference as string;
+													const collectionName = getCollectionName("events", locale);
+													const event = await reader().collections[collectionName].readOrThrow(id);
+
+													return (
+														<Card
+															image={event.image}
+															title={event.title}
+															summary={event.summary}
+															link={{ label: t("IndexPage.card.read-more"), href: `/events/${id}` }}
+														/>
+													);
+												}
+
+												case "news": {
+													const id = slide.value.reference as string;
+													const collectionName = getCollectionName("news", locale);
+													const newsItem =
+														await reader().collections[collectionName].readOrThrow(id);
+
+													return (
+														<Card
+															image={newsItem.image}
+															title={newsItem.title}
+															summary={newsItem.summary}
+															link={{ label: t("IndexPage.card.read-more"), href: `/news/${id}` }}
+														/>
+													);
+												}
+
+												case "page": {
+													const id = slide.value.reference as string;
+													const collectionName = getCollectionName("pages", locale);
+													const page = await reader().collections[collectionName].readOrThrow(id);
+
+													return (
+														<Card
+															image={page.image}
+															title={page.title}
+															summary={page.summary || t("IndexPage.card.no-summary")}
+															link={{ label: t("IndexPage.card.read-more"), href: `/${id}` }}
+														/>
+													);
+												}
+
+												default: {
+													return null;
+												}
+											}
+										})}
+									</ul>
+								</section>
+							);
+						}
+
+						default: {
+							return null;
+						}
+					}
+				})
+			}
+		</div>
+	</MainContent>
+</PageLayout>

@@ -1,0 +1,21 @@
+---
+import { createAnalyticsScript } from "@/lib/analytics";
+
+interface Props {
+	baseUrl: string;
+	id: number;
+}
+
+const { baseUrl, id } = Astro.props;
+---
+
+<script
+	is:inline
+	set:html={`(${String(createAnalyticsScript)})("${baseUrl.endsWith("/") ? baseUrl : baseUrl + "/"}", "${String(id)}");`}
+/>
+
+<script>
+	import { initAnalytics } from "@/lib/analytics";
+
+	initAnalytics();
+</script>

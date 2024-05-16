@@ -1,0 +1,19 @@
+{
+	"name": "Astro",
+	"image": "ghcr.io/acdh-oeaw/devcontainer-frontend:20",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"astro-build.astro-vscode",
+				"bradlc.vscode-tailwindcss",
+				"dbaeumer.vscode-eslint",
+				"editorconfig.editorconfig",
+				"esbenp.prettier-vscode",
+				"mikestead.dotenv",
+				"ms-playwright.playwright",
+				"stylelint.vscode-stylelint",
+				"unifiedjs.vscode-mdx"
+			]
+		}
+	}
+}

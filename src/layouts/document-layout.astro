@@ -1,0 +1,132 @@
+---
+import "tailwindcss/tailwind.css";
+import "@fontsource-variable/inter/slnt.css";
+import "@/styles/index.css";
+
+import { isNonEmptyString } from "@acdh-oeaw/lib";
+import inter from "@fontsource-variable/inter/files/inter-latin-slnt-normal.woff2?url";
+import { ViewTransitions } from "astro:transitions";
+import type { WebSite, WithContext } from "schema-dts";
+
+import Analytics from "@/components/analytics.astro";
+import { env } from "@/config/env.config";
+import { defaultLocale, type Locale, locales } from "@/config/i18n.config";
+import { getUnprefixedPathname } from "@/lib/get-unprefixed-pathname";
+import { createI18n } from "@/lib/i18n";
+import { safeJsonLdReplacer } from "@/lib/safe-json-ld-replacer";
+
+interface Props {
+	description?: string;
+	locale: Locale;
+	robots?: string;
+	title: string;
+}
+
+const { description, locale, robots, title } = Astro.props;
+
+const { t } = await createI18n(locale);
+
+const metadata = t("metadata");
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const manifestUrl = "/manifest.webmanifest";
+const openGraphImageUrl = new URL("/opengraph-image.png", Astro.site);
+const sitemapUrl = "/sitemap-index.xml";
+const rssUrl = new URL("/feed.xml", Astro.site);
+
+const jsonLd: WithContext<WebSite> = {
+	"@context": "https://schema.org",
+	"@type": "WebSite",
+	name: metadata.title,
+	description: metadata.description,
+};
+
+const pathname = getUnprefixedPathname(Astro.url.pathname);
+
+const matomoBaseUrl = env.PUBLIC_MATOMO_BASE_URL;
+const matomoId = env.PUBLIC_MATOMO_ID;
+const googleSiteVerification = env.PUBLIC_GOOGLE_SITE_VERIFICATION;
+---
+
+<html lang={locale}>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="color-scheme" content="light" />
+		<meta charset="utf-8" />
+
+		<title>{[title, metadata.title].join(" | ")}</title>
+		<meta name="description" content={description ?? metadata.description} />
+
+		{robots != null ? <meta name="robots" content={robots} /> : null}
+
+		<link rel="canonical" href={canonicalUrl} />
+		<link rel="manifest" href={manifestUrl} />
+
+		{
+			locales.map((locale) => {
+				return (
+					<link
+						rel="alternate"
+						href={new URL(`/${locale}${pathname}`, Astro.site)}
+						hreflang={locale}
+					/>
+				);
+			})
+		}
+		<link
+			rel="alternate"
+			href={new URL(`/${defaultLocale}${pathname}`, Astro.site)}
+			hreflang="x-default"
+		/>
+
+		<link rel="sitemap" href={sitemapUrl} />
+		<link rel="alternate" type="application/rss+xml" title={metadata.title} href={rssUrl} />
+
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description ?? metadata.description} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:site_name" content={metadata.title} />
+		<meta property="og:locale" content={locale} />
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image" content={openGraphImageUrl} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:type" content="website" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		{
+			"twitter" in metadata && isNonEmptyString(metadata.twitter) ? (
+				<>
+					<meta name="twitter:site" content={metadata.twitter} />
+					<meta name="twitter:creator" content={metadata.twitter} />
+				</>
+			) : null
+		}
+
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="32x32" />
+		<link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any" />
+		<link rel="apple-touch-icon" href="/apple-icon.png" type="image/png" sizes="180x180" />
+
+		<link rel="preload" as="font" type="font/woff2" href={inter} crossorigin />
+
+		<ViewTransitions />
+
+		<script
+			is:inline
+			set:html={JSON.stringify(jsonLd, safeJsonLdReplacer)}
+			type="application/ld+json"
+		/>
+
+		{matomoBaseUrl && matomoId ? <Analytics baseUrl={matomoBaseUrl} id={matomoId} /> : null}
+
+		{
+			googleSiteVerification != null ? (
+				<meta name="google-site-verification" content={googleSiteVerification} />
+			) : null
+		}
+	</head>
+
+	<body>
+		<slot />
+	</body>
+</html>

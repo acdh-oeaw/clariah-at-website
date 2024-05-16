@@ -1,0 +1,106 @@
+---
+import { Icon } from "astro-icon/components";
+
+import LocaleSwitcher from "@/components/locale-switcher.astro";
+import { mobileNavId } from "@/components/navigation/constants";
+import NavLink from "@/components/navigation/nav-link.astro";
+import Search from "@/components/search.astro";
+import { defaultLocale, type Locale } from "@/config/i18n.config";
+import { getNavigation } from "@/lib/get-navigation";
+
+const locale = (Astro.currentLocale as Locale | undefined) ?? defaultLocale;
+const navigation = await getNavigation(locale);
+---
+
+<div id={mobileNavId} hidden class="px-4 pb-6 lg:hidden" data-mobile-nav>
+	<ul class="grid gap-y-2 text-[#444]" role="list">
+		{
+			navigation.links.map((item) => {
+				switch (item.discriminant) {
+					case "link": {
+						return (
+							<li>
+								<NavLink class="transition hover:text-[#212529]" href={item.value.href}>
+									{item.value.label}
+								</NavLink>
+							</li>
+						);
+					}
+
+					case "page": {
+						return (
+							<li>
+								<NavLink class="transition hover:text-[#212529]" href={`/${item.value.reference}`}>
+									{item.value.label}
+								</NavLink>
+							</li>
+						);
+					}
+
+					case "menu": {
+						return (
+							<li>
+								<details class="group">
+									<summary class="inline-flex cursor-pointer items-center gap-x-1.5">
+										{item.value.label}
+										<Icon
+											aria-hidden="true"
+											class="size-4 shrink-0 group-open:rotate-180"
+											name="lucide:chevron-down"
+										/>
+									</summary>
+									<ul class="ml-4 mt-2 grid gap-y-1" role="list">
+										{item.value.links.map((link) => {
+											switch (link.discriminant) {
+												case "link": {
+													return (
+														<li>
+															<NavLink
+																class="transition hover:text-[#212529]"
+																href={link.value.href}
+															>
+																{link.value.label}
+															</NavLink>
+														</li>
+													);
+												}
+
+												case "page": {
+													return (
+														<li>
+															<NavLink
+																class="transition hover:text-[#212529]"
+																href={`/${link.value.reference}`}
+															>
+																{link.value.label}
+															</NavLink>
+														</li>
+													);
+												}
+
+												default: {
+													return null;
+												}
+											}
+										})}
+									</ul>
+								</details>
+							</li>
+						);
+					}
+
+					default: {
+						return null;
+					}
+				}
+			})
+		}
+	</ul>
+
+	<hr class="my-6" />
+
+	<div class="flex justify-between">
+		<LocaleSwitcher />
+		<Search />
+	</div>
+</div>

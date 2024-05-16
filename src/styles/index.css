@@ -1,0 +1,7 @@
+/* stylelint-disable color-no-hex */
+
+:root {
+	--font-body: "Inter Variable";
+	--color-brand: #ef6c00;
+	--color-brand-intent: #dc6502;
+}

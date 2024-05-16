@@ -1,0 +1,140 @@
+{
+	"hero": {
+		"title": "CLARIAH-AT",
+		"subtitle": "An open network facilitating the application of digital methods in the humanities and the development of relevant research infrastructures.",
+		"image": "/assets/content/de/index-page/hero/image.jpg"
+	},
+	"main": {
+		"sections": [
+			{
+				"discriminant": "carouselSection",
+				"value": {
+					"title": "Main",
+					"slides": [
+						{
+							"discriminant": "custom",
+							"value": {
+								"title": "Summer School \"Vom Archiv zum Algorithmus. Digital Humanities in der Praxis.\": Anmeldung ist geöffnet!",
+								"image": "/assets/content/de/index-page/main/sections/0/value/slides/0/image.png",
+								"summary": "9.-13.9., Salzburg; Sei Teil der CLARIAH-AT Summer School 2024 an der PLUS Salzburg! Anmeldeschluss: 9. Juni",
+								"link": {
+									"label": "Mehr Info",
+									"href": "/events/summer-school-anmeldung-offen/"
+								}
+							}
+						},
+						{
+							"discriminant": "custom",
+							"value": {
+								"title": "CfP – Buchentwurf: \"Digital Translation History. Processing historical Data with new Methodologies.\"",
+								"image": "/assets/content/de/index-page/main/sections/0/value/slides/1/image.png",
+								"summary": "UOC & die Universität Graz laden zu Vorschlägen für eine Buchveröffentlichung ein: Reichen Sie Ihr Abstract von 300 Wörtern bis zum 15. Juni ein!",
+								"link": {
+									"label": "Mehr Info",
+									"href": "/news/cfp-buchentwurf/"
+								}
+							}
+						},
+						{
+							"discriminant": "custom",
+							"value": {
+								"title": "ACDH-CH Tool Gallery 10.2: Encoding Manuscripts with TEI-XML Training",
+								"image": "/assets/content/de/index-page/main/sections/0/value/slides/2/image.png",
+								"summary": "22.5.2024 (Vienna): For this workshop a basic understanding of TEI is necessary (participants will receive introductory training material on TEI XML).",
+								"link": {
+									"label": "Mehr Info",
+									"href": "/events/acdh-ch-tool-gallery-10-2-2/"
+								}
+							}
+						},
+						{
+							"discriminant": "custom",
+							"value": {
+								"title": "Förderungen für Jungwissenschaftler*innen",
+								"image": "/assets/content/de/index-page/main/sections/0/value/slides/3/image.jpg",
+								"summary": "CLARIAH-AT hat es sich zum Ziel gesetzt, Jungwissenschaftler*innen im Bereich Digital Humanities & Cultural Heritage zu fördern.",
+								"link": {
+									"label": "Mehr Info",
+									"href": "/forderungen-fur-jungwissenschaftlerinnen/"
+								}
+							}
+						}
+					]
+				}
+			},
+			{
+				"discriminant": "cardsSection",
+				"value": {
+					"title": "Über uns",
+					"variant": "fluid",
+					"cards": [
+						{
+							"discriminant": "custom",
+							"value": {
+								"title": " Fördermöglichkeiten",
+								"summary": "CLARIAH-AT bietet eine Reihe an Fördermöglichkeiten: von Projektförderung bis hin zu spezifischen Fördermöglichkeiten für junge Wissenschaftler*innen.",
+								"link": {
+									"label": "Mehr Info",
+									"href": "/foerdermoglichkeiten/"
+								}
+							}
+						},
+						{
+							"discriminant": "custom",
+							"value": {
+								"title": "Die CLARIAH-AT Arbeitsgruppen",
+								"summary": "Anhand der Leitlinien der DHA Strategie 2021+ hat CLARIAH-AT vier Arbeitsgruppen gebildet. Mehr über die Aufgabenbereiche erfahren Sie hier.",
+								"link": {
+									"label": "Mehr Info",
+									"href": "/die-clariah-at-arbeitsgruppen/"
+								}
+							}
+						},
+						{
+							"discriminant": "custom",
+							"value": {
+								"title": "Über CLARIAH-AT",
+								"summary": "CLARIAH-AT ist das Konsortium jener österreichischen Hochschulen und Forschungsinstitutionen, das die österreichischen Aktivitäten in den europäischen ESFRI Forschungsinfrastrukturen CLARIN (Common Language Resources and Technology Infrastructure) und DARIAH (Digital Research Infrastructure for the Arts and Humanities) koordiniert und vorantreibt.",
+								"link": {
+									"label": "Mehr Info",
+									"href": "/ueber-clariah-at/"
+								}
+							}
+						}
+					]
+				}
+			},
+			{
+				"discriminant": "cardsSection",
+				"value": {
+					"title": "Aktuelles",
+					"variant": "fluid",
+					"cards": [
+						{
+							"discriminant": "custom",
+							"value": {
+								"title": "Aktuelle Veranstaltungen",
+								"summary": "Veranstaltungen von CLARIAH-AT",
+								"link": {
+									"label": "Mehr Info",
+									"href": "/news/"
+								}
+							}
+						},
+						{
+							"discriminant": "custom",
+							"value": {
+								"title": "Aktuelles",
+								"summary": "Neuigkeiten von CLARIAH-AT",
+								"link": {
+									"label": "Mehr Info",
+									"href": "/events/"
+								}
+							}
+						}
+					]
+				}
+			}
+		]
+	}
+}

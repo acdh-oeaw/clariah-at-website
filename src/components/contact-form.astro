@@ -1,0 +1,28 @@
+---
+import TextAreaField from "@/components/form/text-area-field.astro";
+import TextInputField from "@/components/form/text-input-field.astro";
+import type { Locale } from "@/config/i18n.config";
+import { createI18n } from "@/lib/i18n";
+
+const { t } = await createI18n(Astro.currentLocale as Locale | undefined);
+
+const email = t("ContactForm.email");
+const subject = t("ContactForm.subject");
+const message = t("ContactForm.message");
+const submit = t("ContactForm.submit");
+---
+
+<form action="/api/contact" class="grid gap-y-6" data-astro-reload method="post">
+	<TextInputField label={email} name="email" required={true} type="email" />
+
+	<TextInputField label={subject} name="subject" required={true} />
+
+	<TextAreaField label={message} name="message" required={true} rows={5} />
+
+	<button
+		class="rounded-md bg-neutral-950 px-4 py-2 font-semibold text-neutral-0 transition hover:bg-neutral-700 dark:bg-neutral-0 dark:text-neutral-950 dark:hover:bg-neutral-300"
+		type="submit"
+	>
+		{submit}
+	</button>
+</form>

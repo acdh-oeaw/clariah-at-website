@@ -1,0 +1,26 @@
+---
+import SkipLink from "@/components/skip-link.astro";
+import WebsiteFooter from "@/components/website-footer.astro";
+import WebsiteHeader from "@/components/website-header.astro";
+import type { Locale } from "@/config/i18n.config";
+import DocumentLayout from "@/layouts/document-layout.astro";
+
+interface Props {
+	description?: string;
+	locale: Locale;
+	robots?: string;
+	title: string;
+}
+
+const { description, locale, robots, title } = Astro.props;
+---
+
+<DocumentLayout description={description} locale={locale} robots={robots} title={title}>
+	<SkipLink />
+
+	<div class="grid min-h-full grid-rows-[auto_1fr_auto]">
+		<WebsiteHeader />
+		<slot />
+		<WebsiteFooter />
+	</div>
+</DocumentLayout>

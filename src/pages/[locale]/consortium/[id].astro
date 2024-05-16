@@ -1,0 +1,125 @@
+---
+import { Image } from "astro:assets";
+
+import MainContent from "@/components/main-content.astro";
+import PageCard from "@/components/page-card.astro";
+import PageSection from "@/components/page-section.astro";
+import PageTitle from "@/components/page-title.astro";
+import SectionTitle from "@/components/section-title.astro";
+import { type Locale, locales } from "@/config/i18n.config";
+import PageLayout from "@/layouts/page-layout.astro";
+import { getCollectionName } from "@/lib/content/get-collection-name";
+import { processMdx } from "@/lib/content/mdx";
+import { reader } from "@/lib/content/reader";
+import { getImageImport } from "@/lib/get-image-import";
+import { createI18n } from "@/lib/i18n";
+
+export async function getStaticPaths() {
+	return (
+		await Promise.all(
+			locales.map(async (locale) => {
+				const collection = getCollectionName("consortium", locale);
+				const pages = await reader().collections[collection].all();
+
+				return pages.map((page) => {
+					return { params: { id: page.slug, locale }, props: { page: page.entry } };
+				});
+			}),
+		)
+	).flat();
+}
+
+const { locale } = Astro.params;
+
+const { page } = Astro.props;
+
+const { t } = await createI18n(Astro.currentLocale as Locale | undefined);
+
+const documentTitle = page.name;
+const { href, institutions, logo, name, people } = page;
+const { default: Content } = await processMdx(await page.description(), locale);
+---
+
+<PageLayout locale={locale} title={documentTitle}>
+	<MainContent>
+		<PageSection>
+			<PageCard>
+				<div class="flex justify-center">
+					<Image alt="" class="my-12 h-40 object-contain" src={getImageImport(logo)} />
+				</div>
+
+				<PageTitle>
+					<a href={href}>{name}</a>
+				</PageTitle>
+
+				<div class="prose">
+					<Content />
+				</div>
+
+				{
+					institutions.length > 0 || people.length > 0 ? (
+						<div class="grid gap-y-8 py-8">
+							{institutions.length > 0 ? (
+								<section class="grid gap-y-8">
+									<SectionTitle>{t("ConsortiumMemberPage.institutions")}</SectionTitle>
+									<ul class="flex flex-wrap gap-12" role="list">
+										{institutions.map((institution) => {
+											return (
+												<li>
+													<article>
+														<h3 class="text-lg font-medium">
+															<a class="grid gap-y-4" href={institution.href}>
+																<Image
+																	alt=""
+																	class="h-20 w-auto object-contain"
+																	src={getImageImport(institution.logo)}
+																/>
+																{institution.name}
+															</a>
+														</h3>
+													</article>
+												</li>
+											);
+										})}
+									</ul>
+								</section>
+							) : null}
+
+							{people.length > 0 ? (
+								<section class="grid gap-y-8">
+									<SectionTitle>{t("ConsortiumMemberPage.people")}</SectionTitle>
+									<ul class="grid gap-12" role="list">
+										{people.map(async (person) => {
+											const { default: Content } = await processMdx(
+												await person.description(),
+												locale,
+											);
+
+											return (
+												<li>
+													<article class="grid grid-cols-[auto_1fr] gap-x-8">
+														<Image
+															alt=""
+															class="size-32 rounded-full object-contain"
+															src={getImageImport(person.image)}
+														/>
+														<div class="grid gap-y-2">
+															<h3 class="text-lg font-medium">{person.name}</h3>
+															<div class="prose">
+																<Content />
+															</div>
+														</div>
+													</article>
+												</li>
+											);
+										})}
+									</ul>
+								</section>
+							) : null}
+						</div>
+					) : null
+				}
+			</PageCard>
+		</PageSection>
+	</MainContent>
+</PageLayout>

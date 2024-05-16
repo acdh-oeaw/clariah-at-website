@@ -1,0 +1,29 @@
+---
+import { variants } from "@/lib/styles";
+
+interface Props {
+	kind: "caution" | "important" | "note" | "tip" | "warning";
+}
+
+const { kind } = Astro.props;
+
+const calloutStyles = variants({
+	base: "my-4 rounded-md border p-4 text-sm leading-relaxed [&>:first-child]:mt-0 [&>:last-child]:mb-0",
+	variants: {
+		kind: {
+			caution: "",
+			important: "",
+			note: "",
+			tip: "",
+			warning: "",
+		},
+	},
+	defaultVariants: {
+		kind: "note",
+	},
+});
+---
+
+<aside class={calloutStyles({ kind })}>
+	<slot />
+</aside>

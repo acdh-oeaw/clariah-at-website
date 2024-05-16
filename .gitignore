@@ -1,0 +1,35 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# logs
+*.log
+
+# non-public environment variables
+.env.local
+.env.*.local
+
+# caches
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+
+# vercel
+.vercel
+
+# misc
+.DS_Store
+.idea/
+
+# astro
+dist/
+.astro/
+
+# test
+/coverage/
+
+# playwright
+/blob-report/
+/playwright/.cache/
+/playwright-report/
+/test-results/

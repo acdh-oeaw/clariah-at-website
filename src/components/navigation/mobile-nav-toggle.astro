@@ -1,0 +1,52 @@
+---
+import { Icon } from "astro-icon/components";
+
+import { mobileNavId } from "@/components/navigation/constants";
+import type { Locale } from "@/config/i18n.config";
+import { createI18n } from "@/lib/i18n";
+
+const { t } = await createI18n(Astro.currentLocale as Locale | undefined);
+
+const label = t("MobileNavToggle.label");
+---
+
+<mobile-nav-toggle>
+	<button
+		aria-controls={mobileNavId}
+		aria-expanded="true"
+		class="p-2.5 transition hover:text-[#212529]"
+		data-mobile-nav-trigger
+	>
+		<Icon aria-hidden="true" class="size-5 shrink-0" name="lucide:menu" />
+		<span class="sr-only">{label}</span>
+	</button>
+</mobile-nav-toggle>
+
+<script>
+	import { assert } from "@acdh-oeaw/lib";
+
+	class MobileNavToggle extends HTMLElement {
+		constructor() {
+			super();
+
+			const trigger = this.querySelector<HTMLButtonElement>("button[data-mobile-nav-trigger]");
+			assert(trigger);
+
+			const nav = document.querySelector<HTMLDivElement>("div[data-mobile-nav]");
+
+			trigger.setAttribute("aria-expanded", "false");
+
+			trigger.addEventListener("click", (event) => {
+				if (nav == null) return;
+
+				const trigger = event.currentTarget as HTMLButtonElement;
+
+				nav.toggleAttribute("hidden");
+
+				trigger.setAttribute("aria-expanded", String(!nav.hidden));
+			});
+		}
+	}
+
+	customElements.define("mobile-nav-toggle", MobileNavToggle);
+</script>

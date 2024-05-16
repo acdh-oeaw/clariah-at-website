@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+
+import Link from "@/components/link.astro";
+import { getImageImport } from "@/lib/get-image-import";
+
+interface Props {
+	image?: string | null;
+	link: { href: string; label: string };
+	summary: string;
+	title: string;
+}
+
+const { image, link, summary, title } = Astro.props;
+---
+
+<article class="rounded-b-md border border-t-[5px] border-[#0000001a] border-t-brand bg-white">
+	{
+		image ? (
+			<Link aria-label={link.label} class="relative block aspect-[1.5]" href={link.href}>
+				<Image alt="" class="absolute inset-0 size-full object-cover" src={getImageImport(image)} />
+			</Link>
+		) : null
+	}
+	<div class="grid gap-y-3 border-t border-[#00000026] p-6">
+		<header>
+			<h3 class="text-xl font-medium text-[#444]">
+				<Link class="hover:underline" href={link.href}>
+					{title}
+				</Link>
+			</h3>
+		</header>
+		<p class="text-md text-[#6f757c]">{summary}</p>
+		<footer class="mt-1">
+			<Link
+				class="inline-flex rounded-md border border-[#0000001a] px-3 py-1 text-[#212529] transition hover:bg-[#212529] hover:text-white"
+				href={link.href}
+			>
+				{link.label}
+			</Link>
+		</footer>
+	</div>
+</article>

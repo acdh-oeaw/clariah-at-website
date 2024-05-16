@@ -1,0 +1,28 @@
+---
+import MainContent from "@/components/main-content.astro";
+import PageSection from "@/components/page-section.astro";
+import PageTitle from "@/components/page-title.astro";
+import { defaultLocale, type Locale } from "@/config/i18n.config";
+import PageLayout from "@/layouts/page-layout.astro";
+import { createI18n } from "@/lib/i18n";
+
+const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const { t } = await createI18n(locale);
+
+const documentTitle = t("NotFoundPage.meta.title");
+const title = t("NotFoundPage.title");
+
+/**
+ * @see https://docs.astro.build/en/guides/middleware/#error-pages
+ * @see https://github.com/withastro/astro/issues/10785
+ */
+export const prerender = false;
+---
+
+<PageLayout locale={locale} robots="noindex" title={documentTitle}>
+	<MainContent search="exclude">
+		<PageSection class="grid min-h-full place-items-center">
+			<PageTitle>{title}</PageTitle>
+		</PageSection>
+	</MainContent>
+</PageLayout>

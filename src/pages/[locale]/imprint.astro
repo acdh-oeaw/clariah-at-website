@@ -1,0 +1,39 @@
+---
+import { request } from "@acdh-oeaw/lib";
+
+import MainContent from "@/components/main-content.astro";
+import PageCard from "@/components/page-card.astro";
+import PageSection from "@/components/page-section.astro";
+import PageTitle from "@/components/page-title.astro";
+import { locales } from "@/config/i18n.config";
+import { createImprintUrl } from "@/config/imprint.config";
+import PageLayout from "@/layouts/page-layout.astro";
+import { createI18n } from "@/lib/i18n";
+
+export function getStaticPaths() {
+	return locales.map((locale) => {
+		return { params: { locale } };
+	});
+}
+
+const { locale } = Astro.params;
+
+const { t } = await createI18n(locale);
+
+const documentTitle = t("ImprintPage.meta.title");
+const title = t("ImprintPage.title");
+
+const imprintUrl = createImprintUrl(locale);
+const imprintHtml = await request(imprintUrl, { responseType: "text" });
+---
+
+<PageLayout locale={locale} title={documentTitle}>
+	<MainContent search="exclude">
+		<PageSection>
+			<PageCard>
+				<PageTitle>{title}</PageTitle>
+				<div class="prose" set:html={imprintHtml} />
+			</PageCard>
+		</PageSection>
+	</MainContent>
+</PageLayout>

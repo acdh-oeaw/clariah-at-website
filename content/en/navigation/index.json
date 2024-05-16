@@ -1,0 +1,69 @@
+{
+	"links": [
+		{
+			"discriminant": "menu",
+			"value": {
+				"label": "Funding",
+				"links": [
+					{
+						"discriminant": "link",
+						"value": {
+							"label": "Project Funding",
+							"href": "/en/project-funding/"
+						}
+					},
+					{
+						"discriminant": "link",
+						"value": {
+							"label": "Funding for Junior Researchers",
+							"href": "/en/funding-opportunities-for-junior-researcher/"
+						}
+					}
+				]
+			}
+		},
+		{
+			"discriminant": "link",
+			"value": {
+				"label": "Events",
+				"href": "/en/events/"
+			}
+		},
+		{
+			"discriminant": "link",
+			"value": {
+				"label": "News",
+				"href": "/en/news/"
+			}
+		},
+		{
+			"discriminant": "menu",
+			"value": {
+				"label": "About",
+				"links": [
+					{
+						"discriminant": "link",
+						"value": {
+							"label": "CLARIAH-AT",
+							"href": "/en/about-clariah-at/"
+						}
+					},
+					{
+						"discriminant": "link",
+						"value": {
+							"label": "Consortium",
+							"href": "/en/consortium/"
+						}
+					},
+					{
+						"discriminant": "link",
+						"value": {
+							"label": "Working Groups",
+							"href": "/en/the-clariah-at-working-groups/"
+						}
+					}
+				]
+			}
+		}
+	]
+}

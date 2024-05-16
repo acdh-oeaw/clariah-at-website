@@ -1,0 +1,117 @@
+---
+import { Image } from "astro:assets";
+
+import LocaleSwitcher from "@/components/locale-switcher.astro";
+import MobileNav from "@/components/navigation/mobile-nav.astro";
+import MobileNavToggle from "@/components/navigation/mobile-nav-toggle.astro";
+import NavMenu from "@/components/navigation/nav-menu.astro";
+import NavMenuItem from "@/components/navigation/nav-menu-item.astro";
+import NavMenuLink from "@/components/navigation/nav-menu-link.astro";
+import NavMenuPopover from "@/components/navigation/nav-menu-popover.astro";
+import NavMenuTrigger from "@/components/navigation/nav-menu-trigger.astro";
+import Navigation from "@/components/navigation/navigation.astro";
+import Search from "@/components/search.astro";
+import { defaultLocale, type Locale } from "@/config/i18n.config";
+import { getNavigation } from "@/lib/get-navigation";
+import { createI18n } from "@/lib/i18n";
+import logo from "~/public/assets/images/clariah-at-logo.png";
+
+const locale = (Astro.currentLocale as Locale | undefined) ?? defaultLocale;
+const { t } = await createI18n(locale);
+const navigation = await getNavigation(locale);
+
+const home = t("WebsiteHeader.links.home");
+---
+
+<header class="border-b-[5px] border-brand bg-white text-[#444]">
+	<div
+		class="mx-auto flex w-full max-w-screen-lg items-center justify-between p-4 text-md font-medium"
+	>
+		<Navigation class="flex-1" label={t("WebsiteHeader.navigation-primary")}>
+			<NavMenuLink class="-ml-4 inline-flex shrink-0 items-center gap-x-2" href="/">
+				<Image alt="" class="block h-16 w-auto" fetchpriority="high" loading="eager" src={logo} />
+				<span class="sr-only">{home}</span>
+			</NavMenuLink>
+
+			<ul class="hidden flex-1 flex-wrap items-center gap-x-2 lg:flex" role="list">
+				{
+					navigation.links.map((item) => {
+						switch (item.discriminant) {
+							case "link": {
+								return (
+									<li>
+										<NavMenuLink href={item.value.href}>{item.value.label}</NavMenuLink>
+									</li>
+								);
+							}
+
+							case "page": {
+								return (
+									<li>
+										<NavMenuLink href={`/${item.value.reference}`}>{item.value.label}</NavMenuLink>
+									</li>
+								);
+							}
+
+							case "menu": {
+								return (
+									<li>
+										<NavMenu>
+											<NavMenuTrigger>{item.value.label}</NavMenuTrigger>
+											<NavMenuPopover>
+												<ul role="list">
+													{item.value.links.map((link) => {
+														switch (link.discriminant) {
+															case "link": {
+																return (
+																	<li>
+																		<NavMenuItem href={link.value.href}>
+																			{link.value.label}
+																		</NavMenuItem>
+																	</li>
+																);
+															}
+
+															case "page": {
+																return (
+																	<li>
+																		<NavMenuItem href={`/${link.value.reference}`}>
+																			{link.value.label}
+																		</NavMenuItem>
+																	</li>
+																);
+															}
+
+															default: {
+																return null;
+															}
+														}
+													})}
+												</ul>
+											</NavMenuPopover>
+										</NavMenu>
+									</li>
+								);
+							}
+
+							default: {
+								return null;
+							}
+						}
+					})
+				}
+			</ul>
+
+			<div class="ml-auto inline-flex items-center gap-x-4 lg:hidden">
+				<MobileNavToggle />
+			</div>
+		</Navigation>
+
+		<div class="-mr-4 hidden items-center gap-x-4 lg:mr-0 lg:flex">
+			<Search />
+			<LocaleSwitcher />
+		</div>
+	</div>
+
+	<MobileNav />
+</header>

@@ -1,0 +1,107 @@
+{
+	"ColorSchemeSwitcher": {
+		"color-schemes": {
+			"dark": "Dunkel",
+			"light": "Hell",
+			"system": "System"
+		},
+		"change": "Farbschema ändern"
+	},
+	"ContactForm": {
+		"email": "Email-Adresse",
+		"message": "Nachricht",
+		"subject": "Betreff",
+		"submit": "Absenden"
+	},
+	"ConsortiumMemberPage": {
+		"institutions": "Institutionen",
+		"people": "Personen"
+	},
+	"ConsortiumPage": {
+		"meta": {
+			"title": "Consortium"
+		},
+		"title": "Consortium"
+	},
+	"ContactPage": {
+		"meta": {
+			"title": "Kontakt"
+		},
+		"title": "Kontakt"
+	},
+	"EventsPage": {
+		"meta": {
+			"title": "Veranstaltungen"
+		},
+		"read-more": "Mehr Info",
+		"title": "Veranstaltungen"
+	},
+	"ImprintPage": {
+		"meta": {
+			"title": "Impressum"
+		},
+		"title": "Impressum"
+	},
+	"IndexPage": {
+		"card": {
+			"no-summary": "Keine Zusammenfassung verfügbar.",
+			"read-more": "Mehr Info"
+		},
+		"meta": {
+			"title": "Startseite"
+		}
+	},
+	"LocaleSwitcher": {
+		"current-locale": "Aktuelle Sprache: {locale}",
+		"switch-locale": "Sprache wechseln",
+		"switch-locale-to": "Zu {locale} wechseln"
+	},
+	"Mdx": {
+		"FootnoteBackLabel": "Zurück zur Referenz {reference}",
+		"Footnotes": "Fußnoten"
+	},
+	"MobileNavToggle": {
+		"label": "Navigationsmenü öffnen"
+	},
+	"NewsPage": {
+		"meta": {
+			"title": "Aktuelles"
+		},
+		"read-more": "Mehr Info",
+		"title": "Aktuelles"
+	},
+	"NotFoundPage": {
+		"meta": {
+			"title": "Seite nicht gefunden"
+		},
+		"title": "Seite nicht gefunden"
+	},
+	"Search": {
+		"close-dialog": "Dialogfenster schließen",
+		"search": "Suchen"
+	},
+	"SkipLink": {
+		"skip-to-main-content": "Zum Hauptinhalt springen"
+	},
+	"SuccessPage": {
+		"message": "Email erfolgreich gesendet!",
+		"meta": {
+			"title": "Kontakt"
+		},
+		"title": "Kontakt"
+	},
+	"WebsiteFooter": {
+		"bmbwf": "Bundesministerium Bildung, Wissenschaft und Forschung",
+		"contact": "Kontakt",
+		"funded-by": "Gefördert von",
+		"links": {
+			"imprint": "Impressum"
+		}
+	},
+	"WebsiteHeader": {
+		"links": {
+			"home": "Startseite"
+		},
+		"navigation-primary": "Primär"
+	}
+}

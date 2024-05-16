@@ -1,0 +1,132 @@
+---
+import "@pagefind/default-ui/css/ui.css";
+
+import { Icon } from "astro-icon/components";
+
+import type { Locale } from "@/config/i18n.config";
+import { createI18n } from "@/lib/i18n";
+
+const { t } = await createI18n(Astro.currentLocale as Locale | undefined);
+---
+
+<site-search transition:persist>
+	<button
+		class="inline-flex items-center gap-x-2 px-4 py-2 hover:text-[#212529]"
+		data-search-open
+		disabled
+	>
+		<Icon aria-hidden="true" class="size-4 shrink-0" name="lucide:search" />
+		{t("Search.search")}
+	</button>
+
+	<dialog
+		aria-label={t("Search.search")}
+		class="fixed mx-auto min-h-full w-full max-w-screen-md border bg-[#f1f1f1] backdrop:bg-[#545864a8] backdrop:backdrop-blur-sm open:grid sm:mt-[5rem] sm:max-h-[calc(100%-10rem)] sm:min-h-[16rem] sm:rounded-lg sm:shadow-lg"
+	>
+		<div class="grid size-full gap-y-4 px-8 py-6" data-dialog-content>
+			<div class="relative mt-8">
+				<div data-search-results></div>
+			</div>
+			<button class="absolute right-4 top-4 text-sm" data-search-close>
+				<Icon aria-hidden="true" class="size-4 shrink-0" name="lucide:x" />
+				<span class="sr-only">{t("Search.close-dialog")}</span>
+			</button>
+		</div>
+	</dialog>
+</site-search>
+
+<script>
+	import { assert } from "@acdh-oeaw/lib";
+
+	class SiteSearch extends HTMLElement {
+		constructor() {
+			super();
+
+			const openButton = this.querySelector<HTMLButtonElement>("button[data-search-open]");
+			const closeButton = this.querySelector<HTMLButtonElement>("button[data-search-close]");
+			const dialog = this.querySelector<HTMLDialogElement>("dialog");
+			const dialogContent = this.querySelector<HTMLDivElement>("div[data-dialog-content]");
+			const dialogSearchResults = this.querySelector<HTMLDivElement>("div[data-search-results]");
+			assert(openButton);
+			assert(closeButton);
+			assert(dialog);
+			assert(dialogContent);
+			assert(dialogSearchResults);
+
+			function closeDialog() {
+				dialog?.close();
+			}
+
+			const onClick = (event: MouseEvent) => {
+				const element = event.target as Node | null;
+				const isLink = element != null && "href" in element;
+
+				if (isLink || (document.body.contains(element) && !dialogContent.contains(element))) {
+					closeDialog();
+				}
+			};
+
+			function openDialog(event?: MouseEvent) {
+				dialog?.showModal();
+
+				event?.stopPropagation();
+				window.addEventListener("click", onClick);
+			}
+
+			dialog.addEventListener("close", () => {
+				window.removeEventListener("click", onClick);
+			});
+
+			openButton.addEventListener("click", openDialog);
+			openButton.disabled = false;
+			closeButton.addEventListener("click", closeDialog);
+
+			window.addEventListener("DOMContentLoaded", () => {
+				/** Pagefind assets are only generated on build. */
+				if (import.meta.env.DEV) return;
+
+				const onIdle = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
+
+				onIdle(async () => {
+					// @ts-expect-error — Missing types for @pagefind/default-ui package.
+					const { PagefindUI } = await import("@pagefind/default-ui");
+					new PagefindUI({
+						element: dialogSearchResults,
+						baseUrl: import.meta.env.BASE_URL,
+						bundlePath: import.meta.env.BASE_URL.replace(/\/$/, "") + "/pagefind/",
+						showImages: false,
+						showSubResults: true,
+					});
+				});
+			});
+		}
+	}
+
+	customElements.define("site-search", SiteSearch);
+</script>
+
+<style is:global>
+	site-search {
+		display: contents;
+	}
+
+	/* stylelint-disable-next-line selector-class-pattern */
+	.pagefind-ui .pagefind-ui__search-input:focus {
+		@apply outline outline-2 outline-focus-ring;
+	}
+
+	/* stylelint-disable-next-line selector-class-pattern */
+	.pagefind-ui .pagefind-ui__result {
+		@apply !border-t-0 !py-2;
+	}
+
+	/* stylelint-disable-next-line selector-class-pattern */
+	.pagefind-ui .pagefind-ui__result-inner {
+		@apply bg-white py-3 px-4 rounded-md;
+	}
+
+	/* stylelint-disable-next-line selector-class-pattern */
+	.pagefind-ui .pagefind-ui__result-inner mark {
+		@apply bg-transparent font-semibold;
+	}
+</style>

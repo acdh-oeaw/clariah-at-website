@@ -1,0 +1,27 @@
+---
+import Label from "@/components/form/label.astro";
+
+interface Props {
+	autofocus?: boolean;
+	disabled?: boolean;
+	id?: string;
+	label: string;
+	name: string;
+	required?: boolean;
+	rows?: number;
+}
+
+const { disabled, id, label, name, required, ...rest } = Astro.props;
+---
+
+<label class="grid gap-y-1" id={id}>
+	<Label required={required}>{label}</Label>
+	<textarea
+		{...rest}
+		class="rounded-md border border-neutral-300 bg-neutral-50 px-3 py-1.5 disabled:cursor-not-allowed disabled:bg-neutral-50 disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-900"
+		disabled={disabled}
+		name={name}
+		required={required}
+	>
+	</textarea>
+</label>

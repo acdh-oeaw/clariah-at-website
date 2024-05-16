@@ -1,0 +1,89 @@
+---
+import { Icon } from "astro-icon/components";
+
+import Link from "@/components/navigation/nav-link.astro";
+import type { Locale } from "@/config/i18n.config";
+import { createI18n } from "@/lib/i18n";
+
+const { t } = await createI18n(Astro.currentLocale as Locale | undefined);
+
+const imprint = t("WebsiteFooter.links.imprint");
+---
+
+<footer class="border-t border-t-[#00000026] bg-white">
+	<div class="mx-auto grid w-full max-w-screen-lg gap-y-6 px-4 py-12 text-[#444]">
+		<div class="flex w-full items-center gap-x-1.5 border-b border-[#00000026] pb-4">
+			<Icon aria-hidden="true" class="size-4.5" name="lucide:message-circle" />
+			<span class="text-sm font-medium">{t("WebsiteFooter.contact")}</span>
+		</div>
+
+		<div class="grid items-start gap-x-8 gap-y-6 md:grid-cols-2">
+			<div class="grid gap-y-2">
+				<div class="font-medium">CLARIAH-AT</div>
+				<div>
+					<img alt="" class="h-20" loading="lazy" src="/assets/images/clariah-at-logo.png" />
+				</div>
+				<dl class="grid gap-y-2">
+					<div class="inline-flex items-center gap-x-2">
+						<dt>Consortium speaker:</dt>
+						<dd>
+							<a
+								class="underline decoration-dotted underline-offset-4 hover:no-underline"
+								href="mailto:office@clariah.at"
+							>
+								Walter Scholger
+							</a>
+						</dd>
+					</div>
+					<div class="inline-flex items-center gap-x-2">
+						<dt>
+							<span class="sr-only">Twitter:</span>
+							<Icon aria-hidden="true" class="size-4.5" name="lucide:twitter" />
+						</dt>
+						<dd>
+							<a
+								class="underline decoration-dotted underline-offset-4 hover:no-underline"
+								href="https://twitter.com/AtClariah"
+							>
+								@AtClariah
+							</a>
+						</dd>
+					</div>
+					<div class="inline-flex items-center gap-x-2">
+						<dt>
+							<span class="sr-only">Email:</span>
+							<Icon aria-hidden="true" class="size-4.5" name="lucide:mail" />
+						</dt>
+						<dd>
+							<a
+								class="underline decoration-dotted underline-offset-4 hover:no-underline"
+								href="mailto:office@clariah.at"
+							>
+								office@clariah.at
+							</a>
+						</dd>
+					</div>
+				</dl>
+			</div>
+
+			<div class="grid gap-y-2">
+				<div class="font-medium">{t("WebsiteFooter.funded-by")}</div>
+				<div>
+					<a
+						class="underline decoration-dotted underline-offset-4 hover:no-underline"
+						href="mailto:https://www.bmbwf.gv.at"
+					>
+						<span class="sr-only">{t("WebsiteFooter.bmbwf")}</span>
+						<img alt="" class="h-20" loading="lazy" src="/assets/images/bmbwf-logo.png" />
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="bg-[#f1f1f1] py-2 text-center text-sm text-[#444]">
+		&copy; Copyright OEAW |
+		<Link class="underline decoration-dotted underline-offset-4 hover:no-underline" href="/imprint">
+			{imprint}
+		</Link>
+	</div>
+</footer>

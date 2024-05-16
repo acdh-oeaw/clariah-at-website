@@ -1,0 +1,14 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"a"> {}
+
+const { href, ...rest } = Astro.props;
+
+const pathname = href != null ? (typeof href === "string" ? href : href.pathname) : undefined;
+const isCurrent = pathname === Astro.url.pathname;
+---
+
+<a {...rest} aria-current={isCurrent ? "page" : undefined} href={href}>
+	<slot />
+</a>

@@ -1,0 +1,107 @@
+{
+	"ColorSchemeSwitcher": {
+		"color-schemes": {
+			"dark": "Dark",
+			"light": "Light",
+			"system": "System"
+		},
+		"change": "Change color scheme"
+	},
+	"ConsortiumMemberPage": {
+		"institutions": "Institutions",
+		"people": "People"
+	},
+	"ConsortiumPage": {
+		"meta": {
+			"title": "Consortium"
+		},
+		"title": "Consortium"
+	},
+	"ContactForm": {
+		"email": "Email address",
+		"message": "Message",
+		"subject": "Subject",
+		"submit": "Send"
+	},
+	"ContactPage": {
+		"meta": {
+			"title": "Contact"
+		},
+		"title": "Contact"
+	},
+	"EventsPage": {
+		"meta": {
+			"title": "Events"
+		},
+		"read-more": "Read more",
+		"title": "Events"
+	},
+	"ImprintPage": {
+		"meta": {
+			"title": "Imprint"
+		},
+		"title": "Imprint"
+	},
+	"IndexPage": {
+		"card": {
+			"no-summary": "No summary available.",
+			"read-more": "Read more"
+		},
+		"meta": {
+			"title": "Home"
+		}
+	},
+	"LocaleSwitcher": {
+		"current-locale": "Current locale: {locale}",
+		"switch-locale": "Switch locale",
+		"switch-locale-to": "Switch to {locale}"
+	},
+	"Mdx": {
+		"FootnoteBackLabel": "Back to reference {reference}",
+		"Footnotes": "Footnotes"
+	},
+	"MobileNavToggle": {
+		"label": "Open navigation menu"
+	},
+	"NewsPage": {
+		"meta": {
+			"title": "News"
+		},
+		"read-more": "Read more",
+		"title": "News"
+	},
+	"NotFoundPage": {
+		"meta": {
+			"title": "Page not found"
+		},
+		"title": "Page not found"
+	},
+	"Search": {
+		"close-dialog": "Close dialog",
+		"search": "Search"
+	},
+	"SkipLink": {
+		"skip-to-main-content": "Skip to main content"
+	},
+	"SuccessPage": {
+		"message": "Email sent successfully!",
+		"meta": {
+			"title": "Contact"
+		},
+		"title": "Contact"
+	},
+	"WebsiteFooter": {
+		"bmbwf": "Bundesministerium Bildung, Wissenschaft und Forschung",
+		"contact": "Contact",
+		"funded-by": "Gefördert von",
+		"links": {
+			"imprint": "Imprint"
+		}
+	},
+	"WebsiteHeader": {
+		"links": {
+			"home": "Home"
+		},
+		"navigation-primary": "Primary"
+	}
+}

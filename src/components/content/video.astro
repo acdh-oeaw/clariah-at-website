@@ -1,0 +1,27 @@
+---
+import { createUrl } from "@acdh-oeaw/lib";
+
+interface Props {
+	caption?: string;
+	provider: "youtube";
+	id: string;
+}
+
+const { caption, id } = Astro.props;
+
+const href = String(
+	createUrl({
+		baseUrl: "https://www.youtube-nocookie.com",
+		pathname: `/embed/${id}`,
+	}),
+);
+---
+
+<figure>
+	<iframe
+		allowfullscreen
+		class="aspect-video w-full overflow-hidden rounded-md"
+		src={href}
+		title={caption ?? "Video"}></iframe>
+	{caption ? <figcaption>{caption}</figcaption> : null}
+</figure>

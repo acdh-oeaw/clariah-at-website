@@ -1,0 +1,173 @@
+{
+	"name": "@acdh-oeaw/clariah-at-website",
+	"private": true,
+	"license": "MIT",
+	"type": "module",
+	"engines": {
+		"node": "20.x",
+		"pnpm": "9.x"
+	},
+	"packageManager": "pnpm@9.1.2",
+	"scripts": {
+		"build": "run-s build:site generate:search-index",
+		"build:site": "astro build",
+		"dev": "astro dev",
+		"format:check": "prettier . \"!./content/**\" --cache --check --ignore-path ./.gitignore",
+		"format:fix": "pnpm run format:check --write",
+		"generate:search-index": "pagefind --site ./dist/client/",
+		"lint:check": "run-p --continue-on-error \"lint:*:check\"",
+		"lint:fix": "run-p --continue-on-error \"lint:*:fix\"",
+		"lint:code:check": "eslint . --cache --ext .astro,.js,.ts,.tsx --ignore-path ./.gitignore",
+		"lint:code:fix": "pnpm run lint:code:check --fix",
+		"lint:styles:check": "stylelint \"./**/*.@(astro|css)\" --cache --ignore-path ./.gitignore",
+		"lint:styles:fix": "pnpm run lint:styles:check --fix",
+		"preinstall": "npx only-allow pnpm",
+		"prepare": "run-s setup",
+		"setup": "is-ci || simple-git-hooks",
+		"start": "astro preview",
+		"sync": "astro sync",
+		"test": "exit 0",
+		"test:e2e": "playwright test",
+		"test:e2e:codegen": "playwright codegen",
+		"test:e2e:install": "playwright install --with-deps",
+		"test:e2e:ui": "playwright test --ui",
+		"test:e2e:update-snapshots": "playwright test --update-snapshots",
+		"types:check": "astro check",
+		"validate": "run-s format:check lint:check types:check test test:e2e"
+	},
+	"dependencies": {
+		"@acdh-oeaw/lib": "^0.1.11",
+		"@acdh-oeaw/validate-env": "^0.0.3",
+		"@astrojs/mdx": "^3.0.1",
+		"@astrojs/node": "^8.2.5",
+		"@astrojs/react": "^3.4.0",
+		"@astrojs/rss": "^4.0.6",
+		"@astrojs/sitemap": "^3.1.5",
+		"@floating-ui/dom": "^1.6.5",
+		"@fontsource-variable/inter": "^5.0.18",
+		"@iconify-json/lucide": "^1.1.188",
+		"@keystatic/astro": "^5.0.0",
+		"@keystatic/core": "^0.5.17",
+		"@mdx-js/mdx": "^3.0.1",
+		"@pagefind/default-ui": "^1.1.0",
+		"@shikijs/rehype": "^1.6.0",
+		"astro": "^4.9.1",
+		"astro-icon": "^1.1.0",
+		"cva": "^1.0.0-beta.1",
+		"date-fns": "^3.6.0",
+		"lucide-react": "^0.379.0",
+		"nodemailer": "^6.9.13",
+		"pagefind": "^1.1.0",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"rehype-mdx-import-media": "^1.2.0",
+		"rehype-slug": "^6.0.0",
+		"remark-frontmatter": "^5.0.0",
+		"remark-gfm": "^4.0.0",
+		"remark-mdx-frontmatter": "^4.0.0",
+		"remark-smartypants": "^3.0.1",
+		"retext-smartypants": "^6.1.0",
+		"satori": "^0.10.13",
+		"sharp": "^0.33.4",
+		"shiki": "^1.6.0",
+		"valibot": "^0.30.0",
+		"vite": "^5.2.11"
+	},
+	"devDependencies": {
+		"@acdh-oeaw/eslint-config": "^1.0.7",
+		"@acdh-oeaw/eslint-config-astro": "^1.0.10",
+		"@acdh-oeaw/eslint-config-playwright": "^1.0.7",
+		"@acdh-oeaw/eslint-config-react": "^1.0.8",
+		"@acdh-oeaw/prettier-config": "^2.0.0",
+		"@acdh-oeaw/stylelint-config": "^2.0.1",
+		"@acdh-oeaw/tailwindcss-preset": "^0.0.22",
+		"@acdh-oeaw/tsconfig": "^1.0.2",
+		"@astrojs/check": "^0.7.0",
+		"@astrojs/ts-plugin": "^1.8.0",
+		"@playwright/test": "^1.44.1",
+		"@types/mdx": "^2.0.13",
+		"@types/node": "^20.12.12",
+		"@types/nodemailer": "^6.4.15",
+		"@types/react": "^18.3.3",
+		"@types/react-dom": "^18.3.0",
+		"autoprefixer": "^10.4.19",
+		"axe-core": "^4.9.1",
+		"axe-playwright": "^2.0.1",
+		"ci-info": "^4.0.0",
+		"dotenv": "^16.4.5",
+		"dotenv-expand": "^11.0.6",
+		"eslint": "^8.57.0",
+		"eslint-plugin-tailwindcss": "^3.17.0",
+		"is-ci": "^3.0.1",
+		"lint-staged": "^15.2.4",
+		"npm-run-all2": "^6.2.0",
+		"postcss": "^8.4.38",
+		"prettier": "^3.2.5",
+		"prettier-plugin-astro": "^0.13.0",
+		"schema-dts": "^1.1.2",
+		"simple-git-hooks": "^2.11.1",
+		"stylelint": "^16.5.0",
+		"tailwindcss": "^3.4.3",
+		"type-fest": "^4.18.2",
+		"typescript": "^5.4.5"
+	},
+	"browserslist": {
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		],
+		"production": [
+			">=0.75%",
+			"not dead",
+			"not op_mini all"
+		]
+	},
+	"eslintConfig": {
+		"extends": [
+			"@acdh-oeaw/eslint-config",
+			"@acdh-oeaw/eslint-config/strict",
+			"@acdh-oeaw/eslint-config-astro",
+			"@acdh-oeaw/eslint-config-react",
+			"@acdh-oeaw/eslint-config-playwright",
+			"plugin:eslint-plugin-tailwindcss/recommended"
+		],
+		"settings": {
+			"tailwindcss": {
+				"callees": [
+					"cn",
+					"variants"
+				],
+				"classRegex": "^class(:list)?$"
+			}
+		}
+	},
+	"lint-staged": {
+		"*.astro": [
+			"eslint --cache --fix",
+			"stylelint --cache --fix",
+			"prettier --cache --write"
+		],
+		"*.css": [
+			"stylelint --cache --fix",
+			"prettier --cache --write"
+		],
+		"*.@(js|ts|tsx)": [
+			"eslint --cache --fix",
+			"prettier --cache --write"
+		],
+		"*.!(astro|css|js|ts|tsx),!./content/**": "prettier --cache --ignore-unknown --write"
+	},
+	"postcss": {
+		"plugins": {
+			"tailwindcss": {},
+			"autoprefixer": {}
+		}
+	},
+	"simple-git-hooks": {
+		"pre-commit": "pnpm exec lint-staged"
+	},
+	"stylelint": {
+		"extends": "@acdh-oeaw/stylelint-config"
+	}
+}

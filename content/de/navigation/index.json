@@ -1,0 +1,69 @@
+{
+	"links": [
+		{
+			"discriminant": "menu",
+			"value": {
+				"label": "Förderungen",
+				"links": [
+					{
+						"discriminant": "link",
+						"value": {
+							"label": "Projektförderungen",
+							"href": "/de/projektforderungen/"
+						}
+					},
+					{
+						"discriminant": "link",
+						"value": {
+							"label": "Förderungen für Jungwissenschaftler*innen",
+							"href": "/de/forderungen-fur-jungwissenschaftlerinnen/"
+						}
+					}
+				]
+			}
+		},
+		{
+			"discriminant": "link",
+			"value": {
+				"label": "Events",
+				"href": "/de/veranstaltungen/"
+			}
+		},
+		{
+			"discriminant": "link",
+			"value": {
+				"label": "Aktuelles",
+				"href": "/de/aktuelles/"
+			}
+		},
+		{
+			"discriminant": "menu",
+			"value": {
+				"label": "Über uns",
+				"links": [
+					{
+						"discriminant": "link",
+						"value": {
+							"label": "CLARIAH-AT",
+							"href": "/de/ueber-clariah-at/"
+						}
+					},
+					{
+						"discriminant": "link",
+						"value": {
+							"label": "Konsortium",
+							"href": "/de/konsortium/"
+						}
+					},
+					{
+						"discriminant": "link",
+						"value": {
+							"label": "Arbeitsgruppen",
+							"href": "/de/die-clariah-at-arbeitsgruppen/"
+						}
+					}
+				]
+			}
+		}
+	]
+}
