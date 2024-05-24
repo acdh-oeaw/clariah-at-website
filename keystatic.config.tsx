@@ -370,6 +370,111 @@ const collections = {
 			},
 		});
 	}),
+	projects: createCollection("/projects/", (path, assetPath, locale) => {
+		return collection({
+			label: `Projects (${locale})`,
+			path,
+			slugField: "title",
+			format: { contentField: "content" },
+			previewUrl: createPreviewUrl("/projects/{slug}"),
+			entryLayout: "content",
+			columns: ["title", "startDate"],
+			schema: {
+				title: fields.slug({
+					name: {
+						label: "Title",
+						validation: { isRequired: true },
+					},
+				}),
+				shortTitle: fields.text({
+					label: "Short title",
+					// validation: { isRequired: false },
+				}),
+				summary: fields.text({
+					label: "Summary",
+					multiline: true,
+					validation: { isRequired: true },
+				}),
+				startDate: fields.date({
+					label: "Start Date",
+					validation: { isRequired: true },
+				}),
+				endDate: fields.date({
+					label: "End Date",
+					validation: { isRequired: false },
+				}),
+				image: fields.image({
+					label: "Image",
+					...createAssetPaths(assetPath),
+					validation: { isRequired: true },
+				}),
+				additionalImages: fields.array(
+					fields.object({
+						image: fields.image({
+							label: "Additional images",
+							...createAssetPaths(assetPath),
+						}),
+						alt: fields.text({
+							label: "Alternative text",
+						}),
+						license: fields.text({
+							label: "License",
+						}),
+					}),
+					{
+						label: "Additional images",
+						itemLabel: (props) => props.fields.alt.value,
+					},
+				),
+				attachments: fields.array(
+					fields.object({
+						file: fields.file({
+							label: "Attachments",
+							...createAssetPaths(assetPath),
+						}),
+						label: fields.text({
+							label: "Label",
+							validation: { isRequired: true },
+						}),
+					}),
+					{
+						label: "Attachments",
+						itemLabel: (props) => props.fields.label.value,
+					},
+				),
+				links: fields.array(
+					fields.object(
+						{
+							label: fields.text({ label: "Label" }),
+							url: fields.url({ label: "Url" }),
+						},
+						{
+							label: "Url",
+						},
+					),
+					{
+						label: "Links",
+						itemLabel: (props) => props.fields.label.value,
+					},
+				),
+				responsiblePersons: fields.array(fields.text({ label: "Name" }), {
+					label: "Responsible Person(s)",
+					itemLabel: (props) => props.value,
+				}),
+				hostingOrganizations: fields.array(fields.text({ label: "Name" }), {
+					label: "Hosting Organization(s)",
+					itemLabel: (props) => props.value,
+				}),
+				content: fields.mdx({
+					label: "Content",
+					options: {
+						image: createAssetPaths(assetPath),
+					},
+					components: createComponents(assetPath),
+				}),
+			},
+		});
+	}),
 	pages: createCollection("/pages/", (path, assetPath, locale) => {
 		return collection({
 			label: `Pages (${locale})`,
