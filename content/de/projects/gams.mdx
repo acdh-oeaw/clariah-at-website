@@ -1,0 +1,39 @@
+---
+title: GAMS
+summary: Das Geisteswissenschaftliche Asset Management System bietet umfassende
+  Lösungen zur Speicherung, Verwaltung und Veröffentlichung digitaler
+  Ressourcen.
+startDate: 2003-01-01
+image: /assets/content/de/projects/gams/logo_gams_gesamt.png
+additionalImages:
+  - image: /assets/content/de/projects/gams/additionalImages/workflow.png
+    alt: workflow.png
+attachments: []
+links:
+  - url: http://gams.uni-graz.at
+    label: GAMS
+responsiblePersons:
+  - Ass.-Prof. Mag. Dr. Johannes Stigler
+hostingOrganizations:
+  - Universität Graz
+  - Zentrum für Informationsmodellierung - Austrian Centre for Digital
+    Humanities (ZIM-ACDH)
+
+---
+Das _Geisteswissenschaftliche Asset Management System_ (GAMS) ist ein OAIS-konformes Asset Management System zur Verwaltung, Publikation und Langzeitarchivierung digitaler Ressourcen aus allen geisteswissenschaftlichen Fächern. Es bietet MitarbeiterInnen aus Forschung und Lehre, aber auch Studierenden in Projekten die Möglichkeit, diese Ressourcen zitabel und mit Metadaten versehen zu verwalten und zu veröffentlichen.
+
+Geplant und entwickelt wurde GAMS am Zentrum für Informationsmodellierung im Rahmen einer Vielzahl von Kooperationsprojekten mit inner- und außeruniversitären PartnerInnen, in Auseinandersetzung mit den konkreten Erfordernissen universitärer Forschung.
+
+Das Repositorium ist komplett OAIS (Open Archival Information System)-konform und orientiert sich an den FAIR-Datenprinzipien: "data should be Findable, Accessible, Interoperable, and Re-usable".
+
+GAMS basiert auf dem Open Source Projekt Fedora (Flexible Extensible Digital Object Repository Architecture) und wird im Rahmen von Kooperationsprojekten laufend weiterentwickelt um auf spezifische Forschungsinteressen Rücksicht zu nehmen. Für das Objektmanagement und die Datenkuratierung wurde eine eigene Java Applikation entwickelt. Dieser Cirilo Client bietet Funktionalitäten, die besonders für große Mengen an Objekten relevant sind, z.B. Ingest oder Ersetzungsoperationen. Er übernimmt auch zahlreiche Aufgaben bei der Anreicherung der Metadaten und der Qualitätskontrolle der Ressourcen.
+
+GAMS setzt auf eine XML-(eXtensible Markup Language)basierte Datenarchivierung und -präsentation. Wenn die Daten nicht in einem anerkannten XML-basierten Standard vorliegen, implementiert das Zentrum in Abstimmung mit den Projektpartnern einen Konvertierungsablauf.
+
+Für textbasierten Inhalt und Metadaten werden unter anderem die folgenden Standards verwendet: TEI (Text Encoding Initiative), LIDO (Lightweight Information Describing Objects), DC (Dublin Core), METS/MODS (Metadata Encoding and Transmission Standard/Metadata Object Description Scheme), RDF (Resource Description Framework), SKOS (Simple Knowledge Organization System). Bilddateien müssen von den Datenlieferanten in den Standards JPEG/JPEG2000 (Joint Photographic Experts Group) oder TIFF (Tagged Image File Format) zur Verfügung gestellt werden; bei Bedarf kann das Zentrum hier ebenfalls eine Konvertierung durchführen.
+
+Datenobjekte werden unter einem persistent identifier (PID) in Form eines projektspezifischen Permalinks gespeichert. Zusätzlich inkludiert die GAMS-Infrastruktur einen [Handle](http://handle.net/) Server, der die Möglichkeit bietet, auch in diesem System einen permanenten Identifikator anzulegen.
+
+GAMS wurde 2014 erstmals als vertrauenswürdiges digitales Archiv nach den Richtlinien des [Data Seal of Approval](https://assessment.datasealofapproval.org/assessment_143/seal/html/) zertifiziert. Seit 2019 tragen wir das [CoreTrustSeal](https://www.coretrustseal.org/why-certification/certified-repositories/). Im Jahr 2020 wurde GAMS offiziell als [CLARIN B Centre](http://hdl.handle.net/11372/DOC-160) anerkannt. GAMS ist auch bei der [Registry of Research Data Repositories](https://www.re3data.org/repository/r3d100011339) registriert.
+
+Das gesamte Infrastrukturpaket ist als Beitrag zu DARIAH-EU als Open Source Software unter [https://github.com/acdh/cirilo](https://github.com/acdh/cirilo) zur Nachnutzung verfügbar. Eine umfangreiche Dokumentation kann auf dieser Seite unter [http://gams.uni-graz.at/docs](http://gams.uni-graz.at/archive/objects/o:gams.doku/methods/sdef:TEI/get?locale=de) abgerufen werden.

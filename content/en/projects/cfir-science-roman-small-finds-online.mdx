@@ -1,0 +1,49 @@
+---
+title: CFIR.science - Roman small finds online
+summary: cfir.science is a web platform that makes information on Roman-age
+  fibulae and dress components freely available in the form of images, 3D models
+  and metadata.
+startDate: 2015-01-01
+endDate: 2015-01-01
+image: /assets/content/en/projects/cfir-science-roman-small-finds-online/npt_fluegelfibel.jpg
+attachments: []
+links:
+  - url: https://cfir.science/#/
+    label: CFIR.science
+responsiblePersons:
+  - Christian Gugl
+hostingOrganizations:
+  - ÖAI - Österreichisches Archäologisches Institut
+  - Uni Innsbruck - Institut für Archäologien
+
+---
+### **The project and its goals**
+
+[www.cfir.science](https://cfir.science/#/) is a web-based digital research infrastructure that aims to make small metal artifacts from the Roman period freely accessible in the form of 3D data, images and metadata. The abbreviation CFIR can be resolved as _"Corpus Fibularum Imperii Romani"_. The web platform thus intends to create an information hub for Roman fibulae (garment clasps), with the focus of the data collection currently on the surviving components of the "Norico-Pannonian costume" from the ancient eastern Alps and central Danube region.
+
+The majority of the data collected consists of artifacts published in the literature, which will be entered into a PostgreSQL database. All artifacts are arranged and described according to common classification schemes (typologies). The inventory of images and especially of 3D models is under construction and is constantly being enlarged through cooperation with museums and collections (Museum Carnuntinum/Bad Deutsch-Altenburg, Savaria Múzeum/Szombathely, Kunsthistorisches Museum/Vienna, Naturhistorisches Museum/Vienna, Oberösterreichisches Landesmuseum/Linz, Narodni Muzej Slovenije/Ljubljana) by on-site autopsies.
+
+### **Technical Information**
+
+The structure of the PostgreSQL/PostGIS database consists of three basic elements: Find location - Find context - Object. Each object is assigned to a find context, each find context belongs to a find location. The latter are addressable in a standardized way via gazetteers and a GIS interface, so that they, including the find contexts and the objects, can be geographically linked with other web initiatives (concept of geographic interoperability or Linked Open Data concept). Various standard formats or ontologies, such as Dublin Core, [www.nomisma.org](http://www.nomisma.org/), etc., are used to prepare the metadata.
+
+The basic technical equipment (stripe light scanner, laser scanner, photographic equipment) is largely financed by the New Research Infrastructure program of the Austrian Academy of Sciences. The technical implementation of the web platform is in the hands of [7reasons Medien GmbH](https://www.7reasons.net/). The content and conceptual support of the platform [www.cfir.science](https://cfir.science/#/) is coordinated by the Austrian Academy of Sciences (Austrian Archaeological Institute) and the University of Innsbruck (Department of Archaeologies).
+
+### **Main responsible persons:**
+
+*   Gerald Grabherr (University of Innsbruck, Department of Archaeologies): data acquisition
+*   Christian Gugl (ÖAW-ÖAI, Vienna): database design, data acquisition, quality assurance
+*   Christoph Hinker (ÖAW-ÖAI, Vienna): data acquisition, quality assurance
+*   Konstantin Höbart (7reasons, Vienna): database design, programming, server administration
+*   Viktor Jansa, Sebastian Mühling (ÖAW-ÖAI, Vienna): 3D data acquisition and processing
+
+**Collaborators:** Christoph Baumgartner (Kirchham/Upper Austria), Katharina Blasinger (Innsbruck), Olivér Borcsányi (Vienna), Chiara Cardinale (Innsbruck), Sarah Defant (Vienna), Hannah Gächter (Innsbruck), Marko Jelusić (Freiburg/Breisgau), Eftropios Karagkiozis (Ioannina, Vienna), Regina Klöckl (Graz), Maria Mandl (Graz), Michael Rakob (Innsbruck), Verena Rittler (Innsbruck), Josefa Rücker (Innsbruck), Nadja Sutterlüti (Innsbruck), Vera Unterfrauner (Innsbruck).
+
+### **Cooperation partners:**
+
+*   IT Department of the German Archaeological Institute (DAI), Head Office Berlin
+*   Rainer Simon (AIT Austrian Institute of Technology, Vienna)
+
+### **Bibliography:**
+
+C. Gugl – C. Hinker, Wieder in Mode: Die „norisch-pannonische Tracht“ im Informationszeitalter, in: L. Berger – L. Huber – F. Lang – J. Weilhartner (Hrsg.), Akten des 17. Österreichischen Archäologentages am Fachbereich Altertumswissenschaften, Klassische und Frühägäische Archäologie der Universität Salzburg vom 26. bis 28. Februar 2018, Archaeo plus - Schriften zur Archäologie und Archäometrie der Paris Lodron-Universität Salzburg 11 (Salzburg 2020) 99–108.

@@ -1,0 +1,38 @@
+---
+title: Sharing the CROWN - Einrichtung eines Workflows von Sammlungsdaten zu
+  verknüpften Forschungsdaten
+summary: Das Projekt CROWN, das vom KHM in Wien initiiert wurde, konzentriert
+  sich auf eine umfassende Analyse der Reichskrone des Heiligen Römischen
+  Reiches, die eine interdisziplinäre Untersuchung ihrer verschiedenen
+  Bestandteile umfasst.
+startDate: 2023-01-01
+endDate: 2024-01-01
+image: /assets/content/de/projects/sharing-crown-establishing-workflow-collection-data-linked-research-data/crown3.png
+attachments: []
+links:
+  - url: https://doi.org/10.5281/zenodo.7711407
+    label: Poster
+responsiblePersons:
+  - Martina Griesser
+  - Christopher Pollin
+hostingOrganizations:
+  - KHM-Museumsverband
+  - Zentrum für Informationsmodellierung - Austrian Centre for Digital
+    Humanities (ZIM-ACDH)
+
+---
+**Kontext**
+===========
+
+Die Reichskrone des Heiligen Römischen Reiches ist eines der bedeutendsten Symbole der europäischen Geschichte. Sie gehört heute zu den Sammlungen des Kunsthistorischen Museums in Wien (KHM). Im Rahmen des vom KHM initiierten CROWN-Projekts wird eine umfassende Analyse der Krone durchgeführt. Dabei werden alle Bestandteile wie Edelsteine, Perlen, Platten etc. naturwissenschaftlich, historisch und kunsthistorisch untersucht. Das Projekt, das derzeit bis 2024 läuft, ist somit ein interdisziplinäres Unterfangen. Die Forschungsdaten, die sich aus der Anwendung hochentwickelter Analysetechniken zur Untersuchung der Herstellungstechniken und der verwendeten Materialien ergeben, werden mit [The Museum System (TMS)](https://www.gallerysystems.com/solutions/collections-management/) erfasst. TMS ist eine weit verbreitete Softwarelösung, die für Museen entwickelt wurde. Es bietet eine relationale Datenbank, die für die Inventarisierung, Dokumentation und Verwaltung von Sammlungen verwendet werden kann.
+
+Das Projekt CROWN sieht sich mit einer tiefgreifenden und komplexen Analyse eines einzelnen Objekts konfrontiert. Es muss dem wissenschaftlichen Auftrag eines weltweit führenden Museums gerecht werden und auf dem bereits etablierten TMS zur Datenverwaltung aufbauen. Daher ist es notwendig, neu entwickelte Workflows im CROWN-Projekt mit Hilfe des TMS zu implementieren. Die Datenverarbeitung ist ein Leuchtturmprojekt innerhalb des KHM Museumsverbundes. Es sind nicht mehr "normale" Sammlungsdaten, die erfasst und verwaltet werden müssen, sondern hochspezifische Forschungsdaten, die einer speziellen Modellierung und Darstellung bedürfen. Da am KHM keine spezifische Expertise vorhanden ist, wird das vorgeschlagene Projekt in Kooperation mit dem [Zentrum für Informationsmodellierung der Universität Graz (ZIM)](https://informationsmodellierung.uni-graz.at/de/) durchgeführt.
+
+Um auch für zukünftige Forschung nutzbar zu sein, soll im Rahmen des vorgeschlagenen Projektes keine fertige Software entwickelt werden, sondern ein Workflow einer Best-Practice-Lösung beschrieben werden, um hochkomplexe, formalisierte und verknüpfte Forschungsdaten im Museumskontext nach den FAIR-Kriterien zu erzeugen. Aus diesem Grund sind die verwendeten Werkzeuge, TMS oder GAMS, austauschbar und die entwickelten Workflows auf andere bestehende Systeme übertragbar.
+
+**Hauptziel**
+-------------
+
+Das Ziel des vorgeschlagenen Projekts ist die Entwicklung und Implementierung eines Best-Practice-Workflows für die Modellierung, Transformation und Veröffentlichung von Daten aus Werkzeugen wie TMS in [FAIR](https://www.go-fair.org/fair-principles/)\-Forschungsdaten. Ein solcher Workflow umfasst nicht nur "normale" Forschungsdaten, sondern geht weit darüber hinaus. Dies ist auf die sehr spezifischen Forschungsbereiche im Museumskontext zurückzuführen, für die es keine ausreichenden Modelle für die Erfassung und Standardisierung gibt.
+
+Im Fall von CROWN kann die relevante Forschungsfrage nach der Herkunft und Datierung der Krone nur auf der Grundlage einer Vielzahl von interdisziplinären Untersuchungen und Erkenntnissen beantwortet werden. Diese wiederum, d.h. die Kombination von naturwissenschaftlichen Messungen mit historischen Belegen, gehen über die übliche Datenstruktur zur Beschreibung von Objekten in Sammlungen hinaus. Um sowohl das Modell als auch die Entitäten des Datensatzes formal zu repräsentieren, wird ein Semantic-Web-Ansatz gewählt. Die resultierenden RDF-Daten basieren auf einer domänenspezifischen Ontologie, die von [CIDOC-CRM](https://www.cidoc-crm.org/) und der [Basic Formal Ontology (BFO)](https://basic-formal-ontology.org/) abgeleitet ist, und verknüpfen ihre Entitäten mit kontrollierten Vokabularen und [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page). Schließlich wird für die beschriebene Domäne ein webbasierter Proof-of-Concept-Prototyp einer Benutzerschnittstelle entwickelt, die an die Bedürfnisse der verschiedenen beteiligten Disziplinen angepasst ist und die Aggregation, Visualisierung, Exploration und Analyse der verarbeiteten Daten ermöglicht.
