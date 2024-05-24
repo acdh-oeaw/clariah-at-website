@@ -987,6 +987,9 @@ export default config({
 				"---",
 				"de_news",
 				"en_news",
+				"---",
+				"de_projects",
+				"en_projects",
 			],
 			Navigation: ["de_navigation", "en_navigation"],
 			Settings: ["de_metadata", "en_metadata"],
@@ -1022,6 +1025,9 @@ export default config({
 
 		de_news: collections.news("de"),
 		en_news: collections.news("en"),
+
+		de_projects: collections.projects("de"),
+		en_projects: collections.projects("en"),
 	},
 	singletons: {
 		de_indexPage: singletons.indexPage("de"),
