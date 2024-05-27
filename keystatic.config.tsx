@@ -396,12 +396,12 @@ const collections = {
 					validation: { isRequired: true },
 				}),
 				startDate: fields.date({
-					label: "Start Date",
-					validation: { isRequired: true },
+					label: "Start date",
+					// validation: { isRequired: true },
 				}),
 				endDate: fields.date({
-					label: "End Date",
-					validation: { isRequired: false },
+					label: "End date",
+					// validation: { isRequired: false },
 				}),
 				image: fields.image({
 					label: "Image",
@@ -409,62 +409,104 @@ const collections = {
 					validation: { isRequired: true },
 				}),
 				additionalImages: fields.array(
-					fields.object({
-						image: fields.image({
-							label: "Additional images",
-							...createAssetPaths(assetPath),
-						}),
-						alt: fields.text({
-							label: "Alternative text",
-						}),
-						license: fields.text({
-							label: "License",
-						}),
-					}),
+					fields.object(
+						{
+							image: fields.image({
+								label: "Image",
+								...createAssetPaths(assetPath),
+								validation: { isRequired: true },
+							}),
+							alt: fields.text({
+								label: "Alternative text",
+								// validation: { isRequired: false },
+							}),
+							license: fields.text({
+								label: "License",
+								// validation: { isRequired: false },
+							}),
+						},
+						{
+							label: "Image",
+						},
+					),
 					{
 						label: "Additional images",
-						itemLabel: (props) => props.fields.alt.value,
+						itemLabel(props) {
+							return props.fields.alt.value;
+						},
 					},
 				),
 				attachments: fields.array(
-					fields.object({
-						file: fields.file({
-							label: "Attachments",
-							...createAssetPaths(assetPath),
-						}),
-						label: fields.text({
-							label: "Label",
-							validation: { isRequired: true },
-						}),
-					}),
+					fields.object(
+						{
+							file: fields.file({
+								label: "File",
+								...createAssetPaths(assetPath),
+								validation: { isRequired: true },
+							}),
+							label: fields.text({
+								label: "Label",
+								validation: { isRequired: true },
+							}),
+						},
+						{
+							label: "Attachment",
+						},
+					),
 					{
 						label: "Attachments",
-						itemLabel: (props) => props.fields.label.value,
+						itemLabel(props) {
+							return props.fields.label.value;
+						},
 					},
 				),
 				links: fields.array(
 					fields.object(
 						{
-							label: fields.text({ label: "Label" }),
-							url: fields.url({ label: "Url" }),
+							label: fields.text({
+								label: "Label",
+								validation: { isRequired: true },
+							}),
+							url: fields.url({
+								label: "URL",
+								validation: { isRequired: true },
+							}),
 						},
 						{
-							label: "Url",
+							label: "Link",
 						},
 					),
 					{
 						label: "Links",
-						itemLabel: (props) => props.fields.label.value,
+						itemLabel(props) {
+							return props.fields.label.value;
+						},
 					},
 				),
-				responsiblePersons: fields.array(fields.text({ label: "Name" }), {
-					label: "Responsible Person(s)",
-					itemLabel: (props) => props.value,
-				}),
-				hostingOrganizations: fields.array(fields.text({ label: "Name" }), {
-					label: "Hosting Organization(s)",
-					itemLabel: (props) => props.value,
-				}),
+				responsiblePersons: fields.array(
+					fields.text({
+						label: "Name",
+						validation: { isRequired: true },
+					}),
+					{
+						label: "Responsible Person(s)",
+						itemLabel(props) {
+							return props.value;
+						},
+					},
+				),
+				hostingOrganizations: fields.array(
+					fields.text({
+						label: "Name",
+						validation: { isRequired: true },
+					}),
+					{
+						label: "Hosting Organization(s)",
+						itemLabel(props) {
+							return props.value;
+						},
+					},
+				),
 				content: fields.mdx({
 					label: "Content",
 					options: {
