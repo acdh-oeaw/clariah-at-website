@@ -1,0 +1,25 @@
+---
+title: EventSearch API
+summary: Mit EventSearch API wird eine maschinenlesbare Schnittstelle (API) für
+  in digitalen Editionen markierte Ereignisse entwickelt.
+startDate: 2020-01-01
+endDate: 2021-01-01
+image: /assets/content/de/projects/eventsearch-api/fue-l9.onb_.ac_.at_9001_docs_2.png
+attachments: []
+links:
+  - url: https://edition.onb.ac.at/o:ode.EventSearchInfo
+    label: EventSearch API
+responsiblePersons:
+  - Max Kaiser
+hostingOrganizations:
+  - Österreichische Nationalbibliothek (ÖNB)
+  - Österreichische Nationalbibliothek - Abt. für Forschung u. Entwicklung
+
+---
+Ereignisse sind allgegenwärtige Merkmale menschlichen Lebens zu allen Zeiten an allen Orten. Entsprechend unausweichlich trifft man auf Erwähnung und Dokumentation von Ereignissen in historischen wie zeitgenössischen Quellen, die Grundlage geisteswissenschaftlicher Forschung sind, ebenso wie in fiktionalen Texten. Die Zeugen können Lebensdokumente (Tagebücher, Reisenotizen) genauso sein wie amtliche Dokumente (Urkunden, Protokolle, Kalender) oder Kulturüberlieferungen materieller Natur (Inschriften, Teppiche o.a.). Werden diese Quellen und (fiktionalen) Texte digital ediert, hat sich zwar die Kodierung nach den Richtlinien der Text Encoding Initiative (TEI) durchgesetzt, jedoch fehlt eine gängige Praxis für die semantisch eindeutige Erfassung und Auszeichnung von Ereignissen. Hinzu kommt, dass zum Ereignis zugehörige grundlegende Informationen wie ein zeitlicher Hinweis, eine Lokalisierung oder die Angabe zu beteiligten Personen nicht ohne weiteres möglich ist. Im Projekt wird die Kodierung von Ereignissen im Rahmen der TEI modelliert. Dabei wird eine flache Auszeichnung angestrebt, um die Datenmigration für alle Editionsdaten so niedrigschwellig wie möglich zu halten. Selbstverständlich liegt es bei den EditorInnen zu definieren, was im Kontext der jeweiligen Edition ein Ereignis ist. Das vorgeschlagene Modell wird auf bestehende Editionsprojekte der Projektpartner angewendet, um so einen Minimalkorpus an EventSearch-Daten zu generieren.
+
+Mit EventSearch API wird eine maschinenlesbare Schnittstelle (API) für in digitalen Editionen markierte Ereignisse entwickelt. EventSearch ermöglicht es, die aufgezeichneten Ereignisse einzelner digitaler Editionen leichter auffindbar und durchsuchbarer zu machen. Über die EventSearch-Schnittstelle können automatisch Ereignisse aus digitalen Editionen, die in einem bestimmten TEI-Format kodiert sind, abgefragt werden und für weitere inhaltliche Analysen ausgewertet werden. Eine niederschwellige Möglichkeit zu partizipieren wird angeboten, sodass Editionsprojekte unabhängig von Größe und Budget ihre Ergebnisse teilen können.
+
+Die Basisinfrastruktur der API wurde von September bis November 2020 um das Python-Framework [FastAPI](https://fastapi.tiangolo.com/) entwickelt. Die Schnittstelle mit Beispieldaten aus drei Projekten wird in Q2/2021 veröffentlicht. Die Dokumentation der Schnittstelle wird über das [Swagger-Framework](https://swagger.io/) zur Verfügung gestellt.
+
+Das Projekt wird in Kooperation mit der Österreichischen Akademie der Wissenschaften / [Institut für die Erforschung der Habsburgermonarchie und des Balkanraumes](https://www.oeaw.ac.at/ihb) (ÖAW/IHB) sowie der Universität Graz / [Zentrum für Informationsmodellierung](https://informationsmodellierung.uni-graz.at/de/) (ZIM-ACDH) durchgeführt. Es ist 2020 von [CLARIAH-AT](https://digital-humanities.at/en/dha/clariah-at) gefördert worden.

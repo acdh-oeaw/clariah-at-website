@@ -370,6 +370,153 @@ const collections = {
 			},
 		});
 	}),
+	projects: createCollection("/projects/", (path, assetPath, locale) => {
+		return collection({
+			label: `Projects (${locale})`,
+			path,
+			slugField: "title",
+			format: { contentField: "content" },
+			previewUrl: createPreviewUrl("/projects/{slug}"),
+			entryLayout: "content",
+			columns: ["title", "startDate"],
+			schema: {
+				title: fields.slug({
+					name: {
+						label: "Title",
+						validation: { isRequired: true },
+					},
+				}),
+				shortTitle: fields.text({
+					label: "Short title",
+					// validation: { isRequired: false },
+				}),
+				summary: fields.text({
+					label: "Summary",
+					multiline: true,
+					validation: { isRequired: true },
+				}),
+				startDate: fields.date({
+					label: "Start date",
+					// validation: { isRequired: true },
+				}),
+				endDate: fields.date({
+					label: "End date",
+					// validation: { isRequired: false },
+				}),
+				image: fields.image({
+					label: "Image",
+					...createAssetPaths(assetPath),
+					validation: { isRequired: true },
+				}),
+				additionalImages: fields.array(
+					fields.object(
+						{
+							image: fields.image({
+								label: "Image",
+								...createAssetPaths(assetPath),
+								validation: { isRequired: true },
+							}),
+							alt: fields.text({
+								label: "Alternative text",
+								// validation: { isRequired: false },
+							}),
+							license: fields.text({
+								label: "License",
+								// validation: { isRequired: false },
+							}),
+						},
+						{
+							label: "Image",
+						},
+					),
+					{
+						label: "Additional images",
+						itemLabel(props) {
+							return props.fields.alt.value;
+						},
+					},
+				),
+				attachments: fields.array(
+					fields.object(
+						{
+							file: fields.file({
+								label: "File",
+								...createAssetPaths(assetPath),
+								validation: { isRequired: true },
+							}),
+							label: fields.text({
+								label: "Label",
+								validation: { isRequired: true },
+							}),
+						},
+						{
+							label: "Attachment",
+						},
+					),
+					{
+						label: "Attachments",
+						itemLabel(props) {
+							return props.fields.label.value;
+						},
+					},
+				),
+				links: fields.array(
+					fields.object(
+						{
+							label: fields.text({
+								label: "Label",
+								validation: { isRequired: true },
+							}),
+							url: fields.url({
+								label: "URL",
+								validation: { isRequired: true },
+							}),
+						},
+						{
+							label: "Link",
+						},
+					),
+					{
+						label: "Links",
+						itemLabel(props) {
+							return props.fields.label.value;
+						},
+					},
+				),
+				responsiblePersons: fields.array(
+					fields.text({
+						label: "Name",
+						validation: { isRequired: true },
+					}),
+					{
+						label: "Responsible Person(s)",
+						itemLabel(props) {
+							return props.value;
+						},
+					},
+				),
+				hostingOrganizations: fields.array(
+					fields.text({
+						label: "Name",
+						validation: { isRequired: true },
+					}),
+					{
+						label: "Hosting Organization(s)",
+						itemLabel(props) {
+							return props.value;
+						},
+					},
+				),
+				content: fields.mdx({
+					label: "Content",
+					options: {
+						image: createAssetPaths(assetPath),
+					},
+					components: createComponents(assetPath),
+				}),
+			},
+		});
+	}),
 	pages: createCollection("/pages/", (path, assetPath, locale) => {
 		return collection({
 			label: `Pages (${locale})`,
@@ -882,6 +1029,9 @@ export default config({
 				"---",
 				"de_news",
 				"en_news",
+				"---",
+				"de_projects",
+				"en_projects",
 			],
 			Navigation: ["de_navigation", "en_navigation"],
 			Settings: ["de_metadata", "en_metadata"],
@@ -917,6 +1067,9 @@ export default config({
 
 		de_news: collections.news("de"),
 		en_news: collections.news("en"),
+
+		de_projects: collections.projects("de"),
+		en_projects: collections.projects("en"),
 	},
 	singletons: {
 		de_indexPage: singletons.indexPage("de"),

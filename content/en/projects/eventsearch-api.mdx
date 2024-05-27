@@ -1,0 +1,24 @@
+---
+title: EventSearch API
+summary: EventSearch provides an API for events encoded in digital editions.
+startDate: 2020-01-01
+endDate: 2021-01-01
+image: /assets/content/en/projects/eventsearch-api/fue-l9.onb_.ac_.at_9001_docs_2.png
+attachments: []
+links:
+  - url: https://edition.onb.ac.at/o:ode.EventSearchInfo
+    label: EventSearch API
+responsiblePersons:
+  - Max Kaiser
+hostingOrganizations:
+  - Österreichische Nationalbibliothek (ÖNB)
+  - Österreichische Nationalbibliothek - Abt. für Forschung u. Entwicklung
+
+---
+Events are ubiquitous features of human life at all times in all places. One encounters mentioning and documentation of events in historical and contemporary sources as well as in fictional texts which all are the basis of research in the humanities inevitably. The witnesses can be life documents (diaries, travelogues), official documents (protocols, calendars, certificates) or cultural heritage objects (inscriptions, carpets, etc.). If these sources and (fictional) texts are digitally edited, the coding according to the guidelines of the Text Encoding Initiative (TEI) has been established, but there is no common practice for the semantically unambiguous recording and labelling of events. In addition, basic information related to the event, such as a time reference, localization or details of the people involved, is not possible at the moment. In the project, the encoding of events is modelled within the framework of TEI with an emphasis on flat hierarchy in order to keep the data migration for all edition projects as simple as possible. It goes without saying that the definition of an event in the context of the respective edition is up to the editors. The proposed model will be applied to the project partners' existing edition projects in order to generate a minimal corpus of EventSearch data.
+
+With the EventSearch API, a machine-readable interface (API) is developed for events marked in this TEI format. EventSearch makes it possible to make the encoded events of different digital editions more visible and searchable. Via the EventSearch interface, all events in digital editions that are coded in that particular format can be automatically queried and evaluated for further content analysis. EventSearch provides an easy method to participate in sharing events from digital editions independent from size and budget of the respective project.
+
+The basic infrastructure of the API was developed from September to November 2020 around the Python framework [FastAPI](https://fastapi.tiangolo.com/). The interface with sample data from three projects will be published in Q2 / 2021. The documentation of the interface is made available via the [Swagger framework](https://swagger.io/).
+
+The project is carried out in cooperation with the Austrian Academy of Sciences / [Institute for Habsburg and Balkan Studies](https://www.oeaw.ac.at/ihb) (ÖAW / IHB) and the University of Graz / [Centre for Information Modeling](https://informationsmodellierung.uni-graz.at/de/) (ZIM-ACDH). It was funded by [CLARIAH-AT](https://digital-humanities.at/en/dha/clariah-at) in 2020.
