@@ -996,6 +996,7 @@ const singletons = {
 									},
 									{
 										label: "Links",
+										validation: { length: { min: 1 } },
 									},
 								),
 							}),
