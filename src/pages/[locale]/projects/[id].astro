@@ -58,7 +58,7 @@ const { default: Content } = await processMdx(await page.content(), locale);
 					{
 						startDate != null ? (
 							<div>
-								<dt class="uppercase text-neutral-600 text-xs tracking-wider font-medium">
+								<dt class="text-xs font-medium uppercase tracking-wider text-neutral-600">
 									{t("ProjectPage.start-date")}
 								</dt>
 								<dd>
@@ -70,7 +70,7 @@ const { default: Content } = await processMdx(await page.content(), locale);
 					{
 						endDate != null ? (
 							<div>
-								<dt class="uppercase text-neutral-600 text-xs tracking-wider font-medium">
+								<dt class="text-xs font-medium uppercase tracking-wider text-neutral-600">
 									{t("ProjectPage.end-date")}
 								</dt>
 								<dd>
