@@ -37,7 +37,13 @@ const { hero } = page;
 	<MainContent>
 		<section class="relative border-y border-brand">
 			<div class="absolute inset-0 size-full">
-				<Image alt="" class="size-full object-cover" src={getImageImport(hero.image)} />
+				<Image
+					alt=""
+					class="size-full object-cover"
+					sizes="1920px"
+					src={getImageImport(hero.image)}
+					widths={[1920]}
+				/>
 				<div class="absolute inset-0 size-full bg-[#6c757dbf]"></div>
 			</div>
 			<div class="relative mx-auto grid w-full max-w-screen-lg gap-y-6 px-4 py-16">

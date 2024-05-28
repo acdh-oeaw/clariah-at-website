@@ -18,7 +18,13 @@ const { image, link, summary, title } = Astro.props;
 	{
 		image ? (
 			<Link aria-label={link.label} class="relative block aspect-[1.5]" href={link.href}>
-				<Image alt="" class="absolute inset-0 size-full object-cover" src={getImageImport(image)} />
+				<Image
+					alt=""
+					class="absolute inset-0 size-full object-cover"
+					sizes="670px"
+					src={getImageImport(image)}
+					widths={[670]}
+				/>
 			</Link>
 		) : null
 	}

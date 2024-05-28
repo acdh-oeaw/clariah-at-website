@@ -29,7 +29,15 @@ const home = t("WebsiteHeader.links.home");
 	>
 		<Navigation class="flex-1" label={t("WebsiteHeader.navigation-primary")}>
 			<NavMenuLink class="-ml-4 inline-flex shrink-0 items-center gap-x-2" href="/">
-				<Image alt="" class="block h-16 w-auto" fetchpriority="high" loading="eager" src={logo} />
+				<Image
+					alt=""
+					class="block h-16 w-auto"
+					fetchpriority="high"
+					loading="eager"
+					sizes="200px"
+					src={logo}
+					widths={[200]}
+				/>
 				<span class="sr-only">{home}</span>
 			</NavMenuLink>
 

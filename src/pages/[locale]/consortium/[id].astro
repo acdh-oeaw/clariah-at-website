@@ -45,7 +45,13 @@ const { default: Content } = await processMdx(await page.description(), locale);
 		<PageSection>
 			<PageCard>
 				<div class="flex justify-center">
-					<Image alt="" class="my-12 h-40 object-contain" src={getImageImport(logo)} />
+					<Image
+						alt=""
+						class="my-12 h-40 object-contain"
+						sizes="1088px"
+						src={getImageImport(logo)}
+						widths={[1088]}
+					/>
 				</div>
 
 				<PageTitle>
