@@ -30,7 +30,7 @@ const { locale } = Astro.params;
 const { page } = Astro.props;
 
 const { t } = await createI18n(locale);
-const dateTime = new Intl.DateTimeFormat([locale], { dateStyle: "medium" });
+const dateTime = new Intl.DateTimeFormat([locale], { dateStyle: "long" });
 
 const documentTitle = page.title;
 const {
@@ -54,11 +54,13 @@ const { default: Content } = await processMdx(await page.content(), locale);
 		<PageSection>
 			<PageCard image={image}>
 				<PageTitle>{title}</PageTitle>
-				<dl>
+				<dl class="grid gap-y-2">
 					{
 						startDate != null ? (
 							<div>
-								<dt>{t("ProjectPage.start-date")}</dt>
+								<dt class="uppercase text-neutral-600 text-xs tracking-wider font-medium">
+									{t("ProjectPage.start-date")}
+								</dt>
 								<dd>
 									<time datetime={startDate.toISOString()}>{dateTime.format(startDate)}</time>
 								</dd>
@@ -68,7 +70,9 @@ const { default: Content } = await processMdx(await page.content(), locale);
 					{
 						endDate != null ? (
 							<div>
-								<dt>{t("ProjectPage.end-date")}</dt>
+								<dt class="uppercase text-neutral-600 text-xs tracking-wider font-medium">
+									{t("ProjectPage.end-date")}
+								</dt>
 								<dd>
 									<time datetime={endDate.toISOString()}>{dateTime.format(endDate)}</time>
 								</dd>
