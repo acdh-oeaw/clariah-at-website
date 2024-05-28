@@ -406,7 +406,7 @@ const collections = {
 				image: fields.image({
 					label: "Image",
 					...createAssetPaths(assetPath),
-					validation: { isRequired: true },
+					// validation: { isRequired: false },
 				}),
 				additionalImages: fields.array(
 					fields.object(
