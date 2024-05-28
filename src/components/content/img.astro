@@ -10,6 +10,13 @@ const { alt = "", src, ...rest } = Astro.props;
 ---
 
 {
-	/** @ts-expect-error @see https://github.com/withastro/astro/issues/10780 */
-	src != null ? <Image {...rest} alt={alt} src={getImageImport(src)} /> : null
+	src != null ? (
+		src.startsWith("/") ? (
+			/** @ts-expect-error @see https://github.com/withastro/astro/issues/10780 */
+			// prettier-ignore
+			<Image {...rest} alt={alt} src={getImageImport(src)} />
+		) : (
+			<img {...rest} alt={alt} src={src} />
+		)
+	) : null
 }
