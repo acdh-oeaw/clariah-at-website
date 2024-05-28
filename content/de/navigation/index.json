@@ -37,6 +37,13 @@
 			}
 		},
 		{
+			"discriminant": "link",
+			"value": {
+				"label": "Projekte",
+				"href": "/de/projects/"
+			}
+		},
+		{
 			"discriminant": "menu",
 			"value": {
 				"label": "Über uns",

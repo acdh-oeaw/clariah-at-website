@@ -76,6 +76,17 @@
 		},
 		"title": "Page not found"
 	},
+	"ProjectPage": {
+		"start-date": "Start",
+		"end-date": "End"
+	},
+	"ProjectsPage": {
+		"meta": {
+			"title": "Projects"
+		},
+		"read-more": "Read more",
+		"title": "Projects"
+	},
 	"Search": {
 		"close-dialog": "Close dialog",
 		"search": "Search"

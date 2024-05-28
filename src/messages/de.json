@@ -76,6 +76,17 @@
 		},
 		"title": "Seite nicht gefunden"
 	},
+	"ProjectPage": {
+		"start-date": "Beginn",
+		"end-date": "Ende"
+	},
+	"ProjectsPage": {
+		"meta": {
+			"title": "Projekte"
+		},
+		"read-more": "Mehr Info",
+		"title": "Projekte"
+	},
 	"Search": {
 		"close-dialog": "Dialogfenster schließen",
 		"search": "Suchen"
