@@ -18,6 +18,7 @@ const { image, link, summary, title } = Astro.props;
 	{
 		image ? (
 			<Link aria-label={link.label} class="relative block aspect-[1.5]" href={link.href}>
+				{/* @ts-expect-error Upstream type error. */}
 				<Image
 					alt=""
 					class="absolute inset-0 size-full object-cover"

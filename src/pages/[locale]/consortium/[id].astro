@@ -45,6 +45,7 @@ const { default: Content } = await processMdx(await page.description(), locale);
 		<PageSection>
 			<PageCard>
 				<div class="flex justify-center">
+					{/* @ts-expect-error Upstream type error. */}
 					<Image
 						alt=""
 						class="my-12 h-40 object-contain"
@@ -75,6 +76,7 @@ const { default: Content } = await processMdx(await page.description(), locale);
 													<article>
 														<h3 class="text-lg font-medium">
 															<a class="grid gap-y-4" href={institution.href}>
+																{/* @ts-expect-error Upstream type error. */}
 																<Image
 																	alt=""
 																	class="h-20 w-auto object-contain"
@@ -104,6 +106,7 @@ const { default: Content } = await processMdx(await page.description(), locale);
 											return (
 												<li>
 													<article class="grid grid-cols-[auto_1fr] gap-x-8">
+														{/* @ts-expect-error Upstream type error. */}
 														<Image
 															alt=""
 															class="size-32 rounded-full object-contain"
