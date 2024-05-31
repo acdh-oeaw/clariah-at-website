@@ -9,14 +9,14 @@
 						"discriminant": "link",
 						"value": {
 							"label": "Projektförderungen",
-							"href": "/de/projektforderungen/"
+							"href": "/de/project-funding/"
 						}
 					},
 					{
 						"discriminant": "link",
 						"value": {
 							"label": "Förderungen für Jungwissenschaftler*innen",
-							"href": "/de/forderungen-fur-jungwissenschaftlerinnen/"
+							"href": "/de/funding-opportunities-for-junior-researcher/"
 						}
 					}
 				]
@@ -26,14 +26,14 @@
 			"discriminant": "link",
 			"value": {
 				"label": "Events",
-				"href": "/de/veranstaltungen/"
+				"href": "/de/events/"
 			}
 		},
 		{
 			"discriminant": "link",
 			"value": {
 				"label": "Aktuelles",
-				"href": "/de/aktuelles/"
+				"href": "/de/news/"
 			}
 		},
 		{
@@ -52,21 +52,21 @@
 						"discriminant": "link",
 						"value": {
 							"label": "CLARIAH-AT",
-							"href": "/de/ueber-clariah-at/"
+							"href": "/de/about-clariah-at/"
 						}
 					},
 					{
 						"discriminant": "link",
 						"value": {
 							"label": "Konsortium",
-							"href": "/de/konsortium/"
+							"href": "/de/consortium/"
 						}
 					},
 					{
 						"discriminant": "link",
 						"value": {
 							"label": "Arbeitsgruppen",
-							"href": "/de/die-clariah-at-arbeitsgruppen/"
+							"href": "/de/the-clariah-at-working-groups/"
 						}
 					}
 				]

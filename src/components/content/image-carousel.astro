@@ -1,0 +1,293 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+import { defaultLocale, type Locale } from "@/config/i18n.config";
+import { generateUniqueId } from "@/lib/generate-unique-id";
+import { getImageImport } from "@/lib/get-image-import";
+import { createI18n } from "@/lib/i18n";
+
+interface Props {
+	title: string;
+	slides: ReadonlyArray<{
+		title: string;
+		summary: string;
+		alignment: "left" | "right";
+		image: string;
+		page: string;
+	}>;
+}
+
+const { slides, title } = Astro.props;
+
+const id = generateUniqueId();
+
+const { t } = await createI18n((Astro.currentLocale as Locale | undefined) ?? defaultLocale);
+---
+
+<image-carousel>
+	<div
+		aria-roledescription="carousel"
+		aria-label={title}
+		class="group relative"
+		data-carousel
+		data-state="paused"
+	>
+		<div data-controls>
+			<div class="absolute left-8 top-8 z-10">
+				<button
+					class="rounded-md bg-black/50 p-2 text-white transition hover:bg-black/70 focus-visible:bg-black/70 focus-visible:outline-white"
+					data-control-toggle
+					type="button"
+				>
+					<Icon
+						aria-label={t("ImageCarousel.stop")}
+						class="hidden size-6 group-data-[state=playing]:block"
+						name="lucide:circle-pause"
+					/>
+					<Icon
+						aria-label={t("ImageCarousel.start")}
+						class="hidden size-6 group-data-[state=paused]:block"
+						name="lucide:circle-play"
+					/>
+				</button>
+			</div>
+			<div class="absolute right-8 top-8 z-10">
+				<button
+					aria-controls={id}
+					aria-label={t("ImageCarousel.previous")}
+					class="rounded-md bg-black/50 p-2 text-white transition hover:bg-black/70 focus-visible:bg-black/70 focus-visible:outline-white"
+					data-control-previous
+					type="button"
+				>
+					<Icon class="size-6" name="lucide:chevron-left" />
+				</button>
+				<button
+					aria-controls={id}
+					aria-label={t("ImageCarousel.next")}
+					class="rounded-md bg-black/50 p-2 text-white transition hover:bg-black/70 focus-visible:bg-black/70 focus-visible:outline-white"
+					data-control-next
+					type="button"
+				>
+					<Icon class="size-6" name="lucide:chevron-right" />
+				</button>
+			</div>
+		</div>
+
+		<div id={id} aria-live="off" class="relative aspect-[2.125]" data-carousel-items>
+			{
+				slides.map((slide, index) => {
+					const alignments = {
+						left: "left-0",
+						right: "right-0",
+					};
+
+					const href = `/${slide.page}`;
+
+					return (
+						<div
+							data-carousel-item
+							data-active={index === 0 ? "" : undefined}
+							role="group"
+							aria-roledescription="slide"
+							aria-label={t("ImageCarousel.slide", {
+								current: index,
+								total: slides.length,
+							})}
+							class="group relative size-full"
+						>
+							<a
+								class="block size-full -outline-offset-2 focus-visible:outline-white"
+								aria-label={slide.title}
+								href={href}
+							>
+								{/* @ts-expect-error Upstream type error. */}
+								<Image
+									alt=""
+									class="size-full object-cover"
+									loading={index === 0 ? "eager" : undefined}
+									src={getImageImport(slide.image)}
+								/>
+							</a>
+							<div
+								class:list={[
+									"absolute bottom-0 grid w-96 gap-y-2 border-t-4 border-brand-red bg-black/50 p-8 text-white",
+									alignments[slide.alignment],
+								]}
+							>
+								<h2 class="text-xl font-bold">
+									<a class="focus-visible:outline-white" href={href}>
+										{slide.title}
+									</a>
+								</h2>
+								<hr class="my-1 border-[#666]" />
+								<div>{slide.summary}</div>
+							</div>
+						</div>
+					);
+				})
+			}
+		</div>
+	</div>
+</image-carousel>
+
+<script is:inline>
+	/**
+	 * In the initial html, all slides are visible, so they work when javascript is disabled.
+	 * Hide them as soon as javascript loads.
+	 */
+	document.querySelectorAll("[data-carousel-items]").forEach((element) => {
+		element.classList.add("overflow-hidden");
+	});
+
+	document.querySelectorAll("[data-carousel-item]").forEach((element) => {
+		element.classList.remove("relative");
+		element.classList.add(
+			"absolute",
+			"invisible",
+			"translate-x-1/3",
+			"duration-500",
+			"transition-all",
+			"data-[active]:opacity-100",
+			"opacity-0",
+			"data-[active]:visible",
+			"data-[active]:translate-x-0",
+		);
+	});
+</script>
+
+<script>
+	import { assert } from "@acdh-oeaw/lib";
+
+	class ImageCarousel extends HTMLElement {
+		connectedCallback() {
+			const state = {
+				paused: true,
+				intent: "auto" as "auto" | "play" | "pause",
+				current: 0,
+			};
+
+			const root = this.querySelector<HTMLDivElement>("div[data-carousel]");
+			const container = this.querySelector<HTMLDivElement>("div[data-carousel-items]");
+			const liveRegion = this.querySelector<HTMLDivElement>("div[data-carousel-items]");
+			const slides = this.querySelectorAll<HTMLDivElement>("div[data-carousel-item]");
+			const toggle = this.querySelector<HTMLButtonElement>("button[data-control-toggle]");
+			const previous = this.querySelector<HTMLButtonElement>("button[data-control-previous]");
+			const next = this.querySelector<HTMLButtonElement>("button[data-control-next]");
+			assert(root);
+			assert(container);
+			assert(liveRegion);
+			assert(slides.length);
+			assert(toggle);
+			assert(previous);
+			assert(next);
+
+			function updateSlide() {
+				slides.forEach((slide, index) => {
+					// slide.hidden = index !== state.current;
+					if (index === state.current) {
+						slide.dataset.active = "";
+					} else {
+						delete slide.dataset.active;
+					}
+				});
+			}
+
+			updateSlide();
+
+			function onPreviousSlide() {
+				state.current = state.current > 0 ? state.current - 1 : slides.length - 1;
+				updateSlide();
+			}
+
+			function onNextSlide() {
+				state.current = state.current < slides.length - 1 ? state.current + 1 : 0;
+				updateSlide();
+			}
+
+			previous.addEventListener("click", onPreviousSlide);
+			next.addEventListener("click", onNextSlide);
+
+			let timer: ReturnType<typeof setInterval> | null = null;
+			const delay = 5000;
+
+			function play(force?: boolean) {
+				if (force) {
+					state.intent = "play";
+				}
+				state.paused = false;
+				timer = setInterval(onNextSlide, delay);
+				root!.dataset.state = "playing";
+				liveRegion!.setAttribute("aria-live", "off");
+			}
+
+			function pause(force?: boolean) {
+				if (force) {
+					state.intent = "pause";
+				}
+				state.paused = true;
+				if (timer) clearInterval(timer);
+				timer = null;
+				root!.dataset.state = "paused";
+			}
+
+			function onTogglePlayState() {
+				if (state.paused) {
+					play(true);
+				} else {
+					pause(true);
+				}
+			}
+
+			toggle.addEventListener("click", onTogglePlayState);
+
+			function hasReducedMotion() {
+				return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+			}
+
+			function autoplay() {
+				if (state.intent === "play" || (state.intent === "auto" && !hasReducedMotion())) {
+					play();
+				}
+			}
+
+			function onMouseEnter() {
+				pause();
+			}
+
+			function onMouseLeave() {
+				autoplay();
+			}
+
+			container.addEventListener("mouseenter", onMouseEnter);
+			container.addEventListener("mouseleave", onMouseLeave);
+
+			function onFocusIn(event: FocusEvent) {
+				const elementLosingFocus = event.relatedTarget as Element | null;
+				if (elementLosingFocus == null || !root!.contains(elementLosingFocus)) {
+					pause();
+				}
+			}
+
+			function onFocusOut(event: FocusEvent) {
+				const elementReceivingFocus = event.relatedTarget as Element | null;
+				if (elementReceivingFocus == null || !root!.contains(elementReceivingFocus)) {
+					autoplay();
+				}
+			}
+
+			root.addEventListener("focusin", onFocusIn);
+			root.addEventListener("focusout", onFocusOut);
+
+			autoplay();
+		}
+	}
+
+	customElements.define("image-carousel", ImageCarousel);
+</script>
+
+<style is:global>
+	iamge-carousel {
+		display: contents;
+	}
+</style>

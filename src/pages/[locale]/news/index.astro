@@ -1,4 +1,6 @@
 ---
+import { compareDesc } from "date-fns";
+
 import Card from "@/components/card.astro";
 import MainContent from "@/components/main-content.astro";
 import PageCard from "@/components/page-card.astro";
@@ -15,6 +17,10 @@ export async function getStaticPaths() {
 		locales.map(async (locale) => {
 			const collection = getCollectionName("news", locale);
 			const pages = await reader().collections[collection].all();
+
+			pages.sort((a, z) => {
+				return compareDesc(a.entry.date, z.entry.date);
+			});
 
 			return { params: { locale }, props: { pages } };
 		}),

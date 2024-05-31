@@ -10,6 +10,7 @@ import { loadEnv } from "vite";
 
 import { defaultLocale, locales } from "./src/config/i18n.config";
 // import { createConfig as createMdxConfig } from "./src/config/mdx.config";
+import { redirects } from "./src/config/redirects.config";
 
 const env = loadEnv(import.meta.env.MODE, process.cwd(), "");
 
@@ -85,6 +86,7 @@ export default defineConfig({
 			destination: "/keystatic",
 			status: 307,
 		},
+		...redirects,
 	},
 	scopedStyleStrategy: "where",
 	security: {

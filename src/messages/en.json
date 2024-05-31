@@ -36,6 +36,13 @@
 		"read-more": "Read more",
 		"title": "Events"
 	},
+	"ImageCarousel": {
+		"next": "Next",
+		"previous": "Previous",
+		"slide": "{current} of {total}",
+		"start": "Start",
+		"stop": "Pause"
+	},
 	"ImprintPage": {
 		"meta": {
 			"title": "Imprint"

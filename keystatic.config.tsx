@@ -667,6 +667,9 @@ const singletons = {
 													},
 													event: {
 														label: "Event card",
+														itemLabel(props) {
+															return props.fields.title.value;
+														},
 														schema: fields.object(
 															{
 																title: fields.text({
@@ -686,6 +689,9 @@ const singletons = {
 													},
 													news: {
 														label: "News card",
+														itemLabel(props) {
+															return props.fields.title.value;
+														},
 														schema: fields.object(
 															{
 																title: fields.text({
@@ -705,6 +711,9 @@ const singletons = {
 													},
 													page: {
 														label: "Page card",
+														itemLabel(props) {
+															return props.fields.title.value;
+														},
 														schema: fields.object(
 															{
 																title: fields.text({
@@ -791,6 +800,9 @@ const singletons = {
 													},
 													event: {
 														label: "Event slide",
+														itemLabel(props) {
+															return props.fields.title.value;
+														},
 														schema: fields.object(
 															{
 																title: fields.text({
@@ -810,6 +822,9 @@ const singletons = {
 													},
 													news: {
 														label: "News slide",
+														itemLabel(props) {
+															return props.fields.title.value;
+														},
 														schema: fields.object(
 															{
 																title: fields.text({
@@ -829,6 +844,9 @@ const singletons = {
 													},
 													page: {
 														label: "Page slide",
+														itemLabel(props) {
+															return props.fields.title.value;
+														},
 														schema: fields.object(
 															{
 																title: fields.text({
