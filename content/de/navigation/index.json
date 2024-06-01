@@ -1,76 +1,76 @@
 {
-	"links": [
-		{
-			"discriminant": "menu",
-			"value": {
-				"label": "Förderungen",
-				"links": [
-					{
-						"discriminant": "link",
-						"value": {
-							"label": "Projektförderungen",
-							"href": "/de/project-funding/"
-						}
-					},
-					{
-						"discriminant": "link",
-						"value": {
-							"label": "Förderungen für Jungwissenschaftler*innen",
-							"href": "/de/funding-opportunities-for-junior-researcher/"
-						}
-					}
-				]
-			}
-		},
-		{
-			"discriminant": "link",
-			"value": {
-				"label": "Events",
-				"href": "/de/events/"
-			}
-		},
-		{
-			"discriminant": "link",
-			"value": {
-				"label": "Aktuelles",
-				"href": "/de/news/"
-			}
-		},
-		{
-			"discriminant": "link",
-			"value": {
-				"label": "Projekte",
-				"href": "/de/projects/"
-			}
-		},
-		{
-			"discriminant": "menu",
-			"value": {
-				"label": "Über uns",
-				"links": [
-					{
-						"discriminant": "link",
-						"value": {
-							"label": "CLARIAH-AT",
-							"href": "/de/about-clariah-at/"
-						}
-					},
-					{
-						"discriminant": "link",
-						"value": {
-							"label": "Konsortium",
-							"href": "/de/consortium/"
-						}
-					},
-					{
-						"discriminant": "link",
-						"value": {
-							"label": "Arbeitsgruppen",
-							"href": "/de/the-clariah-at-working-groups/"
-						}
-					}
-				]
-			}
-		}
-	]
+  "links": [
+    {
+      "discriminant": "menu",
+      "value": {
+        "label": "Förderungen",
+        "links": [
+          {
+            "discriminant": "page",
+            "value": {
+              "label": "Projektförderungen",
+              "reference": "project-funding"
+            }
+          },
+          {
+            "discriminant": "page",
+            "value": {
+              "label": "Förderungen für Jungwissenschaftler*innen",
+              "reference": "funding-opportunities-for-junior-researcher"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "discriminant": "page",
+      "value": {
+        "label": "Events",
+        "reference": "events"
+      }
+    },
+    {
+      "discriminant": "page",
+      "value": {
+        "label": "Aktuelles",
+        "reference": "news"
+      }
+    },
+    {
+      "discriminant": "page",
+      "value": {
+        "label": "Projekte",
+        "reference": "projects"
+      }
+    },
+    {
+      "discriminant": "menu",
+      "value": {
+        "label": "Über uns",
+        "links": [
+          {
+            "discriminant": "page",
+            "value": {
+              "label": "CLARIAH-AT",
+              "reference": "about-clariah-at"
+            }
+          },
+          {
+            "discriminant": "page",
+            "value": {
+              "label": "Konsortium",
+              "reference": "consortium"
+            }
+          },
+          {
+            "discriminant": "page",
+            "value": {
+              "label": "Arbeitsgruppen",
+              "reference": "the-clariah-at-working-groups"
+            }
+          }
+        ]
+      }
+    }
+  ]
 }

@@ -117,7 +117,7 @@
 								"summary": "Veranstaltungen von CLARIAH-AT",
 								"link": {
 									"label": "Mehr Info",
-									"href": "/news/"
+									"href": "/events/"
 								}
 							}
 						},
@@ -128,7 +128,7 @@
 								"summary": "Neuigkeiten von CLARIAH-AT",
 								"link": {
 									"label": "Mehr Info",
-									"href": "/events/"
+									"href": "/news/"
 								}
 							}
 						}
