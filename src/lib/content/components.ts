@@ -13,6 +13,7 @@ import Link from "@/components/link.astro";
 
 export function useMDXComponents(): MDXComponents {
 	return {
+		// @ts-expect-error It's fine.
 		a: Link,
 		Callout,
 		Download,

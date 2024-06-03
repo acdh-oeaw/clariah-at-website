@@ -90,15 +90,17 @@ const { hero } = page;
 													const event = await reader().collections[collectionName].readOrThrow(id);
 
 													return (
-														<Card
-															image={event.image}
-															title={event.title}
-															summary={event.summary}
-															link={{
-																label: t("IndexPage.card.read-more"),
-																href: `/events/${id}`,
-															}}
-														/>
+														<li>
+															<Card
+																image={event.image}
+																title={event.title}
+																summary={event.summary}
+																link={{
+																	label: t("IndexPage.card.read-more"),
+																	href: `/events/${id}`,
+																}}
+															/>
+														</li>
 													);
 												}
 
@@ -109,15 +111,17 @@ const { hero } = page;
 														await reader().collections[collectionName].readOrThrow(id);
 
 													return (
-														<Card
-															image={newsItem.image}
-															title={newsItem.title}
-															summary={newsItem.summary}
-															link={{
-																label: t("IndexPage.card.read-more"),
-																href: `/news/${id}`,
-															}}
-														/>
+														<li>
+															<Card
+																image={newsItem.image}
+																title={newsItem.title}
+																summary={newsItem.summary}
+																link={{
+																	label: t("IndexPage.card.read-more"),
+																	href: `/news/${id}`,
+																}}
+															/>
+														</li>
 													);
 												}
 
@@ -127,15 +131,17 @@ const { hero } = page;
 													const page = await reader().collections[collectionName].readOrThrow(id);
 
 													return (
-														<Card
-															image={page.image}
-															title={page.title}
-															summary={page.summary || t("IndexPage.card.no-summary")}
-															link={{
-																label: t("IndexPage.card.read-more"),
-																href: `/${id}`,
-															}}
-														/>
+														<li>
+															<Card
+																image={page.image}
+																title={page.title}
+																summary={page.summary || t("IndexPage.card.no-summary")}
+																link={{
+																	label: t("IndexPage.card.read-more"),
+																	href: `/${id}`,
+																}}
+															/>
+														</li>
 													);
 												}
 
@@ -170,15 +176,17 @@ const { hero } = page;
 													const event = await reader().collections[collectionName].readOrThrow(id);
 
 													return (
-														<Card
-															image={event.image}
-															title={event.title}
-															summary={event.summary}
-															link={{
-																label: t("IndexPage.card.read-more"),
-																href: `/events/${id}`,
-															}}
-														/>
+														<li>
+															<Card
+																image={event.image}
+																title={event.title}
+																summary={event.summary}
+																link={{
+																	label: t("IndexPage.card.read-more"),
+																	href: `/events/${id}`,
+																}}
+															/>
+														</li>
 													);
 												}
 
@@ -189,15 +197,17 @@ const { hero } = page;
 														await reader().collections[collectionName].readOrThrow(id);
 
 													return (
-														<Card
-															image={newsItem.image}
-															title={newsItem.title}
-															summary={newsItem.summary}
-															link={{
-																label: t("IndexPage.card.read-more"),
-																href: `/news/${id}`,
-															}}
-														/>
+														<li>
+															<Card
+																image={newsItem.image}
+																title={newsItem.title}
+																summary={newsItem.summary}
+																link={{
+																	label: t("IndexPage.card.read-more"),
+																	href: `/news/${id}`,
+																}}
+															/>
+														</li>
 													);
 												}
 
@@ -207,15 +217,17 @@ const { hero } = page;
 													const page = await reader().collections[collectionName].readOrThrow(id);
 
 													return (
-														<Card
-															image={page.image}
-															title={page.title}
-															summary={page.summary || t("IndexPage.card.no-summary")}
-															link={{
-																label: t("IndexPage.card.read-more"),
-																href: `/${id}`,
-															}}
-														/>
+														<li>
+															<Card
+																image={page.image}
+																title={page.title}
+																summary={page.summary || t("IndexPage.card.no-summary")}
+																link={{
+																	label: t("IndexPage.card.read-more"),
+																	href: `/${id}`,
+																}}
+															/>
+														</li>
 													);
 												}
 
