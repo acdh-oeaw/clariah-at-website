@@ -91,7 +91,10 @@ const { hero } = page;
 															image={event.image}
 															title={event.title}
 															summary={event.summary}
-															link={{ label: t("IndexPage.card.read-more"), href: `/events/${id}` }}
+															link={{
+																label: t("IndexPage.card.read-more"),
+																href: `/${String(locale)}/events/${id}`,
+															}}
 														/>
 													);
 												}
@@ -107,7 +110,10 @@ const { hero } = page;
 															image={newsItem.image}
 															title={newsItem.title}
 															summary={newsItem.summary}
-															link={{ label: t("IndexPage.card.read-more"), href: `/news/${id}` }}
+															link={{
+																label: t("IndexPage.card.read-more"),
+																href: `/${String(locale)}/news/${id}`,
+															}}
 														/>
 													);
 												}
@@ -122,7 +128,10 @@ const { hero } = page;
 															image={page.image}
 															title={page.title}
 															summary={page.summary || t("IndexPage.card.no-summary")}
-															link={{ label: t("IndexPage.card.read-more"), href: `/${id}` }}
+															link={{
+																label: t("IndexPage.card.read-more"),
+																href: `/${String(locale)}/${id}`,
+															}}
 														/>
 													);
 												}
@@ -162,7 +171,10 @@ const { hero } = page;
 															image={event.image}
 															title={event.title}
 															summary={event.summary}
-															link={{ label: t("IndexPage.card.read-more"), href: `/events/${id}` }}
+															link={{
+																label: t("IndexPage.card.read-more"),
+																href: `/${String(locale)}/events/${id}`,
+															}}
 														/>
 													);
 												}
@@ -178,7 +190,10 @@ const { hero } = page;
 															image={newsItem.image}
 															title={newsItem.title}
 															summary={newsItem.summary}
-															link={{ label: t("IndexPage.card.read-more"), href: `/news/${id}` }}
+															link={{
+																label: t("IndexPage.card.read-more"),
+																href: `/${String(locale)}/news/${id}`,
+															}}
 														/>
 													);
 												}
@@ -193,7 +208,10 @@ const { hero } = page;
 															image={page.image}
 															title={page.title}
 															summary={page.summary || t("IndexPage.card.no-summary")}
-															link={{ label: t("IndexPage.card.read-more"), href: `/${id}` }}
+															link={{
+																label: t("IndexPage.card.read-more"),
+																href: `/${String(locale)}/${id}`,
+															}}
 														/>
 													);
 												}

@@ -56,7 +56,9 @@ const home = t("WebsiteHeader.links.home");
 							case "page": {
 								return (
 									<li>
-										<NavMenuLink href={`/${item.value.reference}`}>{item.value.label}</NavMenuLink>
+										<NavMenuLink href={`/${locale}/${item.value.reference}`}>
+											{item.value.label}
+										</NavMenuLink>
 									</li>
 								);
 							}
@@ -83,7 +85,7 @@ const home = t("WebsiteHeader.links.home");
 															case "page": {
 																return (
 																	<li>
-																		<NavMenuItem href={`/${link.value.reference}`}>
+																		<NavMenuItem href={`/${locale}/${link.value.reference}`}>
 																			{link.value.label}
 																		</NavMenuItem>
 																	</li>
