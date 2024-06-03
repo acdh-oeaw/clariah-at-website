@@ -9,9 +9,11 @@ import Figure from "@/components/content/figure.astro";
 import Img from "@/components/content/img.astro";
 import LinkButton from "@/components/content/link-button.astro";
 import Video from "@/components/content/video.astro";
+import Link from "@/components/link.astro";
 
 export function useMDXComponents(): MDXComponents {
 	return {
+		a: Link,
 		Callout,
 		Download,
 		DownloadButton,

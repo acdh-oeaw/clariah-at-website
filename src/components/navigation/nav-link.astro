@@ -1,6 +1,8 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
+import Link from "@/components/link.astro";
+
 interface Props extends HTMLAttributes<"a"> {}
 
 const { href, ...rest } = Astro.props;
@@ -9,6 +11,6 @@ const pathname = href != null ? (typeof href === "string" ? href : href.pathname
 const isCurrent = pathname === Astro.url.pathname;
 ---
 
-<a {...rest} aria-current={isCurrent ? "page" : undefined} href={href}>
+<Link {...rest} aria-current={isCurrent ? "page" : undefined} href={href}>
 	<slot />
-</a>
+</Link>

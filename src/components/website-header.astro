@@ -28,7 +28,7 @@ const home = t("WebsiteHeader.links.home");
 		class="mx-auto flex w-full max-w-screen-lg items-center justify-between p-4 text-md font-medium"
 	>
 		<Navigation class="flex-1" label={t("WebsiteHeader.navigation-primary")}>
-			<NavMenuLink class="-ml-4 inline-flex shrink-0 items-center gap-x-2" href={`/${locale}`}>
+			<NavMenuLink class="-ml-4 inline-flex shrink-0 items-center gap-x-2" href={`/`}>
 				<Image
 					alt=""
 					class="block h-16 w-auto"
@@ -56,9 +56,7 @@ const home = t("WebsiteHeader.links.home");
 							case "page": {
 								return (
 									<li>
-										<NavMenuLink href={`/${locale}/${item.value.reference}`}>
-											{item.value.label}
-										</NavMenuLink>
+										<NavMenuLink href={`/${item.value.reference}`}>{item.value.label}</NavMenuLink>
 									</li>
 								);
 							}
@@ -85,7 +83,7 @@ const home = t("WebsiteHeader.links.home");
 															case "page": {
 																return (
 																	<li>
-																		<NavMenuItem href={`/${locale}/${link.value.reference}`}>
+																		<NavMenuItem href={`/${link.value.reference}`}>
 																			{link.value.label}
 																		</NavMenuItem>
 																	</li>
