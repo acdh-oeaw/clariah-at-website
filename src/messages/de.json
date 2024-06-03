@@ -36,6 +36,13 @@
 		"read-more": "Mehr Info",
 		"title": "Veranstaltungen"
 	},
+	"ImageCarousel": {
+		"next": "Nächste",
+		"previous": "Vorherige",
+		"slide": "{current} von {total}",
+		"start": "Starten",
+		"stop": "Pausieren"
+	},
 	"ImprintPage": {
 		"meta": {
 			"title": "Impressum"

@@ -6,41 +6,41 @@
         "label": "Funding",
         "links": [
           {
-            "discriminant": "link",
+            "discriminant": "page",
             "value": {
               "label": "Project Funding",
-              "href": "/en/project-funding/"
+              "reference": "project-funding"
             }
           },
           {
-            "discriminant": "link",
+            "discriminant": "page",
             "value": {
               "label": "Funding for Junior Researchers",
-              "href": "/en/funding-opportunities-for-junior-researcher/"
+              "reference": "funding-opportunities-for-junior-researcher"
             }
           }
         ]
       }
     },
     {
-      "discriminant": "link",
+      "discriminant": "page",
       "value": {
         "label": "Events",
-        "href": "/en/events/"
+        "reference": "events"
       }
     },
     {
-      "discriminant": "link",
+      "discriminant": "page",
       "value": {
         "label": "News",
-        "href": "/en/news/"
+        "reference": "news"
       }
     },
     {
-      "discriminant": "link",
+      "discriminant": "page",
       "value": {
         "label": "Projects",
-        "href": "/en/projects/"
+        "reference": "projects"
       }
     },
     {
@@ -49,24 +49,24 @@
         "label": "About",
         "links": [
           {
-            "discriminant": "link",
+            "discriminant": "page",
             "value": {
               "label": "CLARIAH-AT",
-              "href": "/en/about-clariah-at/"
+              "reference": "about-clariah-at"
             }
           },
           {
-            "discriminant": "link",
+            "discriminant": "page",
             "value": {
               "label": "Consortium",
-              "href": "/en/consortium/"
+              "reference": "consortium"
             }
           },
           {
-            "discriminant": "link",
+            "discriminant": "page",
             "value": {
               "label": "Working Groups",
-              "href": "/en/the-clariah-at-working-groups/"
+              "reference": "the-clariah-at-working-groups"
             }
           }
         ]

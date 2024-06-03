@@ -64,6 +64,8 @@ jobs:
     permissions:
       contents: read
       packages: write
+    environment:
+      name: "${{ needs.env.outputs.environment }}"
 
     steps:
       - name: Checkout repository
@@ -100,6 +102,7 @@ jobs:
           tags: "${{ steps.meta.outputs.tags }}"
           labels: "${{ steps.meta.outputs.labels }}"
           build-args: |
+            "PUBLIC_APP_BASE_PATH=${{ vars.PUBLIC_APP_BASE_PATH }}"
             "PUBLIC_APP_BASE_URL=${{ needs.vars.outputs.public_url }}"
             "PUBLIC_BOTS=${{ vars.PUBLIC_BOTS }}"
             "PUBLIC_KEYSTATIC_GITHUB_APP_SLUG=${{ vars.PUBLIC_KEYSTATIC_GITHUB_APP_SLUG }}"

@@ -7,7 +7,7 @@
 		"node": "20.x",
 		"pnpm": "9.x"
 	},
-	"packageManager": "pnpm@9.1.2",
+	"packageManager": "pnpm@9.1.4",
 	"scripts": {
 		"build": "run-s build:site generate:search-index",
 		"build:site": "astro build",
