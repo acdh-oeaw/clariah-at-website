@@ -17,6 +17,7 @@ import { createAssetPaths, createPreviewUrl } from "@/config/content.config";
 import { env } from "@/config/env.config";
 import type { Locale } from "@/config/i18n.config";
 import { getCollectionName } from "@/lib/content/get-collection-name";
+import { useObjectUrl } from "@/lib/content/use-object-url";
 
 function createCollection<T extends Record<string, ComponentSchema>, U extends string>(
 	path: `/${string}/`,
@@ -48,7 +49,16 @@ function createSingleton<T extends Record<string, ComponentSchema>>(
 
 function createComponents(
 	assetPath: `/${string}/`,
-	components?: Array<"Callout" | "Download" | "DownloadButton" | "Figure" | "LinkButton" | "Video">,
+	components?: Array<
+		| "Callout"
+		| "Download"
+		| "DownloadButton"
+		| "Figure"
+		| "Grid"
+		| "GridItem"
+		| "LinkButton"
+		| "Video"
+	>,
 ) {
 	const allComponents = {
 		Callout: wrapper({
@@ -117,6 +127,19 @@ function createComponents(
 					label: "Image description for screen readers",
 					// validation: { isRequired: false },
 				}),
+			},
+			ContentView(props) {
+				const contentType = props.value.href?.extension === "svg" ? "image/svg+xml" : undefined;
+				const url = useObjectUrl(props.value.href?.data ?? null, contentType);
+
+				return (
+					<NotEditable>
+						<figure>
+							<img alt={props.value.alt} src={url ?? undefined} />
+							<figcaption>{props.children}</figcaption>
+						</figure>
+					</NotEditable>
+				);
 			},
 		}),
 		Grid: repeating({
