@@ -5,11 +5,12 @@ import {
 	type ComponentSchema,
 	config,
 	fields,
+	NotEditable,
 	type Singleton,
 	singleton,
 } from "@keystatic/core";
-import { block, mark, wrapper } from "@keystatic/core/content-components";
-import { DownloadIcon, ImageIcon, InfoIcon, LinkIcon, VideoIcon } from "lucide-react";
+import { block, mark, repeating, wrapper } from "@keystatic/core/content-components";
+import { DownloadIcon, GridIcon, ImageIcon, InfoIcon, LinkIcon, VideoIcon } from "lucide-react";
 
 import { Logo } from "@/components/logo";
 import { createAssetPaths, createPreviewUrl } from "@/config/content.config";
@@ -99,7 +100,7 @@ function createComponents(
 				}),
 			},
 			ContentView(props) {
-				return props.value.label;
+				return <NotEditable>{props.value.label}</NotEditable>;
 			},
 		}),
 		Figure: wrapper({
@@ -118,6 +119,51 @@ function createComponents(
 				}),
 			},
 		}),
+		Grid: repeating({
+			label: "Grid",
+			description: "A grid layout.",
+			icon: <GridIcon />,
+			children: ["GridItem"],
+			schema: {
+				variant: fields.select({
+					label: "Variant",
+					options: [
+						{
+							label: "Two columns",
+							value: "two-columns",
+						},
+						{
+							label: "Three columns",
+							value: "three-columns",
+						},
+						{
+							label: "Four columns",
+							value: "four-columns",
+						},
+						{
+							label: "Two columns, right is 2x as wide",
+							value: "one-two-columns",
+						},
+						{
+							label: "Two columns, right is 3x as wide",
+							value: "one-three-columns",
+						},
+						{
+							label: "Two columns, right is 4x as wide",
+							value: "one-three-columns",
+						},
+					],
+					defaultValue: "two-columns",
+				}),
+			},
+		}),
+		GridItem: wrapper({
+			label: "Grid item",
+			description: "A grid cell.",
+			icon: <GridIcon />,
+			forSpecificLocations: true,
+			schema: {},
+		}),
 		LinkButton: block({
 			label: "Link button",
 			description: "A link which looks like a button.",
@@ -133,7 +179,7 @@ function createComponents(
 				}),
 			},
 			ContentView(props) {
-				return props.value.label;
+				return <NotEditable>{props.value.label}</NotEditable>;
 			},
 		}),
 		Video: block({
@@ -171,10 +217,12 @@ function createComponents(
 				);
 
 				return (
-					<figure>
-						<iframe allowFullScreen={true} src={href} title="Video" />
-						{caption ? <figcaption>{caption}</figcaption> : null}
-					</figure>
+					<NotEditable>
+						<figure>
+							<iframe allowFullScreen={true} src={href} title="Video" />
+							{caption ? <figcaption>{caption}</figcaption> : null}
+						</figure>
+					</NotEditable>
 				);
 			},
 		}),
