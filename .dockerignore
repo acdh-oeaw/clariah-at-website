@@ -61,3 +61,6 @@ playwright.config.ts
 
 # misc
 .editorconfig
+
+# astro assets cache
+!/node_modules/.astro/

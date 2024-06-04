@@ -27,6 +27,9 @@ RUN pnpm fetch --dev
 COPY --chown=node:node ./ ./
 RUN sed -i "s/use-node-version/# use-node-version/" .npmrc
 
+# astro assets cache
+COPY --chown=node:node ./node_modules/.astro ./node_modules/.astro
+
 ARG PUBLIC_APP_BASE_PATH
 ARG PUBLIC_APP_BASE_URL
 ARG PUBLIC_BOTS
