@@ -150,7 +150,7 @@ function createComponents(
 						},
 						{
 							label: "Two columns, right is 4x as wide",
-							value: "one-three-columns",
+							value: "one-four-columns",
 						},
 					],
 					defaultValue: "two-columns",
