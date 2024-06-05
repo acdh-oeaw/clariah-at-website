@@ -17,7 +17,7 @@ const { image, link, summary, title } = Astro.props;
 <article class="rounded-b-md border border-t-[5px] border-[#0000001a] border-t-brand bg-white">
 	{
 		image ? (
-			<Link aria-label={link.label} class="relative block aspect-[1.5]" href={link.href}>
+			<Link aria-label={title} class="relative block aspect-[1.5]" href={link.href}>
 				{/* @ts-expect-error Upstream type error. */}
 				<Image
 					alt=""
@@ -40,6 +40,7 @@ const { image, link, summary, title } = Astro.props;
 		<p class="text-md text-[#6f757c]">{summary}</p>
 		<footer class="mt-1">
 			<Link
+				aria-label={title}
 				class="inline-flex rounded-md border border-[#0000001a] px-3 py-1 text-[#212529] transition hover:bg-[#212529] hover:text-white"
 				href={link.href}
 			>
