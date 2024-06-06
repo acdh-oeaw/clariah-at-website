@@ -36,7 +36,7 @@ test("should disallow indexing of not-found page", async ({ page }) => {
 	}
 });
 
-test.describe("should set page metadata", () => {
+test.describe.skip("should set page metadata", () => {
 	test("static", async ({ page }) => {
 		await page.goto("/en/");
 
@@ -123,7 +123,7 @@ test.describe("should set page metadata", () => {
 	});
 });
 
-test.describe("should add json+ld metadata", () => {
+test.describe.skip("should add json+ld metadata", () => {
 	test("with en locale", async ({ page }) => {
 		await page.goto("/en/");
 

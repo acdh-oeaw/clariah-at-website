@@ -13,8 +13,6 @@ export async function GET() {
 		short_name: metadata.shortTitle,
 		description: metadata.description,
 		icons: [
-			{ src: "/icon.svg", sizes: "any", type: "image/svg+xml" },
-			{ src: "/icon-maskable.svg", sizes: "any", type: "image/svg+xml", purpose: "maskable" },
 			{ src: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
 			{ src: "/android-chrome-512x512.png", sizes: "512x512", type: "image/png" },
 		],
