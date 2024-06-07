@@ -86,8 +86,10 @@
 	"ProjectPage": {
 		"additional-images": "Additional images",
 		"attachments": "Attachments",
-		"links": "Links",
 		"end-date": "End",
+		"hosting-organisations": "Hosting organisations",
+		"links": "Links",
+		"responsible-persons": "Responsible persons",
 		"start-date": "Start"
 	},
 	"ProjectsPage": {

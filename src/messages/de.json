@@ -86,8 +86,10 @@
 	"ProjectPage": {
 		"additional-images": "Weitere Bilder",
 		"attachments": "Anhänge",
-		"links": "Links",
 		"end-date": "Ende",
+		"hosting-organisations": "Hosting-Organisationen",
+		"links": "Links",
+		"responsible-persons": "Verantwortliche Personen",
 		"start-date": "Beginn"
 	},
 	"ProjectsPage": {

@@ -33,6 +33,7 @@ const { page } = Astro.props;
 
 const { t } = await createI18n(locale);
 const dateTime = new Intl.DateTimeFormat([locale], { dateStyle: "long" });
+const list = new Intl.ListFormat([locale]);
 
 const documentTitle = page.title;
 const {
@@ -42,9 +43,9 @@ const {
 	title,
 	additionalImages,
 	attachments,
-	// hostingOrganizations,
+	hostingOrganizations,
 	links,
-	// responsiblePersons,
+	responsiblePersons,
 } = page;
 const startDate = _startDate != null ? new Date(_startDate) : undefined;
 const endDate = _endDate != null ? new Date(_endDate) : undefined;
@@ -56,10 +57,30 @@ const { default: Content } = await processMdx(await page.content(), locale);
 		<PageSection>
 			<PageCard image={image}>
 				<PageTitle>{title}</PageTitle>
-				<dl class="grid gap-y-2 py-2">
+				<dl class="grid gap-y-3 py-4">
+					{
+						isNonEmptyArray(hostingOrganizations) ? (
+							<div class="grid gap-y-1 text-sm">
+								<dt class="text-xs font-medium uppercase tracking-wider text-neutral-600">
+									{t("ProjectPage.hosting-organisations")}
+								</dt>
+								<dd>{list.format(hostingOrganizations)}</dd>
+							</div>
+						) : null
+					}
+					{
+						isNonEmptyArray(responsiblePersons) ? (
+							<div class="grid gap-y-1 text-sm">
+								<dt class="text-xs font-medium uppercase tracking-wider text-neutral-600">
+									{t("ProjectPage.responsible-persons")}
+								</dt>
+								<dd>{list.format(responsiblePersons)}</dd>
+							</div>
+						) : null
+					}
 					{
 						startDate != null ? (
-							<div>
+							<div class="grid gap-y-1 text-sm">
 								<dt class="text-xs font-medium uppercase tracking-wider text-neutral-600">
 									{t("ProjectPage.start-date")}
 								</dt>
@@ -71,7 +92,7 @@ const { default: Content } = await processMdx(await page.content(), locale);
 					}
 					{
 						endDate != null ? (
-							<div>
+							<div class="grid gap-y-1 text-sm">
 								<dt class="text-xs font-medium uppercase tracking-wider text-neutral-600">
 									{t("ProjectPage.end-date")}
 								</dt>
