@@ -1,4 +1,6 @@
 ---
+import { isNonEmptyArray } from "@acdh-oeaw/lib";
+
 import MainContent from "@/components/main-content.astro";
 import PageCard from "@/components/page-card.astro";
 import PageSection from "@/components/page-section.astro";
@@ -38,10 +40,10 @@ const {
 	image,
 	startDate: _startDate,
 	title,
-	// additionalImages,
-	// attachments,
+	additionalImages,
+	attachments,
 	// hostingOrganizations,
-	// links,
+	links,
 	// responsiblePersons,
 } = page;
 const startDate = _startDate != null ? new Date(_startDate) : undefined;
@@ -54,7 +56,7 @@ const { default: Content } = await processMdx(await page.content(), locale);
 		<PageSection>
 			<PageCard image={image}>
 				<PageTitle>{title}</PageTitle>
-				<dl class="grid gap-y-2">
+				<dl class="grid gap-y-2 py-2">
 					{
 						startDate != null ? (
 							<div>
@@ -80,8 +82,71 @@ const { default: Content } = await processMdx(await page.content(), locale);
 						) : null
 					}
 				</dl>
+
 				<div class="prose">
 					<Content />
+				</div>
+
+				<div class="grid gap-y-8 py-4">
+					{
+						isNonEmptyArray(attachments) ? (
+							<section class="grid gap-y-4">
+								<h2 class="border-b pb-2 text-xl font-bold">{t("ProjectPage.attachments")}</h2>
+								<ul class="grid gap-y-2" role="list">
+									{attachments.map((attachment) => {
+										return (
+											<li>
+												<a class="font-medium underline" download href={attachment.file}>
+													{attachment.label}
+												</a>
+											</li>
+										);
+									})}
+								</ul>
+							</section>
+						) : null
+					}
+
+					{
+						isNonEmptyArray(links) ? (
+							<section class="grid gap-y-4">
+								<h2 class="border-b pb-2 text-xl font-bold">{t("ProjectPage.links")}</h2>
+								<ul class="grid gap-y-2" role="list">
+									{links.map((link) => {
+										return (
+											<li>
+												<a class="font-medium underline" download href={link.url}>
+													{link.label}
+												</a>
+											</li>
+										);
+									})}
+								</ul>
+							</section>
+						) : null
+					}
+
+					{
+						isNonEmptyArray(additionalImages) ? (
+							<section class="grid gap-y-4">
+								<h2 class="border-b pb-2 text-xl font-bold">
+									{t("ProjectPage.additional-images")}
+								</h2>
+								<ul class="grid gap-4 md:grid-cols-2" role="list">
+									{additionalImages.map((image) => {
+										return (
+											<li>
+												<figure>
+													<img alt={image.alt} src={image.image} />
+													<figcaption>{image.license}</figcaption>
+												</figure>
+											</li>
+										);
+									})}
+								</ul>
+							</section>
+						) : null
+					}
 				</div>
 			</PageCard>
 		</PageSection>

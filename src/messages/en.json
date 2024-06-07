@@ -84,8 +84,11 @@
 		"title": "Page not found"
 	},
 	"ProjectPage": {
-		"start-date": "Start",
-		"end-date": "End"
+		"additional-images": "Additional images",
+		"attachments": "Attachments",
+		"links": "Links",
+		"end-date": "End",
+		"start-date": "Start"
 	},
 	"ProjectsPage": {
 		"meta": {
