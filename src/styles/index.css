@@ -5,3 +5,8 @@
 	--color-brand: #ef6c00;
 	--color-brand-intent: #dc6502;
 }
+
+/** "Jungwissenschafter*innen" is too long. */
+h1 {
+	overflow-wrap: anywhere;
+}

@@ -19,6 +19,9 @@ const config: Config = {
 					intent: "var(--color-brand-intent)",
 				},
 			},
+			fontSize: {
+				"2.5xl": "1.625rem",
+			},
 			screens: {
 				lg: "70rem",
 			},
