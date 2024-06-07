@@ -10,6 +10,11 @@
 	"ContactForm": {
 		"email": "Email-Adresse",
 		"message": "Nachricht",
+		"status": {
+			"invalid-input": "Ungültige Eingabe.",
+			"success": "Nachricht erfolgreich gesendet.",
+			"unknown-error": "Konnte Nachricht nicht senden."
+		},
 		"subject": "Betreff",
 		"submit": "Absenden"
 	},
@@ -105,13 +110,6 @@
 	},
 	"SkipLink": {
 		"skip-to-main-content": "Zum Hauptinhalt springen"
-	},
-	"SuccessPage": {
-		"message": "Email erfolgreich gesendet!",
-		"meta": {
-			"title": "Kontakt"
-		},
-		"title": "Kontakt"
 	},
 	"WebsiteFooter": {
 		"bmbwf": "Bundesministerium Bildung, Wissenschaft und Forschung",

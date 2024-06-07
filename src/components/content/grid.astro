@@ -21,6 +21,6 @@ const variants: Record<Props["variant"], string> = {
 };
 ---
 
-<div class:list={[variants[variant], "grid gap-8 content-start"]}>
+<div class:list={[variants[variant], "grid content-start gap-8"]}>
 	<slot />
 </div>

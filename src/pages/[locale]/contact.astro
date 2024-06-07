@@ -1,11 +1,15 @@
 ---
-import ContactForm from "@/components/contact-form.astro";
+import { getFormDataValues } from "@acdh-oeaw/lib";
+import * as v from "valibot";
+
+import TextAreaField from "@/components/form/text-area-field.astro";
+import TextInputField from "@/components/form/text-input-field.astro";
 import MainContent from "@/components/main-content.astro";
-import PageCard from "@/components/page-card.astro";
 import PageSection from "@/components/page-section.astro";
 import PageTitle from "@/components/page-title.astro";
 import { locales } from "@/config/i18n.config";
 import PageLayout from "@/layouts/page-layout.astro";
+import { sendEmail } from "@/lib/email";
 import { createI18n } from "@/lib/i18n";
 
 export function getStaticPaths() {
@@ -20,15 +24,80 @@ const { t } = await createI18n(locale);
 
 const documentTitle = t("ContactPage.meta.title");
 const title = t("ContactPage.title");
+
+const email = t("ContactForm.email");
+const subject = t("ContactForm.subject");
+const message = t("ContactForm.message");
+const submit = t("ContactForm.submit");
+
+let status = { kind: "initial" } as
+	| { kind: "error"; message: string }
+	| { kind: "initial" }
+	| { kind: "success"; message: string };
+
+if (Astro.request.method === "POST") {
+	try {
+		const data = await Astro.request.formData();
+		const formData = getFormDataValues(data);
+		const schema = v.object({
+			name: v.pipe(v.string(), v.nonEmpty()),
+			email: v.pipe(v.string(), v.email()),
+			message: v.pipe(v.string(), v.nonEmpty()),
+			subject: v.pipe(v.string(), v.nonEmpty()),
+		});
+		const result = v.safeParse(schema, formData);
+		if (!result.success) {
+			status = { kind: "error", message: t("ContactForm.status.invalid-input") };
+		} else {
+			const { name, email, message, subject } = result.output;
+			await sendEmail({
+				from: `${name} <${email}>`,
+				subject,
+				text: message,
+				attachments: [],
+			});
+			status = { kind: "success", message: t("ContactForm.status.success") };
+		}
+	} catch (error) {
+		if (error instanceof Error) {
+			console.error(error.message);
+		}
+		status = { kind: "error", message: t("ContactForm.status.unknown-error") };
+	}
+}
 ---
 
 <PageLayout locale={locale} title={documentTitle}>
-	<MainContent>
+	<MainContent search="exclude">
 		<PageSection>
-			<PageCard>
-				<PageTitle>{title}</PageTitle>
-				<ContactForm />
-			</PageCard>
+			<PageTitle>{title}</PageTitle>
+
+			<form class="grid gap-y-6" data-astro-reload method="post">
+				<TextInputField label={email} name="email" required={true} type="email" />
+
+				<TextInputField label={subject} name="subject" required={true} />
+
+				<TextAreaField label={message} name="message" required={true} rows={5} />
+
+				<button
+					class="rounded-md bg-neutral-950 px-4 py-2 font-semibold text-neutral-0 transition hover:bg-neutral-700 dark:bg-neutral-0 dark:text-neutral-950 dark:hover:bg-neutral-300"
+					type="submit"
+				>
+					{submit}
+				</button>
+
+				<div
+					aria-live="polite"
+					aria-atomic="true"
+					class={status.kind === "error"
+						? "text-negative"
+						: status.kind === "success"
+							? "text-positive"
+							: undefined}
+				>
+					{status.kind !== "initial" ? status.message : null}
+				</div>
+			</form>
 		</PageSection>
 	</MainContent>
 </PageLayout>
