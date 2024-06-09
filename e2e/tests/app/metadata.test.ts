@@ -1,6 +1,7 @@
 import { createUrl } from "@acdh-oeaw/lib";
 
 import { defaultLocale, locales } from "@/config/i18n.config";
+import { escape } from "@/lib/safe-json-ld-replacer";
 import { expect, test } from "~/e2e/lib/test";
 
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -108,8 +109,8 @@ test("should add json+ld metadata", async ({ createIndexPage }) => {
 			JSON.stringify({
 				"@context": "https://schema.org",
 				"@type": "WebSite",
-				name: i18n.t("metadata.shortTitle"),
-				description: i18n.t("metadata.description").replace(/&/g, "&amp;"),
+				name: escape(i18n.t("metadata.shortTitle")),
+				description: escape(i18n.t("metadata.description")),
 			}),
 		);
 	}
