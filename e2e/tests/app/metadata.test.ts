@@ -28,8 +28,11 @@ test("should set document title on not-found page", async ({ createI18n, page })
 	);
 
 	// TODO:
+	// const i18nDe = await createI18n("de");
 	// await page.goto("/de/unknown/");
-	// await expect(page).toHaveTitle("Seite nicht gefunden | CLARIAH-AT");
+	// await expect(page).toHaveTitle(
+	// 	[i18nDe.t("NotFoundPage.meta.title"), i18nDe.t("metadata.title")].join(" | "),
+	// );
 });
 
 test("should disallow indexing of not-found page", async ({ page }) => {
@@ -47,6 +50,7 @@ test("should set page metadata", async ({ createIndexPage }) => {
 		await indexPage.goto();
 
 		expect(i18n.t("metadata.title")).toBeTruthy();
+		expect(i18n.t("metadata.shortTitle")).toBeTruthy();
 		expect(i18n.t("metadata.description")).toBeTruthy();
 
 		const ogType = indexPage.page.locator('meta[property="og:type"]');
