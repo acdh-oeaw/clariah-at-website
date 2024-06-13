@@ -6,17 +6,15 @@ import { getImageImport } from "@/lib/get-image-import";
 
 interface Props extends HTMLAttributes<"img"> {}
 
-const { alt = "", src, ...rest } = Astro.props;
+const { alt = "", src, width, height, ...rest } = Astro.props;
 ---
 
 {
 	src != null ? (
 		src.startsWith("/") ? (
-			/** @ts-expect-error @see https://github.com/withastro/astro/issues/10780 */
-			// prettier-ignore
 			<Image {...rest} alt={alt} src={getImageImport(src)} />
 		) : (
-			<img {...rest} alt={alt} src={src} />
+			<img {...rest} alt={alt} height={height} src={src} width={width} />
 		)
 	) : null
 }

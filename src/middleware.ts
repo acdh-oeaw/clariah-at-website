@@ -12,7 +12,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
 		return next();
 	}
 
-	if (context.url.pathname.startsWith("/_image/")) {
+	if (context.url.pathname.startsWith("/_image")) {
 		return next();
 	}
 

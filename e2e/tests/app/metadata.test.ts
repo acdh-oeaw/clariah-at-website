@@ -109,7 +109,7 @@ test("should add json+ld metadata", async ({ createIndexPage }) => {
 			JSON.stringify({
 				"@context": "https://schema.org",
 				"@type": "WebSite",
-				name: escape(i18n.t("metadata.shortTitle")),
+				name: escape(i18n.t("metadata.title")),
 				description: escape(i18n.t("metadata.description")),
 			}),
 		);
