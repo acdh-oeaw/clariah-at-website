@@ -13,9 +13,13 @@ const { image } = Astro.props;
 <div class="my-2 border-t-[5px] border-brand bg-white">
 	{
 		image != null ? (
-			/* @ts-expect-error Upstream type error. */
-			// prettier-ignore
-			<Image alt="" class="h-96 w-full object-cover" sizes="1088px" src={getImageImport(image)} widths={[1088]} />
+			<Image
+				alt=""
+				class="h-96 w-full object-cover"
+				sizes="1088px"
+				src={getImageImport(image)}
+				widths={[1088]}
+			/>
 		) : null
 	}
 	<div class="grid gap-y-4 px-4 pb-12 pt-8 xs:px-8">

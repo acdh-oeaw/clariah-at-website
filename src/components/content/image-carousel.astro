@@ -101,7 +101,6 @@ const { t } = await createI18n((Astro.currentLocale as Locale | undefined) ?? de
 								aria-label={slide.title}
 								href={href}
 							>
-								{/* @ts-expect-error Upstream type error. */}
 								<Image
 									alt=""
 									class="size-full object-cover"
