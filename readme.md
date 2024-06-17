@@ -15,8 +15,12 @@ set required environment variables in `.env.local`:
 cp .env.local.example .env.local
 ```
 
-adjust environment variables in `.github/workflows/validate.yml` and
-`.github/workflows/build-deploy.yml`.
+also, set environment variables required by [validation](./.github/workflows/validate.yml) and
+[deployment](./.github/workflows/build-deploy.yml) github actions. use
+["variables"](https://github.com/acdh-oeaw/clariah-at-website/settings/variables/actions) for every
+environment variable prefixed with `PUBLIC_`, and
+["secrets"](https://github.com/acdh-oeaw/clariah-at-website/settings/secrets/actions) for all
+others.
 
 the default template accepts the following variables:
 
@@ -82,10 +86,12 @@ to the github repository).
   to the issue number. this should match the `PUBLIC_REDMINE_ID` variable in your `.env.local` file.
 - ensure required build args (prefixed with `PUBLIC_`) are referenced in both the
   [`Dockerfile`](./Dockerfile), as well as the [validation](./.github/workflows/validate.yml) and
-  [deployment](./.github/workflows/build-deploy.yml) pipelines, and set as github variables.
+  [deployment](./.github/workflows/build-deploy.yml) pipelines, and set as
+  [github variables](https://github.com/acdh-oeaw/clariah-at-website/settings/variables/actions).
 - ensure required runtime environment variables are referenced in the
   [validation](./.github/workflows/validate.yml) and
-  [deployment](./.github/workflows/build-deploy.yml) pipelines, and set as github secrets. github
+  [deployment](./.github/workflows/build-deploy.yml) pipelines, and set as
+  [github secrets](https://github.com/acdh-oeaw/clariah-at-website/settings/secrets/actions). github
   secrets need to be prefixed with `K8S_SECRET_` to be automatically copied to the runtime
   environment. in case you need secrets in the docker build context, you can
   [mount a secret in the Dockerfile](https://docs.docker.com/build/building/secrets/).

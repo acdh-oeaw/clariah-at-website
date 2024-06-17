@@ -1,0 +1,13 @@
+---
+import { defaultLocale } from "@/config/i18n.config";
+
+export const prerender = false;
+
+/**
+ * The typescript warning is about:
+ * @see https://github.com/withastro/language-tools/issues/476
+ */
+const locale = Astro.preferredLocale ?? defaultLocale;
+
+return Astro.redirect(`/${locale}/`, 307);
+---
