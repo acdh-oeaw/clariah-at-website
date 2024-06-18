@@ -1,114 +1,93 @@
 {
-	"hero": {
-		"title": "CLARIAH-AT",
-		"subtitle": "An open network facilitating the application of digital methods in the humanities and the development of relevant research infrastructures.",
-		"image": "/assets/content/de/index-page/hero/image.jpg"
-	},
-	"main": {
-		"sections": [
-			{
-				"discriminant": "carouselSection",
-				"value": {
-					"title": "Main",
-					"slides": [
-						{
-							"discriminant": "event",
-							"value": {
-								"title": "ACDH-CH Lecture 10.3",
-								"reference": "acdh-ch-lecture-10-3"
-							}
-						},
-						{
-							"discriminant": "event",
-							"value": {
-								"title": "Enhance Your Research Skills with SSH Open Marketplace: An Online Workshop for PhD Students",
-								"reference": "ssh-open-marketplace-online-workshop-for-phd-students"
-							}
-						},
-						{
-							"discriminant": "event",
-							"value": {
-								"title": "Transnational Research Infrastructure: A Journey Through CLARIN Knowledge Centres",
-								"reference": "transnational-research-infrastructure"
-							}
-						},
-						{
-							"discriminant": "event",
-							"value": {
-								"title": "Summer School \"Vom Archiv zum Algorithmus. Digital Humanities in der Praxis.\": Anmeldung ist geöffnet!",
-								"reference": "summer-school-registrations-open"
-							}
-						},
-						{
-							"discriminant": "news",
-							"value": {
-								"title": "CfP – Buchentwurf: \"Digital Translation History. Processing historical Data with new Methodologies.\"",
-								"reference": "cfp-book-proposal"
-							}
-						},
-						{
-							"discriminant": "page",
-							"value": {
-								"title": "Förderungen für Jungwissenschaftler*innen",
-								"reference": "funding-opportunities-for-junior-researcher"
-							}
-						}
-					]
-				}
-			},
-			{
-				"discriminant": "cardsSection",
-				"value": {
-					"title": "Über uns",
-					"variant": "fluid",
-					"cards": [
-						{
-							"discriminant": "page",
-							"value": {
-								"title": "Fördermöglichkeiten",
-								"reference": "funding-opportunities"
-							}
-						},
-						{
-							"discriminant": "page",
-							"value": {
-								"title": "Die CLARIAH-AT Arbeitsgruppen",
-								"reference": "the-clariah-at-working-groups"
-							}
-						},
-						{
-							"discriminant": "page",
-							"value": {
-								"title": "Über CLARIAH-AT",
-								"reference": "about-clariah-at"
-							}
-						}
-					]
-				}
-			},
-			{
-				"discriminant": "cardsSection",
-				"value": {
-					"title": "Aktuelles",
-					"variant": "fluid",
-					"cards": [
-						{
-							"discriminant": "page",
-							"value": {
-								"title": "Aktuelle Veranstaltungen",
-								"reference": "events"
-							}
-						},
-						{
-							"discriminant": "page",
-							"value": {
-								"title": "Aktuelles",
-								"reference": "news"
-							}
-						}
-					]
-				}
-			}
-		]
-	}
+  "hero": {
+    "title": "CLARIAH-AT",
+    "subtitle": "An open network facilitating the application of digital methods in the humanities and the development of relevant research infrastructures.",
+    "image": "/assets/content/de/index-page/hero/image.jpg"
+  },
+  "main": {
+    "sections": [
+      {
+        "discriminant": "carouselSection",
+        "value": {
+          "title": "Main",
+          "slides": [
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Call: Zweites Österreichisches Treffen zur Digitalen Linguistik",
+                "reference": "call-second-austrian-meeting-on-digital-linguistics"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "Summer School \"Vom Archiv zum Algorithmus. Digital Humanities in der Praxis.\": Anmeldung ist geöffnet!",
+                "reference": "summer-school-registrations-open"
+              }
+            },
+            {
+              "discriminant": "page",
+              "value": {
+                "title": "Förderungen für Jungwissenschaftler*innen",
+                "reference": "funding-opportunities-for-junior-researcher"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "discriminant": "cardsSection",
+        "value": {
+          "title": "Über uns",
+          "variant": "fluid",
+          "cards": [
+            {
+              "discriminant": "page",
+              "value": {
+                "title": "Fördermöglichkeiten",
+                "reference": "funding-opportunities"
+              }
+            },
+            {
+              "discriminant": "page",
+              "value": {
+                "title": "Die CLARIAH-AT Arbeitsgruppen",
+                "reference": "the-clariah-at-working-groups"
+              }
+            },
+            {
+              "discriminant": "page",
+              "value": {
+                "title": "Über CLARIAH-AT",
+                "reference": "about-clariah-at"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "discriminant": "cardsSection",
+        "value": {
+          "title": "Aktuelles",
+          "variant": "fluid",
+          "cards": [
+            {
+              "discriminant": "page",
+              "value": {
+                "title": "Aktuelle Veranstaltungen",
+                "reference": "events"
+              }
+            },
+            {
+              "discriminant": "page",
+              "value": {
+                "title": "Aktuelles",
+                "reference": "news"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
 }
