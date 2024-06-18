@@ -113,7 +113,7 @@
 	},
 	"pnpm": {
 		"overrides": {
-			"@keystatic/core": "0.5.18"
+			"@keystatic/core": "0.5.19"
 		}
 	},
 	"browserslist": {
