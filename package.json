@@ -111,6 +111,11 @@
 		"type-fest": "^4.20.1",
 		"typescript": "^5.4.5"
 	},
+	"pnpm": {
+		"overrides": {
+			"@keystatic/core": "0.5.18"
+		}
+	},
 	"browserslist": {
 		"development": [
 			"last 1 chrome version",
