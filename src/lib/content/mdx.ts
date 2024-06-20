@@ -1,10 +1,16 @@
-import { evaluate } from "@mdx-js/mdx";
+import { run } from "@mdx-js/mdx";
+import {
+	createFormatAwareProcessors,
+	type FormatAwareProcessors,
+} from "@mdx-js/mdx/internal-create-format-aware-processors";
 import * as runtime from "astro/jsx-runtime";
 import type { MDXModule } from "mdx/types";
 
 import type { Locale } from "@/config/i18n.config";
 import { createConfig as createMdxConfig } from "@/config/mdx.config";
 import { useMDXComponents } from "@/lib/content/components";
+
+const cache = new Map<Locale, FormatAwareProcessors>();
 
 interface MdxContent<T extends Record<string, unknown>> extends MDXModule {
 	/** Added by `remark-mdx-frontmatter`. */
@@ -17,11 +23,24 @@ export async function processMdx<T extends Record<string, unknown>>(
 ): Promise<MdxContent<T>> {
 	const config = await createMdxConfig(locale);
 
-	// @ts-expect-error Upstream type error.
-	return evaluate(code, {
-		...runtime,
-		...config,
-		elementAttributeNameCase: "html",
-		useMDXComponents,
-	});
+	if (!cache.has(locale)) {
+		cache.set(
+			locale,
+			createFormatAwareProcessors({
+				...config,
+				elementAttributeNameCase: "html",
+				format: "mdx",
+				outputFormat: "function-body",
+				providerImportSource: "#",
+			}),
+		);
+	}
+
+	// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+	const processor = cache.get(locale)!;
+
+	const file = await processor.process(code);
+
+	// @ts-expect-error Upstream type issue.
+	return run(file, { ...runtime, useMDXComponents });
 }
