@@ -14,7 +14,6 @@ WORKDIR /app
 USER node
 
 COPY --chown=node:node .npmrc package.json pnpm-lock.yaml ./
-RUN sed -i "s/use-node-version/# use-node-version/" .npmrc
 
 RUN pnpm fetch --prod
 RUN pnpm install --frozen-lockfile --ignore-scripts --offline --prod
@@ -25,7 +24,6 @@ FROM base as build
 RUN pnpm fetch --dev
 
 COPY --chown=node:node ./ ./
-RUN sed -i "s/use-node-version/# use-node-version/" .npmrc
 
 # astro assets cache
 COPY --chown=node:node ./node_modules/.astro ./node_modules/.astro
