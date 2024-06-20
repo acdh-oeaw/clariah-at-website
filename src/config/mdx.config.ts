@@ -12,6 +12,8 @@ import type { Options as TypographicOptions } from "retext-smartypants";
 
 import type { Locale } from "@/config/i18n.config";
 // import { config as syntaxHighlighterConfig } from "@/config/syntax-highlighter.config";
+// import { withMdxFootnotes } from "@/lib/content/footnotes";
+// import { withMdxTableOfContents, withTableOfContents } from "@/lib/content/table-of-contents";
 import { createI18n } from "@/lib/i18n";
 
 const cache = new Map<Locale, CompileOptions>();
@@ -52,7 +54,10 @@ export async function createConfig(locale: Locale) {
 			footnoteLabel: t("Mdx.Footnotes"),
 		},
 		rehypePlugins: [
+			// withMdxFootnotes,
 			withHeadingIds,
+			// withTableOfContents,
+			// withMdxTableOfContents,
 			// [withSyntaxHighlighter, syntaxHighlighterConfig],
 			withAssets,
 		],

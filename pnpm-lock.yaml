@@ -65,6 +65,15 @@ importers:
       date-fns:
         specifier: ^3.6.0
         version: 3.6.0
+      estree-util-value-to-estree:
+        specifier: ^3.1.1
+        version: 3.1.1
+      hast-util-heading-rank:
+        specifier: ^3.0.0
+        version: 3.0.0
+      hast-util-to-string:
+        specifier: ^3.0.0
+        version: 3.0.0
       lucide-react:
         specifier: ^0.395.0
         version: 0.395.0(react@18.3.1)
@@ -110,9 +119,15 @@ importers:
       shiki:
         specifier: ^1.7.0
         version: 1.7.0
+      unist-util-visit:
+        specifier: ^5.0.0
+        version: 5.0.0
       valibot:
         specifier: ^0.33.3
         version: 0.33.3
+      vfile:
+        specifier: ^6.0.1
+        version: 6.0.1
       vite:
         specifier: ^5.3.1
         version: 5.3.1(@types/node@20.14.6)
@@ -150,6 +165,9 @@ importers:
       '@playwright/test':
         specifier: ^1.44.1
         version: 1.44.1
+      '@types/hast':
+        specifier: ^3.0.4
+        version: 3.0.4
       '@types/mdx':
         specifier: ^2.0.13
         version: 2.0.13
@@ -195,6 +213,9 @@ importers:
       lint-staged:
         specifier: ^15.2.7
         version: 15.2.7
+      mdast-util-mdx-jsx:
+        specifier: ^3.1.2
+        version: 3.1.2
       npm-run-all2:
         specifier: ^6.2.0
         version: 6.2.0
