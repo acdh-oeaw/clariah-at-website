@@ -19,13 +19,6 @@
               }
             },
             {
-              "discriminant": "event",
-              "value": {
-                "title": "Summer School \"Vom Archiv zum Algorithmus. Digital Humanities in der Praxis.\": Registrations are open!",
-                "reference": "summer-school-registrations-open"
-              }
-            },
-            {
               "discriminant": "page",
               "value": {
                 "title": "Funding Opportunities for Junior Researchers",
