@@ -1,11 +1,11 @@
 ---
 title: Prototype of a Historical-Critical Online Edition based on the Estate
   Materials of Josef Maria Baernreither
-summary: "The project aims to investigate the feasibility of an RDF-based graph
-  model of a Historical-Critical Edition. "
-startDate: 2022-01-01
-endDate: 2022-01-01
-image: /assets/content/en/projects/prototype-historical-critical-online-edition-based-estate-materials-josef-maria-baernreither/hhsta_tagebuch_karton6_1913.jpg
+summary: The project aims to investigate the feasibility of an RDF-based graph
+  model of a Historical-Critical Edition.
+startDate: 2022-09-01
+endDate: 2024-03-31
+image: /assets/content/en/projects/prototype-historical-critical-online-edition-based-estate-materials-josef-maria-baernreither/image.png
 attachments: []
 links:
   - url: https://oesterreichische-geschichte.at/#/projekte
@@ -19,6 +19,12 @@ hostingOrganizations:
   - Uni Innsbruck - Institut für Geschichtswissenschaft u. Europäische Ethnologie
 
 ---
+**Project lead:** Kurt Scharr
+
+**Institution:** Department of History & European Ethnology, Kommission für neuere Geschichte Österreichs, University of Innsbruck
+
+**Project duration:** 01.09.2022 – 31.03.2024
+
 Joseph Maria Baernreither (1845–1925) was one of the leading politicians of the late phase of the Habsburg monarchy, who dealt intensively with both the social issues of the monarchy and the national problems of the multinational state.
 
 Baernreither recorded and reflected on his work in a diary (19 volumes). Based on these diaries from 1921 on, Baernreither wrote an edited version of the diaries entitled "Fragments of a Political Diary". These have survived for the period from 1897 to 1912 as typescripts in eight volumes. After his death, Josef Redlich and Oskar Mitis published excerpts from these "fragments".
@@ -28,3 +34,32 @@ As historians we have to deal therefor with three different text variants of Bae
 The project aims thus to investigate the feasibility of an RDF-based graph model of a Historical-Critical Edition. The goal is to express all information about the relations between text variants, which are encoded as strings in attribute values in the existing TEI markup, by RDF structure elements. This eliminates the need for string evaluation. Based on the scientific specifications, an ontology of the relation network is created, from which the instances of the individual connections are derived. If there are usable standard ontologies, these are used, otherwise a proprietary one is developed and combined with these. The use of the W3C standard Web Annotation Ontology ([https://www.w3.org/TR/annotation-vocab/](https://www.w3.org/TR/annotation-vocab/)) for modeling the connections will be investigated.
 
 In addition to this experimental part of the project, there is a conventional part, which includes the modified TEI markup of the full texts and the HTML pages generated from them using XSLT. In this way it links the project to the Commission projects already underway at ACDH-CH.
+
+**keywords:** digital edition, TEI, RDF
+
+***
+
+**(intermediary) Outcomes**
+
+The project was launched in September 2023. In the first few months, the focus was on selecting suitable sections of the diary for the project study and agreeing on the different annotation levels. The choice was made for the so-called diaries 7 and 8 as well as the corresponding passages in the so-called memoirs. Subsequently, these texts were transcribed and collated according to the agreed specifications.
+
+Once the textual basis was complete, the labelling of the texts began in accordance with the TEI and DTA specifications. At present, around half of the texts have been marked up, and for the various registers (persons, places, institutions, keywords) the markup has been completed, persistent identifiers (GND, GeoNames, Histogis) were determined and compiled.
+
+A repository was set up on Github to store the data ([https://github.com/KfNGOe/baernreither-data](https://github.com/KfNGOe/baernreither-data)).
+
+With regard to the technical implementation, the following work has been carried out so far:
+
+* Setup of a development environment: Github Repos, VisualStudio Code, NodeJS, GraphDB, JS Libraries, Github Actions, Git API, Gnd API, Wikidata API
+* JS scripts for converting TEI/XML data into RDF/TTL data using the example of diary 8 (AP 4)
+* SPARQL queries for connecting the RDF/TTL data of the texts with the RDF/TTL data of the annotations using the Web Annotation Vocabulary using the example of diary 8 and the register of persons (WP 5)
+* Start building a dummy page to visualise the entire workflow from the ingest of the TEI/XML data to the dissemination of the HTML data of the texts and annotations (WP 6, WP 8).
+
+**Links**
+
+GitHub Repository: [https://github.com/KfNGOe/baernreither-data](https://github.com/KfNGOe/baernreither-data)
+
+* Tagebuch 8.xml: [https://github.com/KfNGOe/baernreither-app/blob/main/results/Bae\_TB\_8.xml](https://github.com/KfNGOe/baernreither-app/blob/main/results/Bae_TB_8.xml)
+* Tagebuch 8.ttl: [https://github.com/KfNGOe/baernreither-app/blob/main/results/Bae\_TB\_8.ttl](https://github.com/KfNGOe/baernreither-app/blob/main/results/Bae_TB_8.ttl)
+* Personenregister.xlsx: [https://github.com/KfNGOe/baernreither-app/blob/main/results/Baernreither\_Personenregister\_2023.xlsx](https://github.com/KfNGOe/baernreither-app/blob/main/results/Baernreither_Personenregister_2023.xlsx)
+* Personenregister.ttl: [https://github.com/KfNGOe/baernreither-app/blob/main/results/personi.ttl](https://github.com/KfNGOe/baernreither-app/blob/main/results/personi.ttl)
+* Annotationsebene\_Personen.ttl: [https://github.com/KfNGOe/baernreither-app/blob/main/results/annoPersoni.ttl](https://github.com/KfNGOe/baernreither-app/blob/main/results/annoPersoni.ttl)
