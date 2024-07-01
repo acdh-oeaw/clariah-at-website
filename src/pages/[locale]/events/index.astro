@@ -22,14 +22,19 @@ export async function getStaticPaths() {
 				return compareDesc(a.entry.date, z.entry.date);
 			});
 
-			return { params: { locale }, props: { pages } };
+			const now = Date.now();
+			const index = pages.findIndex((page) => new Date(page.entry.date).getTime() < now);
+			const future = pages.slice(0, index);
+			const past = pages.slice(index);
+
+			return { params: { locale }, props: { pages, future, past } };
 		}),
 	);
 }
 
 const { locale } = Astro.params;
 
-const { pages } = Astro.props;
+const { pages, future, past } = Astro.props;
 
 const { t } = await createI18n(locale);
 
