@@ -12,6 +12,13 @@
           "title": "Main",
           "slides": [
             {
+              "discriminant": "event",
+              "value": {
+                "title": "CLARIAH-AT Roadshow",
+                "reference": "clariah-at-roadshow"
+              }
+            },
+            {
               "discriminant": "news",
               "value": {
                 "title": "Call: Zweites Österreichisches Treffen zur Digitalen Linguistik",
