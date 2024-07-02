@@ -1,30 +1,30 @@
 {
-	"name": "University of Innsbruck",
-	"href": "https://www.uibk.ac.at/en/",
-	"logo": "/assets/content/en/consortium/university-of-innsbruck/logo.png",
-	"institutions": [
-		{
-			"name": "Research Center Digital Humanities at the University of Innsbruck",
-			"href": "https://www.uibk.ac.at/forschung/profilbildung/digital_humanities.html.en",
-			"logo": "/assets/content/en/consortium/university-of-innsbruck/institutions/0/logo.png"
-		}
-	],
-	"people": [
-		{
-			"name": "Günter Mühlberger",
-			"image": "/assets/content/en/consortium/university-of-innsbruck/people/0/image.png"
-		},
-		{
-			"name": "Eva Pfanzelter",
-			"image": "/assets/content/en/consortium/university-of-innsbruck/people/1/image.png"
-		},
-		{
-			"name": "Ulrike Tanzer",
-			"image": "/assets/content/en/consortium/university-of-innsbruck/people/2/image.png"
-		},
-		{
-			"name": "Tamara Terbul",
-			"image": "/assets/content/en/consortium/university-of-innsbruck/people/3/image.png"
-		}
-	]
+  "name": "University of Innsbruck",
+  "href": "https://www.uibk.ac.at/en/",
+  "logo": "/assets/content/de/consortium/university-of-innsbruck/logo.png",
+  "institutions": [
+    {
+      "name": "Research Center Digital Humanities at the University of Innsbruck",
+      "href": "https://www.uibk.ac.at/forschung/profilbildung/digital_humanities.html.en",
+      "logo": "/assets/content/de/consortium/university-of-innsbruck/institutions/0/logo.png"
+    }
+  ],
+  "people": [
+    {
+      "name": "Günter Mühlberger",
+      "image": "/assets/content/de/consortium/university-of-innsbruck/people/0/image.png"
+    },
+    {
+      "name": "Eva Pfanzelter",
+      "image": "/assets/content/de/consortium/university-of-innsbruck/people/1/image.png"
+    },
+    {
+      "name": "Ulrike Tanzer",
+      "image": "/assets/content/de/consortium/university-of-innsbruck/people/2/image.png"
+    },
+    {
+      "name": "Tamara Terbul",
+      "image": "/assets/content/de/consortium/university-of-innsbruck/people/3/image.png"
+    }
+  ]
 }

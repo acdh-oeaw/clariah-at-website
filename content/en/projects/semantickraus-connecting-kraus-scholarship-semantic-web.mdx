@@ -1,9 +1,9 @@
 ---
 title: SemanticKraus – Connecting Kraus-Scholarship to the Semantic Web
 summary: A resource plattform and reference resource on Karl Kraus.
-startDate: 2022-01-01
-endDate: 2023-01-01
-image: /assets/content/en/projects/semantickraus-connecting-kraus-scholarship-semantic-web/logo_4_beschn.png
+startDate: 2022-10-01
+endDate: 2023-12-31
+image: /assets/content/en/projects/semantickraus-connecting-kraus-scholarship-semantic-web/image.png
 attachments: []
 links:
   - url: https://clariah.at/
@@ -14,10 +14,60 @@ hostingOrganizations:
   - ACDH-CH - Austrian Centre for Digital Humanities and Cultural Heritage
 
 ---
+**Project lead:** Dr. Bernhard Oberreither
+
+**Institution:** Austrian Centre for Digital Humanities & Cultural Heritage (ACDH-CH), Austrian Academy of Sciences (OeAW)
+
+**Project duration:** 1.10.2022 – 31.12.2023
+
 The Austrian satirist Karl Kraus shaped Viennese culture from the Fin de Siècle to the end of the First Republic and has had a lasting impact ever since; research on him – 'traditional' as well as digital – is rich and growing. This situation offers the opportunity to create a reference resource: a bibliographical and biographical source and at the same time a tool linking present and future online publications on Karl Kraus – as well as on the neighboring topics in this much researched, culturally fertile period.
 
 This resource will consist of a Linked Open Data (LOD) data set containing among other data a complete index of texts published in Die Fackel as the center of Kraus's work.
 
-Other data sets are to be added to respectively merged with and interlinked with this index of texts, most importantly: the index of persons of Die Fackel online, but also data deriving from other projects like Karl Kraus Rechtsakten and Karl Kraus 1933 – Dritte Walpurgisnacht. This way, the project makes use of existing, but so far mostly uncorrelated bibliographical and biographical data to serve the frequently expressed demand for open, reusable, and interlinked edition data.
+Other data sets are to be added to respectively merged with and interlinked with this index of texts, most importantly: the index of persons of [Die Fackel online](https://fackel.oeaw.ac.at/), but also data deriving from other projects like [Karl Kraus Rechtsakten](https://kraus.wienbibliothek.at/) and [Karl Kraus 1933 – Dritte Walpurgisnacht](https://kraus1933.ace.oeaw.ac.at/index.html). This way, the project makes use of existing, but so far mostly uncorrelated bibliographical and biographical data to serve the frequently expressed demand for open, reusable, and interlinked edition data.
 
 The data set will be ingested into a triple store and provided via a SPARQL endpoint as well as an interactive user interface. The result is both a research platform and a reference resource offering users the opportunity for manual exploration as well as automated data retrieval – thus ensuring the integration of Kraus research into the LOD Cloud.
+
+**Keywords:** Semantic Web, Edition Data, Linked Open Data (LOD)
+
+***
+
+**Outcomes**
+
+The data from the three initial projects ([die Fackel online](https://fackel.oeaw.ac.at/), [Karl Kraus Rechtsakten](https://kraus.wienbibliothek.at/) and [Karl Kraus 1933 – Dritte Walpurgisnacht](https://kraus1933.ace.oeaw.ac.at/index.html)) is now [freely accessible in the ResearchSpace-based web application](https://semantickraus.acdh.oeaw.ac.at). To this end, the data was first enriched; this primarily involved identifiers to identify content overlaps in the data sets, XML attributes and the creation of auxiliary XMLs for simplified further processing as well as the conversion of the text directory of the “Fackel” into a table, which was then subjected to an intensive correction and supplementation process. Once the data model had been created, which in part ran in parallel with the enrichment (and in terms of small details still in parallel with the conversion), the resulting enriched data could be converted (first into a .ttl, then into the .trig format); Python and XSL scripts were used for this. The data was subjected to thorough quality control over multiple iterations.
+
+The creation of a test data set (in .ttl format) with a minimal size was used in advance to develop the web application based on ResearchSpace from an early stage of the project on a local installation. The application then has been developed step by step in parallel with the database and was soon set up on an [ACDH-CH](/consortium/austrian-academy-of-sciences/) server. Subsequent to a ResearchSpace workshop, the corresponding development workflow soon evolved. By making the data quickly accessible in a UI, both data and UI templates could be alternately checked and improved. In addition, the upload to the triplestore underlying the ResearchSpace instance following each data update was automated over the course of the project.
+
+Since the turn of the year, the web application has been openly accessible online and offers 13 detailed views oriented to the respective entity class as well as a SPARQL interface and several subpages dedicated to the project, the data model and the data sources. The start page also offers a search function and links to some sample entities as ‘curated’ access to the data.
+
+The [project blog](https://howto.acdh.oeaw.ac.at/de/curriculum/semantickraus-a-blogpost-series) was launched in parallel with the project – despite a time delay (three of the planned five to six entries are currently online). The project was also presented at DH2023 (12-14 July 2023) as part of a poster presentation and at the “ACDH-CH Research Lunch” event series (14 November 2023).
+
+The ingest of the data into a long-term repository is currently being started and will include the converted source data itself, the data model, the data created within the project (in particular a catalogue of E55 types for categorizing various entities from the source data) as well as the ResearchSpace templates and the SPARQL queries they contain. The aim is to secure both the data and its accessibility in the long term.
+
+The work still pending at present concerns dissemination: the blog is to be finalised in the near future. After mainly theoretical and methodological aspects have been discussed so far, the use of Karma to create RDF data and the development of templates in ResearchSpace will be addressed in order to ensure the dissemination of the practical experience gained. The use of ResearchSpace was also tested and documented within the institute over the course of the project so that future projects with this technical foundation can be based on extended knowledge. In addition, the publication of an article that provides insights into the project and the methodological implications of such data transformations is planned for later this year.
+
+***
+
+* SemanticKraus online application: [https://semantickraus.acdh.oeaw.ac.at](https://semantickraus.acdh.oeaw.ac.at/)\
+  provides access to 16,600 personal data records as well as to the bibliographic data of 19,807 texts from the original projects; it also includes personal names within these texts as well as intertextual relationships between them. The data can be retrieved manually and via a SPARQL UI.
+
+- Converted data from the initial projects:
+
+  * [https://semantic-kraus.github.io/dw-data/](https://semantic-kraus.github.io/dw-data/)
+  * [https://semantic-kraus.github.io/fa-data/](https://semantic-kraus.github.io/fa-data/)
+  * [https://semantic-kraus.github.io/lk-data/](https://semantic-kraus.github.io/lk-data/)\
+    provides the most recent transformation of the project data as .ttl and .trig files, and the metadata as about.ttl.
+
+* data model: [https://github.com/semantic-kraus/sk\_general/blob/main/sk\_model.trig](https://github.com/semantic-kraus/sk_general/blob/main/sk_model.trig) \
+  The SemanticKraus data model as a .trig file. (This public repository also contains all other files created in the course of the project, which are valid beyond the individual initial projects).
+
+- [SemanticKraus – a Blogpost Series](https://howto.acdh.oeaw.ac.at/de/curriculum/semantickraus-a-blogpost-series)
+
+  * [Lesson 1: Make a plan, then don’t stick to it](https://howto.acdh.oeaw.ac.at/de/resource/posts/lesson-1-make-a-plan)
+  * [Lesson 2: Meet the data. Examples of data perspectivity, with some thoughts on shopping for groceries.](https://howto.acdh.oeaw.ac.at/de/resource/posts/lesson-2-meet-the-data)
+  * [Lesson 3: Ontology Re-Use or: The Virtues of Copy And Paste](https://howto.acdh.oeaw.ac.at/de/resource/posts/lesson-3-copy-and-paste)
+
+* DH2023 Project Poster: [https://github.com/semantic-kraus/sk\_general/blob/main/img/SemanticKraus\_DH2023\_Poster.pdf](https://github.com/semantic-kraus/sk_general/blob/main/img/SemanticKraus_DH2023_Poster.pdf) \
+  Via QR codes, the poster links to the entries on this website: [https://boberreither.github.io/dh2023/](https://boberreither.github.io/dh2023/) 
+
+- The RDF datasets are located in public github repositories: [https://github.com/semantic-kraus](https://github.com/semantic-kraus)

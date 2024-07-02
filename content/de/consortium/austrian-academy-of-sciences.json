@@ -1,38 +1,38 @@
 {
-	"name": "Austrian Academy of Sciences",
-	"href": "https://www.oeaw.ac.at/en/",
-	"logo": "/assets/content/en/consortium/austrian-academy-of-sciences/logo.png",
-	"institutions": [
-		{
-			"name": "Austrian Centre for Digital Humanities & Cultural Heritage (ACDH-CH)",
-			"href": "https://www.oeaw.ac.at/acdh",
-			"logo": "/assets/content/en/consortium/austrian-academy-of-sciences/institutions/0/logo.png"
-		}
-	],
-	"people": [
-		{
-			"name": "Karlheinz Mörth",
-			"image": "/assets/content/en/consortium/austrian-academy-of-sciences/people/0/image.png"
-		},
-		{
-			"name": "Matej Ďurčo",
-			"image": "/assets/content/en/consortium/austrian-academy-of-sciences/people/1/image.png"
-		},
-		{
-			"name": "Vera Maria Charvat",
-			"image": "/assets/content/en/consortium/austrian-academy-of-sciences/people/2/image.png"
-		},
-		{
-			"name": "Elisabeth Königshofer",
-			"image": "/assets/content/en/consortium/austrian-academy-of-sciences/people/3/image.png"
-		},
-		{
-			"name": "Tanja Wissik",
-			"image": "/assets/content/en/consortium/austrian-academy-of-sciences/people/4/image.png"
-		},
-		{
-			"name": "Anna Woldrich",
-			"image": "/assets/content/en/consortium/austrian-academy-of-sciences/people/5/image.png"
-		}
-	]
+  "name": "Austrian Academy of Sciences",
+  "href": "https://www.oeaw.ac.at/en/",
+  "logo": "/assets/content/de/consortium/austrian-academy-of-sciences/logo.png",
+  "institutions": [
+    {
+      "name": "Austrian Centre for Digital Humanities & Cultural Heritage (ACDH-CH)",
+      "href": "https://www.oeaw.ac.at/acdh",
+      "logo": "/assets/content/de/consortium/austrian-academy-of-sciences/institutions/0/logo.png"
+    }
+  ],
+  "people": [
+    {
+      "name": "Karlheinz Mörth",
+      "image": "/assets/content/de/consortium/austrian-academy-of-sciences/people/0/image.png"
+    },
+    {
+      "name": "Matej Ďurčo",
+      "image": "/assets/content/de/consortium/austrian-academy-of-sciences/people/1/image.png"
+    },
+    {
+      "name": "Vera Maria Charvat",
+      "image": "/assets/content/de/consortium/austrian-academy-of-sciences/people/2/image.png"
+    },
+    {
+      "name": "Elisabeth Königshofer",
+      "image": "/assets/content/de/consortium/austrian-academy-of-sciences/people/3/image.png"
+    },
+    {
+      "name": "Tanja Wissik",
+      "image": "/assets/content/de/consortium/austrian-academy-of-sciences/people/4/image.png"
+    },
+    {
+      "name": "Anna Woldrich",
+      "image": "/assets/content/de/consortium/austrian-academy-of-sciences/people/5/image.png"
+    }
+  ]
 }
