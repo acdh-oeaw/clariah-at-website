@@ -120,7 +120,8 @@ jobs:
 
   build-deploy:
     name: Build and deploy
-    if: ${{ always() && github.event_name == 'push' }}
+    # prettier-ignore
+    if: ${{ github.event_name == 'push' && (needs.validate.result == 'skipped' || needs.validate.result == 'success') }}
     needs: [validate]
     uses: ./.github/workflows/build-deploy.yml
     secrets: inherit

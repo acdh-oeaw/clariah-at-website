@@ -71,6 +71,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Ensure astro build artefacts folder exists
+        run: mkdir -p node_modules/.astro
+
       - name: Cache astro build artefacts
         uses: actions/cache@v4
         with:
