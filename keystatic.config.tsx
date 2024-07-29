@@ -18,16 +18,6 @@ import { env } from "@/config/env.config";
 import type { Locale } from "@/config/i18n.config";
 import { getCollectionName } from "@/lib/content/get-collection-name";
 import { useObjectUrl } from "@/lib/content/use-object-url";
-import { cn } from "@/lib/styles";
-
-export const gridVariants = {
-	"two-columns": "grid-cols-2",
-	"three-columns": "grid-cols-3",
-	"four-columns": "grid-cols-4",
-	"one-two-columns": "grid-cols-[1fr_2fr]",
-	"one-three-columns": "grid-cols-[1fr_3fr]",
-	"one-four-columns": "grid-cols-[1fr_4fr]",
-};
 
 function createCollection<T extends Record<string, ComponentSchema>, U extends string>(
 	path: `/${string}/`,
@@ -88,25 +78,32 @@ function createComponents(
 				maxSize: fields.number({
 					label: "Max image size in pixels",
 					validation: { isRequired: true },
-					defaultValue: 180
+					defaultValue: 180,
 				}),
 				variant: fields.select({
 					label: "Variant",
 					options: [
-						{ label: "Rounded", value: "rounded"},
-						{ label: "Square", value: "square"},
+						{ label: "Rounded", value: "rounded" },
+						{ label: "Square", value: "square" },
 					],
-					defaultValue: "rounded"
-				})
+					defaultValue: "rounded",
+				}),
 			},
 			ContentView(props) {
 				const contentType = props.value.href?.extension === "svg" ? "image/svg+xml" : undefined;
 				const url = useObjectUrl(props.value.href?.data ?? null, contentType);
 
 				return (
-					<NotEditable>
-						<img alt="" src={url ?? undefined} />
-					</NotEditable>
+					<figure>
+						<NotEditable>
+							<img
+								alt=""
+								src={url ?? undefined}
+								style={{ aspectRatio: 1, margin: 0, maxWidth: `${String(props.value.maxSize)}px`, width: "100%" }}
+							/>
+						</NotEditable>
+						<figcaption>{props.children}</figcaption>
+					</figure>
 				);
 			},
 		}),
@@ -229,11 +226,25 @@ function createComponents(
 				}),
 			},
 			ContentView(props) {
+				const variants = {
+					"two-columns": { gridTemplateColumns: "repeat(2, minmax(0, 1fr))" },
+					"three-columns": { gridTemplateColumns: "repeat(3, minmax(0, 1fr))" },
+					"four-columns": { gridTemplateColumns: "repeat(4, minmax(0, 1fr))" },
+					"one-two-columns": { gridTemplateColumns: "minmax(0, 1fr) minmax(0, 2fr)" },
+					"one-three-columns": { gridTemplateColumns: "minmax(0, 1fr) minmax(0, 3fr)" },
+					"one-four-columns": { gridTemplateColumns: "minmax(0, 1fr) minmax(0, 4fr)" },
+				};
+
 				return (
-					<div className={cn(gridVariants[props.value.variant], "grid content-start gap-8")}>
+					<div style={{
+						display: "grid",
+						gap: 32,
+						alignContent: "start",
+						...variants[props.value.variant],
+					}}>
 						{props.children}
 					</div>
-				)
+				);
 			},
 		}),
 		GridItem: wrapper({

@@ -17,7 +17,7 @@ const { alt, href, maxSize, variant } = Astro.props;
 		class="aspect-square w-full"
 		class:list={variant === "rounded" ? "rounded" : undefined}
 		src={href}
-		style={{ margin: 0, maxWidth: maxSize + "px" }}
+		style={{ margin: 0, maxWidth: `${String(maxSize)}px` }}
 	/>
 	<figcaption class="text-md text-[--tw-prose-body]">
 		<slot />
