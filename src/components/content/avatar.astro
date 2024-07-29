@@ -2,17 +2,24 @@
 import Img from "@/components/content/img.astro";
 
 interface Props {
-	image: string;
+	alt?: string;
+	href: string;
 	maxSize: number;
 	variant: "rounded" | "square";
 }
 
-const { image, maxSize, variant } = Astro.props;
+const { alt, href, maxSize, variant } = Astro.props;
 ---
 
-<Img
-	class="aspect-square w-full"
-	class:list={variant === "rounded" ? "rounded" : undefined}
-	src={image}
-	style={{ margin: 0, maxWidth: maxSize + "px" }}
-/>
+<figure>
+	<Img
+		alt={alt}
+		class="aspect-square w-full"
+		class:list={variant === "rounded" ? "rounded" : undefined}
+		src={href}
+		style={{ margin: 0, maxWidth: maxSize + "px" }}
+	/>
+	<figcaption class="text-md text-[--tw-prose-body]">
+		<slot />
+	</figcaption>
+</figure>

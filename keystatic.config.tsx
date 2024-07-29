@@ -76,14 +76,22 @@ function createComponents(
 			description: "An avatar component.",
 			icon: <InfoIcon />,
 			schema: {
-				image: fields.image({
+				href: fields.image({
 					label: "Image",
 					...createAssetPaths(assetPath),
 					validation: { isRequired: true },
 				}),
+				alt: fields.text({
+					label: "Image description for screen readers",
+					// validation: { isRequired: false },
+				}),
+				caption: fields.text({
+					label: "Caption",
+					// validation: { isRequired: false },
+				}),
 				maxSize: fields.number({
-					label: "Max image size",
-					validation: { isRequired: false },
+					label: "Max image size in pixels",
+					validation: { isRequired: true },
 					defaultValue: 180
 				}),
 				variant: fields.select({
@@ -96,8 +104,8 @@ function createComponents(
 				})
 			},
 			ContentView(props) {
-				const contentType = props.value.image?.extension === "svg" ? "image/svg+xml" : undefined;
-				const url = useObjectUrl(props.value.image?.data ?? null, contentType);
+				const contentType = props.value.href?.extension === "svg" ? "image/svg+xml" : undefined;
+				const url = useObjectUrl(props.value.href?.data ?? null, contentType);
 
 				return (
 					<NotEditable>
