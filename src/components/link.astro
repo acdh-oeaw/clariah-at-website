@@ -11,7 +11,7 @@ interface Props extends HTMLAttributes<"a"> {
 const { href, locale, ...rest } = Astro.props;
 
 const localisedHref =
-	typeof href === "string" && href.startsWith("/")
+	typeof href === "string" && href.startsWith("/") && !href.startsWith("/assets/")
 		? "/" + (locale ?? Astro.currentLocale ?? defaultLocale) + ensureTrailingSlash(href)
 		: href;
 ---
