@@ -71,7 +71,7 @@ function createComponents(
 	>,
 ) {
 	const allComponents = {
-		Avatar: block({
+		Avatar: wrapper({
 			label: "Avatar",
 			description: "An avatar component.",
 			icon: <InfoIcon />,
@@ -83,10 +83,6 @@ function createComponents(
 				}),
 				alt: fields.text({
 					label: "Image description for screen readers",
-					// validation: { isRequired: false },
-				}),
-				caption: fields.text({
-					label: "Caption",
 					// validation: { isRequired: false },
 				}),
 				maxSize: fields.number({
