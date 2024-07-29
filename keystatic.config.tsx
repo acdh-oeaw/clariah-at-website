@@ -18,6 +18,16 @@ import { env } from "@/config/env.config";
 import type { Locale } from "@/config/i18n.config";
 import { getCollectionName } from "@/lib/content/get-collection-name";
 import { useObjectUrl } from "@/lib/content/use-object-url";
+import { cn } from "@/lib/styles";
+
+export const gridVariants = {
+	"two-columns": "grid-cols-2",
+	"three-columns": "grid-cols-3",
+	"four-columns": "grid-cols-4",
+	"one-two-columns": "grid-cols-[1fr_2fr]",
+	"one-three-columns": "grid-cols-[1fr_3fr]",
+	"one-four-columns": "grid-cols-[1fr_4fr]",
+};
 
 function createCollection<T extends Record<string, ComponentSchema>, U extends string>(
 	path: `/${string}/`,
@@ -213,6 +223,13 @@ function createComponents(
 					],
 					defaultValue: "two-columns",
 				}),
+			},
+			ContentView(props) {
+				return (
+					<div className={cn(gridVariants[props.value.variant], "grid content-start gap-8")}>
+						{props.children}
+					</div>
+				)
 			},
 		}),
 		GridItem: wrapper({
