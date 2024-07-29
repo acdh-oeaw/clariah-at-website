@@ -2,6 +2,7 @@
 
 import type { MDXComponents } from "mdx/types";
 
+import Avatar from "@/components/content/avatar.astro";
 import Callout from "@/components/content/callout.astro";
 import Download from "@/components/content/download.astro";
 import DownloadButton from "@/components/content/download-button.astro";
@@ -17,6 +18,7 @@ export function useMDXComponents(): MDXComponents {
 	return {
 		// @ts-expect-error It's fine.
 		a: Link,
+		Avatar,
 		Callout,
 		Download,
 		DownloadButton,

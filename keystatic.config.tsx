@@ -61,6 +61,41 @@ function createComponents(
 	>,
 ) {
 	const allComponents = {
+		Avatar: block({
+			label: "Avatar",
+			description: "An avatar component.",
+			icon: <InfoIcon />,
+			schema: {
+				image: fields.image({
+					label: "Image",
+					...createAssetPaths(assetPath),
+					validation: { isRequired: true },
+				}),
+				maxSize: fields.number({
+					label: "Max image size",
+					validation: { isRequired: false },
+					defaultValue: 180
+				}),
+				variant: fields.select({
+					label: "Variant",
+					options: [
+						{ label: "Rounded", value: "rounded"},
+						{ label: "Square", value: "square"},
+					],
+					defaultValue: "rounded"
+				})
+			},
+			ContentView(props) {
+				const contentType = props.value.image?.extension === "svg" ? "image/svg+xml" : undefined;
+				const url = useObjectUrl(props.value.image?.data ?? null, contentType);
+
+				return (
+					<NotEditable>
+						<img alt="" src={url ?? undefined} />
+					</NotEditable>
+				);
+			},
+		}),
 		Callout: wrapper({
 			label: "Callout",
 			description: "Additional information.",
