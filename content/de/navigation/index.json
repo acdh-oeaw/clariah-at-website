@@ -44,18 +44,10 @@
       }
     },
     {
-      "discriminant": "menu",
+      "discriminant": "page",
       "value": {
         "label": "Über uns",
-        "links": [
-          {
-            "discriminant": "page",
-            "value": {
-              "label": "CLARIAH-AT",
-              "reference": "about-clariah-at"
-            }
-          }
-        ]
+        "reference": "about-clariah-at"
       }
     }
   ]
