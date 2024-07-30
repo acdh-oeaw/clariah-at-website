@@ -58,13 +58,6 @@
           {
             "discriminant": "page",
             "value": {
-              "label": "Consortium",
-              "reference": "consortium"
-            }
-          },
-          {
-            "discriminant": "page",
-            "value": {
               "label": "Working Groups",
               "reference": "the-clariah-at-working-groups"
             }
