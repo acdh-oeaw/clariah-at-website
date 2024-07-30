@@ -436,18 +436,27 @@ const collections = {
 						validation: { isRequired: true },
 					},
 				}),
-				shortTitle: fields.text({
-					label: "Short title",
-					// validation: { isRequired: false },
-				}),
 				date: fields.date({
-					label: "Date",
+					label: "Publication date",
 					validation: { isRequired: true },
+					defaultValue: { kind: "today" },
 				}),
 				image: fields.image({
 					label: "Image",
 					...createAssetPaths(assetPath),
 					validation: { isRequired: true },
+				}),
+				eventDate: fields.date({
+					label: "Event date",
+					// validation: { isRequired: true },
+				}),
+				eventLocation: fields.text({
+					label: "Event location",
+					// validation: { isRequired: true },
+				}),
+				shortTitle: fields.text({
+					label: "Summary title",
+					// validation: { isRequired: false },
 				}),
 				summary: fields.text({
 					label: "Summary",
@@ -480,18 +489,19 @@ const collections = {
 						validation: { isRequired: true },
 					},
 				}),
-				shortTitle: fields.text({
-					label: "Short title",
-					// validation: { isRequired: false },
-				}),
 				date: fields.date({
-					label: "Date",
+					label: "Publication date",
 					validation: { isRequired: true },
+					defaultValue: { kind: "today" },
 				}),
 				image: fields.image({
 					label: "Image",
 					...createAssetPaths(assetPath),
 					validation: { isRequired: true },
+				}),
+				shortTitle: fields.text({
+					label: "Summary title",
+					// validation: { isRequired: false },
 				}),
 				summary: fields.text({
 					label: "Summary",
@@ -525,7 +535,7 @@ const collections = {
 					},
 				}),
 				shortTitle: fields.text({
-					label: "Short title",
+					label: "Summary title",
 					// validation: { isRequired: false },
 				}),
 				summary: fields.text({
