@@ -77,8 +77,7 @@ function createComponents(
 				}),
 				maxSize: fields.number({
 					label: "Max image size in pixels",
-					validation: { isRequired: true },
-					defaultValue: 180,
+					// validation: { isRequired: false },
 				}),
 				variant: fields.select({
 					label: "Variant",
