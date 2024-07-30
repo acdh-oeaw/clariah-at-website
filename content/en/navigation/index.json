@@ -54,13 +54,6 @@
               "label": "CLARIAH-AT",
               "reference": "about-clariah-at"
             }
-          },
-          {
-            "discriminant": "page",
-            "value": {
-              "label": "Working Groups",
-              "reference": "the-clariah-at-working-groups"
-            }
           }
         ]
       }
