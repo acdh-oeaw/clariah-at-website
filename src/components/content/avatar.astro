@@ -4,11 +4,11 @@ import Img from "@/components/content/img.astro";
 interface Props {
 	alt?: string;
 	href: string;
-	maxSize: number;
+	maxSize?: number;
 	variant: "rounded" | "square";
 }
 
-const { alt, href, maxSize, variant } = Astro.props;
+const { alt = "", href, maxSize, variant } = Astro.props;
 ---
 
 <figure>
@@ -17,7 +17,7 @@ const { alt, href, maxSize, variant } = Astro.props;
 		class="aspect-square w-full"
 		class:list={variant === "rounded" ? "rounded" : undefined}
 		src={href}
-		style={{ margin: 0, maxWidth: `${String(maxSize)}px` }}
+		style={{ margin: 0, maxWidth: maxSize != null ? `${String(maxSize)}px` : undefined }}
 	/>
 	<figcaption class="text-md text-[--tw-prose-body]">
 		<slot />
