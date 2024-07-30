@@ -51,13 +51,6 @@
             {
               "discriminant": "page",
               "value": {
-                "title": "Die CLARIAH-AT Arbeitsgruppen",
-                "reference": "the-clariah-at-working-groups"
-              }
-            },
-            {
-              "discriminant": "page",
-              "value": {
                 "title": "Über CLARIAH-AT",
                 "reference": "about-clariah-at"
               }
