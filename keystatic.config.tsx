@@ -99,7 +99,12 @@ function createComponents(
 							<img
 								alt=""
 								src={url ?? undefined}
-								style={{ aspectRatio: 1, margin: 0, maxWidth: `${String(props.value.maxSize)}px`, width: "100%" }}
+								style={{
+									aspectRatio: 1,
+									margin: 0,
+									maxWidth: `${String(props.value.maxSize)}px`,
+									width: "100%",
+								}}
 							/>
 						</NotEditable>
 						<figcaption>{props.children}</figcaption>
@@ -236,12 +241,14 @@ function createComponents(
 				};
 
 				return (
-					<div style={{
-						display: "grid",
-						gap: 32,
-						alignContent: "start",
-						...variants[props.value.variant],
-					}}>
+					<div
+						style={{
+							display: "grid",
+							gap: 32,
+							alignContent: "start",
+							...variants[props.value.variant],
+						}}
+					>
 						{props.children}
 					</div>
 				);
