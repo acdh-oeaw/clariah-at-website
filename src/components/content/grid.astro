@@ -12,12 +12,12 @@ interface Props {
 const { variant } = Astro.props;
 
 const variants: Record<Props["variant"], string> = {
-	"two-columns": "grid-cols-2",
-	"three-columns": "grid-cols-3",
-	"four-columns": "grid-cols-4",
-	"one-two-columns": "grid-cols-[1fr_2fr]",
-	"one-three-columns": "grid-cols-[1fr_3fr]",
-	"one-four-columns": "grid-cols-[1fr_4fr]",
+	"two-columns": "sm:grid-cols-2",
+	"three-columns": "sm:grid-cols-3",
+	"four-columns": "sm:grid-cols-4",
+	"one-two-columns": "sm:grid-cols-[1fr_2fr]",
+	"one-three-columns": "sm:grid-cols-[1fr_3fr]",
+	"one-four-columns": "sm:grid-cols-[1fr_4fr]",
 };
 ---
 
