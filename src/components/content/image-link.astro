@@ -1,0 +1,18 @@
+---
+import Figure from "@/components/content/figure.astro";
+import Link from "@/components/link.astro";
+
+interface Props {
+	href: string;
+	src: string;
+	alt?: string;
+	text: string;
+}
+
+const { alt, href, src, text } = Astro.props;
+---
+
+<Link href={href}>
+	<span class="sr-only">{text}</span>
+	<Figure alt={alt} href={src} />
+</Link>

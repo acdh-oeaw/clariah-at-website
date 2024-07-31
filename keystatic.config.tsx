@@ -260,6 +260,47 @@ function createComponents(
 			forSpecificLocations: true,
 			schema: {},
 		}),
+		ImageLink: wrapper({
+			label: "Image link",
+			description: "An image-only link.",
+			icon: <LinkIcon />,
+			schema: {
+				href: fields.url({
+					label: "URL",
+					validation: { isRequired:true }
+				}),
+				src: fields.image({
+					label: "Image",
+					...createAssetPaths(assetPath),
+					validation: { isRequired: true }
+				}),
+				alt: fields.text({
+					label: "Image description for screen readers",
+					// validation: { isRequired: false },
+				}),
+				text: fields.text({
+					label: "Link text (invisible)",
+					validation: { isRequired: true }
+				})
+			},
+			ContentView(props) {
+				const contentType = props.value.src?.extension === "svg" ? "image/svg+xml" : undefined;
+				const url = useObjectUrl(props.value.src?.data ?? null, contentType);
+
+				return (
+					<figure>
+						<NotEditable>
+							<img
+								alt={props.value.alt}
+								src={url ?? undefined}
+
+							/>
+						</NotEditable>
+						<figcaption>{props.children}</figcaption>
+					</figure>
+				)
+			}
+		}),
 		LinkButton: block({
 			label: "Link button",
 			description: "A link which looks like a button.",
@@ -882,6 +923,48 @@ const singletons = {
 															},
 															{
 																label: "Page card",
+															},
+														),
+													},
+													email: {
+														label: "Mailing list card",
+														itemLabel(props) {
+															return props.fields.title.value;
+														},
+														schema: fields.object(
+															{
+																title: fields.text({
+																	label: "Title",
+																	validation: { isRequired: true },
+																}),
+																image: fields.image({
+																	label: "Image",
+																	...createAssetPaths(assetPath),
+																	// validation: { isRequired: false },
+																}),
+																summary: fields.text({
+																	label: "Summary",
+																	multiline: true,
+																	validation: { isRequired: true },
+																}),
+																link: fields.object(
+																	{
+																		label: fields.text({
+																			label: "Label",
+																			validation: { isRequired: true },
+																		}),
+																		href: fields.url({
+																			label: "URL",
+																			validation: { isRequired: true },
+																		}),
+																	},
+																	{
+																		label: "Link",
+																	},
+																),
+															},
+															{
+																label: "Custom card",
 															},
 														),
 													},

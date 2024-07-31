@@ -9,6 +9,7 @@ import DownloadButton from "@/components/content/download-button.astro";
 import Figure from "@/components/content/figure.astro";
 import Grid from "@/components/content/grid.astro";
 import GridItem from "@/components/content/grid-item.astro";
+import ImageLink from "@/components/content/image-link.astro";
 import Img from "@/components/content/img.astro";
 import LinkButton from "@/components/content/link-button.astro";
 import Video from "@/components/content/video.astro";
@@ -27,6 +28,7 @@ export function useMDXComponents(): MDXComponents {
 		GridItem,
 		// @ts-expect-error It's fine.
 		img: Img,
+		ImageLink,
 		LinkButton,
 		Video,
 	};

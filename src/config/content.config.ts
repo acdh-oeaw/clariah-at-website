@@ -1,4 +1,4 @@
-import slugify from "@sindresorhus/slugify";
+// import slugify from "@sindresorhus/slugify";
 
 import { env } from "@/config/env.config";
 
@@ -6,9 +6,9 @@ export function createAssetPaths(segment: `/${string}/`) {
 	return {
 		directory: `./public/assets${segment}`,
 		publicPath: `/assets${segment}`,
-		transformFilename(originalFilename: string) {
-			return slugify(originalFilename);
-		},
+		// transformFilename(originalFilename: string) {
+		// 	return slugify(originalFilename);
+		// },
 	};
 }
 
