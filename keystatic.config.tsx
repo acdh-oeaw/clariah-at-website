@@ -267,12 +267,12 @@ function createComponents(
 			schema: {
 				href: fields.url({
 					label: "URL",
-					validation: { isRequired:true }
+					validation: { isRequired: true },
 				}),
 				src: fields.image({
 					label: "Image",
 					...createAssetPaths(assetPath),
-					validation: { isRequired: true }
+					validation: { isRequired: true },
 				}),
 				alt: fields.text({
 					label: "Image description for screen readers",
@@ -280,8 +280,8 @@ function createComponents(
 				}),
 				text: fields.text({
 					label: "Link text (invisible)",
-					validation: { isRequired: true }
-				})
+					validation: { isRequired: true },
+				}),
 			},
 			ContentView(props) {
 				const contentType = props.value.src?.extension === "svg" ? "image/svg+xml" : undefined;
@@ -290,16 +290,12 @@ function createComponents(
 				return (
 					<figure>
 						<NotEditable>
-							<img
-								alt={props.value.alt}
-								src={url ?? undefined}
-
-							/>
+							<img alt={props.value.alt} src={url ?? undefined} />
 						</NotEditable>
 						<figcaption>{props.children}</figcaption>
 					</figure>
-				)
-			}
+				);
+			},
 		}),
 		LinkButton: block({
 			label: "Link button",
