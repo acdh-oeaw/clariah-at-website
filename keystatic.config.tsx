@@ -9,8 +9,16 @@ import {
 	type Singleton,
 	singleton,
 } from "@keystatic/core";
-import { block, mark, repeating, wrapper } from "@keystatic/core/content-components";
-import { DownloadIcon, GridIcon, ImageIcon, InfoIcon, LinkIcon, VideoIcon } from "lucide-react";
+import { block, inline, mark, repeating, wrapper } from "@keystatic/core/content-components";
+import {
+	DownloadIcon,
+	GridIcon,
+	HeadingIcon,
+	ImageIcon,
+	InfoIcon,
+	LinkIcon,
+	VideoIcon,
+} from "lucide-react";
 
 import { Logo } from "@/components/logo";
 import { createAssetPaths, createPreviewUrl } from "@/config/content.config";
@@ -56,6 +64,7 @@ function createComponents(
 		| "Figure"
 		| "Grid"
 		| "GridItem"
+		| "HeadingId"
 		| "LinkButton"
 		| "Video"
 	>,
@@ -259,6 +268,20 @@ function createComponents(
 			icon: <GridIcon />,
 			forSpecificLocations: true,
 			schema: {},
+		}),
+		HeadingId: inline({
+			label: "Heading ID",
+			description: "A custom heading id as a link target.",
+			icon: <HeadingIcon />,
+			schema: {
+				id: fields.text({
+					label: "Identifier",
+					validation: { isRequired: true },
+				}),
+			},
+			ContentView(props) {
+				return <span className="opacity-50">#{props.value.id}</span>;
+			},
 		}),
 		ImageLink: wrapper({
 			label: "Image link",

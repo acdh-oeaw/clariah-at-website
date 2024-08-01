@@ -12,6 +12,7 @@ import type { Options as TypographicOptions } from "retext-smartypants";
 
 import type { Locale } from "@/config/i18n.config";
 // import { config as syntaxHighlighterConfig } from "@/config/syntax-highlighter.config";
+import { withCustomHeadingIds } from "@/lib/content/custom-heading-ids";
 // import { withMdxFootnotes } from "@/lib/content/footnotes";
 // import { withMdxTableOfContents, withTableOfContents } from "@/lib/content/table-of-contents";
 import { createI18n } from "@/lib/i18n";
@@ -55,6 +56,7 @@ export async function createConfig(locale: Locale) {
 		},
 		rehypePlugins: [
 			// withMdxFootnotes,
+			withCustomHeadingIds,
 			withHeadingIds,
 			// withTableOfContents,
 			// withMdxTableOfContents,
