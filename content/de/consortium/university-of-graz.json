@@ -4,9 +4,9 @@
   "logo": "/assets/content/de/consortium/university-of-graz/logo.png",
   "institutions": [
     {
-      "name": "Centre for Information Modelling",
-      "href": "https://informationsmodellierung.uni-graz.at/en/",
-      "logo": "/assets/content/de/consortium/university-of-graz/institutions/0/logo.png"
+      "name": "Department of Digital Humanities",
+      "href": "https://digital-humanities.uni-graz.at/de/",
+      "logo": "/assets/content/de/consortium/university-of-graz/institutions/0/logo.jpg"
     },
     {
       "name": "University of Graz Library",
@@ -52,7 +52,7 @@
       "image": "/assets/content/de/consortium/university-of-graz/people/8/image.png"
     },
     {
-      "name": "Dr Chiara Zuanni",
+      "name": "Chiara Zuanni",
       "image": "/assets/content/de/consortium/university-of-graz/people/9/image.png"
     }
   ]
