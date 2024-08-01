@@ -11,6 +11,7 @@ import {
 } from "@keystatic/core";
 import { block, inline, mark, repeating, wrapper } from "@keystatic/core/content-components";
 import {
+	BookTextIcon,
 	DownloadIcon,
 	GridIcon,
 	HeadingIcon,
@@ -26,6 +27,8 @@ import { env } from "@/config/env.config";
 import type { Locale } from "@/config/i18n.config";
 import { getCollectionName } from "@/lib/content/get-collection-name";
 import { useObjectUrl } from "@/lib/content/use-object-url";
+
+const headingLevels = [2, 3, 4, 5] as const;
 
 function createCollection<T extends Record<string, ComponentSchema>, U extends string>(
 	path: `/${string}/`,
@@ -57,6 +60,7 @@ function createSingleton<T extends Record<string, ComponentSchema>>(
 
 function createComponents(
 	assetPath: `/${string}/`,
+	locale: Locale,
 	components?: Array<
 		| "Callout"
 		| "Download"
@@ -338,6 +342,41 @@ function createComponents(
 				return <NotEditable>{props.value.label}</NotEditable>;
 			},
 		}),
+		ResourceLink: mark({
+			label: "Resource link",
+			icon: <BookTextIcon />,
+			tag: "a",
+			schema: {
+				resource: fields.conditional(
+					fields.select({
+						label: "Collection",
+						options: [
+							{ label: "Events", value: "events" },
+							{ label: "News", value: "news" },
+							{ label: "Pages", value: "pages" },
+						],
+						defaultValue: "pages",
+					}),
+					{
+						events: fields.relationship({
+							label: "Event",
+							collection: getCollectionName("events", locale),
+							validation: { isRequired: true },
+						}),
+						news: fields.relationship({
+							label: "News",
+							collection: getCollectionName("news", locale),
+							validation: { isRequired: true },
+						}),
+						pages: fields.relationship({
+							label: "Page",
+							collection: getCollectionName("pages", locale),
+							validation: { isRequired: true },
+						}),
+					},
+				),
+			},
+		}),
 		Video: block({
 			label: "Video",
 			description: "An embedded video.",
@@ -418,6 +457,7 @@ const collections = {
 				description: fields.mdx({
 					label: "Description",
 					options: {
+						heading: false,
 						image: createAssetPaths(assetPath),
 					},
 					components: {},
@@ -466,6 +506,7 @@ const collections = {
 							description: fields.mdx({
 								label: "Description",
 								options: {
+									heading: false,
 									image: createAssetPaths(assetPath),
 								},
 								components: {},
@@ -532,9 +573,10 @@ const collections = {
 				content: fields.mdx({
 					label: "Content",
 					options: {
+						heading: headingLevels,
 						image: createAssetPaths(assetPath),
 					},
-					components: createComponents(assetPath),
+					components: createComponents(assetPath, locale),
 				}),
 			},
 		});
@@ -577,9 +619,10 @@ const collections = {
 				content: fields.mdx({
 					label: "Content",
 					options: {
+						heading: headingLevels,
 						image: createAssetPaths(assetPath),
 					},
-					components: createComponents(assetPath),
+					components: createComponents(assetPath, locale),
 				}),
 			},
 		});
@@ -724,9 +767,10 @@ const collections = {
 				content: fields.mdx({
 					label: "Content",
 					options: {
+						heading: headingLevels,
 						image: createAssetPaths(assetPath),
 					},
-					components: createComponents(assetPath),
+					components: createComponents(assetPath, locale),
 				}),
 			},
 		});
@@ -760,9 +804,10 @@ const collections = {
 				content: fields.mdx({
 					label: "Content",
 					options: {
+						heading: headingLevels,
 						image: createAssetPaths(assetPath),
 					},
-					components: createComponents(assetPath),
+					components: createComponents(assetPath, locale),
 				}),
 			},
 		});
