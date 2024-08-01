@@ -12,7 +12,7 @@ import GridItem from "@/components/content/grid-item.astro";
 import ImageLink from "@/components/content/image-link.astro";
 import Img from "@/components/content/img.astro";
 import LinkButton from "@/components/content/link-button.astro";
-import ResourceLink from '@/components/content/resource-link.astro'
+import ResourceLink from "@/components/content/resource-link.astro";
 import Video from "@/components/content/video.astro";
 import Link from "@/components/link.astro";
 

@@ -284,7 +284,7 @@ function createComponents(
 				}),
 			},
 			ContentView(props) {
-				return <span className="opacity-50">#{props.value.id}</span>;
+				return <span style={{ opacity: 0.5 }}>#{props.value.id}</span>;
 			},
 		}),
 		ImageLink: wrapper({
