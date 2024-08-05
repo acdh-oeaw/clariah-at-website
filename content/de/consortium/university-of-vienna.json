@@ -1,20 +1,20 @@
 {
-	"name": "University of Vienna",
-	"href": "https://www.univie.ac.at/en/",
-	"logo": "/assets/content/en/consortium/university-of-vienna/logo.png",
-	"institutions": [],
-	"people": [
-		{
-			"name": "Tara Andrews",
-			"image": "/assets/content/en/consortium/university-of-vienna/people/0/image.jpg"
-		},
-		{
-			"name": "Andreas Baumann",
-			"image": "/assets/content/en/consortium/university-of-vienna/people/1/image.jpg"
-		},
-		{
-			"name": "Thomas Wallnig",
-			"image": "/assets/content/en/consortium/university-of-vienna/people/2/image.jpg"
-		}
-	]
+  "name": "University of Vienna",
+  "href": "https://www.univie.ac.at/en/",
+  "logo": "/assets/content/de/consortium/university-of-vienna/logo.png",
+  "institutions": [],
+  "people": [
+    {
+      "name": "Tara Andrews",
+      "image": "/assets/content/de/consortium/university-of-vienna/people/0/image.jpg"
+    },
+    {
+      "name": "Andreas Baumann",
+      "image": "/assets/content/de/consortium/university-of-vienna/people/1/image.jpg"
+    },
+    {
+      "name": "Thomas Wallnig",
+      "image": "/assets/content/de/consortium/university-of-vienna/people/2/image.jpg"
+    }
+  ]
 }
