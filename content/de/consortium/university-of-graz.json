@@ -1,15 +1,15 @@
 {
-  "name": "University of Graz",
+  "name": "Universität Graz",
   "href": "https://www.uni-graz.at/en/",
   "logo": "/assets/content/de/consortium/university-of-graz/logo.png",
   "institutions": [
     {
-      "name": "Department of Digital Humanities",
+      "name": "Institut für Digitale Geisteswissenschaften",
       "href": "https://digital-humanities.uni-graz.at/de/",
       "logo": "/assets/content/de/consortium/university-of-graz/institutions/0/logo.jpg"
     },
     {
-      "name": "University of Graz Library",
+      "name": "Universitätsbibliothek Graz",
       "href": "https://ub.uni-graz.at/en/",
       "logo": "/assets/content/de/consortium/university-of-graz/institutions/1/logo.png"
     }
