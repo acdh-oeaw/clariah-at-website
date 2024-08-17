@@ -25,4 +25,14 @@ test.describe("index page", () => {
 			expect(await getViolations()).toEqual([]);
 		}
 	});
+
+	// eslint-disable-next-line playwright/no-skipped-test
+	test.skip("should not have visible changes", async ({ createIndexPage }) => {
+		for (const locale of locales) {
+			const { indexPage } = await createIndexPage(locale);
+			await indexPage.goto();
+
+			await expect(indexPage.page).toHaveScreenshot();
+		}
+	});
 });
