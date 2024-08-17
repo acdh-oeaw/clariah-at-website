@@ -24,11 +24,6 @@ export default defineConfig({
 		mode: "standalone",
 	}),
 	base: env.PUBLIC_APP_BASE_PATH,
-	experimental: {
-		// actions: true,
-		contentCollectionCache: true,
-		rewriting: true,
-	},
 	i18n: {
 		defaultLocale,
 		locales: locales as Writable<typeof locales>,
