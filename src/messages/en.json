@@ -1,12 +1,4 @@
 {
-	"ColorSchemeSwitcher": {
-		"color-schemes": {
-			"dark": "Dark",
-			"light": "Light",
-			"system": "System"
-		},
-		"change": "Change color scheme"
-	},
 	"ConsortiumMemberPage": {
 		"institutions": "Institutions",
 		"people": "People"

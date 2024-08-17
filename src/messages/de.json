@@ -1,12 +1,4 @@
 {
-	"ColorSchemeSwitcher": {
-		"color-schemes": {
-			"dark": "Dunkel",
-			"light": "Hell",
-			"system": "System"
-		},
-		"change": "Farbschema ändern"
-	},
 	"ConsortiumMemberPage": {
 		"institutions": "Institutionen",
 		"people": "Personen"
