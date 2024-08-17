@@ -7,17 +7,6 @@
 		},
 		"change": "Farbschema ändern"
 	},
-	"ContactForm": {
-		"email": "Email-Adresse",
-		"message": "Nachricht",
-		"status": {
-			"invalid-input": "Ungültige Eingabe.",
-			"success": "Nachricht erfolgreich gesendet.",
-			"unknown-error": "Konnte Nachricht nicht senden."
-		},
-		"subject": "Betreff",
-		"submit": "Absenden"
-	},
 	"ConsortiumMemberPage": {
 		"institutions": "Institutionen",
 		"people": "Personen"
@@ -27,12 +16,6 @@
 			"title": "Consortium"
 		},
 		"title": "Consortium"
-	},
-	"ContactPage": {
-		"meta": {
-			"title": "Kontakt"
-		},
-		"title": "Kontakt"
 	},
 	"EventsPage": {
 		"meta": {

@@ -17,23 +17,6 @@
 		},
 		"title": "Consortium"
 	},
-	"ContactForm": {
-		"email": "Email address",
-		"message": "Message",
-		"status": {
-			"invalid-input": "Invalid input.",
-			"success": "Message sent successfully.",
-			"unknown-error": "Failed to send message."
-		},
-		"subject": "Subject",
-		"submit": "Send"
-	},
-	"ContactPage": {
-		"meta": {
-			"title": "Contact"
-		},
-		"title": "Contact"
-	},
 	"EventsPage": {
 		"meta": {
 			"title": "Events"

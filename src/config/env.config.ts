@@ -16,13 +16,6 @@ export const env = createEnv({
 	},
 	private(input) {
 		const Schema = v.object({
-			EMAIL_CONTACT_ADDRESS: v.optional(v.pipe(v.string(), v.email())),
-			EMAIL_SMTP_PORT: v.optional(
-				v.pipe(v.string(), v.transform(Number), v.number(), v.integer(), v.minValue(1)),
-			),
-			EMAIL_SMTP_SERVER: v.optional(v.pipe(v.string(), v.nonEmpty())),
-			EMAIL_SMTP_USERNAME: v.optional(v.pipe(v.string(), v.nonEmpty())),
-			EMAIL_SMTP_PASSWORD: v.optional(v.pipe(v.string(), v.nonEmpty())),
 			KEYSTATIC_GITHUB_CLIENT_ID: v.optional(v.pipe(v.string(), v.nonEmpty())),
 			KEYSTATIC_GITHUB_CLIENT_SECRET: v.optional(v.pipe(v.string(), v.nonEmpty())),
 			KEYSTATIC_SECRET: v.optional(v.pipe(v.string(), v.nonEmpty())),
