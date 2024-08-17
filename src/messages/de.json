@@ -43,10 +43,6 @@
 		"switch-locale": "Sprache wechseln",
 		"switch-locale-to": "Zu {locale} wechseln"
 	},
-	"Mdx": {
-		"FootnoteBackLabel": "Zurück zur Referenz {reference}",
-		"Footnotes": "Fußnoten"
-	},
 	"MobileNavToggle": {
 		"label": "Navigationsmenü öffnen"
 	},
@@ -99,5 +95,9 @@
 			"home": "Startseite"
 		},
 		"navigation-primary": "Primär"
+	},
+	"mdx": {
+		"FootnoteBackLabel": "Zurück zur Referenz {reference}",
+		"Footnotes": "Fußnoten"
 	}
 }

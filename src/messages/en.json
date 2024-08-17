@@ -43,10 +43,6 @@
 		"switch-locale": "Switch locale",
 		"switch-locale-to": "Switch to {locale}"
 	},
-	"Mdx": {
-		"FootnoteBackLabel": "Back to reference {reference}",
-		"Footnotes": "Footnotes"
-	},
 	"MobileNavToggle": {
 		"label": "Open navigation menu"
 	},
@@ -99,5 +95,9 @@
 			"home": "Home"
 		},
 		"navigation-primary": "Primary"
+	},
+	"mdx": {
+		"FootnoteBackLabel": "Back to reference {reference}",
+		"Footnotes": "Footnotes"
 	}
 }

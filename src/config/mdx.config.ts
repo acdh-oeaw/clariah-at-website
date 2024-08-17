@@ -46,13 +46,13 @@ export async function createConfig(locale: Locale) {
 		],
 		remarkRehypeOptions: {
 			footnoteBackLabel(referenceIndex, rereferenceIndex) {
-				return t("Mdx.FootnoteBackLabel", {
+				return t("mdx.FootnoteBackLabel", {
 					reference:
 						String(referenceIndex + 1) +
 						(rereferenceIndex > 1 ? "-" + String(rereferenceIndex) : ""),
 				});
 			},
-			footnoteLabel: t("Mdx.Footnotes"),
+			footnoteLabel: t("mdx.Footnotes"),
 		},
 		rehypePlugins: [
 			// withMdxFootnotes,
