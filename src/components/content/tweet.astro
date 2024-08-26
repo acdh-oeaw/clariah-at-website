@@ -1,0 +1,11 @@
+---
+import StaticTweet from "astro-tweet";
+
+interface Props {
+	id: string;
+}
+
+const { id } = Astro.props;
+---
+
+<StaticTweet id={id} />

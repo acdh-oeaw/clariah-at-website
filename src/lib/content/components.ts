@@ -13,6 +13,7 @@ import ImageLink from "@/components/content/image-link.astro";
 import Img from "@/components/content/img.astro";
 import InternalLink from "@/components/content/internal-link.astro";
 import LinkButton from "@/components/content/link-button.astro";
+import Tweet from "@/components/content/tweet.astro";
 import Video from "@/components/content/video.astro";
 import Link from "@/components/link.astro";
 
@@ -32,6 +33,7 @@ export function useMDXComponents(): MDXComponents {
 		ImageLink,
 		InternalLink,
 		LinkButton,
+		Tweet,
 		Video,
 	};
 }

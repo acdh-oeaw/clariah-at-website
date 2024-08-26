@@ -18,8 +18,10 @@ import {
 	ImageIcon,
 	InfoIcon,
 	LinkIcon,
+	TwitterIcon,
 	VideoIcon,
 } from "lucide-react";
+import { Tweet } from "react-tweet";
 
 import { Logo } from "@/components/logo";
 import { createAssetPaths, createPreviewUrl } from "@/config/content.config";
@@ -73,6 +75,7 @@ function createComponents(
 		| "ImageLink"
 		| "InternalLink"
 		| "LinkButton"
+		| "Tweet"
 		| "Video"
 	>,
 ) {
@@ -509,6 +512,31 @@ function createComponents(
 				);
 			},
 		}),
+		Tweet() {
+			return wrapper({
+				label: "Tweet",
+				description: "A tweet.",
+				icon: <TwitterIcon />,
+				schema: {
+					id: fields.text({
+						label: "ID",
+						validation: { isRequired: true },
+					}),
+				},
+				ContentView(props) {
+					const { children, value } = props;
+
+					return (
+						<figure>
+							<NotEditable>
+								<Tweet id={value.id} />
+							</NotEditable>
+							{children ? <figcaption>{children}</figcaption> : null}
+						</figure>
+					);
+				},
+			});
+		},
 		Video: wrapper({
 			label: "Video",
 			description: "An embedded video.",
