@@ -324,10 +324,45 @@ function createComponents(
 			description: "An image-only link.",
 			icon: <LinkIcon />,
 			schema: {
-				href: fields.url({
-					label: "URL",
-					validation: { isRequired: true },
-				}),
+				link: fields.conditional(
+					fields.select({
+						label: "Type",
+						options: [
+							{ label: "Consortium", value: "consortium" },
+							{ label: "Custom", value: "custom" },
+							{ label: "Events", value: "events" },
+							{ label: "News", value: "news" },
+							{ label: "Page", value: "pages" },
+						],
+						defaultValue: "pages",
+					}),
+					{
+						consortium: fields.relationship({
+							label: "Consortium member",
+							validation: { isRequired: true },
+							collection: getCollectionName("consortium", locale),
+						}),
+						custom: fields.text({
+							label: "URL",
+							validation: { isRequired: true },
+						}),
+						events: fields.relationship({
+							label: "Event",
+							validation: { isRequired: true },
+							collection: getCollectionName("events", locale),
+						}),
+						news: fields.relationship({
+							label: "News",
+							validation: { isRequired: true },
+							collection: getCollectionName("news", locale),
+						}),
+						pages: fields.relationship({
+							label: "Page",
+							validation: { isRequired: true },
+							collection: getCollectionName("pages", locale),
+						}),
+					},
+				),
 				src: fields.image({
 					label: "Image",
 					...createAssetPaths(assetPath),
@@ -367,6 +402,7 @@ function createComponents(
 					fields.select({
 						label: "Collection",
 						options: [
+							{ label: "Consortium", value: "consortium" },
 							{ label: "Events", value: "events" },
 							{ label: "News", value: "news" },
 							{ label: "Pages", value: "pages" },
@@ -374,6 +410,11 @@ function createComponents(
 						defaultValue: "pages",
 					}),
 					{
+						consortium: fields.relationship({
+							label: "Consortium member",
+							validation: { isRequired: true },
+							collection: getCollectionName("consortium", locale),
+						}),
 						events: fields.relationship({
 							label: "Event",
 							validation: { isRequired: true },
@@ -406,6 +447,7 @@ function createComponents(
 					fields.select({
 						label: "Type",
 						options: [
+							{ label: "Consortium", value: "consortium" },
 							{ label: "Custom", value: "custom" },
 							{ label: "Events", value: "events" },
 							{ label: "News", value: "news" },
@@ -414,6 +456,11 @@ function createComponents(
 						defaultValue: "pages",
 					}),
 					{
+						consortium: fields.relationship({
+							label: "Consortium member",
+							validation: { isRequired: true },
+							collection: getCollectionName("consortium", locale),
+						}),
 						custom: fields.text({
 							label: "URL",
 							validation: { isRequired: true },
