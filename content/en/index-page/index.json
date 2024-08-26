@@ -79,7 +79,7 @@
               }
             },
             {
-              "discriminant": "email",
+              "discriminant": "custom",
               "value": {
                 "title": "DHA Email List",
                 "image": "/assets/content/en/index-page/main/sections/2/value/cards/2/value/image.jpg",
