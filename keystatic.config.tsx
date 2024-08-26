@@ -512,31 +512,29 @@ function createComponents(
 				);
 			},
 		}),
-		Tweet() {
-			return wrapper({
-				label: "Tweet",
-				description: "A tweet.",
-				icon: <TwitterIcon />,
-				schema: {
-					id: fields.text({
-						label: "ID",
-						validation: { isRequired: true },
-					}),
-				},
-				ContentView(props) {
-					const { children, value } = props;
+		Tweet: wrapper({
+			label: "Tweet",
+			description: "A tweet.",
+			icon: <TwitterIcon />,
+			schema: {
+				id: fields.text({
+					label: "ID",
+					validation: { isRequired: true },
+				}),
+			},
+			ContentView(props) {
+				const { children, value } = props;
 
-					return (
-						<figure>
-							<NotEditable>
-								<Tweet id={value.id} />
-							</NotEditable>
-							{children ? <figcaption>{children}</figcaption> : null}
-						</figure>
-					);
-				},
-			});
-		},
+				return (
+					<figure>
+						<NotEditable>
+							<Tweet id={value.id} />
+						</NotEditable>
+						{children ? <figcaption>{children}</figcaption> : null}
+					</figure>
+				);
+			},
+		}),
 		Video: wrapper({
 			label: "Video",
 			description: "An embedded video.",
