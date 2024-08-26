@@ -62,13 +62,16 @@ function createComponents(
 	assetPath: `/${string}/`,
 	locale: Locale,
 	components?: Array<
+		| "Avatar"
 		| "Callout"
-		| "Download"
 		| "DownloadButton"
+		| "DownloadLink"
 		| "Figure"
 		| "Grid"
 		| "GridItem"
 		| "HeadingId"
+		| "ImageLink"
+		| "InternalLink"
 		| "LinkButton"
 		| "Video"
 	>,
@@ -102,8 +105,10 @@ function createComponents(
 				}),
 			},
 			ContentView(props) {
-				const contentType = props.value.href?.extension === "svg" ? "image/svg+xml" : undefined;
-				const url = useObjectUrl(props.value.href?.data ?? null, contentType);
+				const { children, value } = props;
+
+				const contentType = value.href?.extension === "svg" ? "image/svg+xml" : undefined;
+				const url = useObjectUrl(value.href?.data ?? null, contentType);
 
 				return (
 					<figure>
@@ -114,12 +119,12 @@ function createComponents(
 								style={{
 									aspectRatio: 1,
 									margin: 0,
-									maxWidth: `${String(props.value.maxSize)}px`,
+									maxWidth: `${String(value.maxSize)}px`,
 									width: "100%",
 								}}
 							/>
 						</NotEditable>
-						<figcaption>{props.children}</figcaption>
+						{children ? <figcaption>{children}</figcaption> : null}
 					</figure>
 				);
 			},
@@ -143,12 +148,15 @@ function createComponents(
 				}),
 			},
 		}),
-		Download: mark({
-			label: "Download",
+		DownloadLink: mark({
+			label: "Download link",
 			// description: "A link to an uploaded file.",
-			tag: "a",
-			className: "underline decoration-dotted",
 			icon: <DownloadIcon />,
+			tag: "a",
+			style: {
+				textDecorationLine: "underline",
+				textDecorationStyle: "dotted",
+			},
 			schema: {
 				href: fields.file({
 					label: "File",
@@ -168,12 +176,30 @@ function createComponents(
 				}),
 				href: fields.file({
 					label: "File",
-					...createAssetPaths(assetPath),
 					validation: { isRequired: true },
+					...createAssetPaths(assetPath),
 				}),
 			},
 			ContentView(props) {
-				return <NotEditable>{props.value.label}</NotEditable>;
+				const { value } = props;
+
+				return (
+					<NotEditable>
+						<div
+							style={{
+								appearance: "none",
+								background: "black",
+								borderRadius: 9999,
+								color: "white",
+								display: "inline-flex",
+								padding: "8px 24px",
+								textDecoration: "none",
+							}}
+						>
+							{value.label}
+						</div>
+					</NotEditable>
+				);
 			},
 		}),
 		Figure: wrapper({
@@ -192,16 +218,18 @@ function createComponents(
 				}),
 			},
 			ContentView(props) {
-				const contentType = props.value.href?.extension === "svg" ? "image/svg+xml" : undefined;
-				const url = useObjectUrl(props.value.href?.data ?? null, contentType);
+				const { children, value } = props;
+
+				const contentType = value.href?.extension === "svg" ? "image/svg+xml" : undefined;
+				const url = useObjectUrl(value.href?.data ?? null, contentType);
 
 				return (
-					<NotEditable>
-						<figure>
-							<img alt={props.value.alt} src={url ?? undefined} />
-							<figcaption>{props.children}</figcaption>
-						</figure>
-					</NotEditable>
+					<figure>
+						<NotEditable>
+							<img alt={value.alt} src={url ?? undefined} />
+						</NotEditable>
+						{children ? <figcaption>{children}</figcaption> : null}
+					</figure>
 				);
 			},
 		}),
@@ -243,6 +271,8 @@ function createComponents(
 				}),
 			},
 			ContentView(props) {
+				const { children, value } = props;
+
 				const variants = {
 					"two-columns": { gridTemplateColumns: "repeat(2, minmax(0, 1fr))" },
 					"three-columns": { gridTemplateColumns: "repeat(3, minmax(0, 1fr))" },
@@ -255,13 +285,13 @@ function createComponents(
 				return (
 					<div
 						style={{
+							alignContent: "start",
 							display: "grid",
 							gap: 32,
-							alignContent: "start",
-							...variants[props.value.variant],
+							...variants[value.variant],
 						}}
 					>
-						{props.children}
+						{children}
 					</div>
 				);
 			},
@@ -284,7 +314,9 @@ function createComponents(
 				}),
 			},
 			ContentView(props) {
-				return <span style={{ opacity: 0.5 }}>#{props.value.id}</span>;
+				const { value } = props;
+
+				return <span style={{ opacity: 0.5 }}>#{value.id}</span>;
 			},
 		}),
 		ImageLink: wrapper({
@@ -311,39 +343,23 @@ function createComponents(
 				}),
 			},
 			ContentView(props) {
-				const contentType = props.value.src?.extension === "svg" ? "image/svg+xml" : undefined;
-				const url = useObjectUrl(props.value.src?.data ?? null, contentType);
+				const { children, value } = props;
+
+				const contentType = value.src?.extension === "svg" ? "image/svg+xml" : undefined;
+				const url = useObjectUrl(value.src?.data ?? null, contentType);
 
 				return (
 					<figure>
 						<NotEditable>
-							<img alt={props.value.alt} src={url ?? undefined} />
+							<img alt={value.alt} src={url ?? undefined} />
 						</NotEditable>
-						<figcaption>{props.children}</figcaption>
+						{children ? <figcaption>{children}</figcaption> : null}
 					</figure>
 				);
 			},
 		}),
-		LinkButton: block({
-			label: "Link button",
-			description: "A link which looks like a button.",
-			icon: <LinkIcon />,
-			schema: {
-				label: fields.text({
-					label: "Label",
-					validation: { isRequired: true },
-				}),
-				href: fields.url({
-					label: "URL",
-					validation: { isRequired: true },
-				}),
-			},
-			ContentView(props) {
-				return <NotEditable>{props.value.label}</NotEditable>;
-			},
-		}),
-		ResourceLink: mark({
-			label: "Resource link",
+		InternalLink: mark({
+			label: "Internal link",
 			icon: <BookTextIcon />,
 			tag: "a",
 			schema: {
@@ -360,64 +376,124 @@ function createComponents(
 					{
 						events: fields.relationship({
 							label: "Event",
-							collection: getCollectionName("events", locale),
 							validation: { isRequired: true },
+							collection: getCollectionName("events", locale),
 						}),
 						news: fields.relationship({
 							label: "News",
-							collection: getCollectionName("news", locale),
 							validation: { isRequired: true },
+							collection: getCollectionName("news", locale),
 						}),
 						pages: fields.relationship({
 							label: "Page",
-							collection: getCollectionName("pages", locale),
 							validation: { isRequired: true },
+							collection: getCollectionName("pages", locale),
 						}),
 					},
 				),
 			},
 		}),
-		Video: block({
+		LinkButton: block({
+			label: "Link button",
+			description: "A link which looks like a button.",
+			icon: <LinkIcon />,
+			schema: {
+				label: fields.text({
+					label: "Label",
+					validation: { isRequired: true },
+				}),
+				link: fields.conditional(
+					fields.select({
+						label: "Type",
+						options: [
+							{ label: "Custom", value: "custom" },
+							{ label: "Events", value: "events" },
+							{ label: "News", value: "news" },
+							{ label: "Page", value: "pages" },
+						],
+						defaultValue: "pages",
+					}),
+					{
+						custom: fields.text({
+							label: "URL",
+							validation: { isRequired: true },
+						}),
+						events: fields.relationship({
+							label: "Event",
+							validation: { isRequired: true },
+							collection: getCollectionName("events", locale),
+						}),
+						news: fields.relationship({
+							label: "News",
+							validation: { isRequired: true },
+							collection: getCollectionName("news", locale),
+						}),
+						pages: fields.relationship({
+							label: "Page",
+							validation: { isRequired: true },
+							collection: getCollectionName("pages", locale),
+						}),
+					},
+				),
+			},
+			ContentView(props) {
+				const { value } = props;
+
+				if (value.label.length === 0) {
+					return null;
+				}
+
+				return (
+					<NotEditable>
+						<div
+							style={{
+								appearance: "none",
+								background: "black",
+								borderRadius: 9999,
+								color: "white",
+								display: "inline-flex",
+								padding: "8px 24px",
+								textDecoration: "none",
+							}}
+						>
+							{value.label}
+						</div>
+					</NotEditable>
+				);
+			},
+		}),
+		Video: wrapper({
 			label: "Video",
 			description: "An embedded video.",
 			icon: <VideoIcon />,
 			schema: {
 				provider: fields.select({
 					label: "Video provider",
-					options: [
-						{
-							label: "YouTube",
-							value: "youtube",
-						},
-					],
+					options: [{ label: "YouTube", value: "youtube" }],
 					defaultValue: "youtube",
 				}),
 				id: fields.text({
 					label: "Video ID",
 					validation: { isRequired: true },
 				}),
-				caption: fields.text({
-					label: "Caption",
-					// validation: { isRequired: false },
-				}),
 			},
 			ContentView(props) {
-				const { caption, id } = props.value;
+				const { children, value } = props;
 
 				const href = String(
 					createUrl({
 						baseUrl: "https://www.youtube-nocookie.com",
-						pathname: `/embed/${id}`,
+						pathname: `/embed/${value.id}`,
 					}),
 				);
 
 				return (
-					<NotEditable>
-						<figure>
+					<figure>
+						<NotEditable>
 							<iframe allowFullScreen={true} src={href} title="Video" />
-							{caption ? <figcaption>{caption}</figcaption> : null}
-						</figure>
-					</NotEditable>
+						</NotEditable>
+						{children ? <figcaption>{children}</figcaption> : null}
+					</figure>
 				);
 			},
 		}),
@@ -1041,139 +1117,6 @@ const singletons = {
 										},
 										{
 											label: "Cards section",
-										},
-									),
-								},
-								carouselSection: {
-									label: "Carousel section",
-									itemLabel(props) {
-										return props.fields.title.value + " (Carousel)";
-									},
-									schema: fields.object(
-										{
-											title: fields.text({
-												label: "Title",
-												validation: { isRequired: true },
-											}),
-											slides: fields.blocks(
-												{
-													custom: {
-														label: "Custom slide",
-														itemLabel(props) {
-															return props.fields.title.value;
-														},
-														schema: fields.object(
-															{
-																title: fields.text({
-																	label: "Title",
-																	validation: { isRequired: true },
-																}),
-																image: fields.image({
-																	label: "Image",
-																	...createAssetPaths(assetPath),
-																	// validation: { isRequired: false },
-																}),
-																summary: fields.text({
-																	label: "Summary",
-																	multiline: true,
-																	validation: { isRequired: true },
-																}),
-																link: fields.object(
-																	{
-																		label: fields.text({
-																			label: "Label",
-																			validation: { isRequired: true },
-																		}),
-																		href: fields.url({
-																			label: "URL",
-																			validation: { isRequired: true },
-																		}),
-																	},
-																	{
-																		label: "Link",
-																	},
-																),
-															},
-															{
-																label: "Custom slide",
-															},
-														),
-													},
-													event: {
-														label: "Event slide",
-														itemLabel(props) {
-															return props.fields.title.value;
-														},
-														schema: fields.object(
-															{
-																title: fields.text({
-																	label: "Title",
-																	validation: { isRequired: true },
-																}),
-																reference: fields.relationship({
-																	label: "Event",
-																	collection: getCollectionName("events", locale),
-																	validation: { isRequired: true },
-																}),
-															},
-															{
-																label: "Event slide",
-															},
-														),
-													},
-													news: {
-														label: "News slide",
-														itemLabel(props) {
-															return props.fields.title.value;
-														},
-														schema: fields.object(
-															{
-																title: fields.text({
-																	label: "Title",
-																	validation: { isRequired: true },
-																}),
-																reference: fields.relationship({
-																	label: "News",
-																	collection: getCollectionName("news", locale),
-																	validation: { isRequired: true },
-																}),
-															},
-															{
-																label: "News slide",
-															},
-														),
-													},
-													page: {
-														label: "Page slide",
-														itemLabel(props) {
-															return props.fields.title.value;
-														},
-														schema: fields.object(
-															{
-																title: fields.text({
-																	label: "Title",
-																	validation: { isRequired: true },
-																}),
-																reference: fields.relationship({
-																	label: "Page",
-																	collection: getCollectionName("pages", locale),
-																	validation: { isRequired: true },
-																}),
-															},
-															{
-																label: "Page slide",
-															},
-														),
-													},
-												},
-												{
-													label: "Slides",
-													validation: { length: { min: 1 } },
-												},
-											),
-										},
-										{
-											label: "Carousel section",
 										},
 									),
 								},

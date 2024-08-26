@@ -16,13 +16,6 @@
 		"read-more": "Mehr Info",
 		"title": "Veranstaltungen"
 	},
-	"ImageCarousel": {
-		"next": "Nächste",
-		"previous": "Vorherige",
-		"slide": "{current} von {total}",
-		"start": "Starten",
-		"stop": "Pausieren"
-	},
 	"ImprintPage": {
 		"meta": {
 			"title": "Impressum"
@@ -65,6 +58,10 @@
 		"end-date": "Ende",
 		"hosting-organisations": "Hosting-Organisationen",
 		"links": "Links",
+		"more": {
+			"clariah-at-projects": "weitere CLARIAH-AT Projekte",
+			"dha-projects": "alle DHA Projekte"
+		},
 		"responsible-persons": "Verantwortliche Personen",
 		"start-date": "Beginn"
 	},

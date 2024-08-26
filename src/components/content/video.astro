@@ -2,12 +2,11 @@
 import { createUrl } from "@acdh-oeaw/lib";
 
 interface Props {
-	caption?: string;
 	provider: "youtube";
 	id: string;
 }
 
-const { caption, id } = Astro.props;
+const { id } = Astro.props;
 
 const href = String(
 	createUrl({
@@ -22,6 +21,12 @@ const href = String(
 		allowfullscreen
 		class="aspect-video w-full overflow-hidden rounded-md"
 		src={href}
-		title={caption ?? "Video"}></iframe>
-	{caption ? <figcaption>{caption}</figcaption> : null}
+		title={"Video"}></iframe>
+	{
+		Astro.slots.has("default") ? (
+			<figcaption>
+				<slot />
+			</figcaption>
+		) : null
+	}
 </figure>

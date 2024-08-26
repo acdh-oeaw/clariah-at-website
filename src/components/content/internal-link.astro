@@ -11,7 +11,7 @@ interface Props {
 const { resource } = Astro.props;
 const { discriminant: collection, value: id } = resource;
 
-const href = `/${collection}/${id}`;
+const href = collection === "pages" ? `/${id}` : `/${collection}/${id}`;
 ---
 
 <Link href={href}><slot /></Link>

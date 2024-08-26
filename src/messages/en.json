@@ -16,13 +16,6 @@
 		"read-more": "Read more",
 		"title": "Events"
 	},
-	"ImageCarousel": {
-		"next": "Next",
-		"previous": "Previous",
-		"slide": "{current} of {total}",
-		"start": "Start",
-		"stop": "Pause"
-	},
 	"ImprintPage": {
 		"meta": {
 			"title": "Imprint"
@@ -65,6 +58,10 @@
 		"end-date": "End",
 		"hosting-organisations": "Hosting organisations",
 		"links": "Links",
+		"more": {
+			"clariah-at-projects": "more CLARIAH-AT projects",
+			"dha-projects": "more DHA projects"
+		},
 		"responsible-persons": "Responsible persons",
 		"start-date": "Start"
 	},

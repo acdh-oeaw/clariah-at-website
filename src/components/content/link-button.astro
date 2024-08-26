@@ -1,15 +1,27 @@
 ---
+import Link from "@/components/link.astro";
+
 interface Props {
-	href: string;
 	label: string;
+	link: {
+		discriminant: "custom" | "events" | "news" | "pages";
+		value: string;
+	};
 }
 
-const { href, label } = Astro.props;
+const { label, link } = Astro.props;
+
+const href =
+	link.discriminant === "custom"
+		? link.value
+		: link.discriminant === "pages"
+			? `/${link.value}`
+			: `/${link.discriminant}/${link.value}`;
 ---
 
-<a
+<Link
 	class="my-2 inline-flex rounded-full bg-brand px-6 py-2 text-white no-underline transition hover:bg-brand-intent"
 	href={href}
 >
 	{label}
-</a>
+</Link>

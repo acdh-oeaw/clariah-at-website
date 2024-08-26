@@ -52,7 +52,7 @@ A great deal of thought and agreement went into the graphical representation of 
 
 ## **Outcomes**
 
-The backend of the project runs Node.js to process the JS scripts and a GraphDB instance as a SPARQL endpoint. The TEI/XML primary data of the texts are the only use of XML technology; after ingest and conversion to TTL/RDF, the application only works with this data format or the data extracted from it in JSON. The TTL/RDF data is queried with SPARQL (.rq), the JSON data with JS (.js). 
+The backend of the project runs Node.js to process the JS scripts and a GraphDB instance as a SPARQL endpoint. The TEI/XML primary data of the texts are the only use of XML technology; after ingest and conversion to TTL/RDF, the application only works with this data format or the data extracted from it in JSON. The TTL/RDF data is queried with SPARQL (.rq), the JSON data with JS (.js).
 
 A JS script is started with a shell script (.sh); this also applies to the JS API of the GraphDB.
 
@@ -60,9 +60,9 @@ The conversion from TEI to TTL turns the XML entities into RDF statements, which
 
 The registers are generated in the following process:
 
-* Generation of the source data (\_tmp.json) from. Excel tables (.xlsx), databases (geonames) and the occurrences in the texts (\_text.json). 
-* Conversion of the source data into TEI/XML (also the output format of the registers).  
-* Use the existing TEI to RDF conversion to generate the RDF data of the registers from the XML data. This modelling of the RDF data is chosen for reasons of efficiency; other modelling, for example according to common ontologies (GND, Wikidata), is also possible. 
+* Generation of the source data (\_tmp.json) from. Excel tables (.xlsx), databases (geonames) and the occurrences in the texts (\_text.json).
+* Conversion of the source data into TEI/XML (also the output format of the registers).
+* Use the existing TEI to RDF conversion to generate the RDF data of the registers from the XML data. This modelling of the RDF data is chosen for reasons of efficiency; other modelling, for example according to common ontologies (GND, Wikidata), is also possible.
 * TTL to JSON conversion generates the JSON version of the registers, with which the register data can be output on the HTML pages using JS. Other output formats can be achieved using modified JS scripts.
 
 The annotation levels are implemented with the [Web Annotation Vocabulary of the W3C](https://www.w3.org/TR/2017/REC-annotation-vocab-20170223/). The vocabulary contains information in RDF about the referenced locations in the texts and the associated locations in other texts or in the registers. A further advantage is the faster retrieval of individual annotations by specifying the references in the texts.
@@ -73,11 +73,6 @@ The current status of the application can be accessed at: [https://kfngoe.github
 
 PLEASE NOTE: this is a preliminary beta version of the site, which is intended to show that the important frontend functionalities (text comparison, index of persons, search with restricted index, e.g. "those for reasons") of the project could be realised. The development of the project up to the release version could be followed on this website. It then went through a test phase in which feedback was collected from various users.
 
-The results of the pilot study were presented [on 23 May 2024 in the Austrian Parliament](https://clariah.at/de/events/projectpresentation-digital-edition-baernreither/). The location was chosen because Baernreither spent a large part of his political career there as a member of parliament and minister; in addition, the Parliamentary Archives could be won as a project partner for the planned continuation of the edition on the basis of the CLARIAH-AT-funded project. The planned continuation of the project by the Commission for Modern Austrian History in co-operation with the Parliamentary Archives can be seen as the most important result of the pilot study, alongside the successful technical implementation of the project. In the coming years, all remaining diaries (30 volumes) are to be edited using the technology that has now been trialled and the necessary adaptations made thanks to funding from the Commission. \
-A basic agreement has also been reached with the Austrian State Archives on the publication of the diaries in digital form and the possibility of long-term digital storage of the data in ARCHE;
+The results of the pilot study were presented [on 23 May 2024 in the Austrian Parliament](https://clariah.at/de/events/projectpresentation-digital-edition-baernreither/). The location was chosen because Baernreither spent a large part of his political career there as a member of parliament and minister; in addition, the Parliamentary Archives could be won as a project partner for the planned continuation of the edition on the basis of the CLARIAH-AT-funded project. The planned continuation of the project by the Commission for Modern Austrian History in co-operation with the Parliamentary Archives can be seen as the most important result of the pilot study, alongside the successful technical implementation of the project. In the coming years, all remaining diaries (30 volumes) are to be edited using the technology that has now been trialled and the necessary adaptations made thanks to funding from the Commission.
 
-
-
-<LinkButton label="CLARIAH-AT funded projects" href="/project-funding/" />
-
-<LinkButton label="all DHA projects" href="/en/projects/" />
+A basic agreement has also been reached with the Austrian State Archives on the publication of the diaries in digital form and the possibility of long-term digital storage of the data in ARCHE.

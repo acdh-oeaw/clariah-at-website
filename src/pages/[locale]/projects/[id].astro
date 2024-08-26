@@ -1,6 +1,7 @@
 ---
 import { isNonEmptyArray } from "@acdh-oeaw/lib";
 
+import LinkButton from "@/components/content/link-button.astro";
 import MainContent from "@/components/main-content.astro";
 import PageCard from "@/components/page-card.astro";
 import PageSection from "@/components/page-section.astro";
@@ -168,6 +169,18 @@ const { default: Content } = await processMdx(await page.content(), locale);
 							</section>
 						) : null
 					}
+				</div>
+
+				<div class="mt-8 flex items-center gap-x-4">
+					<LinkButton
+						label={t("ProjectPage.more.clariah-at-projects")}
+						link={{ discriminant: "pages", value: "project-funding" }}
+					/>
+
+					<LinkButton
+						label={t("ProjectPage.more.dha-projects")}
+						link={{ discriminant: "pages", value: "projects" }}
+					/>
 				</div>
 			</PageCard>
 		</PageSection>
