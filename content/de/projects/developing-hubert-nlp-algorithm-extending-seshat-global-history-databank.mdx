@@ -1,53 +1,84 @@
 ---
-title: "Developing HuBERT: a Natural Language Processing algorithm for extending
-  the Seshat Global History Databank"
-summary: This project addresses the challenges of expanding and increasing the
+title: >-
+  Developing HuBERT: a Natural Language Processing algorithm for extending the
+  Seshat Global History Databank
+summary: >-
+  This project addresses the challenges of expanding and increasing the
   cross-utilization of historical datasets by developing a NLP algorithm that
   can help expand current databases and increase the translatability of data
   across projects.
 startDate: 2023-01-01
 endDate: 2023-01-01
+additionalImages: []
 attachments: []
 links:
-  - url: https://www.csh.ac.at/complexity-science/social-complexity-and-collapse/
-    label: Complexity Science Hub team
-  - url: https://seshatdatabank.info/seshat-projects/
-    label: Seshat
+  - label: Complexity Science Hub team
+    url: https://www.csh.ac.at/complexity-science/social-complexity-and-collapse/
+  - label: Seshat
+    url: https://seshatdatabank.info/seshat-projects/
+  - label: Datenrepositorium (Figshare)
+    url: https://figshare.com/s/d6c947b89e57b89a272c
 responsiblePersons:
   - Maria del Rio-Chanona
 hostingOrganizations:
   - Complexity Science Hub Vienna
+---
+Dieses Projekt befasst sich mit den Herausforderungen, die mit der Erweiterung und der verstärkten Nutzung historischer Datensätze verbunden sind, indem ein Algorithmus für die Verarbeitung natürlicher Sprache (NLP) entwickelt wird, der dazu beitragen kann, die aktuellen Datenbanken zu erweitern und die Übersetzung der Daten in andere Projekte hinweg zu verbessern. Das Projekt umfasst zunächst die Neuorganisation des [Seshat](https://seshatdatabank.info/seshat-projects/)-Literaturrepositoriums, das über 8.000 akademische Artikel und Bücher zu verschiedenen Kulturen und Zivilisationen enthält. Durch diese Umstrukturierung wird das Repositorium für Forscher einfach und automatisch zugänglich gemacht, wodurch die Nutzbarkeit der darin enthaltenen Daten erhöht wird. Zweitens wird im Rahmen des Projekts ein Algorithmus namens HuBERT entwickelt, der das Screening von Dokumenten und die Datenerfassung aus archäologischen und historischen Materialien und bestehenden Datenbanken teilweise automatisiert. Dies trägt dazu bei, die Herausforderungen der langsamen Datenerfassung und der fehleranfälligen manuellen Eingabe zu überwinden, wodurch die Daten projektübergreifend besser übertragbar werden und die Forscher ein breiteres Spektrum von Forschungsfragen beantworten können. Zusätzlich zu diesen Beiträgen umfasst das Projekt Aktualisierungen der Projektwebsite, Anleitungen und andere Ressourcen, um die Daten und den Algorithmus für ein breites Spektrum von Forschern aus verschiedenen Disziplinen zugänglich zu machen.
+
+## **Projekt**
+
+Ein breites Spektrum historischer und archäologischer Arbeiten hat die Dynamik vergangener komplexer Gesellschaften aus der ganzen Welt dokumentiert. Jüngste Projekte haben sich darauf konzentriert, diese Informationen für verschiedene Gesellschaften im Laufe der Zeit neu zusammenzustellen (z. B. die Datenbanken Seshat und D-place), was die Forschung in verschiedenen Disziplinen der Geistes- und Sozialwissenschaften ermöglicht. Die Verbesserung der Nutzbarkeit dieser Datenbanken und die Erweiterung der darin enthaltenen Informationen würde die Beantwortung vieler weiterer Forschungsfragen ermöglichen.
+
+Die größte Herausforderung bei der Ausweitung und verstärkten Nutzung historischer Datensätze besteht darin, dass die Datenerfassung langsam ist und dass die projektübergreifende Übersetzung von Informationen mühsam und fehleranfällig ist. Die Durchsicht der vorhandenen Literatur, das gründliche Lesen ausgewählter Artikel und die manuelle Erfassung von Variablen oder die erneute Eingabe der Informationen in ein anderes System erfordern viele Arbeitsstunden. Ziel dieses Projekts ist die Entwicklung eines Algorithmus für die Verarbeitung natürlicher Sprache (Natural Language Processing, NLP), der dazu beitragen kann, aktuelle Datenbanken zu erweitern und die Übersetzbarkeit von Daten zwischen Projekten zu verbessern. Insbesondere werden wir auf dem kürzlich entwickelten BERT-Sprachmodell aufbauen, um das Screening von Dokumenten und die Datenerfassung aus archäologischen und historischen Materialien und bestehenden Datenbanken teilweise zu automatisieren.
+
+### **Dieses Projekt ist in drei Teile gegliedert:**
+
+1. Organisieren und Verfeinern der Beschriftung der Sammlung von Forschungsartikeln.\
+   Das Seshat-Team hat mehr als 8000 akademische Artikel und Bücher über verschiedene Kulturen und Zivilisationen neu zusammengestellt. Allerdings gibt es derzeit kein strukturiertes Repositorium, das einen einfachen oder automatischen Zugriff ermöglicht. Hier werden wir das Seshat-Literatur-Repositorium aufbauen, indem wir das aktuelle Repositorium aktualisieren und organisieren, so dass der Zugang automatisiert werden kann. Außerdem verfeinern wir die Verweise, so dass der Link zu dem/den jeweiligen Abschnitt(en) führt, aus dem/denen die Informationen abgeleitet wurden. Dieses detaillierte Referenzierungssystem ermöglicht es anderen Forschern, leichter auf die Seshat-Daten zuzugreifen, und ist nützlich für die Feinabstimmung von NLP-Algorithmen.
+2. Entwicklung eines natursprachlichen (NLP) Verfahrens zur Unterstützung der Datenextraktion. Jüngste Entwicklungen in NLP haben es Forschern ermöglicht, Sprachmodelle mit dem gesamten englischen Wikipedia-Textkorpus zu trainieren. Hier wird HuBERT entwickelt, ein BERT-Modell, das mit dem Text von sozial- und geisteswissenschaftlichen Forschungsartikeln aus dem Seshat-Literaturrepositorium feinabgestimmt wurde. Insbesondere wollen wir erreichen, dass HuBERT in der Lage ist, Forschungsartikel zu durchsuchen und eine Vorauswahl derjenigen zu treffen, die Informationen über eine bestimmte Variable enthalten könnten, um dann Forschern die Möglichkeit zu geben, Seshat nach Variablen abzufragen, die dort noch nicht definiert sind; d.h. HuBERT wird die Vorauswahl der Artikel treffen und Daten identifizieren, die für die Wiederverwendung von Forschenden der Zukunft geeignet sind.
+3. Pflege und Erweiterung der Dokumentation und Anleitungen.\
+   Die Seshat-Datenbank und die Website werden weiterhin aktualisiert und dokumentiert. Datenvisualisierungen und Dokumentationen sowie Tutorials für das Seshat-Literatur-Repositorium und HuBERT werden hinzugefügt.
 
 ---
-**Abstract**
 
-This project addresses the challenges of expanding and increasing the cross-utilization of historical datasets by developing a Natural Language Processing (NLP) algorithm that can help expand current databases and increase the translatability of data across projects. Firstly, the project involves the re-organization of the Seshat Literature Repository, which contains over 8,000 academic articles and books on various cultures and civilizations. This re-organization makes the repository easily and automatically accessible to researchers, increasing the usability of the data contained within it. Secondly, the project develops an algorithm called HuBERT that partially automates document screening and data collection from archaeological and historical materials and existing databases. This helps overcome the challenges of slow data collection and error-prone manual entry, thus increasing the translatability of data across projects and enabling researchers to answer a wider range of research questions. In addition to these contributions, the project includes updates to the project website, tutorials, and other resources to make the data and algorithm accessible to a broad range of researchers across multiple disciplines.
+## Outcomes
 
-**Project**
+Ziel dieses Projekts war es, die gegenseitige Nutzung historischer Datensätze zu erweitern und zu fördern. Die Seshat-Datenbank wurde erfolgreich erweitert, so dass ihre reichhaltigen Metadaten für eine groß angelegte, automatisierte Analyse angepasst werden können. Dazu gehören die Verknüpfungen zwischen historischen Fakten, ihren Quellen in der Literatur und zusätzlichen Freitexterklärungen, die zusammen einen einzigartigen Datensatz für die Entwicklung und das Training von Lösungen für die Verarbeitung natürlicher Sprache (NLP) bilden. Darüber hinaus konnte bis November 2024 die Finanzierung gesichert werden, um die Bemühungen zur Automatisierung der Datenextraktion durch große Sprachmodelle fortzusetzen.
 
-A wide range of historical and archaeological works have documented the dynamics of past complex societies from across the globe. Recent projects have focused on recompiling this information across time for different societies (e.g. Seshat and D-place databases), enabling research from multiple disciplines across the Humanities and Social Sciences \[1-5\]. Increasing the usability of these databases and increasing the information on them would allow for many more research questions to be answered.
+### Datenerhebung und -bereinigung
 
-The main challenge for expanding and increasing the cross-utilization of historical datasets is that data collection is slow and that translating information across projects is tedious and prone to error. It takes many human hours to screen through the existing literature, thoroughly read selected articles, and manually record variables or reenter the information into a different framework. The goal of this project is to develop a Natural Language Processing (NLP) algorithm that can help expand current databases and increase the translatability of data across projects. In particular, we will build upon the recent BERT language model \[6\] to partially automate document screening and data collection from archeological and historical materials and existing databases.
+Die Seshat-Datenbank wurde ursprünglich mit dem Ziel geschaffen, die quantitative Analyse historischer Daten durch automatisierte Berechnungsmethoden zu ermöglichen. Bislang umfasste sie jedoch nur die Datenpunkte (d. h. die historischen Fakten) selbst, während die entsprechenden Metadaten in einem freien Textformat gespeichert waren. Daher wurde ein Online-Tool entwickelt, das eine effiziente Verarbeitung dieser Metadaten ermöglicht und über 12.000 Zitate mit Zotero-Datenbankobjekten verknüpft. Folglich konnten 140.000 Datenpunkte in der Seshat-Datenbank mit diesen Objekten verknüpft werden. Außerdem konnten in der Seshat-Datenbank 50.000 eindeutige Erklärungen von wissenschaftlichen Mitarbeitern verarbeitet werden. Diese Erklärungen wurden verwendet, um einen Datensatz mit zwei Tabellen zu erstellen:\
+Die erste Tabelle enthält 7.000 Textsegmente aus Quelldokumenten, auf die in den Erklärungen Bezug genommen wurde. Die zweite Tabelle enthält 40.000 der Beschreibungen der Forschungsassistenten, die länger als 50 Zeichen sind. Beide Tabellen enthalten ein oder mehrere Themenetiketten für jedes der Textsegmente sowie weitere Informationen zu den Fakten und den Politiken, auf die sich die Texte beziehen.
 
-**This project is organized in three parts:**
+|         |          |         |                       |                                                                                   |                                          |
+| ------- | -------- | ------- | --------------------- | --------------------------------------------------------------------------------- | ---------------------------------------- |
+| polity  | variable | value   | reference             | description                                                                       | quote                                    |
+| InGaroL | Weight   | present | Burling, Robbins 1963 | The following seems to indicate that …: ‘When women cook rice, they measure the … | When women cook rice, they measure the … |
 
-1.  Organizing and refining labels of the repository of research articles.
-    The Seshat team has recompiled more than 8000 academic articles and books on different cultures and civilizations. However, there is currently no structured repository that allows for easy or automatic access. Here we will build the Seshat Literature Repository by updating and organizing the current repository so that access can be automatized. We also refine references to link to the particular paragraph(s) where the information was inferred from. This detailed referencing system allows for other researchers to access the Seshat data more easily and is useful for fine tuning NLP algorithms.
+Beispiel für einen Datenpunkt
 
-2.  Developing a Natural Language Process to aid data extraction data extraction.
-    Recent developments in NLP have allowed researchers to train language models with the whole English Wikipedia text corpus \[6\]. Here we will develop HuBERT, a BERT model fine-tuned with the text of social science and humanities research articles in the Seshat literature repository. In particular we aim for HuBERT to able to both screen research articles and pre-select those that might have information on a specific variable and then allow researchers to query Seshat about variables not yet defined there; i.e. HuBERT will do the pre-selection of articles and identify data suitable for reuse by future researchers.
+---
 
-3.  Maintenance and expansion of documentation and tutorials.
-    We will continue to update and document the Seshat database and the website. We will add data visualizations and documentation, and tutorials for the Seshat Literature Repository and HumanBERT.
+### Datenveröffentlichung
+
+Das wichtigste Ergebnis dieses Projekts ist ein Datensatz von Referenzen mit Texterklärungen, die mit historischen Fakten (d. h. Datenpunkten) verknüpft sind. Dieser Datensatz kann wiederverwendet werden, um große Sprachmodelle zu trainieren, insbesondere als beschrifteter Textdatensatz, bei dem ein Text mit den Informationen beschriftet wird, die extrahiert werden können.
+
+Das Datenrepositorium ist via Figshare verfügbar: [https://figshare.com/s/d6c947b89e57b89a272c](https://figshare.com/s/d6c947b89e57b89a272c)
+
+Dieser Datensatz bietet von Experten validierte Fakten in einer speziellen Domäne (z.B. Geschichte) und kann somit als Grundlage für die Entwicklung von LLMs mit domänenspezifischem Wissen oder Modellen dienen, die in der Lage sind, Informationen mit ihren Quellen zu verknüpfen - ein Problem, mit dem aktuelle NLP-basierte Lösungen immer noch zu kämpfen haben. Der aktuelle Datensatz wird laufend aktualisiert, die endgültige Version wird über Zenodo veröffentlicht.
+
+### **Dissemination**
+
+* Präsentation der Ergebnisse bei der Big Historcal Data Conference 2023, Max Planck Institut für Geoanthropologie:\
+  Benam et. al (2023): Enhancing the Seshat Databank: A computationally readable mapping of historical facts to scholarly references. In: Big Historical Data Conference. Meeting Programme & Book of Abstracts, 22. – 25. November 2023, Jena, Germany, p.47.\
+  [https://bhdc.earth/wp-content/uploads/2023/11/Big-Historical-Data-Conference-2023-Book-of-Abstracts.pdf](https://bhdc.earth/wp-content/uploads/2023/11/Big-Historical-Data-Conference-2023-Book-of-Abstracts.pdf)
+
+- aktualisierte Version der Seshat Webpage: [https://seshat-db.com/](https://seshat-db.com/)
+
+### Ausblick
+
+Mit der gesicherten Finanzierung bis November 2024 will das Team i) ein Nature Scientific Data Paper über den NLP-Seshat-Datensatz schreiben, in dem Text mit historischen Informationen verknüpft werden kann, und ii) ein großes Sprachmodell wie BERT trainieren, um die Datenextraktion zu automatisieren. Der Code wird öffentlich gemacht und auf Zenodo hochgeladen.
 
 
-**References**
 
-1.  Botero CA, Gardner B, Kirby KR, Bulbulia J, Gavin MC, Gray RD. The ecology of religious beliefs. Proceedings of the National Academy of Sciences. 2014 Nov 25;111(47):16784-9.
-2.  Haynie HJ, Kavanagh PH, Jordan FM, Ember CR, Gray RD, Greenhill SJ, Kirby KR, Kushnick G, Low BS, Tuff T, Vilela B. Pathways to social inequality. Evolutionary Human Sciences. 2021;3.
-3.  Turchin P, Currie TE, Whitehouse H, François P, Feeney K, Mullins D, Hoyer D, Collins C, Grohmann S, Savage P, Mendel-Gleason G. Quantitative historical analysis uncovers a single dimension of complexity that structures global variation in human social organization. Proceedings of the National Academy of Sciences. 2018 Jan 9;115(2):E144-51.
-4.  Turchin P, Currie TE, Turner EA, Gavrilets S. War, space, and the evolution of Old World complex societies. Proceedings of the National Academy of Sciences. 2013 Oct 8;110(41):16384-9.
-5.  Turchin P. Arise 'cliodynamics'. Nature. 2008 Jul;454(7200):34-5.
-6.  Devlin J, Chang MW, Lee K, Toutanova K. Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805. 2018 Oct 11.
-7.  Beltagy I, Lo K, Cohan A. SciBERT: A pretrained language model for scientific text. arXiv preprint arXiv:1903.10676. 2019 Mar 26.
-8.  Lee J, Yoon W, Kim S, Kim D, Kim S, So CH, Kang J. BioBERT: a pre-trained biomedical language representation model for biomedical text mining. Bioinformatics. 2020 Feb 15;36(4):1234-40.
+###
