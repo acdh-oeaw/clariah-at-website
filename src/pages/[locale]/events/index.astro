@@ -19,7 +19,7 @@ export async function getStaticPaths() {
 			const pages = await reader().collections[collection].all();
 
 			pages.sort((a, z) => {
-				return compareDesc(a.entry.date, z.entry.date);
+				return compareDesc(new Date(a.entry.date), new Date(z.entry.date));
 			});
 
 			return { params: { locale }, props: { pages } };
