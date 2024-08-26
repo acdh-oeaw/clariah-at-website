@@ -626,6 +626,36 @@ const collections = {
 								...createAssetPaths(assetPath),
 								validation: { isRequired: true },
 							}),
+							links: fields.array(
+								fields.object({
+									kind: fields.select({
+										label: "Type",
+										options: [
+											{ label: "Bluesky", value: "bluesky" },
+											{ label: "Facebook", value: "facebook" },
+											{ label: "Instagram", value: "instagram" },
+											{ label: "Linkedin", value: "linkedin" },
+											{ label: "Mastodon", value: "mastodon" },
+											{ label: "ORCID", value: "orcid" },
+											{ label: "Podcast", value: "podcast" },
+											{ label: "Twitter", value: "twitter" },
+											{ label: "Website", value: "website" },
+											{ label: "YouTube", value: "youtube" },
+										],
+										defaultValue: "website",
+									}),
+									href: fields.url({
+										label: "URL",
+										validation: { isRequired: true },
+									}),
+								}),
+								{
+									label: "Links (social media)",
+									itemLabel(props) {
+										return props.fields.kind.value;
+									},
+								},
+							),
 							description: fields.mdx({
 								label: "Description",
 								options: {

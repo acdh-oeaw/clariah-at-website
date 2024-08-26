@@ -1,5 +1,7 @@
 ---
+import { isNonEmptyArray } from "@acdh-oeaw/lib";
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 
 import MainContent from "@/components/main-content.astro";
 import PageCard from "@/components/page-card.astro";
@@ -38,6 +40,31 @@ const { t } = await createI18n(Astro.currentLocale as Locale | undefined);
 const documentTitle = page.name;
 const { href, institutions, logo, name, people } = page;
 const { default: Content } = await processMdx(await page.description(), locale);
+
+const icons = {
+	bluesky: { label: "Bluesky", icon: "simple-icons:bluesky" },
+	facebook: {
+		label: "Facebook",
+		icon: "simple-icons:facebook",
+	},
+	instagram: {
+		label: "Instagram",
+		icon: "simple-icons:instagram",
+	},
+	linkedin: {
+		label: "LinkedIn",
+		icon: "simple-icons:linkedin",
+	},
+	mastodon: {
+		label: "Mastodon",
+		icon: "simple-icons:mastodon",
+	},
+	orcid: { label: "ORCID", icon: "simple-icons:orcid" },
+	podcast: { label: "Podcast", icon: "lucide:podcast" },
+	twitter: { label: "Twitter", icon: "simple-icons:x" },
+	website: { label: "Website", icon: "lucide:globe" },
+	youtube: { label: "YouTube", icon: "simple-icons:youtube" },
+};
 ---
 
 <PageLayout locale={locale} title={documentTitle}>
@@ -111,6 +138,32 @@ const { default: Content } = await processMdx(await page.description(), locale);
 														/>
 														<div class="grid gap-y-2">
 															<h3 class="text-lg font-medium">{person.name}</h3>
+															{isNonEmptyArray(person.links) ? (
+																<dl class="my-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm font-medium text-neutral-500">
+																	{person.links.map((link) => {
+																		const icon = icons[link.kind];
+
+																		return (
+																			<div>
+																				<dt class="sr-only">{icon.label}</dt>
+																				<dd>
+																					<a
+																						class="flex items-center gap-x-1.5 transition hover:text-neutral-950"
+																						href={link.href}
+																					>
+																						<Icon
+																							aria-hidden="true"
+																							class="size-5 shrink-0"
+																							name={icon.icon}
+																						/>
+																						<span>{icon.label}</span>
+																					</a>
+																				</dd>
+																			</div>
+																		);
+																	})}
+																</dl>
+															) : null}
 															<div class="prose">
 																<Content />
 															</div>

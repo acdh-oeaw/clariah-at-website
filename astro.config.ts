@@ -33,7 +33,29 @@ export default defineConfig({
 		icon({
 			/** @see https://www.astroicon.dev/reference/configuration/#include */
 			include: {
-				lucide: ["chevron-down", "mail", "menu", "message-circle", "search", "twitter", "x"],
+				lucide: [
+					"chevron-down",
+					"globe",
+					"mail",
+					"menu",
+					"message-circle",
+					"podcast",
+					"search",
+					"twitter",
+					"x",
+				],
+				simpleIcons: [
+					"bluesky",
+					"facebook",
+					"instagram",
+					"linkedin",
+					"mastodon",
+					"orcid",
+					"podcast",
+					"x",
+					"website",
+					"youtube",
+				],
 			},
 			svgoOptions: {
 				multipass: true,
