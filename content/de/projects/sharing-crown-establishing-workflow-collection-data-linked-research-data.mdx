@@ -28,15 +28,17 @@ hostingOrganizations:
 
 Die Reichskrone des Heiligen Römischen Reiches ist eines der bedeutendsten Symbole der europäischen Geschichte. Sie gehört heute zu den Sammlungen des Kunsthistorischen Museums in Wien (KHM). Im Rahmen des vom KHM initiierten CROWN-Projekts wird eine umfassende Analyse der Krone durchgeführt. Dabei werden alle Bestandteile wie Edelsteine, Perlen, Platten etc. naturwissenschaftlich, historisch und kunsthistorisch untersucht. Das Projekt, das derzeit bis 2024 läuft, ist somit ein interdisziplinäres Unterfangen. Die Forschungsdaten, die sich aus der Anwendung hochentwickelter Analysetechniken zur Untersuchung der Herstellungstechniken und der verwendeten Materialien ergeben, werden mit [The Museum System (TMS)](https://www.gallerysystems.com/solutions/collections-management/) erfasst. TMS ist eine weit verbreitete Softwarelösung, die für Museen entwickelt wurde. Es bietet eine relationale Datenbank, die für die Inventarisierung, Dokumentation und Verwaltung von Sammlungen verwendet werden kann.
 
-Das Projekt CROWN sieht sich mit einer tiefgreifenden und komplexen Analyse eines einzelnen Objekts konfrontiert. Es muss dem wissenschaftlichen Auftrag eines weltweit führenden Museums gerecht werden und auf dem bereits etablierten TMS zur Datenverwaltung aufbauen. Daher ist es notwendig, neu entwickelte Workflows im CROWN-Projekt mit Hilfe des TMS zu implementieren. Die Datenverarbeitung ist ein Leuchtturmprojekt innerhalb des KHM Museumsverbundes. Es sind nicht mehr "normale" Sammlungsdaten, die erfasst und verwaltet werden müssen, sondern hochspezifische Forschungsdaten, die einer speziellen Modellierung und Darstellung bedürfen. Da am KHM keine spezifische Expertise vorhanden ist, wird das vorgeschlagene Projekt in Kooperation mit dem [Zentrum für Informationsmodellierung der Universität Graz (ZIM)](https://informationsmodellierung.uni-graz.at/de/) durchgeführt.
+Das Projekt CROWN sieht sich mit einer tiefgreifenden und komplexen Analyse eines einzelnen Objekts konfrontiert. Es muss dem wissenschaftlichen Auftrag eines weltweit führenden Museums gerecht werden und auf dem bereits etablierten TMS zur Datenverwaltung aufbauen. Daher ist es notwendig, neu entwickelte Workflows im CROWN-Projekt mit Hilfe des TMS zu implementieren. Die Datenverarbeitung ist ein Leuchtturmprojekt innerhalb des KHM Museumsverbundes. Es sind nicht mehr "normale" Sammlungsdaten, die erfasst und verwaltet werden müssen, sondern hochspezifische Forschungsdaten, die einer speziellen Modellierung und Darstellung bedürfen. Da am KHM keine spezifische Expertise vorhanden ist, wird das vorgeschlagene Projekt in Kooperation mit dem [Institut für Digitale Geisteswissenschaften](https://digital-humanities.uni-graz.at/de/) (ehemals Zentrum für Informationsmodellierung, ZIM) der Universität Graz durchgeführt.
 
-Um auch für zukünftige Forschung nutzbar zu sein, soll im Rahmen des vorgeschlagenen Projektes keine fertige Software entwickelt werden, sondern ein Workflow einer Best-Practice-Lösung beschrieben werden, um hochkomplexe, formalisierte und verknüpfte Forschungsdaten im Museumskontext nach den FAIR-Kriterien zu erzeugen. Aus diesem Grund sind die verwendeten Werkzeuge, TMS oder GAMS, austauschbar und die entwickelten Workflows auf andere bestehende Systeme übertragbar.
+Um auch für zukünftige Forschung nutzbar zu sein, soll im Rahmen des vorgeschlagenen Projektes keine fertige Software entwickelt werden, sondern ein Workflow einer Best-Practice-Lösung beschrieben werden, um hochkomplexe, formalisierte und verknüpfte Forschungsdaten im Museumskontext nach den FAIR-Kriterien zu erzeugen. Aus diesem Grund sind die verwendeten Werkzeuge, TMS oder GAMS ([Geisteswissenschaftliches Asset Management System](https://gams.uni-graz.at/)), austauschbar und die entwickelten Workflows auf andere bestehende Systeme übertragbar.
 
 ## **Hauptziel**
 
 Das Ziel des vorgeschlagenen Projekts ist die Entwicklung und Implementierung eines Best-Practice-Workflows für die Modellierung, Transformation und Veröffentlichung von Daten aus Werkzeugen wie TMS in [FAIR](https://www.go-fair.org/fair-principles/)-Forschungsdaten. Ein solcher Workflow umfasst nicht nur "normale" Forschungsdaten, sondern geht weit darüber hinaus. Dies ist auf die sehr spezifischen Forschungsbereiche im Museumskontext zurückzuführen, für die es keine ausreichenden Modelle für die Erfassung und Standardisierung gibt.
 
 Im Fall von CROWN kann die relevante Forschungsfrage nach der Herkunft und Datierung der Krone nur auf der Grundlage einer Vielzahl von interdisziplinären Untersuchungen und Erkenntnissen beantwortet werden. Diese wiederum, d.h. die Kombination von naturwissenschaftlichen Messungen mit historischen Belegen, gehen über die übliche Datenstruktur zur Beschreibung von Objekten in Sammlungen hinaus. Um sowohl das Modell als auch die Entitäten des Datensatzes formal zu repräsentieren, wird ein Semantic-Web-Ansatz gewählt. Die resultierenden RDF-Daten basieren auf einer domänenspezifischen Ontologie, die von [CIDOC-CRM](https://www.cidoc-crm.org/) und der [Basic Formal Ontology (BFO)](https://basic-formal-ontology.org/) abgeleitet ist, und verknüpfen ihre Entitäten mit kontrollierten Vokabularen und [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page). Schließlich wird für die beschriebene Domäne ein webbasierter Proof-of-Concept-Prototyp einer Benutzerschnittstelle entwickelt, die an die Bedürfnisse der verschiedenen beteiligten Disziplinen angepasst ist und die Aggregation, Visualisierung, Exploration und Analyse der verarbeiteten Daten ermöglicht.
+
+**keywords:** Museen, semantic web, linked open data, Ontologie, interdisziplinäre Forschung, Forschungsdaten, Workflows
 
 ---
 
@@ -52,7 +54,7 @@ Eine besondere Herausforderung des Forschungsprojektes bestand darin, dass 2470 
 
 * **Datenmodellierung**: Entwicklung eines Datenmodells bzw. einer Ontologie. 
 
-- **Datendarstellung**: Erstellung eines Prototyps in GAMS.
+- **Datenvisualisierung**: Erstellung eines Prototyps in GAMS.
 
 ### Dateneingabe
 
@@ -78,7 +80,7 @@ Implementierte Python-Skripte: 
 
 * **datafields-to-ontology.py**: Verwendet lokale JSON-Dateien (Top-Level Class + CIDOC Mapping) und die in Google Spreadsheet definierten Datenfeldinformationen, um die Ontologie zu generieren. 
 
-### **Datendarstellung** 
+### **Datenvisualisierung**
 
 Die Daten wurden erfolgreich in die Staging-Umgebung von GAMS integriert und ein Web Prototyp für den Zugriff auf die Daten implementiert. 
 
@@ -99,4 +101,3 @@ Darüber hinaus wurde im Rahmen des Best-Practice ein niederschwelliger Zugang z
   * Organisationenindex: [https://gams-staging.uni-graz.at/archive/objects/o:crown.index.organisation/methods/sdef:Ontology/get](https://gams-staging.uni-graz.at/archive/objects/o:crown.index.organisation/methods/sdef:Ontology/get) 
 
    
-
