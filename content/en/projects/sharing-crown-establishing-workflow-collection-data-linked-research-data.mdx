@@ -1,39 +1,37 @@
 ---
-title: Sharing the CROWN - Establishing a Workflow from Collection Data to
-  Linked Research Data
-summary: The CROWN project, initiated by the KHM in Vienna, focuses on a
-  comprehensive analysis of the Imperial Crown of the Holy Roman Empire,
-  involving interdisciplinary research on its various components using The
-  Museum System (TMS).
+title: >-
+  Sharing the CROWN - Establishing a Workflow from Collection Data to Linked
+  Research Data
+summary: >-
+  The CROWN project, initiated by the KHM in Vienna, focuses on a comprehensive
+  analysis of the Imperial Crown of the Holy Roman Empire, involving
+  interdisciplinary research on its various components using The Museum System
+  (TMS).
 startDate: 2023-04-01
 endDate: 2024-03-31
-image: /assets/content/en/projects/sharing-crown-establishing-workflow-collection-data-linked-research-data/image.png
+additionalImages: []
 attachments: []
 links:
-  - url: https://doi.org/10.5281/zenodo.7711407
-    label: Poster
+  - label: GitHub Repository
+    url: https://github.com/DigitalHumanitiesCraft/crown
+  - label: Poster
+    url: https://doi.org/10.5281/zenodo.7711407
 responsiblePersons:
   - Martina Griesser
   - Christopher Pollin
 hostingOrganizations:
   - KHM-Museumsverband
-  - Zentrum für Informationsmodellierung - Austrian Centre for Digital
-    Humanities (ZIM-ACDH)
-
+  - Department of Digital Humanities - University of Graz
 ---
-**Project lead:** Martina Grießer
-
-**Institution:** KHM-Museumsverband, scientific institution under public law
-
-**Project duration:** 01.04.2023 – 31.03.2024
+## Context
 
 The *Imperial Crown* of the Holy Roman Empire is one of the most important symbols of European history. Today it is part of the collections of the *Kunsthistorisches Museum* in Vienna (KHM). In the course of the so-called [*CROWN* project](https://www.projekt-reichskrone.at/) initiated by the KHM, a comprehensive analysis of the *Imperial Crown* is being carried out. For this purpose, all components like gems, pearls, plates, etc. will be analysed from a scientific, historical and art-historical point of view. This project, which is currently running until 2024, is thus a truly interdisciplinary endeavour. Research data resulting from the application of highly sophisticated analytical techniques to study manufacturing techniques and materials used, is recorded using [The Museum System (TMS)](https://www.gallerysystems.com/solutions/collections-management/). TMS is a widely used software solution designed for museums. It provides a relational database that can be used for inventorying, documenting, and managing collections.
 
-The CROWN project is faced with an in-depth and complex analysis of a single object. It must fulfil the scientific mandate of a world leading museum and has to be based on the already established TMS for data management. Therefore, it is necessary to implement newly developed workflows in the CROWN project using TMS. Concerning data processing this is a flagship project within the *KHM-Museumsverband*. It is no longer "usual" collection data that needs to be recorded and managed, but highly specific research data that requires special modelling and representation. As specific expertise is not available at the KHM, the proposed project is performed in cooperation with the [Institute Centre for Information Modelling, University of Graz (ZIM)](https://informationsmodellierung.uni-graz.at/de/).
+The CROWN project is faced with an in-depth and complex analysis of a single object. It must fulfil the scientific mandate of a world leading museum and has to be based on the already established TMS for data management. Therefore, it is necessary to implement newly developed workflows in the CROWN project using TMS. Concerning data processing this is a flagship project within the *KHM-Museumsverband*. It is no longer "usual" collection data that needs to be recorded and managed, but highly specific research data that requires special modelling and representation. As specific expertise is not available at the KHM, the proposed project is performed in cooperation with the [Department of Digital Humanities](https://digital-humanities.uni-graz.at/en/) (formerly Centre for Information Modelling, ZIM), University of Graz.
 
 To be usable also for future research, the proposed project is not to develop a ready-made software, but to describe a workflow of a best practice solution to create highly complex, formalised and linked research data in the context of museums according to the FAIR criteria. For this reason, the tools used, TMS or GAMS ([Geisteswissenschaftliches Asset Management System](https://gams.uni-graz.at/)), are exchangeable, and the workflows developed are transferable to other existing systems.
 
-**Main Goal**
+## **Main Goal**
 
 The objective of the proposed project is to develop and implement a best practice workflow for modelling, transforming, and publishing data from tools like TMS into [FAIR](https://www.go-fair.org/fair-principles/) research data. Such a workflow does not include "usual" collection data, but goes far beyond that. This is due to the highly specific research domains in the museum context for which there are insufficient templates for acquisition and standardisation.
 
@@ -41,21 +39,46 @@ In the case of CROWN, the relevant research question, i.e. origin and dating of 
 
 **keywords:** museums, semantic web, linked open data, ontology, interdisciplinary research, research data, workflows
 
-***
+---
 
-**(intermediary) Outcomes**
+## **Outcomes**
 
-The current status of the project and all relevant documents are in the “work in progress” stage and are published in the following GitHub repo, where the Best\_Pratices workflows are also made available: [https://github.com/DigitalHumanitiesCraft/crown](https://github.com/DigitalHumanitiesCraft/crown).
+The project focused on the development of a workflow for the semantic enrichment and normalisation of research data from the museum system (TMS) using the CROWN project as an example. The workflow includes data cleansing, domain modelling, the generation of RDF data from a TMS export and the creation of a prototype in GAMS.
 
-* Data cleansing: Data cleansing is an essential step to create a solid foundation for further data processing.
-* CSV export to RDF: The project has developed best practices to convert CSV exports from TMS to RDF, including semantic enrichment and normalisation.
-* Python scripts and ontology: The repository contains Python scripts for generating RDF data corresponding to the ontology “crown-ontology.ttl”. This ontology serves as a domain-specific model for describing the research data. A derivation of CIDOC CRM is still pending.
-* Semantic enrichment and reconciliation: Semantic enrichment and reconciliation were successfully implemented for specific areas such as “colours”.
-* Mapping of user fields: The project uses its own mapping file to cover project-specific “user fields” in which the RDF property paths are defined.
+A particular challenge of the research project was that 2470 objects (as of March 2024; further objects to follow), 669 specific and a further 40 predefined data fields had to be transferred from TMS to RDF. These data fields contain highly specialised information such as the description of drill holes on gemstones (the imperial crown) as well as the shape, surface, colour of gemstones and analytical procedures carried out, such as Raman spectroscopy. As this is an ongoing project, with different departments working together and new data fields being required over time, an expandable workflow is required. The most important areas are described below.
 
-Prototype in GAMS ([Geisteswissenschaftliches Asset Management System](https://gams.uni-graz.at/)): The aim is to publish a prototype on GAMS. A first version of the unpublished test instance is already available and includes:
+* **Data input**: In the TMS system by interdisciplinary teams of scientists, data cleansing and data normalisation. 
+* **Data transformation**: Transformation of TMS export data into RDF. 
+* **Data modelling**: Development of a data model or ontology. 
+* **Data visualisation**: Creation of a prototype in GAMS.
 
-* A sample for single object representation (RDF): [https://gams-staging.uni-graz.at/archive/objects/o:crown.object.a\_max\_example\_test/methods/sdef:Ontology/get](https://gams-staging.uni-graz.at/archive/objects/o:crown.object.a_max_example_test/methods/sdef:Ontology/get)
-* Object overview: [https://gams-staging.uni-graz.at/archive/objects/query:crown.context-objects/methods/sdef:Query/get](https://gams-staging.uni-graz.at/archive/objects/query:crown.context-objects/methods/sdef:Query/get)
-* A sample for displaying a project-specific thesaurus (SKOS): [https://gams-staging.uni-graz.at/archive/objects/o:crown.thesaurus/methods/sdef:SKOS/get](https://gams-staging.uni-graz.at/archive/objects/o:crown.thesaurus/methods/sdef:SKOS/get)
-* Full text search and filter functionalities
+### Data input
+
+The previous data collection was successfully cleansed and normalised. In order to ensure further normalised data entry, a handout and training courses on data entry were carried out during the funding period;
+
+### **Data transformation**
+
+The best practices and workflows are documented and published in a [GitHub repository](https://github.com/DigitalHumanitiesCraft/crown). Several Python scripts that convert the CSV export from TMS into RDF form the centrepiece. The mapping is realised by a detailed listing and definition of the UserFields in a Google Spreadsheet, which allows collaborative adaptations of the data fields. Modifications can be made to create similar workflows for other datasets, such as painting data from TMS, to generate semantic research data.
+
+### Data modelling
+
+The project-specific ontology **crown-ontology.ttl** is intended to describe data from museum collections in a structured way. Interoperability is improved through integration with CIDOC CRM. The ontology supports detailed properties of components of the Imperial Crown as well as additional materials, their origin and condition and is open for updates and extensions. The defined workflow makes it possible to use common documentation for both the mapping and the generation of the ontology.
+
+Implemented Python scripts:
+
+* **datafields-to-ontology.py**: Uses local JSON files (top-level class + CIDOC mapping) and the data field information defined in Google Spreadsheet to generate the ontology.
+
+### Data visualisation
+
+The data was successfully integrated into the staging environment of GAMS and a web prototype for accessing the data was implemented;
+
+In addition, a low-threshold access to the data and its query using GraphDB was demonstrated as part of the best practice to show that RDF data can also be used in other environments.
+
+* Public GitHub repository with the best practices (tutorial), as well as all scripts, input  \
+  and output data: [https://github.com/DigitalHumanitiesCraft/crown](https://github.com/DigitalHumanitiesCraft/crown)
+* Prototype in GAMS ([Geisteswissenschaftliches Asset Management System](https://gams.uni-graz.at/)): A first version of the unpublished test instance is already available and includes:
+  * A sample for single object representation (RDF): [https://gams-staging.uni-graz.at/archive/objects/o:crown.object.a\_max\_example\_test/methods/sdef:Ontology/get](https://gams-staging.uni-graz.at/archive/objects/o:crown.object.a_max_example_test/methods/sdef:Ontology/get)
+  * Object overview: [https://gams-staging.uni-graz.at/archive/objects/query:crown.context-objects/methods/sdef:Query/get](https://gams-staging.uni-graz.at/archive/objects/query:crown.context-objects/methods/sdef:Query/get)
+  * A sample for displaying a project-specific thesaurus (SKOS): [https://gams-staging.uni-graz.at/archive/objects/o:crown.thesaurus/methods/sdef:SKOS/get](https://gams-staging.uni-graz.at/archive/objects/o:crown.thesaurus/methods/sdef:SKOS/get)
+  * Index of people: [https://gams-staging.uni-graz.at/archive/objects/o:crown.index.person/methods/sdef:Ontology/get](https://gams-staging.uni-graz.at/archive/objects/o:crown.index.person/methods/sdef:Ontology/get) 
+  * Index of organisations: [https://gams-staging.uni-graz.at/archive/objects/o:crown.index.organisation/methods/sdef:Ontology/get](https://gams-staging.uni-graz.at/archive/objects/o:crown.index.organisation/methods/sdef:Ontology/get) 
