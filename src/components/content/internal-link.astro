@@ -3,7 +3,8 @@ import Link from "@/components/link.astro";
 
 interface Props {
 	resource: {
-		discriminant: "consortium" | "events" | "news" | "pages";
+		discriminant: "consortium" | "events" | "news" | "pages" | "projects";
+		id?: string;
 		value: string;
 	};
 }
@@ -11,7 +12,11 @@ interface Props {
 const { resource } = Astro.props;
 const { discriminant: collection, value: id } = resource;
 
-const href = collection === "pages" ? `/${id}` : `/${collection}/${id}`;
+let href = collection === "pages" ? `/${id}` : `/${collection}/${id}`;
+
+if (resource.id != null) {
+	href += `#${resource.id}`;
+}
 ---
 
 <Link href={href}><slot /></Link>
