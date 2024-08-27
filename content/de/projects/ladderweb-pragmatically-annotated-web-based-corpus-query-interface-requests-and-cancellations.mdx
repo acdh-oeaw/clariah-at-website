@@ -6,14 +6,20 @@ summary: >-
   Das Projekt zielt darauf ab, pragmatisch annotierte Daten in wenig erforschten
   Sprachen (Italienisch L1/L2, Deutsch und kolumbianisches Spanisch)
   bereitzustellen. Zu den Vorteilen gehören die Professionalisierung von
-  Lehrkräften [...]
-startDate: 2023-01-01
-endDate: 2023-01-01
+  Lehrkräften und das Selbststudim für nicht Muttersprachler:innen.
+startDate: 2023-04-01
+endDate: 2024-03-31
 image: >-
-  /assets/content/de/projects/ladderweb-pragmatically-annotated-web-based-corpus-query-interface-requests-and-cancellations/image.jpg
+  /assets/content/de/projects/ladderweb-pragmatically-annotated-web-based-corpus-query-interface-requests-and-cancellations/image.png
 additionalImages: []
 attachments: []
-links: []
+links:
+  - label: LADDER
+    url: https://arche.acdh.oeaw.ac.at/browser/oeaw_detail/531126
+  - label: DisDir
+    url: https://arche.acdh.oeaw.ac.at/browser/oeaw_detail/531127
+  - label: LadderWeb App
+    url: https://ifd-ladderweb.uibk.ac.at/#/annotate
 responsiblePersons:
   - Nicola Brocca
 hostingOrganizations:
@@ -33,3 +39,30 @@ Das Endprodukt wird eine Online-Plattform sein, die es Linguisten ermöglicht, d
 
 ## Outcomes
 
+Die Datensätze wurden bereinigt und die vorhandene Annotation überprüft, so dass der Datensatz für das KI-Training und die automatische Annotation vorbereitet werden konnte. Außerdem wurden die verbalen Daten transkribiert und mit Metadaten verknüpft.\
+Es wurde ein Workflow für das Training von Sprachmodellen und die anschließende automatische Annotation von Beispielsätzen entwickelt. Derzeit testen wir verschiedene Tagging-Algorithmen und überprüfen die Qualität ihrer Ergebnisse.\
+Bei der Verwendung von Hunderten von Datensätzen ist das Ergebnis noch nicht zufriedenstellend, so dass eine manuelle Nachbearbeitung erforderlich ist. Wir sind zuversichtlich, dass sich die Qualität der automatischen Annotation mit Hilfe der halbautomatischen Annotation und der Ergänzung des Trainingskorpus durch weitere Datensätze stetig verbessern wird.
+
+Diese Daten werden Studenten, Lehrern und Forschern über Ladder Web, eine Webanwendung, öffentlich zugänglich gemacht. Andere Datensätze, die aufgrund einer geringen Anzahl spezifischer Sprachdateien nicht in das Training einbezogen wurden, werden derzeit bereinigt und ohne Annotation zusammen mit den annotierten Daten archiviert.
+
+Die Archivierung von linguistischen Datensätzen auf der ÖAW-ARCHE-Plattform erfolgt in den Formaten TEI/XML und JSON, die eine langfristige Aufbewahrung und Zugänglichkeit gewährleisten. Diese Formate entsprechen den komplexen Anforderungen der linguistischen Forschung und ermöglichen die detaillierte Darstellung von Texten und Annotationen. Der Zugang zu den Korpora LADDER (Learners Digital Communication a Dataset for Pragmatic competence in Italian L2) und DisDir (Disdette e atti di rifiuto) wird durch spezielle Links erleichtert und bietet Forschern reichhaltige Ressourcen für die Analyse von Sprache und Diskurs;
+
+* LADDER: [https://hdl.handle.net/21.11115/0000-0011-83CC-3](https://hdl.handle.net/21.11115/0000-0011-83CC-3)
+* DisDir: [https://hdl.handle.net/21.11115/0000-0011-83CD-2](https://hdl.handle.net/21.11115/0000-0011-83CD-2)
+
+Die LadderWeb App, die von der Universität Innsbruck entwickelt und gehostet wird, stellt einen bedeutenden Fortschritt im Bereich der linguistischen Forschungswerkzeuge dar. Sie automatisiert den Annotationsprozess und steigert die Effizienz und Genauigkeit. Verfügbar unter: [https://ifd-ladderweb.uibk.ac.at/](https://ifd-ladderweb.uibk.ac.at/)
+
+Eine manuelle Nachbearbeitung durch Studierende in Seminaren ist geplant, insbesondere angesichts der positiven Rückmeldungen zu den Verbreitungsformaten.
+
+Die Funktionalität der App umfasst die Verwaltung von Texten und deren Metadaten (z.B. IDs, Inhalt, Sprache, Aufgaben und Sprecherinformationen wie Alter, Geschlecht und sprachlicher Hintergrund) und Annotationen (z.B. Modifikatoren und Subakte). Der Annotationsprozess umfasst mehrere Schritte:
+
+1. Vorverarbeitung: \
+   Dazu gehören Unicode-Normalisierung, Satzsegmentierung mit Apache NLP, Tokenisierung mit RegExp und Kleinschreibung.
+2. Tagging: \
+   Verwendet einen vortrainierten Apache NLP POS-Tagger für das grundlegende Tagging, ergänzt durch binäre Tagger für jede Sprache und jedes Token. Das Training wird ausschließlich mit Daten aus der Datenbank durchgeführt, eine Methode, die sich als effektiv erwiesen hat.
+
+Dieser detaillierte Ansatz zur Archivierung und Analyse linguistischer Daten unterstreicht die Bedeutung digitaler Werkzeuge für die Weiterentwicklung der Sprachforschung. LadderWeb mit seiner innovativen Anwendung von NLP-Techniken und nutzerorientiertem Design ist ein Beispiel für das Potenzial der Technologie zur Verfeinerung und Erweiterung der Grenzen der linguistischen Analyse;
+
+## Dissemination
+
+Die folgenden 4 Zusammenfassungen über das Projekt sind bei OASIS eingereicht worden:
