@@ -25,7 +25,7 @@ const { t } = await createI18n(Astro.currentLocale as Locale | undefined);
 	>
 		<div class="grid size-full gap-y-4 px-8 py-6" data-dialog-content>
 			<div class="relative mt-8">
-				<div data-search-results></div>
+				<div data-search-results transition:persist></div>
 			</div>
 			<button class="absolute right-4 top-4 text-sm" data-search-close>
 				<Icon aria-hidden="true" class="size-4 shrink-0" name="lucide:x" />
