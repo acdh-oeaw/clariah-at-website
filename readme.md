@@ -43,12 +43,6 @@ the default template accepts the following variables:
   are "disabled", "enabled" and "public" (only validate public variables, which can be useful in a
   docker build context to avoid having to pass secrets to `docker build`), defaults to "enabled".
 
-the email service can be configured with these environment variables:
-
-- `EMAIL_CONTACT_ADDRESS` (required): email will be sent to this address.
-- `EMAIL_SMTP_SERVER` and `EMAIL_SMTP_PORT` (required): which smtp server to use.
-- `EMAIL_SMTP_USERNAME` and `EMAIL_SMTP_PASSWORD` (optional): not needed on acdh-ch infrastructure,
-
 when adding new environment variables, don't forget to add them to `.env.local.example` as well.
 
 install dependencies:
