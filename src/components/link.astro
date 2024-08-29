@@ -6,9 +6,10 @@ import { ensureTrailingSlash } from "@/lib/ensure-trailing-slash";
 
 interface Props extends HTMLAttributes<"a"> {
 	locale?: Locale;
+	reload?: boolean;
 }
 
-const { href, locale, ...rest } = Astro.props;
+const { href, locale, reload, ...rest } = Astro.props;
 
 const localisedHref =
 	typeof href === "string" && href.startsWith("/") && !href.startsWith("/assets/")
@@ -16,4 +17,4 @@ const localisedHref =
 		: href;
 ---
 
-<a {...rest} href={localisedHref}><slot /></a>
+<a {...rest} data-astro-reload={reload} href={localisedHref}><slot /></a>

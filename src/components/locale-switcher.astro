@@ -30,7 +30,7 @@ const currentPathname = getUnprefixedPathname(Astro.url.pathname);
 			}
 
 			return (
-				<Link href={currentPathname} locale={locale}>
+				<Link href={currentPathname} locale={locale} reload={true}>
 					<span aria-hidden="true">{locale.toUpperCase()}</span>
 					<span class="sr-only">
 						{t("LocaleSwitcher.switch-locale-to", { locale: label.of(locale) })}
