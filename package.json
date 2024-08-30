@@ -12,7 +12,7 @@
 		"build": "run-s build:site generate:search-index",
 		"build:site": "astro build",
 		"dev": "astro dev",
-		"format:check": "prettier . \"!./content/**\" --cache --check --ignore-path ./.gitignore",
+		"format:check": "prettier . \"!./@(content|public)/**\" --cache --check --ignore-path ./.gitignore",
 		"format:fix": "pnpm run format:check --write",
 		"generate:search-index": "pagefind --site ./dist/client/",
 		"lint:check": "run-p --continue-on-error \"lint:*:check\"",
@@ -166,7 +166,7 @@
 			"eslint --cache --fix",
 			"prettier --cache --write"
 		],
-		"*.!(astro|css|js|ts|tsx),!./content/**": "prettier --cache --ignore-unknown --write"
+		"*.!(astro|css|js|ts|tsx),!./@(content|public)/**": "prettier --cache --ignore-unknown --write"
 	},
 	"postcss": {
 		"plugins": {
