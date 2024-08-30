@@ -29,6 +29,7 @@ import { env } from "@/config/env.config";
 import type { Locale } from "@/config/i18n.config";
 import { getCollectionName } from "@/lib/content/get-collection-name";
 import { useObjectUrl } from "@/lib/content/use-object-url";
+import { cn } from "@/lib/styles";
 
 const headingLevels = [2, 3, 4, 5] as const;
 
@@ -118,12 +119,11 @@ function createComponents(
 						<NotEditable>
 							<img
 								alt=""
+								className="aspect-square w-full"
 								src={url ?? undefined}
 								style={{
-									aspectRatio: 1,
 									margin: 0,
 									maxWidth: `${String(value.maxSize)}px`,
-									width: "100%",
 								}}
 							/>
 						</NotEditable>
@@ -156,10 +156,7 @@ function createComponents(
 			// description: "A link to an uploaded file.",
 			icon: <DownloadIcon />,
 			tag: "a",
-			style: {
-				textDecorationLine: "underline",
-				textDecorationStyle: "dotted",
-			},
+			className: "underline decoration-dotted",
 			schema: {
 				href: fields.file({
 					label: "File",
@@ -188,17 +185,7 @@ function createComponents(
 
 				return (
 					<NotEditable>
-						<div
-							style={{
-								appearance: "none",
-								background: "black",
-								borderRadius: 9999,
-								color: "white",
-								display: "inline-flex",
-								padding: "8px 24px",
-								textDecoration: "none",
-							}}
-						>
+						<div className="my-2 inline-flex rounded-full bg-brand px-6 py-2 text-white no-underline transition hover:bg-brand-intent">
 							{value.label}
 						</div>
 					</NotEditable>
@@ -277,25 +264,16 @@ function createComponents(
 				const { children, value } = props;
 
 				const variants = {
-					"two-columns": { gridTemplateColumns: "repeat(2, minmax(0, 1fr))" },
-					"three-columns": { gridTemplateColumns: "repeat(3, minmax(0, 1fr))" },
-					"four-columns": { gridTemplateColumns: "repeat(4, minmax(0, 1fr))" },
-					"one-two-columns": { gridTemplateColumns: "minmax(0, 1fr) minmax(0, 2fr)" },
-					"one-three-columns": { gridTemplateColumns: "minmax(0, 1fr) minmax(0, 3fr)" },
-					"one-four-columns": { gridTemplateColumns: "minmax(0, 1fr) minmax(0, 4fr)" },
+					"two-columns": "sm:grid-cols-2",
+					"three-columns": "sm:grid-cols-3",
+					"four-columns": "sm:grid-cols-4",
+					"one-two-columns": "sm:grid-cols-[1fr_2fr]",
+					"one-three-columns": "sm:grid-cols-[1fr_3fr]",
+					"one-four-columns": "sm:grid-cols-[1fr_4fr]",
 				};
 
 				return (
-					<div
-						style={{
-							alignContent: "start",
-							display: "grid",
-							gap: 32,
-							...variants[value.variant],
-						}}
-					>
-						{children}
-					</div>
+					<div className={cn("grid content-start gap-8", variants[value.variant])}>{children}</div>
 				);
 			},
 		}),
@@ -319,7 +297,7 @@ function createComponents(
 			ContentView(props) {
 				const { value } = props;
 
-				return <span style={{ opacity: 0.5 }}>#{value.id}</span>;
+				return <span className="opacity-50">#{value.id}</span>;
 			},
 		}),
 		ImageLink: wrapper({
@@ -513,17 +491,7 @@ function createComponents(
 
 				return (
 					<NotEditable>
-						<div
-							style={{
-								appearance: "none",
-								background: "black",
-								borderRadius: 9999,
-								color: "white",
-								display: "inline-flex",
-								padding: "8px 24px",
-								textDecoration: "none",
-							}}
-						>
+						<div className="my-2 inline-flex rounded-full bg-brand px-6 py-2 text-white no-underline transition hover:bg-brand-intent">
 							{value.label}
 						</div>
 					</NotEditable>

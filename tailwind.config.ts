@@ -5,7 +5,7 @@ const preset = createPreset();
 
 const config: Config = {
 	content: [
-		"./keystatic.config.tsx",
+		"./keystatic.config.|(ts|tsx)",
 		"./content/**/*.@(md|mdx)",
 		"./src/@(components|layouts|pages)/**/*.@(astro|css|ts|tsx)",
 		"./src/styles/**/*.css",
