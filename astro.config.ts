@@ -2,7 +2,6 @@ import mdx from "@astrojs/mdx";
 import node from "@astrojs/node";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
-import keystatic from "@keystatic/astro";
 import { defineConfig } from "astro/config";
 import icon from "astro-icon";
 import type { Writable } from "type-fest";
@@ -71,7 +70,6 @@ export default defineConfig({
 				],
 			},
 		}),
-		keystatic(),
 		mdx(),
 		react(),
 		sitemap({
@@ -110,6 +108,8 @@ export default defineConfig({
 		checkOrigin: true,
 	},
 	server: {
+		/** Required by keystatic. */
+		host: "127.0.0.1",
 		port: 3000,
 	},
 	site: env.PUBLIC_APP_BASE_URL,

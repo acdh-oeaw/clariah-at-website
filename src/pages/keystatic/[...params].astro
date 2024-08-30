@@ -1,0 +1,30 @@
+---
+import "tailwindcss/tailwind.css";
+
+import { createI18n } from "@/lib/i18n";
+import { Keystatic } from "@/lib/keystatic/page";
+
+const locale = "en";
+const { t } = await createI18n(locale);
+
+const metadata = t("metadata");
+
+export const prerender = false;
+---
+
+<html lang={locale}>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta charset="utf-8" />
+
+		<title>{["CMS", metadata.title].join(" | ")}</title>
+
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="32x32" />
+
+		<meta name="robots" content="noindex" />
+	</head>
+
+	<body>
+		<Keystatic client:load />
+	</body>
+</html>
