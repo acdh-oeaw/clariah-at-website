@@ -1155,48 +1155,6 @@ const singletons = {
 															},
 														),
 													},
-													email: {
-														label: "Mailing list card",
-														itemLabel(props) {
-															return props.fields.title.value;
-														},
-														schema: fields.object(
-															{
-																title: fields.text({
-																	label: "Title",
-																	validation: { isRequired: true },
-																}),
-																image: fields.image({
-																	label: "Image",
-																	...createAssetPaths(assetPath),
-																	// validation: { isRequired: false },
-																}),
-																summary: fields.text({
-																	label: "Summary",
-																	multiline: true,
-																	validation: { isRequired: true },
-																}),
-																link: fields.object(
-																	{
-																		label: fields.text({
-																			label: "Label",
-																			validation: { isRequired: true },
-																		}),
-																		href: fields.url({
-																			label: "URL",
-																			validation: { isRequired: true },
-																		}),
-																	},
-																	{
-																		label: "Link",
-																	},
-																),
-															},
-															{
-																label: "Custom card",
-															},
-														),
-													},
 												},
 												{
 													label: "Cards",
