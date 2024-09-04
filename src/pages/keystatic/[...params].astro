@@ -28,3 +28,10 @@ export const prerender = false;
 		<Keystatic client:load />
 	</body>
 </html>
+
+<style is:global>
+	body {
+		/** FIXME: work around for @see https://github.com/Thinkmill/keystatic/issues/1292 */
+		font-synthesis: style;
+	}
+</style>
