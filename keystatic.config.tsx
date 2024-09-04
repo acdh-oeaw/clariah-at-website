@@ -491,7 +491,7 @@ function createComponents(
 
 				return (
 					<NotEditable>
-						<div className="my-2 inline-flex rounded-full bg-brand px-6 py-2 text-white no-underline transition hover:bg-brand-intent">
+						<div className="my-2 font-medium inline-flex rounded-full bg-brand px-6 py-2 text-white no-underline transition hover:bg-brand-intent">
 							{value.label}
 						</div>
 					</NotEditable>
