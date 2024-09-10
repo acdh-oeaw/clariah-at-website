@@ -20,6 +20,13 @@
               }
             },
             {
+              "discriminant": "event",
+              "value": {
+                "title": "CLARIAH-AT Roadshow",
+                "reference": "clariah-at-roadshow"
+              }
+            },
+            {
               "discriminant": "news",
               "value": {
                 "title": "CLARIN Jahresbericht 2023",
@@ -31,13 +38,6 @@
               "value": {
                 "title": "CLARIN Café - SSHOC Marketplace & Workflows",
                 "reference": "clarin-cafe-sshoc-marketplace-and-workflows"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "CLARIAH-AT Roadshow",
-                "reference": "clariah-at-roadshow"
               }
             },
             {
