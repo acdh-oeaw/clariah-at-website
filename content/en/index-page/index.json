@@ -39,6 +39,13 @@
                 "title": "Call: Second Austrian Meeting on Digital Linguistics ",
                 "reference": "call-second-austrian-meeting-on-digital-linguistics"
               }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "ÖNB Labs Symposium “Newspapers as Datasets” - Save the date!",
+                "reference": "onb-labs-symposium-2024-newspapers-as-datasets"
+              }
             }
           ]
         }
