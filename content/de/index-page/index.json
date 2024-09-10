@@ -15,6 +15,13 @@
             {
               "discriminant": "news",
               "value": {
+                "title": "ÖNB Labs Symposium “Newspapers as Datasets” - Save the date!",
+                "reference": "onb-labs-symposium-2024-newspapers-as-datasets"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
                 "title": "CLARIN Jahresbericht 2023",
                 "reference": "clarin-annual-report-2023"
               }
