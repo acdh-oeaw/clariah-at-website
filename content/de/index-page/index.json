@@ -22,20 +22,6 @@
             {
               "discriminant": "event",
               "value": {
-                "title": "CLARIAH-AT Roadshow",
-                "reference": "clariah-at-roadshow"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "CLARIN Jahresbericht 2023",
-                "reference": "clarin-annual-report-2023"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
                 "title": "CLARIN Café - SSHOC Marketplace & Workflows",
                 "reference": "clarin-cafe-sshoc-marketplace-and-workflows"
               }
@@ -43,8 +29,8 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "Call: Zweites Österreichisches Treffen zur Digitalen Linguistik",
-                "reference": "call-second-austrian-meeting-on-digital-linguistics"
+                "title": "CLARIN Jahresbericht 2023",
+                "reference": "clarin-annual-report-2023"
               }
             }
           ]
