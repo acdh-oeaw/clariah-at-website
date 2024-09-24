@@ -9,6 +9,12 @@
 		},
 		"title": "Consortium"
 	},
+	"EventPage": {
+		"more": {
+			"events": "CLARIAH-AT events",
+			"news": "CLARIAH-AT news"
+		}
+	},
 	"EventsPage": {
 		"meta": {
 			"title": "Events"
@@ -45,6 +51,12 @@
 		},
 		"read-more": "Read more",
 		"title": "News"
+	},
+	"NewsItemPage": {
+		"more": {
+			"events": "CLARIAH-AT events",
+			"news": "CLARIAH-AT news"
+		}
 	},
 	"NotFoundPage": {
 		"meta": {

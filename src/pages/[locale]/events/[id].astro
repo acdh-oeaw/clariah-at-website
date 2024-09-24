@@ -1,4 +1,5 @@
 ---
+import LinkButton from "@/components/content/link-button.astro";
 import MainContent from "@/components/main-content.astro";
 import PageCard from "@/components/page-card.astro";
 import PageSection from "@/components/page-section.astro";
@@ -8,6 +9,7 @@ import PageLayout from "@/layouts/page-layout.astro";
 import { getCollectionName } from "@/lib/content/get-collection-name";
 import { processMdx } from "@/lib/content/mdx";
 import { reader } from "@/lib/content/reader";
+import { createI18n } from "@/lib/i18n";
 
 export async function getStaticPaths() {
 	return (
@@ -28,6 +30,8 @@ const { locale } = Astro.params;
 
 const { page } = Astro.props;
 
+const { t } = await createI18n(locale);
+
 const documentTitle = page.title;
 const { date, image, title } = page;
 const { default: Content } = await processMdx(await page.content(), locale);
@@ -38,9 +42,23 @@ const { default: Content } = await processMdx(await page.content(), locale);
 		<PageSection>
 			<PageCard image={image}>
 				<PageTitle>{title}</PageTitle>
+
 				<time datetime={date}>{date}</time>
+
 				<div class="prose">
 					<Content />
+				</div>
+
+				<div class="mt-8 flex items-center gap-x-4">
+					<LinkButton
+						label={t("EventPage.more.events")}
+						link={{ discriminant: "pages", value: "events" }}
+					/>
+
+					<LinkButton
+						label={t("EventPage.more.news")}
+						link={{ discriminant: "pages", value: "news" }}
+					/>
 				</div>
 			</PageCard>
 		</PageSection>

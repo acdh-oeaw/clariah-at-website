@@ -33,6 +33,7 @@ const { locale } = Astro.params;
 const { page } = Astro.props;
 
 const { t } = await createI18n(locale);
+
 const dateTime = new Intl.DateTimeFormat([locale], { dateStyle: "long" });
 const list = new Intl.ListFormat([locale]);
 
