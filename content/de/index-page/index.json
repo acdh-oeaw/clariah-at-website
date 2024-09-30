@@ -15,22 +15,22 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "ÖNB Labs Symposium “Newspapers as Datasets” - Save the date!",
-                "reference": "onb-labs-symposium-2024-newspapers-as-datasets"
+                "title": "Transformations: a DARIAH Jounal - 1st Call for Contributions!",
+                "reference": "transformations-a-dariah-journal-1st-call-for-contributions"
               }
             },
             {
               "discriminant": "event",
               "value": {
-                "title": "CLARIN Café - SSHOC Marketplace & Workflows",
-                "reference": "clarin-cafe-sshoc-marketplace-and-workflows"
+                "title": "Digitale Bibliothek 2024 - Zurück (und) in die Zukunft",
+                "reference": "digitale-bibliothek-2024-zurueck-und-in-die-zukunft"
               }
             },
             {
               "discriminant": "news",
               "value": {
-                "title": "CLARIN Jahresbericht 2023",
-                "reference": "clarin-annual-report-2023"
+                "title": "ÖNB Labs Symposium “Newspapers as Datasets” - Save the date!",
+                "reference": "onb-labs-symposium-2024-newspapers-as-datasets"
               }
             }
           ]
