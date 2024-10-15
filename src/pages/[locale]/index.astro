@@ -62,9 +62,8 @@ const { hero } = page;
 						case "cardsSection": {
 							const sectionStyles = {
 								fluid: "grid-fluid-cols-80",
-								"two-columns": "grid-cols-2",
-								"three-columns": "grid-cols-3",
-								"four-columns": "grid-cols-4",
+								"two-columns": "grid-fluid-cols-80 sm:grid-cols-2",
+								"three-columns": "grid-fluid-cols-80 lg:grid-cols-3",
 							};
 
 							return (

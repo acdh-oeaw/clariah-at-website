@@ -1038,10 +1038,6 @@ const singletons = {
 														label: "Three columns",
 														value: "three-columns",
 													},
-													{
-														label: "Four columns",
-														value: "four-columns",
-													},
 												],
 												defaultValue: "fluid",
 											}),
