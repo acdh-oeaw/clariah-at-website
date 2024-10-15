@@ -13,6 +13,13 @@
           "variant": "four-columns",
           "cards": [
             {
+              "discriminant": "event",
+              "value": {
+                "title": "ÖNB Labs Symposium \"Newspapers as Datasets\"",
+                "reference": "onb-labs-symposium-newspapers-as-datasets"
+              }
+            },
+            {
               "discriminant": "news",
               "value": {
                 "title": "ACDH-CH Volontariate Februar 2025",
@@ -31,13 +38,6 @@
               "value": {
                 "title": "Digitale Bibliothek 2024 - Zurück (und) in die Zukunft",
                 "reference": "digitale-bibliothek-2024-zurueck-und-in-die-zukunft"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "ÖNB Labs Symposium “Newspapers as Datasets” - Save the date!",
-                "reference": "onb-labs-symposium-2024-newspapers-as-datasets"
               }
             }
           ]
