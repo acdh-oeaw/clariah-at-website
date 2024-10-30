@@ -15,6 +15,13 @@
             {
               "discriminant": "news",
               "value": {
+                "title": "DARIAH Annual Report 2023",
+                "reference": "dariah-annual-report-2023"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
                 "title": "CLARIN Conference 2025 in Vienna!",
                 "reference": "clarin-conference-2025-vienna"
               }
@@ -45,13 +52,6 @@
               "value": {
                 "title": "Digital Library 2024 - Zurück (und) in die Zukunft",
                 "reference": "digitale-bibliothek-2024-zurueck-und-in-die-zukunft"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "DARIAH Annual Report 2023",
-                "reference": "dariah-annual-report-2023"
               }
             }
           ]
