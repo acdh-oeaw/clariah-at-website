@@ -15,6 +15,13 @@
             {
               "discriminant": "news",
               "value": {
+                "title": "DARIAH Jahresbericht 2023",
+                "reference": "dariah-annual-report-2023"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
                 "title": "CLARIN Konferenz 2025 in Wien!",
                 "reference": "clarin-conference-2025-vienna"
               }
