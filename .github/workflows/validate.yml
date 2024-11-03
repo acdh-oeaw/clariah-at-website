@@ -5,6 +5,7 @@ concurrency:
   cancel-in-progress: true
 
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - main
@@ -41,7 +42,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        node-version: [20.x]
+        node-version: [22.x]
         os: [ubuntu-latest]
 
     steps:
@@ -120,9 +121,9 @@ jobs:
 
   build-deploy:
     name: Build and deploy
+    needs: [validate]
     # @see https://github.com/orgs/community/discussions/45058
     if: ${{ github.event_name == 'push' && !failure() && !cancelled() }}
-    needs: [validate]
     uses: ./.github/workflows/build-deploy.yml
     secrets: inherit
     # https://docs.github.com/en/actions/using-workflows/reusing-workflows#access-and-permissions

@@ -8,18 +8,16 @@ import PageSection from "@/components/page-section.astro";
 import PageTitle from "@/components/page-title.astro";
 import { locales } from "@/config/i18n.config";
 import PageLayout from "@/layouts/page-layout.astro";
-import { getCollectionName } from "@/lib/content/get-collection-name";
-import { reader } from "@/lib/content/reader";
 import { createI18n } from "@/lib/i18n";
+import { createCollectionResource } from "@/lib/keystatic/resources";
 
 export async function getStaticPaths() {
 	return Promise.all(
 		locales.map(async (locale) => {
-			const collection = getCollectionName("events", locale);
-			const pages = await reader().collections[collection].all();
+			const pages = await createCollectionResource("events", locale).all();
 
 			pages.sort((a, z) => {
-				return compareDesc(new Date(a.entry.date), new Date(z.entry.date));
+				return compareDesc(new Date(a.data.date), new Date(z.data.date));
 			});
 
 			return { params: { locale }, props: { pages } };
@@ -45,17 +43,19 @@ const title = t("EventsPage.title");
 				<ul class="my-8 grid gap-12 md:grid-cols-2" role="list">
 					{
 						pages.map((page) => {
+							const { image, shortTitle, summary, title } = page.data;
+
 							return (
 								<li>
 									<article>
 										<Card
-											image={page.entry.image}
+											image={image}
 											link={{
 												label: t("EventsPage.read-more"),
-												href: `/events/${page.slug as string}`,
+												href: `/events/${page.id}`,
 											}}
-											summary={page.entry.summary}
-											title={page.entry.shortTitle || (page.entry.title as string)}
+											summary={summary}
+											title={shortTitle || title}
 										/>
 									</article>
 								</li>

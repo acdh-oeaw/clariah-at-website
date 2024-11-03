@@ -8,20 +8,17 @@ import PageSection from "@/components/page-section.astro";
 import PageTitle from "@/components/page-title.astro";
 import { locales } from "@/config/i18n.config";
 import PageLayout from "@/layouts/page-layout.astro";
-import { getCollectionName } from "@/lib/content/get-collection-name";
-import { processMdx } from "@/lib/content/mdx";
-import { reader } from "@/lib/content/reader";
 import { createI18n } from "@/lib/i18n";
+import { createCollectionResource } from "@/lib/keystatic/resources";
 
 export async function getStaticPaths() {
 	return (
 		await Promise.all(
 			locales.map(async (locale) => {
-				const collection = getCollectionName("projects", locale);
-				const pages = await reader().collections[collection].all();
+				const pages = await createCollectionResource("projects", locale).all();
 
 				return pages.map((page) => {
-					return { params: { id: page.slug, locale }, props: { page: page.entry } };
+					return { params: { id: page.id, locale }, props: { page } };
 				});
 			}),
 		)
@@ -37,8 +34,8 @@ const { t } = await createI18n(locale);
 const dateTime = new Intl.DateTimeFormat([locale], { dateStyle: "long" });
 const list = new Intl.ListFormat([locale]);
 
-const documentTitle = page.title;
 const {
+	content,
 	endDate: _endDate,
 	image,
 	startDate: _startDate,
@@ -48,10 +45,11 @@ const {
 	hostingOrganizations,
 	links,
 	responsiblePersons,
-} = page;
+} = page.data;
+const documentTitle = title;
 const startDate = _startDate != null ? new Date(_startDate) : undefined;
 const endDate = _endDate != null ? new Date(_endDate) : undefined;
-const { default: Content } = await processMdx(await page.content(), locale);
+const { default: Content } = await page.compile(content);
 ---
 
 <PageLayout locale={locale} title={documentTitle}>

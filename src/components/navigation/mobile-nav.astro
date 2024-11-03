@@ -6,31 +6,22 @@ import { mobileNavId } from "@/components/navigation/constants";
 import NavLink from "@/components/navigation/nav-link.astro";
 import Search from "@/components/search.astro";
 import { defaultLocale, type Locale } from "@/config/i18n.config";
-import { getNavigation } from "@/lib/get-navigation";
+import { getLinkProps } from "@/lib/keystatic/get-link-props";
+import { createSingletonResource } from "@/lib/keystatic/resources";
 
 const locale = (Astro.currentLocale as Locale | undefined) ?? defaultLocale;
-const navigation = await getNavigation(locale);
+const navigation = await createSingletonResource("navigation", locale).read();
 ---
 
-<div id={mobileNavId} hidden class="px-4 pb-6 lg:hidden" data-mobile-nav>
+<div class="px-4 pb-6 lg:hidden" data-mobile-nav hidden id={mobileNavId}>
 	<ul class="grid gap-y-2 text-[#444]" role="list">
 		{
-			navigation.links.map((item) => {
+			navigation.data.links.map((item) => {
 				switch (item.discriminant) {
 					case "link": {
 						return (
 							<li>
-								<NavLink class="transition hover:text-[#212529]" href={item.value.href}>
-									{item.value.label}
-								</NavLink>
-							</li>
-						);
-					}
-
-					case "page": {
-						return (
-							<li>
-								<NavLink class="transition hover:text-[#212529]" href={`/${item.value.reference}`}>
+								<NavLink class="transition hover:text-[#212529]" {...getLinkProps(item.value.link)}>
 									{item.value.label}
 								</NavLink>
 							</li>
@@ -50,14 +41,14 @@ const navigation = await getNavigation(locale);
 										/>
 									</summary>
 									<ul class="ml-4 mt-2 grid gap-y-1" role="list">
-										{item.value.links.map((link) => {
+										{item.value.items.map((link) => {
 											switch (link.discriminant) {
 												case "link": {
 													return (
 														<li>
 															<NavLink
 																class="transition hover:text-[#212529]"
-																href={link.value.href}
+																{...getLinkProps(link.value.link)}
 															>
 																{link.value.label}
 															</NavLink>
@@ -65,17 +56,8 @@ const navigation = await getNavigation(locale);
 													);
 												}
 
-												case "page": {
-													return (
-														<li>
-															<NavLink
-																class="transition hover:text-[#212529]"
-																href={`/${link.value.reference}`}
-															>
-																{link.value.label}
-															</NavLink>
-														</li>
-													);
+												case "separator": {
+													return null;
 												}
 
 												default: {
@@ -87,6 +69,10 @@ const navigation = await getNavigation(locale);
 								</details>
 							</li>
 						);
+					}
+
+					case "separator": {
+						return null;
 					}
 
 					default: {

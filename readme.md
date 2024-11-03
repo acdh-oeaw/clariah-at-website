@@ -1,17 +1,17 @@
 # clariah-at
 
-project website for clariah-at.
+project website for clariah-at. deployed at <https://clariah.at>.
 
 ## how to run
 
 prerequisites:
 
-- [node.js 20.x](https://nodejs.org/en/download)
+- [node.js 22.x](https://nodejs.org/en/download)
 - [pnpm 9.x](https://pnpm.io/installation)
 
 > [!TIP]
 >
-> you can use `pnpm` to install the required node.js version with `pnpm env use 20 --global`
+> you can use `pnpm` to install the required node.js version with `pnpm env use 22 --global`
 
 set required environment variables in `.env.local`:
 
@@ -64,9 +64,9 @@ pnpm run dev
 
 ## how to edit content
 
-use the admin ui at when developing locally <http://localhost:3000/admin> (this will save changes to
-the filesystem), or at <https://clariah-at.acdh-ch-dev.oeaw.ac.at/admin> (this will commit changes
-to the github repository).
+use the admin ui at <http://localhost:3000/admin> when developing locally (this will save changes to
+the filesystem), or at <https://clariah.at/admin> (this will commit changes to the github
+repository).
 
 ## how to deploy
 
@@ -79,6 +79,11 @@ to the github repository).
   "https://my-app.acdh-ch-dev.oeaw.ac.at"), and set the `KUBE_INGRESS_BASE_DOMAIN` to the public
   url's base domain (e.g. "acdh-ch-dev.oeaw.ac.at"). `PUBLIC_URL` should match
   `PUBLIC_APP_BASE_URL`.
+- when deploying to a production domain (i.e. a domain not ending in "acdh-ch-dev.oeaw.ac.at"), set
+  `HELM_UPGRADE_EXTRA_ARGS` to
+  `--set 'ingress.annotations.cert-manager\.io/cluster-issuer=acdh-prod'` for "acdh.oeaw.ac.at"
+  domains, or to `--set 'ingress.annotations.cert-manager\.io/cluster-issuer=letsencrypt-prod'` for
+  any other non-oeaw domains, and ensure `KUBE_INGRESS_BASE_DOMAIN` is set correctly.
 - if you haven't yet, create a service issue in the acdh-ch
   [redmine](https://redmine.acdh.oeaw.ac.at) issue tracker, and set the `SERVICE_ID` github variable
   to the issue number. this should match the `PUBLIC_REDMINE_ID` variable in your `.env.local` file.
@@ -96,12 +101,19 @@ to the github repository).
 - ensure both the github repository, as well as the
   [package registry](https://github.com/orgs/acdh-oeaw/packages/container/my-app/settings) is set to
   public.
+- the `PUBLIC_BOTS` variable defaults to "disabled", which signals to web crawlers that the website
+  should not be indexed. when deploying to a production domain (i.e. a domain not ending in
+  "acdh-ch-dev.oeaw.ac.at") this should be set to "enabled".
 
 if everything is set up correctly, every git push to the `main` branch will create a new deployment
 if the validation pipeline passes.
 
 you can reference the [template repository](https://github.com/acdh-oeaw/template-website-astro) for
 a working setup.
+
+> [!IMPORTANT]
+>
+> don't forget to include relevant data in the [rss feed](./src/pages/[locale]/feed.xml.ts).
 
 > [!NOTE]
 >

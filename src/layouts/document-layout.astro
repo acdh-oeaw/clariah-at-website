@@ -1,10 +1,9 @@
 ---
-import "tailwindcss/tailwind.css";
 import "@fontsource-variable/inter/standard.css";
 import "@fontsource-variable/inter/standard-italic.css";
+import "tailwindcss/tailwind.css";
 import "@/styles/index.css";
 
-import { isNonEmptyString } from "@acdh-oeaw/lib";
 import inter from "@fontsource-variable/inter/files/inter-latin-standard-normal.woff2?url";
 import { ViewTransitions } from "astro:transitions";
 import type { WebSite, WithContext } from "schema-dts";
@@ -15,6 +14,7 @@ import { defaultLocale, type Locale, locales } from "@/config/i18n.config";
 import { getUnprefixedPathname } from "@/lib/get-unprefixed-pathname";
 import { createI18n } from "@/lib/i18n";
 import { safeJsonLdReplacer } from "@/lib/safe-json-ld-replacer";
+import { withBasePath } from "@/lib/with-base-path";
 
 interface Props {
 	description?: string;
@@ -30,10 +30,10 @@ const { t } = await createI18n(locale);
 const metadata = t("metadata");
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
-const manifestUrl = "/manifest.webmanifest";
-const openGraphImageUrl = new URL("/opengraph-image.png", Astro.site);
-const sitemapUrl = "/sitemap-index.xml";
-const rssUrl = new URL("/feed.xml", Astro.site);
+const manifestUrl = withBasePath("/manifest.webmanifest");
+const openGraphImageUrl = new URL(withBasePath("/opengraph-image.png"), Astro.site);
+const sitemapUrl = withBasePath("/sitemap-index.xml");
+const rssUrl = new URL(withBasePath("/feed.xml"), Astro.site);
 
 const jsonLd: WithContext<WebSite> = {
 	"@context": "https://schema.org",
@@ -51,63 +51,62 @@ const googleSiteVerification = env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 <html lang={locale}>
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="color-scheme" content="light" />
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<meta content="light" name="color-scheme" />
 		<meta charset="utf-8" />
 
 		<title>{[title, metadata.title].join(" | ")}</title>
-		<meta name="description" content={description ?? metadata.description} />
+		<meta content={description ?? metadata.description} name="description" />
 
-		{robots != null ? <meta name="robots" content={robots} /> : null}
+		{robots != null ? <meta content={robots} name="robots" /> : null}
 
-		<link rel="canonical" href={canonicalUrl} />
-		<link rel="manifest" href={manifestUrl} />
+		<link href={canonicalUrl} rel="canonical" />
+		<link href={manifestUrl} rel="manifest" />
 
 		{
 			locales.map((locale) => {
 				return (
 					<link
-						rel="alternate"
-						href={new URL(`/${locale}${pathname}`, Astro.site)}
+						href={new URL(withBasePath(`/${locale}${pathname}`), Astro.site)}
 						hreflang={locale}
+						rel="alternate"
 					/>
 				);
 			})
 		}
 		<link
-			rel="alternate"
-			href={new URL(`/${defaultLocale}${pathname}`, Astro.site)}
+			href={new URL(withBasePath(`/${defaultLocale}${pathname}`), Astro.site)}
 			hreflang="x-default"
+			rel="alternate"
 		/>
 
-		<link rel="sitemap" href={sitemapUrl} />
-		<link rel="alternate" type="application/rss+xml" title={metadata.title} href={rssUrl} />
+		<link href={sitemapUrl} rel="sitemap" />
+		<link href={rssUrl} rel="alternate" title={metadata.title} type="application/rss+xml" />
 
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description ?? metadata.description} />
-		<meta property="og:url" content={canonicalUrl} />
-		<meta property="og:site_name" content={metadata.title} />
-		<meta property="og:locale" content={locale} />
-		<meta property="og:image:type" content="image/png" />
-		<meta property="og:image" content={openGraphImageUrl} />
-		<meta property="og:image:width" content="1200" />
-		<meta property="og:image:height" content="630" />
-		<meta property="og:type" content="website" />
+		<meta content={title} property="og:title" />
+		<meta content={description ?? metadata.description} property="og:description" />
+		<meta content={canonicalUrl} property="og:url" />
+		<meta content={metadata.title} property="og:site_name" />
+		<meta content={locale} property="og:locale" />
+		<meta content="image/png" property="og:image:type" />
+		<meta content={openGraphImageUrl} property="og:image" />
+		<meta content="1200" property="og:image:width" />
+		<meta content="630" property="og:image:height" />
+		<meta content="website" property="og:type" />
 
-		<meta name="twitter:card" content="summary_large_image" />
-		{
-			"twitter" in metadata && isNonEmptyString(metadata.twitter) ? (
-				<>
-					<meta name="twitter:site" content={metadata.twitter} />
-					<meta name="twitter:creator" content={metadata.twitter} />
-				</>
-			) : null
-		}
+		<meta content="summary_large_image" name="twitter:card" />
+		<meta content={metadata.twitter.site} name="twitter:site" />
+		<meta content={metadata.twitter.creator} name="twitter:creator" />
 
-		<link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="32x32" />
-		<link rel="apple-touch-icon" href="/apple-icon.png" type="image/png" sizes="180x180" />
+		<link href={withBasePath("/favicon.ico")} rel="icon" sizes="32x32" type="image/x-icon" />
+		<link
+			href={withBasePath("/apple-icon.png")}
+			rel="apple-touch-icon"
+			sizes="180x180"
+			type="image/png"
+		/>
 
-		<link rel="preload" as="font" type="font/woff2" href={inter} crossorigin />
+		<link as="font" crossorigin href={inter} rel="preload" type="font/woff2" />
 
 		<ViewTransitions />
 
@@ -121,7 +120,7 @@ const googleSiteVerification = env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 		{
 			googleSiteVerification != null ? (
-				<meta name="google-site-verification" content={googleSiteVerification} />
+				<meta content={googleSiteVerification} name="google-site-verification" />
 			) : null
 		}
 	</head>

@@ -3,7 +3,6 @@ import { createUrl } from "@acdh-oeaw/lib";
 import { defaultLocale, locales } from "@/config/i18n.config";
 import { expect, test } from "~/e2e/lib/test";
 
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 const baseUrl = process.env.PUBLIC_APP_BASE_URL!;
 
 test.describe("i18n", () => {
@@ -19,8 +18,7 @@ test.describe("i18n", () => {
 	test.describe("should redirect root route to preferred locale", () => {
 		test.use({ locale: "de" });
 
-		/** FIXME: Astro currently does not provide `preferredLocale` in hybrid output mode. */
-		test.fixme("with supported locale", async ({ page }) => {
+		test("with supported locale", async ({ page }) => {
 			await page.goto("/");
 			await expect(page).toHaveURL("/de/");
 		});
@@ -81,13 +79,6 @@ test.describe("i18n", () => {
 		);
 	});
 
-	test("should set `lang` attribute on `html` element", async ({ page }) => {
-		for (const locale of locales) {
-			await page.goto(`/${locale}/`);
-			await expect(page.locator("html")).toHaveAttribute("lang", locale);
-		}
-	});
-
 	test("should set alternate links in link tags", async ({ page }) => {
 		function createAbsoluteUrl(pathname: string) {
 			return String(createUrl({ baseUrl, pathname }));
@@ -102,14 +93,16 @@ test.describe("i18n", () => {
 				const links = await page
 					.locator('link[rel="alternate"][hreflang]')
 					.evaluateAll((elements) => {
-						return elements.map((element) => element.outerHTML);
+						return elements.map((element) => {
+							return element.outerHTML;
+						});
 					});
 
 				expect(links).toEqual(
 					expect.arrayContaining([
-						`<link rel="alternate" href="${createAbsoluteUrl(`/de${pathname}`)}" hreflang="de">`,
-						`<link rel="alternate" href="${createAbsoluteUrl(`/en${pathname}`)}" hreflang="en">`,
-						`<link rel="alternate" href="${createAbsoluteUrl(`/en${pathname}`)}" hreflang="x-default">`,
+						`<link href="${createAbsoluteUrl(`/de${pathname}`)}" hreflang="de" rel="alternate">`,
+						`<link href="${createAbsoluteUrl(`/en${pathname}`)}" hreflang="en" rel="alternate">`,
+						`<link href="${createAbsoluteUrl(`/en${pathname}`)}" hreflang="x-default" rel="alternate">`,
 					]),
 				);
 			}

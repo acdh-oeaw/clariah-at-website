@@ -6,17 +6,14 @@ import MainContent from "@/components/main-content.astro";
 import SectionTitle from "@/components/section-title.astro";
 import { locales } from "@/config/i18n.config";
 import PageLayout from "@/layouts/page-layout.astro";
-import { getCollectionName } from "@/lib/content/get-collection-name";
-import { getSingletonName } from "@/lib/content/get-singleton-name";
-import { reader } from "@/lib/content/reader";
 import { getImageImport } from "@/lib/get-image-import";
 import { createI18n } from "@/lib/i18n";
+import { createCollectionResource, createSingletonResource } from "@/lib/keystatic/resources";
 
 export function getStaticPaths() {
 	return Promise.all(
 		locales.map(async (locale) => {
-			const singleton = getSingletonName("indexPage", locale);
-			const page = await reader().singletons[singleton].readOrThrow();
+			const page = await createSingletonResource("index-page", locale).read();
 
 			return { params: { locale }, props: { page } };
 		}),
@@ -30,7 +27,7 @@ const { page } = Astro.props;
 const { t } = await createI18n(locale);
 
 const documentTitle = t("IndexPage.meta.title");
-const { hero } = page;
+const { hero, main } = page.data;
 ---
 
 <PageLayout locale={locale} title={documentTitle}>
@@ -50,14 +47,14 @@ const { hero } = page;
 			<div class="relative mx-auto grid w-full max-w-screen-lg gap-y-6 px-4 py-16">
 				<h1 class="text-5xl font-medium text-neutral-0">{hero.title}</h1>
 				<p class="max-w-[52rem] text-2xl text-neutral-0">
-					{hero.subtitle}
+					{hero.lead}
 				</p>
 			</div>
 		</section>
 
 		<div class="grid gap-y-12 py-12">
 			{
-				page.main.sections.map((section) => {
+				main.sections.map((section) => {
 					switch (section.discriminant) {
 						case "cardsSection": {
 							const sectionStyles = {
@@ -85,19 +82,19 @@ const { hero } = page;
 
 												case "event": {
 													const id = card.value.reference as string;
-													const collectionName = getCollectionName("events", locale);
-													const event = await reader().collections[collectionName].readOrThrow(id);
+													const event = await createCollectionResource("events", locale).read(id);
+													const { image, summary, title } = event.data;
 
 													return (
 														<li>
 															<Card
-																image={event.image}
-																title={event.title}
-																summary={event.summary}
+																image={image}
 																link={{
 																	label: t("IndexPage.card.read-more"),
 																	href: `/events/${id}`,
 																}}
+																summary={summary}
+																title={title}
 															/>
 														</li>
 													);
@@ -105,20 +102,19 @@ const { hero } = page;
 
 												case "news": {
 													const id = card.value.reference as string;
-													const collectionName = getCollectionName("news", locale);
-													const newsItem =
-														await reader().collections[collectionName].readOrThrow(id);
+													const newsItem = await createCollectionResource("news", locale).read(id);
+													const { image, summary, title } = newsItem.data;
 
 													return (
 														<li>
 															<Card
-																image={newsItem.image}
-																title={newsItem.title}
-																summary={newsItem.summary}
+																image={image}
 																link={{
 																	label: t("IndexPage.card.read-more"),
 																	href: `/news/${id}`,
 																}}
+																summary={summary}
+																title={title}
 															/>
 														</li>
 													);
@@ -126,19 +122,19 @@ const { hero } = page;
 
 												case "page": {
 													const id = card.value.reference as string;
-													const collectionName = getCollectionName("pages", locale);
-													const page = await reader().collections[collectionName].readOrThrow(id);
+													const page = await createCollectionResource("pages", locale).read(id);
+													const { image, summary, title } = page.data;
 
 													return (
 														<li>
 															<Card
-																image={page.image}
-																title={page.title}
-																summary={page.summary || t("IndexPage.card.no-summary")}
+																image={image}
 																link={{
 																	label: t("IndexPage.card.read-more"),
 																	href: `/${id}`,
 																}}
+																summary={summary || t("IndexPage.card.no-summary")}
+																title={title}
 															/>
 														</li>
 													);

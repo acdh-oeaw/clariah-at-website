@@ -10,21 +10,18 @@ import PageTitle from "@/components/page-title.astro";
 import SectionTitle from "@/components/section-title.astro";
 import { type Locale, locales } from "@/config/i18n.config";
 import PageLayout from "@/layouts/page-layout.astro";
-import { getCollectionName } from "@/lib/content/get-collection-name";
-import { processMdx } from "@/lib/content/mdx";
-import { reader } from "@/lib/content/reader";
 import { getImageImport } from "@/lib/get-image-import";
 import { createI18n } from "@/lib/i18n";
+import { createCollectionResource } from "@/lib/keystatic/resources";
 
 export async function getStaticPaths() {
 	return (
 		await Promise.all(
 			locales.map(async (locale) => {
-				const collection = getCollectionName("consortium", locale);
-				const pages = await reader().collections[collection].all();
+				const pages = await createCollectionResource("consortium", locale).all();
 
 				return pages.map((page) => {
-					return { params: { id: page.slug, locale }, props: { page: page.entry } };
+					return { params: { id: page.id, locale }, props: { page } };
 				});
 			}),
 		)
@@ -37,9 +34,9 @@ const { page } = Astro.props;
 
 const { t } = await createI18n(Astro.currentLocale as Locale | undefined);
 
-const documentTitle = page.name;
-const { href, institutions, logo, name, people } = page;
-const { default: Content } = await processMdx(await page.description(), locale);
+const { description, href, institutions, logo, name, people } = page.data;
+const documentTitle = name;
+const { default: Content } = await page.compile(description);
 
 const icons = {
 	bluesky: { label: "Bluesky", icon: "simple-icons:bluesky" },
@@ -123,10 +120,7 @@ const icons = {
 									<SectionTitle>{t("ConsortiumMemberPage.people")}</SectionTitle>
 									<ul class="grid gap-12" role="list">
 										{people.map(async (person) => {
-											const { default: Content } = await processMdx(
-												await person.description(),
-												locale,
-											);
+											const { default: Content } = await page.compile(description);
 
 											return (
 												<li>

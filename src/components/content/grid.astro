@@ -1,26 +1,40 @@
 ---
+import { styles } from "@acdh-oeaw/style-variants";
+
+import type { GridLayout } from "@/lib/keystatic/component-options";
+
 interface Props {
-	variant:
-		| "four-columns"
-		| "one-four-columns"
-		| "one-three-columns"
-		| "one-two-columns"
-		| "three-columns"
-		| "two-columns";
+	/** @default "stretch" */
+	alignment?: "center" | "stretch";
+	/** @default "two-columns" */
+	layout: GridLayout;
 }
 
-const { variant } = Astro.props;
+const { alignment, layout } = Astro.props;
 
-const variants: Record<Props["variant"], string> = {
-	"two-columns": "sm:grid-cols-2",
-	"three-columns": "sm:grid-cols-3",
-	"four-columns": "sm:grid-cols-4",
-	"one-two-columns": "sm:grid-cols-[1fr_2fr]",
-	"one-three-columns": "sm:grid-cols-[1fr_3fr]",
-	"one-four-columns": "sm:grid-cols-[1fr_4fr]",
-};
+const gridStyles = styles({
+	base: "grid content-start gap-x-8",
+	variants: {
+		alignment: {
+			center: "items-center",
+			stretch: "",
+		},
+		layout: {
+			"two-columns": "sm:grid-cols-2",
+			"three-columns": "sm:grid-cols-3",
+			"four-columns": "sm:grid-cols-4",
+			"one-two-columns": "sm:grid-cols-[1fr_2fr]",
+			"one-three-columns": "sm:grid-cols-[1fr_3fr]",
+			"one-four-columns": "sm:grid-cols-[1fr_4fr]",
+		},
+	},
+	defaults: {
+		alignment: "stretch",
+		layout: "two-columns",
+	},
+});
 ---
 
-<div class:list={[variants[variant], "grid content-start gap-8"]}>
+<div class={gridStyles({ alignment, layout })}>
 	<slot />
 </div>

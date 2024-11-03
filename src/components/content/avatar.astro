@@ -1,11 +1,12 @@
 ---
 import Img from "@/components/content/img.astro";
+import type { AvatarVariant } from "@/lib/keystatic/component-options";
 
 interface Props {
 	alt?: string;
 	href: string;
 	maxSize?: number;
-	variant: "rounded" | "square";
+	variant: AvatarVariant;
 }
 
 const { alt = "", href, maxSize, variant } = Astro.props;
@@ -15,7 +16,7 @@ const { alt = "", href, maxSize, variant } = Astro.props;
 	<Img
 		alt={alt}
 		class="aspect-square w-full"
-		class:list={variant === "rounded" ? "rounded" : undefined}
+		class:list={variant === "circle" ? "circle" : undefined}
 		src={href}
 		style={{ margin: 0, maxWidth: maxSize != null ? `${String(maxSize)}px` : undefined }}
 	/>

@@ -3,7 +3,6 @@ import { createUrl } from "@acdh-oeaw/lib";
 import { defaultLocale, locales } from "@/config/i18n.config";
 import { expect, test } from "~/e2e/lib/test";
 
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 const baseUrl = process.env.PUBLIC_APP_BASE_URL!;
 
 test.describe("app", () => {
@@ -68,6 +67,35 @@ test.describe("app", () => {
 		}
 	});
 
+	test("should serve an rss feed", async ({ createI18n, request }) => {
+		for (const locale of locales) {
+			const { t } = await createI18n(locale);
+
+			const feedResponse = await request.get(`/${locale}/feed.xml`);
+			const feed = await feedResponse.body();
+
+			expect(feed.toString()).toContain(
+				[
+					'<?xml version="1.0" encoding="UTF-8"?>',
+					'<rss version="2.0">',
+					"<channel>",
+					`<title>${t("metadata.title")}</title>`,
+				].join(""),
+			);
+
+			for (const url of []) {
+				const link = String(
+					createUrl({
+						baseUrl,
+						pathname: url,
+					}),
+				);
+
+				expect(feed.toString()).toContain(`<link>${link}</link>`);
+			}
+		}
+	});
+
 	test("should serve a webmanifest", async ({ createI18n, request }) => {
 		const response = await request.get("/manifest.webmanifest");
 		const body = await response.body();
@@ -76,9 +104,9 @@ test.describe("app", () => {
 
 		expect(body.toString()).toEqual(
 			JSON.stringify({
-				name: i18n.t("metadata.title"),
-				short_name: i18n.t("metadata.shortTitle"),
-				description: i18n.t("metadata.description"),
+				name: i18n.t("metadata.manifest.name"),
+				short_name: i18n.t("metadata.manifest.short-name"),
+				description: i18n.t("metadata.manifest.description"),
 				icons: [
 					{ src: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
 					{ src: "/android-chrome-512x512.png", sizes: "512x512", type: "image/png" },
@@ -106,15 +134,23 @@ test.describe("app", () => {
 	});
 
 	test("should skip to main content with skip-link", async ({ createIndexPage }) => {
-		const locale = "en";
+		for (const locale of locales) {
+			const { indexPage } = await createIndexPage(locale);
+			await indexPage.goto();
 
-		const { indexPage } = await createIndexPage(locale);
-		await indexPage.goto();
+			await indexPage.page.keyboard.press("Tab");
+			await expect(indexPage.skipLink).toBeFocused();
 
-		await indexPage.page.keyboard.press("Tab");
-		await expect(indexPage.skipLink).toBeFocused();
+			await indexPage.skipLink.click();
+			await expect(indexPage.mainContent).toBeFocused();
+		}
+	});
 
-		await indexPage.skipLink.click();
-		await expect(indexPage.mainContent).toBeFocused();
+	test("should set `lang` attribute on `html` element", async ({ createIndexPage }) => {
+		for (const locale of locales) {
+			const { indexPage } = await createIndexPage(locale);
+			await indexPage.goto();
+			await expect(indexPage.page.locator("html")).toHaveAttribute("lang", locale);
+		}
 	});
 });

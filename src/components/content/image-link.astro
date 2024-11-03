@@ -1,28 +1,19 @@
 ---
 import Figure from "@/components/content/figure.astro";
-import Link from "@/components/link.astro";
+import ContentLink from "@/components/content/link.astro";
+import type { LinkSchema } from "@/lib/keystatic/get-link-props";
 
 interface Props {
-	link: {
-		discriminant: "consortium" | "custom" | "events" | "news" | "pages";
-		value: string;
-	};
+	link: LinkSchema;
 	src: string;
 	alt?: string;
 	text: string;
 }
 
 const { alt, link, src, text } = Astro.props;
-
-const href =
-	link.discriminant === "custom"
-		? link.value
-		: link.discriminant === "pages"
-			? `/${link.value}`
-			: `/${link.discriminant}/${link.value}`;
 ---
 
-<Link href={href}>
+<ContentLink link={link}>
 	<span class="sr-only">{text}</span>
-	<Figure alt={alt} href={src} />
-</Link>
+	<Figure alt={alt} src={src} />
+</ContentLink>

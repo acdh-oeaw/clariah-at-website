@@ -12,13 +12,14 @@ import NavMenuTrigger from "@/components/navigation/nav-menu-trigger.astro";
 import Navigation from "@/components/navigation/navigation.astro";
 import Search from "@/components/search.astro";
 import { defaultLocale, type Locale } from "@/config/i18n.config";
-import { getNavigation } from "@/lib/get-navigation";
 import { createI18n } from "@/lib/i18n";
+import { getLinkProps } from "@/lib/keystatic/get-link-props";
+import { createSingletonResource } from "@/lib/keystatic/resources";
 import logo from "~/public/assets/images/clariah-at-logo.png";
 
 const locale = (Astro.currentLocale as Locale | undefined) ?? defaultLocale;
 const { t } = await createI18n(locale);
-const navigation = await getNavigation(locale);
+const navigation = await createSingletonResource("navigation", locale).read();
 
 const home = t("WebsiteHeader.links.home");
 ---
@@ -43,20 +44,12 @@ const home = t("WebsiteHeader.links.home");
 
 			<ul class="hidden flex-1 flex-wrap items-center gap-x-2 lg:flex" role="list">
 				{
-					navigation.links.map((item) => {
+					navigation.data.links.map((item) => {
 						switch (item.discriminant) {
 							case "link": {
 								return (
 									<li>
-										<NavMenuLink href={item.value.href}>{item.value.label}</NavMenuLink>
-									</li>
-								);
-							}
-
-							case "page": {
-								return (
-									<li>
-										<NavMenuLink href={`/${item.value.reference}`}>{item.value.label}</NavMenuLink>
+										<NavMenuLink {...getLinkProps(item.value.link)}>{item.value.label}</NavMenuLink>
 									</li>
 								);
 							}
@@ -68,26 +61,20 @@ const home = t("WebsiteHeader.links.home");
 											<NavMenuTrigger>{item.value.label}</NavMenuTrigger>
 											<NavMenuPopover>
 												<ul role="list">
-													{item.value.links.map((link) => {
+													{item.value.items.map((link) => {
 														switch (link.discriminant) {
 															case "link": {
 																return (
 																	<li>
-																		<NavMenuItem href={link.value.href}>
+																		<NavMenuItem {...getLinkProps(link.value.link)}>
 																			{link.value.label}
 																		</NavMenuItem>
 																	</li>
 																);
 															}
 
-															case "page": {
-																return (
-																	<li>
-																		<NavMenuItem href={`/${link.value.reference}`}>
-																			{link.value.label}
-																		</NavMenuItem>
-																	</li>
-																);
+															case "separator": {
+																return null;
 															}
 
 															default: {
@@ -100,6 +87,10 @@ const home = t("WebsiteHeader.links.home");
 										</NavMenu>
 									</li>
 								);
+							}
+
+							case "separator": {
+								return null;
 							}
 
 							default: {

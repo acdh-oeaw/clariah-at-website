@@ -1,54 +1,72 @@
 {
-  "links": [
-    {
-      "discriminant": "menu",
-      "value": {
-        "label": "Funding",
-        "links": [
-          {
-            "discriminant": "page",
-            "value": {
-              "label": "Project Funding",
-              "reference": "project-funding"
-            }
-          },
-          {
-            "discriminant": "page",
-            "value": {
-              "label": "Funding for Junior Researchers",
-              "reference": "funding-opportunities-for-junior-researcher"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "discriminant": "page",
-      "value": {
-        "label": "Events",
-        "reference": "events"
-      }
-    },
-    {
-      "discriminant": "page",
-      "value": {
-        "label": "News",
-        "reference": "news"
-      }
-    },
-    {
-      "discriminant": "page",
-      "value": {
-        "label": "Projects",
-        "reference": "projects"
-      }
-    },
-    {
-      "discriminant": "page",
-      "value": {
-        "label": "About",
-        "reference": "about-clariah-at"
-      }
-    }
-  ]
+	"links": [
+		{
+			"discriminant": "menu",
+			"value": {
+				"label": "Funding",
+				"items": [
+					{
+						"discriminant": "link",
+						"value": {
+							"label": "Project Funding",
+							"link": {
+								"discriminant": "pages",
+								"value": "project-funding"
+							}
+						}
+					},
+					{
+						"discriminant": "link",
+						"value": {
+							"label": "Funding for Junior Researchers",
+							"link": {
+								"discriminant": "pages",
+								"value": "funding-opportunities-for-junior-researcher"
+							}
+						}
+					}
+				]
+			}
+		},
+		{
+			"discriminant": "link",
+			"value": {
+				"label": "Events",
+				"link": {
+					"discriminant": "pages",
+					"value": "events"
+				}
+			}
+		},
+		{
+			"discriminant": "link",
+			"value": {
+				"label": "News",
+				"link": {
+					"discriminant": "pages",
+					"value": "news"
+				}
+			}
+		},
+		{
+			"discriminant": "link",
+			"value": {
+				"label": "Projects",
+				"link": {
+					"discriminant": "pages",
+					"value": "projects"
+				}
+			}
+		},
+		{
+			"discriminant": "link",
+			"value": {
+				"label": "About",
+				"link": {
+					"discriminant": "pages",
+					"value": "about-clariah-at"
+				}
+			}
+		}
+	]
 }

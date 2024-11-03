@@ -3,7 +3,8 @@ import { createEnv } from "@acdh-oeaw/validate-env/astro";
 import * as v from "valibot";
 
 const environment = import.meta.env.SSR
-	? Object.assign({}, process.env, import.meta.env)
+	? // eslint-disable-next-line no-restricted-syntax
+		Object.assign({}, process.env, import.meta.env)
 	: import.meta.env;
 
 export const env = createEnv({

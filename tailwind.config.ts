@@ -7,7 +7,7 @@ const config: Config = {
 	content: [
 		"./keystatic.config.|(ts|tsx)",
 		"./content/**/*.@(md|mdx)",
-		"./src/@(components|layouts|pages)/**/*.@(astro|css|ts|tsx)",
+		"./src/@(components|layouts|lib|pages)/**/*.@(astro|css|ts|tsx)",
 		"./src/styles/**/*.css",
 	],
 	presets: [preset],

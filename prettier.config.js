@@ -1,6 +1,8 @@
+/** @typedef {import('prettier').Config} Config */
+
 import sharedConfig from "@acdh-oeaw/prettier-config";
 
-/** @type {import('prettier').Config} */
+/** @type {Config} */
 const config = {
 	...sharedConfig,
 	plugins: ["prettier-plugin-astro"],

@@ -8,4 +8,13 @@ interface Props {
 const { id } = Astro.props;
 ---
 
-<StaticTweet id={id} />
+<figure>
+	<StaticTweet id={id} />
+	{
+		Astro.slots.has("default") ? (
+			<figcaption>
+				<slot />
+			</figcaption>
+		) : null
+	}
+</figure>

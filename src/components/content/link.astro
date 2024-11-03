@@ -1,0 +1,13 @@
+---
+import Anchor from "@/components/link.astro";
+import { getLinkProps, type LinkSchema } from "@/lib/keystatic/get-link-props";
+
+interface Props {
+	class?: string;
+	link: LinkSchema;
+}
+
+const { link, ...rest } = Astro.props;
+---
+
+<Anchor {...rest} {...getLinkProps(link)}><slot /></Anchor>

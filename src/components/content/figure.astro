@@ -1,16 +1,19 @@
 ---
 import Img from "@/components/content/img.astro";
+import type { FigureAlignment } from "@/lib/keystatic/component-options";
 
 interface Props {
+	/** @default "stretch" */
+	alignment?: FigureAlignment;
 	alt?: string;
-	href: string;
+	src: string;
 }
 
-const { alt = "", href } = Astro.props;
+const { alignment = "stretch", alt = "", src } = Astro.props;
 ---
 
-<figure>
-	<Img alt={alt} src={href} />
+<figure class="grid gap-y-2" class:list={alignment === "center" ? "justify-center" : undefined}>
+	<Img alt={alt} class="overflow-hidden rounded-md" src={src} />
 	{
 		Astro.slots.has("default") ? (
 			<figcaption>
