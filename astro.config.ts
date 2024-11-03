@@ -56,19 +56,6 @@ export default defineConfig({
 					"youtube",
 				],
 			},
-			svgoOptions: {
-				multipass: true,
-				plugins: [
-					{
-						name: "preset-default",
-						params: {
-							overrides: {
-								removeViewBox: false,
-							},
-						},
-					},
-				],
-			},
 		}),
 		mdx(),
 		react(),
@@ -104,9 +91,6 @@ export default defineConfig({
 		...redirects,
 	},
 	scopedStyleStrategy: "where",
-	security: {
-		checkOrigin: true,
-	},
 	server: {
 		/** Required by keystatic. */
 		host: "127.0.0.1",
