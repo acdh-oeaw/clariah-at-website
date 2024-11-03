@@ -1,54 +1,72 @@
 {
-  "links": [
-    {
-      "discriminant": "menu",
-      "value": {
-        "label": "Förderungen",
-        "links": [
-          {
-            "discriminant": "page",
-            "value": {
-              "label": "Projektförderungen",
-              "reference": "project-funding"
-            }
-          },
-          {
-            "discriminant": "page",
-            "value": {
-              "label": "Förderungen für Jungwissenschaftler*innen",
-              "reference": "funding-opportunities-for-junior-researcher"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "discriminant": "page",
-      "value": {
-        "label": "Events",
-        "reference": "events"
-      }
-    },
-    {
-      "discriminant": "page",
-      "value": {
-        "label": "Aktuelles",
-        "reference": "news"
-      }
-    },
-    {
-      "discriminant": "page",
-      "value": {
-        "label": "Projekte",
-        "reference": "projects"
-      }
-    },
-    {
-      "discriminant": "page",
-      "value": {
-        "label": "Über uns",
-        "reference": "about-clariah-at"
-      }
-    }
-  ]
+	"links": [
+		{
+			"discriminant": "menu",
+			"value": {
+				"label": "Förderungen",
+				"items": [
+					{
+						"discriminant": "link",
+						"value": {
+							"label": "Projektförderungen",
+							"link": {
+								"discriminant": "pages",
+								"value": "project-funding"
+							}
+						}
+					},
+					{
+						"discriminant": "link",
+						"value": {
+							"label": "Förderungen für Jungwissenschaftler*innen",
+							"link": {
+								"discriminant": "pages",
+								"value": "funding-opportunities-for-junior-researcher"
+							}
+						}
+					}
+				]
+			}
+		},
+		{
+			"discriminant": "link",
+			"value": {
+				"label": "Events",
+				"link": {
+					"discriminant": "pages",
+					"value": "events"
+				}
+			}
+		},
+		{
+			"discriminant": "link",
+			"value": {
+				"label": "Aktuelles",
+				"link": {
+					"discriminant": "pages",
+					"value": "news"
+				}
+			}
+		},
+		{
+			"discriminant": "link",
+			"value": {
+				"label": "Projekte",
+				"link": {
+					"discriminant": "pages",
+					"value": "projects"
+				}
+			}
+		},
+		{
+			"discriminant": "link",
+			"value": {
+				"label": "Über uns",
+				"link": {
+					"discriminant": "pages",
+					"value": "about-clariah-at"
+				}
+			}
+		}
+	]
 }

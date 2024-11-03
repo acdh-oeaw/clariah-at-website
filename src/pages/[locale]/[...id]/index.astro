@@ -5,19 +5,16 @@ import PageSection from "@/components/page-section.astro";
 import PageTitle from "@/components/page-title.astro";
 import { locales } from "@/config/i18n.config";
 import PageLayout from "@/layouts/page-layout.astro";
-import { getCollectionName } from "@/lib/content/get-collection-name";
-import { processMdx } from "@/lib/content/mdx";
-import { reader } from "@/lib/content/reader";
+import { createCollectionResource } from "@/lib/keystatic/resources";
 
 export async function getStaticPaths() {
 	return (
 		await Promise.all(
 			locales.map(async (locale) => {
-				const collection = getCollectionName("pages", locale);
-				const pages = await reader().collections[collection].all();
+				const pages = await createCollectionResource("pages", locale).all();
 
 				return pages.map((page) => {
-					return { params: { id: page.slug, locale }, props: { page: page.entry } };
+					return { params: { id: page.id, locale }, props: { page } };
 				});
 			}),
 		)
@@ -28,9 +25,9 @@ const { locale } = Astro.params;
 
 const { page } = Astro.props;
 
-const documentTitle = page.title;
-const { image, title } = page;
-const { default: Content } = await processMdx(await page.content(), locale);
+const { content, image, title } = page.data;
+const documentTitle = title;
+const { default: Content } = await page.compile(content);
 ---
 
 <PageLayout locale={locale} title={documentTitle}>

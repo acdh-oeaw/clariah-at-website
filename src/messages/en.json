@@ -1,4 +1,8 @@
 {
+	"mdx": {
+		"footnote-back-label": "Back to reference {reference}",
+		"footnotes": "Footnotes"
+	},
 	"ConsortiumMemberPage": {
 		"institutions": "Institutions",
 		"people": "People"
@@ -104,9 +108,5 @@
 			"home": "Home"
 		},
 		"navigation-primary": "Primary"
-	},
-	"mdx": {
-		"FootnoteBackLabel": "Back to reference {reference}",
-		"Footnotes": "Footnotes"
 	}
 }

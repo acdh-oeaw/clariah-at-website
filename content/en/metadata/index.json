@@ -1,6 +1,13 @@
 {
-  "title": "CLARIAH-AT",
-  "shortTitle": "CLARIAH-AT",
-  "description": "An open network facilitating the application of digital methods in the Humanities & the development of relevant research infrastructures.",
-  "twitter": "@atclariah"
+	"title": "CLARIAH-AT",
+	"description": "An open network facilitating the application of digital methods in the Humanities & the development of relevant research infrastructures.",
+	"twitter": {
+		"creator": "@atclariah",
+		"site": "@atclariah"
+	},
+	"manifest": {
+		"name": "CLARIAH-AT",
+		"short-name": "CLARIAH-AT",
+		"description": "An open network facilitating the application of digital methods in the Humanities & the development of relevant research infrastructures."
+	}
 }

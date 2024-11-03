@@ -1,19 +1,18 @@
 ---
-import { createUrl } from "@acdh-oeaw/lib";
+import type { VideoProvider } from "@/lib/keystatic/component-options";
+import { createVideoUrl } from "@/lib/keystatic/create-video-url";
 
 interface Props {
-	provider: "youtube";
 	id: string;
+	provider: VideoProvider;
+	startTime?: number;
+	/** Added by `@acdh-oeaw/mdx-lib#with-iframe-titles`. */
+	title?: string;
 }
 
-const { id } = Astro.props;
+const { id, provider, startTime, title } = Astro.props;
 
-const href = String(
-	createUrl({
-		baseUrl: "https://www.youtube-nocookie.com",
-		pathname: `/embed/${id}`,
-	}),
-);
+const href = String(createVideoUrl(provider, id, startTime));
 ---
 
 <figure>
@@ -21,7 +20,7 @@ const href = String(
 		allowfullscreen
 		class="aspect-video w-full overflow-hidden rounded-md"
 		src={href}
-		title={"Video"}></iframe>
+		title={title ?? "Video"}></iframe>
 	{
 		Astro.slots.has("default") ? (
 			<figcaption>

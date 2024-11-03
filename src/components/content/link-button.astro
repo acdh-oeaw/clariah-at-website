@@ -1,27 +1,18 @@
 ---
-import Link from "@/components/link.astro";
+import ContentLink from "@/components/content/link.astro";
+import type { LinkSchema } from "@/lib/keystatic/get-link-props";
 
 interface Props {
 	label: string;
-	link: {
-		discriminant: "consortium" | "custom" | "events" | "news" | "pages";
-		value: string;
-	};
+	link: LinkSchema;
 }
 
 const { label, link } = Astro.props;
-
-const href =
-	link.discriminant === "custom"
-		? link.value
-		: link.discriminant === "pages"
-			? `/${link.value}`
-			: `/${link.discriminant}/${link.value}`;
 ---
 
-<Link
+<ContentLink
 	class="my-2 inline-flex rounded-full bg-brand px-6 py-2 text-white no-underline transition hover:bg-brand-intent"
-	href={href}
+	link={link}
 >
 	{label}
-</Link>
+</ContentLink>

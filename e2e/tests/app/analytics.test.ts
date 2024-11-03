@@ -1,5 +1,6 @@
 import { createUrl } from "@acdh-oeaw/lib";
 
+import { defaultLocale } from "@/config/i18n.config";
 import { expect, test } from "~/e2e/lib/test";
 
 if (process.env.PUBLIC_MATOMO_BASE_URL && process.env.PUBLIC_MATOMO_ID) {
@@ -8,9 +9,11 @@ if (process.env.PUBLIC_MATOMO_BASE_URL && process.env.PUBLIC_MATOMO_ID) {
 			createUrl({ baseUrl: process.env.PUBLIC_MATOMO_BASE_URL!, pathname: "/**" }),
 		);
 
-		test("should track page views", async ({ page }) => {
+		test("should track page views", async ({ createIndexPage }) => {
+			const { indexPage } = await createIndexPage(defaultLocale);
+			const { page } = indexPage;
 			const initialResponsePromise = page.waitForResponse(baseUrl);
-			await page.goto("/en/");
+			await indexPage.goto();
 			const initialResponse = await initialResponsePromise;
 			expect(initialResponse.status()).toBe(204);
 

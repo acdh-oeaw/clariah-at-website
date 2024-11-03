@@ -6,24 +6,22 @@ import PageSection from "@/components/page-section.astro";
 import PageTitle from "@/components/page-title.astro";
 import { locales } from "@/config/i18n.config";
 import PageLayout from "@/layouts/page-layout.astro";
-import { getCollectionName } from "@/lib/content/get-collection-name";
-import { reader } from "@/lib/content/reader";
 import { createI18n } from "@/lib/i18n";
+import { createCollectionResource } from "@/lib/keystatic/resources";
 
 export async function getStaticPaths() {
 	return Promise.all(
 		locales.map(async (locale) => {
-			const collection = getCollectionName("projects", locale);
-			const pages = await reader().collections[collection].all();
+			const projects = await createCollectionResource("projects", locale).all();
 
-			return { params: { locale }, props: { pages } };
+			return { params: { locale }, props: { projects } };
 		}),
 	);
 }
 
 const { locale } = Astro.params;
 
-const { pages } = Astro.props;
+const { projects } = Astro.props;
 
 const { t } = await createI18n(locale);
 
@@ -38,18 +36,20 @@ const title = t("ProjectsPage.title");
 				<PageTitle>{title}</PageTitle>
 				<ul class="my-8 grid gap-12 md:grid-cols-2" role="list">
 					{
-						pages.map((page) => {
+						projects.map((project) => {
+							const { image, shortTitle, summary, title } = project.data;
+
 							return (
 								<li>
 									<article>
 										<Card
-											image={page.entry.image}
+											image={image}
 											link={{
 												label: t("ProjectsPage.read-more"),
-												href: `/projects/${page.slug as string}`,
+												href: `/projects/${project.id}`,
 											}}
-											summary={page.entry.summary}
-											title={page.entry.shortTitle || (page.entry.title as string)}
+											summary={summary}
+											title={shortTitle || title}
 										/>
 									</article>
 								</li>

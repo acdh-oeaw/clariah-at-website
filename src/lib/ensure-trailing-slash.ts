@@ -1,7 +1,5 @@
-const hasFileExtension = /\.\w+$/;
-
 export function ensureTrailingSlash(path: string): string {
-	if (hasFileExtension.test(path)) return path;
+	if (path.split("/").at(-1)?.includes(".")) return path;
 
-	return path.endsWith("/") ? path : `${path  }/`;
+	return path.endsWith("/") ? path : `${path}/`;
 }

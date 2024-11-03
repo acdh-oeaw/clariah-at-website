@@ -75,4 +75,20 @@
 			"</PageLayout>",
 		],
 	},
+	"Astro component": {
+		"scope": "astro",
+		"prefix": "astro-component",
+		"description": "Create Astro component",
+		"body": [
+			"---",
+			"interface Props {",
+			"\t$1",
+			"}",
+			"",
+			"const { $2 } = Astro.props",
+			"---",
+			"",
+			"$3",
+		],
+	},
 }

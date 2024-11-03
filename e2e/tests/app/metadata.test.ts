@@ -27,7 +27,6 @@ test("should set document title on not-found page", async ({ createI18n, page })
 		[i18n.t("NotFoundPage.meta.title"), i18n.t("metadata.title")].join(" | "),
 	);
 
-	// TODO:
 	// const i18nDe = await createI18n("de");
 	// await page.goto("/de/unknown/");
 	// await expect(page).toHaveTitle(
@@ -50,7 +49,6 @@ test("should set page metadata", async ({ createIndexPage }) => {
 		await indexPage.goto();
 
 		expect(i18n.t("metadata.title")).toBeTruthy();
-		expect(i18n.t("metadata.shortTitle")).toBeTruthy();
 		expect(i18n.t("metadata.description")).toBeTruthy();
 
 		const ogType = indexPage.page.locator('meta[property="og:type"]');
@@ -60,10 +58,10 @@ test("should set page metadata", async ({ createIndexPage }) => {
 		await expect(twCard).toHaveAttribute("content", "summary_large_image");
 
 		const twCreator = indexPage.page.locator('meta[name="twitter:creator"]');
-		await expect(twCreator).toHaveAttribute("content", i18n.t("metadata.twitter"));
+		await expect(twCreator).toHaveAttribute("content", i18n.t("metadata.twitter.creator"));
 
 		const twSite = indexPage.page.locator('meta[name="twitter:site"]');
-		await expect(twSite).toHaveAttribute("content", i18n.t("metadata.twitter"));
+		await expect(twSite).toHaveAttribute("content", i18n.t("metadata.twitter.site"));
 
 		// const googleSiteVerification = indexPage.page.locator('meta[name="google-site-verification"]');
 		// await expect(googleSiteVerification).toHaveAttribute("content", "");
@@ -115,14 +113,15 @@ test("should add json+ld metadata", async ({ createIndexPage }) => {
 	}
 });
 
-test("should serve an open-graph image", async ({ page, request }) => {
+test("should serve an open-graph image", async ({ createIndexPage, request }) => {
 	for (const locale of locales) {
 		// TODO: support per-locale opengraph images
 		// const imagePath = `/${locale}/opengraph-image.png`;
 		const imagePath = "/opengraph-image.png";
 
-		await page.goto(`/${locale}`);
-		await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+		const { indexPage } = await createIndexPage(locale);
+		await indexPage.goto();
+		await expect(indexPage.page.locator('meta[property="og:image"]')).toHaveAttribute(
 			"content",
 			expect.stringContaining(String(createUrl({ baseUrl, pathname: imagePath }))),
 		);

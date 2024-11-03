@@ -9,9 +9,9 @@ export async function GET() {
 	const metadata = t("metadata");
 
 	const manifest = {
-		name: metadata.title,
-		short_name: metadata.shortTitle,
-		description: metadata.description,
+		name: metadata.manifest.name,
+		short_name: metadata.manifest["short-name"],
+		description: metadata.manifest.description,
 		icons: [
 			{ src: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
 			{ src: "/android-chrome-512x512.png", sizes: "512x512", type: "image/png" },

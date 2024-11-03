@@ -3,9 +3,8 @@ import rss, { type RSSFeedItem } from "@astrojs/rss";
 import type { APIContext } from "astro";
 
 import { type Locale, locales } from "@/config/i18n.config";
-import { getCollectionName } from "@/lib/content/get-collection-name";
-import { reader } from "@/lib/content/reader";
 import { createI18n } from "@/lib/i18n";
+import { createCollectionResource } from "@/lib/keystatic/resources";
 
 export function getStaticPaths() {
 	return locales.map((locale) => {
@@ -20,8 +19,8 @@ export async function GET(context: APIContext) {
 
 	const metadata = t("metadata");
 
-	const events = await reader().collections[getCollectionName("events", locale)].all();
-	const news = await reader().collections[getCollectionName("news", locale)].all();
+	const events = await createCollectionResource("events", locale).all();
+	const news = await createCollectionResource("news", locale).all();
 
 	return rss({
 		title: metadata.title,
@@ -29,32 +28,32 @@ export async function GET(context: APIContext) {
 		site: context.site!,
 		/** @see https://docs.astro.build/en/guides/rss/#generating-items */
 		items: [
-			...events.map(({ entry, slug }) => {
+			...events.map(({ data, id }) => {
 				const item: RSSFeedItem = {
 					link: String(
 						createUrl({
 							baseUrl: import.meta.env.SITE,
-							pathname: `/${locale}/events/${slug}`,
+							pathname: `/${locale}/events/${id}`,
 						}),
 					),
-					title: entry.title,
-					pubDate: new Date(entry.date),
-					description: entry.summary,
+					title: data.title,
+					pubDate: new Date(data.date),
+					description: data.summary,
 				};
 
 				return item;
 			}),
-			...news.map(({ entry, slug }) => {
+			...news.map(({ data, id }) => {
 				const item: RSSFeedItem = {
 					link: String(
 						createUrl({
 							baseUrl: import.meta.env.SITE,
-							pathname: `/${locale}/news/${slug}`,
+							pathname: `/${locale}/news/${id}`,
 						}),
 					),
-					title: entry.title,
-					pubDate: new Date(entry.date),
-					description: entry.summary,
+					title: data.title,
+					pubDate: new Date(data.date),
+					description: data.summary,
 				};
 
 				return item;
