@@ -3,8 +3,8 @@
 	"extends": ["astro/tsconfigs/base", "@acdh-oeaw/tsconfig"],
 	"compilerOptions": {
 		"baseUrl": ".",
-		"jsx": "react-jsx",
-		"jsxImportSource": "react",
+		"jsx": "preserve",
+		"jsxImportSource": "solid-js",
 		"paths": {
 			"@/*": ["./src/*"],
 			"~/*": ["./*"]
@@ -12,5 +12,9 @@
 		"plugins": [{ "name": "@astrojs/ts-plugin" }]
 	},
 	"include": ["./**/*"],
-	"exclude": ["dist", "node_modules"]
+	"exclude": ["dist", "node_modules"],
+	"mdx": {
+		"checkMdx": false,
+		"plugins": ["remark-frontmatter", "remark-gfm"]
+	}
 }
