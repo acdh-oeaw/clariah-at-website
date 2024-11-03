@@ -55,7 +55,7 @@
 		"@keystatic/core": "^0.5.39",
 		"@pagefind/default-ui": "^1.1.1",
 		"@shikijs/rehype": "^1.13.0",
-		"astro": "^4.16.8",
+		"astro": "~4.15.12",
 		"astro-icon": "^1.1.1",
 		"astro-tweet": "^0.0.4",
 		"date-fns": "^4.1.0",
