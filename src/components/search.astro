@@ -85,7 +85,11 @@ const { t } = await createI18n(Astro.currentLocale as Locale | undefined);
 				/** Pagefind assets are only generated on build. */
 				if (import.meta.env.DEV) return;
 
-				const onIdle = window.requestIdleCallback || ((cb) => {return setTimeout(cb, 1)});
+				const onIdle =
+					window.requestIdleCallback ||
+					((cb) => {
+						return setTimeout(cb, 1);
+					});
 
 				onIdle(async () => {
 					// @ts-expect-error — Missing types for @pagefind/default-ui package.
@@ -93,7 +97,7 @@ const { t } = await createI18n(Astro.currentLocale as Locale | undefined);
 					new PagefindUI({
 						element: dialogSearchResults,
 						baseUrl: import.meta.env.BASE_URL,
-						bundlePath: `${import.meta.env.BASE_URL.replace(/\/$/, "")  }/pagefind/`,
+						bundlePath: `${import.meta.env.BASE_URL.replace(/\/$/, "")}/pagefind/`,
 						showImages: false,
 						showSubResults: true,
 					});

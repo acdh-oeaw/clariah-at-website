@@ -8,6 +8,7 @@ export function createVideoUrl(
 	startTime?: number | null,
 ): URL {
 	switch (provider) {
+		// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 		case "youtube": {
 			return createUrl({
 				baseUrl: "https://www.youtube-nocookie.com",
