@@ -39,7 +39,6 @@ export async function processMdx<T extends Record<string, unknown>>(
 		);
 	}
 
-	// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 	const processor = cache.get(locale)!;
 
 	const file = await processor.process(code);

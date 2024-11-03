@@ -3,7 +3,6 @@ import { createUrl } from "@acdh-oeaw/lib";
 import { defaultLocale, locales } from "@/config/i18n.config";
 import { expect, test } from "~/e2e/lib/test";
 
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 const baseUrl = process.env.PUBLIC_APP_BASE_URL!;
 
 test.describe("i18n", () => {
@@ -102,7 +101,7 @@ test.describe("i18n", () => {
 				const links = await page
 					.locator('link[rel="alternate"][hreflang]')
 					.evaluateAll((elements) => {
-						return elements.map((element) => element.outerHTML);
+						return elements.map((element) => {return element.outerHTML});
 					});
 
 				expect(links).toEqual(

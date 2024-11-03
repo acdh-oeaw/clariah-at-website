@@ -5,7 +5,6 @@ import { expect, test } from "~/e2e/lib/test";
 if (process.env.PUBLIC_MATOMO_BASE_URL && process.env.PUBLIC_MATOMO_ID) {
 	test.describe("analytics service", () => {
 		const baseUrl = String(
-			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 			createUrl({ baseUrl: process.env.PUBLIC_MATOMO_BASE_URL!, pathname: "/**" }),
 		);
 

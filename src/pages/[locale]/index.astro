@@ -92,12 +92,12 @@ const { hero } = page;
 														<li>
 															<Card
 																image={event.image}
-																title={event.title}
-																summary={event.summary}
 																link={{
 																	label: t("IndexPage.card.read-more"),
 																	href: `/events/${id}`,
 																}}
+																summary={event.summary}
+																title={event.title}
 															/>
 														</li>
 													);
@@ -113,12 +113,12 @@ const { hero } = page;
 														<li>
 															<Card
 																image={newsItem.image}
-																title={newsItem.title}
-																summary={newsItem.summary}
 																link={{
 																	label: t("IndexPage.card.read-more"),
 																	href: `/news/${id}`,
 																}}
+																summary={newsItem.summary}
+																title={newsItem.title}
 															/>
 														</li>
 													);
@@ -133,12 +133,12 @@ const { hero } = page;
 														<li>
 															<Card
 																image={page.image}
-																title={page.title}
-																summary={page.summary || t("IndexPage.card.no-summary")}
 																link={{
 																	label: t("IndexPage.card.read-more"),
 																	href: `/${id}`,
 																}}
+																summary={page.summary || t("IndexPage.card.no-summary")}
+																title={page.title}
 															/>
 														</li>
 													);

@@ -11,7 +11,7 @@ const { baseUrl, id } = Astro.props;
 
 <script
 	is:inline
-	set:html={`(${String(createAnalyticsScript)})("${baseUrl.endsWith("/") ? baseUrl : baseUrl + "/"}", "${String(id)}");`}
+	set:html={`(${String(createAnalyticsScript)})("${baseUrl.endsWith("/") ? baseUrl : `${baseUrl  }/`}", "${String(id)}");`}
 />
 
 <script>

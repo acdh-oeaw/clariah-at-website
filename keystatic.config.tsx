@@ -1,3 +1,5 @@
+/* @jsxImportSource react */
+
 import { createUrl, pick } from "@acdh-oeaw/lib";
 import {
 	type Collection,
@@ -23,12 +25,12 @@ import {
 } from "lucide-react";
 import { Tweet } from "react-tweet";
 
-import { Logo } from "@/components/logo";
 import { createAssetPaths, createPreviewUrl } from "@/config/content.config";
 import { env } from "@/config/env.config";
 import type { Locale } from "@/config/i18n.config";
 import { getCollectionName } from "@/lib/content/get-collection-name";
 import { useObjectUrl } from "@/lib/content/use-object-url";
+import { Logo } from "@/lib/keystatic/logo";
 import { cn } from "@/lib/styles";
 
 const headingLevels = [2, 3, 4, 5] as const;
@@ -491,7 +493,7 @@ function createComponents(
 
 				return (
 					<NotEditable>
-						<div className="my-2 font-medium inline-flex rounded-full bg-brand px-6 py-2 text-white no-underline transition hover:bg-brand-intent">
+						<div className="my-2 inline-flex rounded-full bg-brand px-6 py-2 font-medium text-white no-underline transition hover:bg-brand-intent">
 							{value.label}
 						</div>
 					</NotEditable>
@@ -501,6 +503,7 @@ function createComponents(
 		Tweet: wrapper({
 			label: "Tweet",
 			description: "A tweet.",
+			// eslint-disable-next-line @typescript-eslint/no-deprecated
 			icon: <TwitterIcon />,
 			schema: {
 				id: fields.text({
@@ -1015,7 +1018,7 @@ const singletons = {
 								cardsSection: {
 									label: "Cards section",
 									itemLabel(props) {
-										return props.fields.title.value + " (Cards)";
+										return `${props.fields.title.value} (Cards)`;
 									},
 									schema: fields.object(
 										{
@@ -1246,7 +1249,7 @@ const singletons = {
 						menu: {
 							label: "Menu",
 							itemLabel(props) {
-								return props.fields.label.value + " (Menu)";
+								return `${props.fields.label.value} (Menu)`;
 							},
 							schema: fields.object({
 								label: fields.text({

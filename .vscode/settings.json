@@ -13,9 +13,6 @@
 	"editor.rulers": [100],
 	"editor.stickyScroll.enabled": true,
 	"eslint.enable": true,
-	"eslint.options": {
-		"ignorePath": ".gitignore"
-	},
 	"eslint.validate": ["astro", "javascript", "typescript", "typescriptreact"],
 	"files.associations": {
 		"*.css": "tailwindcss"

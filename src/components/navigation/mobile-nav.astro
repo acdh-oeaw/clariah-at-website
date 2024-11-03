@@ -12,7 +12,7 @@ const locale = (Astro.currentLocale as Locale | undefined) ?? defaultLocale;
 const navigation = await getNavigation(locale);
 ---
 
-<div id={mobileNavId} hidden class="px-4 pb-6 lg:hidden" data-mobile-nav>
+<div class="px-4 pb-6 lg:hidden" data-mobile-nav hidden id={mobileNavId}>
 	<ul class="grid gap-y-2 text-[#444]" role="list">
 		{
 			navigation.links.map((item) => {

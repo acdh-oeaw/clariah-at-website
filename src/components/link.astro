@@ -13,7 +13,7 @@ const { href, locale, reload, ...rest } = Astro.props;
 
 const localisedHref =
 	typeof href === "string" && href.startsWith("/") && !href.startsWith("/assets/")
-		? "/" + (locale ?? Astro.currentLocale ?? defaultLocale) + ensureTrailingSlash(href)
+		? `/${  locale ?? Astro.currentLocale ?? defaultLocale  }${ensureTrailingSlash(href)}`
 		: href;
 ---
 

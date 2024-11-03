@@ -20,10 +20,9 @@ export function withCustomHeadingIds() {
 			assert(id, "`<HeadingId>` has no `id` prop.");
 
 			if (parent.properties.id == null) {
-				parent.properties.id = String(id);
+				parent.properties.id = String(id as string);
 			}
 
-			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 			parent.children.splice(index!, 1);
 
 			return SKIP;

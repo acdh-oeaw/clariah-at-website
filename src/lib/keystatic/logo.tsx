@@ -1,3 +1,5 @@
+/* @jsxImportSource react */
+
 import type { ReactNode } from "react";
 
 interface LogoProps {
