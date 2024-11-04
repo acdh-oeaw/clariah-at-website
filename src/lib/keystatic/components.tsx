@@ -268,16 +268,20 @@ export const createLink = createComponent((assetPath, locale) => {
 
 export const createLinkButton = createComponent((assetPath, locale) => {
 	return {
-		LinkButton: wrapper({
+		LinkButton: block({
 			label: "LinkButton",
 			icon: <LinkIcon />,
 			schema: {
+				label: fields.text({
+					label: "Label",
+					validation: { isRequired: true },
+				}),
 				link: createLinkSchema(assetPath, locale),
 			},
 			ContentView(props) {
-				const { children, value } = props;
+				const { value } = props;
 
-				return <LinkButtonPreview link={value.link}>{children}</LinkButtonPreview>;
+				return <LinkButtonPreview link={value.link}>{value.label}</LinkButtonPreview>;
 			},
 		}),
 	};
