@@ -1,6 +1,6 @@
 {
 	"title": "CLARIAH-AT",
-	"description": "An open network facilitating the application of digital methods in the Humanities & the development of relevant research infrastructures.",
+	"description": "Ein offenes Netzwerk, das die Anwendung digitaler Methoden in den Geisteswissenschaften und die Entwicklung der entsprechenden Forschungsinfrastrukturen fördert und unterstützt.",
 	"twitter": {
 		"creator": "@atclariah",
 		"site": "@atclariah"
@@ -8,6 +8,6 @@
 	"manifest": {
 		"name": "CLARIAH-AT",
 		"short-name": "CLARIAH-AT",
-		"description": "An open network facilitating the application of digital methods in the Humanities & the development of relevant research infrastructures."
+		"description": "Ein offenes Netzwerk, das die Anwendung digitaler Methoden in den Geisteswissenschaften und die Entwicklung der entsprechenden Forschungsinfrastrukturen fördert und unterstützt."
 	}
 }
