@@ -268,7 +268,7 @@ export const createLink = createComponent((assetPath, locale) => {
 
 export const createLinkButton = createComponent((assetPath, locale) => {
 	return {
-		Link: wrapper({
+		LinkButton: wrapper({
 			label: "LinkButton",
 			icon: <LinkIcon />,
 			schema: {
