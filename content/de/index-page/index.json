@@ -9,9 +9,16 @@
       {
         "discriminant": "cardsSection",
         "value": {
-          "title": "Main",
+          "title": "auf einen Blick",
           "variant": "fluid",
           "cards": [
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "Zweites Österreichisches Treffen zur Digitalen Linguistik: Programm verfügbar",
+                "reference": "zweites-oesterreichisches-treffen-zur-digitalen-linguistik"
+              }
+            },
             {
               "discriminant": "news",
               "value": {
@@ -29,6 +36,13 @@
             {
               "discriminant": "event",
               "value": {
+                "title": "Digitale Bibliothek 2024 - Zurück (und) in die Zukunft",
+                "reference": "digitale-bibliothek-2024-zurueck-und-in-die-zukunft"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
                 "title": "ÖNB Labs Symposium \"Newspapers as Datasets\"",
                 "reference": "onb-labs-symposium-newspapers-as-datasets"
               }
@@ -38,20 +52,6 @@
               "value": {
                 "title": "ACDH-CH Volontariate Februar 2025",
                 "reference": "acdh-ch-internships-february-2025"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Transformations: a DARIAH Jounal - 1st Call for Contributions!",
-                "reference": "transformations-a-dariah-journal-1st-call-for-contributions"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "Digitale Bibliothek 2024 - Zurück (und) in die Zukunft",
-                "reference": "digitale-bibliothek-2024-zurueck-und-in-die-zukunft"
               }
             }
           ]
