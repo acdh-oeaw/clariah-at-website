@@ -1,127 +1,127 @@
 {
-	"hero": {
-		"title": "CLARIAH-AT",
-		"lead": "An open network facilitating the application of digital methods in the humanities and the development of relevant research infrastructures.",
-		"image": "/assets/content/en/index-page/hero/image.jpg"
-	},
-	"main": {
-		"sections": [
-			{
-				"discriminant": "cardsSection",
-				"value": {
-					"title": "Main",
-					"variant": "fluid",
-					"cards": [
-						{
-							"discriminant": "news",
-							"value": {
-								"title": "DARIAH Annual Report 2023",
-								"reference": "dariah-annual-report-2023"
-							}
-						},
-						{
-							"discriminant": "news",
-							"value": {
-								"title": "CLARIN Conference 2025 in Vienna!",
-								"reference": "clarin-conference-2025-vienna"
-							}
-						},
-						{
-							"discriminant": "event",
-							"value": {
-								"title": "ÖNB Labs Symposium \"Newspapers as Datasets\"",
-								"reference": "onb-labs-symposium-newspapers-as-datasets"
-							}
-						},
-						{
-							"discriminant": "news",
-							"value": {
-								"title": "ACDH-CH Internships February 2025",
-								"reference": "acdh-ch-internships-february-2025"
-							}
-						},
-						{
-							"discriminant": "news",
-							"value": {
-								"title": "Transformations: a DARIAH Journal - 1st Call for Contributions!",
-								"reference": "transformations-a-dariah-journal-1st-call-for-contributions"
-							}
-						},
-						{
-							"discriminant": "event",
-							"value": {
-								"title": "Digital Library 2024 - Zurück (und) in die Zukunft",
-								"reference": "digitale-bibliothek-2024-zurueck-und-in-die-zukunft"
-							}
-						}
-					]
-				}
-			},
-			{
-				"discriminant": "cardsSection",
-				"value": {
-					"title": "About",
-					"variant": "fluid",
-					"cards": [
-						{
-							"discriminant": "page",
-							"value": {
-								"title": "Early Career Funding",
-								"reference": "funding-opportunities-for-junior-researcher"
-							}
-						},
-						{
-							"discriminant": "page",
-							"value": {
-								"title": "About CLARIAH-AT",
-								"reference": "about-clariah-at"
-							}
-						},
-						{
-							"discriminant": "page",
-							"value": {
-								"title": "CLARIAH-AT Project Funding",
-								"reference": "project-funding"
-							}
-						}
-					]
-				}
-			},
-			{
-				"discriminant": "cardsSection",
-				"value": {
-					"title": "News",
-					"variant": "fluid",
-					"cards": [
-						{
-							"discriminant": "page",
-							"value": {
-								"title": "Upcoming Events",
-								"reference": "events"
-							}
-						},
-						{
-							"discriminant": "page",
-							"value": {
-								"title": "News",
-								"reference": "news"
-							}
-						},
-						{
-							"discriminant": "custom",
-							"value": {
-								"title": "DHA email list",
-								"image": "/assets/content/en/index-page/main/sections/2/value/cards/2/value/image.jpg",
-								"summary": "Stay up to date about Digital Humanities (DH) activities in Austria: Members of the DHA list do not only receive information about events, open calls & much more, but are also eligible to send out upcoming activities from the Austrian DH landscape to members of this list.\nIn case you wish to become a member of the DHA mailing list, kindly write an email to office@clariah.at, indicating ‘DHA list subscription’ in the subject line.",
-								"link": {
-									"label": "DHA email list subscription",
-									"href": "mailto:office@clariah.at"
-								}
-							}
-						}
-					]
-				}
-			}
-		]
-	}
+  "hero": {
+    "title": "CLARIAH-AT",
+    "lead": "An open network facilitating the application of digital methods in the humanities and the development of relevant research infrastructures.",
+    "image": "/assets/content/en/index-page/hero/image.jpg"
+  },
+  "main": {
+    "sections": [
+      {
+        "discriminant": "cardsSection",
+        "value": {
+          "title": "at one glimpse",
+          "variant": "fluid",
+          "cards": [
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "Second Austrian Meeting on Digital Linguistics: Program available",
+                "reference": "zweites-oesterreichisches-treffen-zur-digitalen-linguistik"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "DARIAH Annual Report 2023",
+                "reference": "dariah-annual-report-2023"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "CLARIN Conference 2025 in Vienna!",
+                "reference": "clarin-conference-2025-vienna"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "Digital Library 2024 - Zurück (und) in die Zukunft",
+                "reference": "digitale-bibliothek-2024-zurueck-und-in-die-zukunft"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "ÖNB Labs Symposium \"Newspapers as Datasets\"",
+                "reference": "onb-labs-symposium-newspapers-as-datasets"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "ACDH-CH Internships February 2025",
+                "reference": "acdh-ch-internships-february-2025"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "discriminant": "cardsSection",
+        "value": {
+          "title": "About",
+          "variant": "fluid",
+          "cards": [
+            {
+              "discriminant": "page",
+              "value": {
+                "title": "Early Career Funding",
+                "reference": "funding-opportunities-for-junior-researcher"
+              }
+            },
+            {
+              "discriminant": "page",
+              "value": {
+                "title": "About CLARIAH-AT",
+                "reference": "about-clariah-at"
+              }
+            },
+            {
+              "discriminant": "page",
+              "value": {
+                "title": "CLARIAH-AT Project Funding",
+                "reference": "project-funding"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "discriminant": "cardsSection",
+        "value": {
+          "title": "News",
+          "variant": "fluid",
+          "cards": [
+            {
+              "discriminant": "page",
+              "value": {
+                "title": "Upcoming Events",
+                "reference": "events"
+              }
+            },
+            {
+              "discriminant": "page",
+              "value": {
+                "title": "News",
+                "reference": "news"
+              }
+            },
+            {
+              "discriminant": "custom",
+              "value": {
+                "title": "DHA email list",
+                "image": "/assets/content/en/index-page/main/sections/2/value/cards/2/value/image.jpg",
+                "summary": "Stay up to date about Digital Humanities (DH) activities in Austria: Members of the DHA list do not only receive information about events, open calls & much more, but are also eligible to send out upcoming activities from the Austrian DH landscape to members of this list.\nIn case you wish to become a member of the DHA mailing list, kindly write an email to office@clariah.at, indicating ‘DHA list subscription’ in the subject line.",
+                "link": {
+                  "label": "DHA email list subscription",
+                  "href": "mailto:office@clariah.at"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
 }
