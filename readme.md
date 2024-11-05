@@ -1,6 +1,8 @@
 # clariah-at
 
-project website for clariah-at. deployed at <https://clariah.at>.
+project website for clariah-at.
+
+deployed at <https://clariah.at>.
 
 ## how to run
 
