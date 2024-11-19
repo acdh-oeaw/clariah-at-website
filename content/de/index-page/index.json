@@ -13,24 +13,10 @@
           "variant": "fluid",
           "cards": [
             {
-              "discriminant": "event",
-              "value": {
-                "title": "Zweites Österreichisches Treffen zur Digitalen Linguistik: Programm verfügbar",
-                "reference": "zweites-oesterreichisches-treffen-zur-digitalen-linguistik"
-              }
-            },
-            {
               "discriminant": "news",
               "value": {
-                "title": "DARIAH Jahresbericht 2023",
-                "reference": "dariah-annual-report-2023"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "CLARIN Konferenz 2025 in Wien!",
-                "reference": "clarin-conference-2025-vienna"
+                "title": "Erhaltung einer Infrastruktur und eines Netzwerks für die digitalen Geisteswissenschaften in Österreich",
+                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
               }
             },
             {
@@ -43,15 +29,15 @@
             {
               "discriminant": "event",
               "value": {
-                "title": "ÖNB Labs Symposium \"Newspapers as Datasets\"",
-                "reference": "onb-labs-symposium-newspapers-as-datasets"
+                "title": "Zweites Österreichisches Treffen zur Digitalen Linguistik: Programm verfügbar",
+                "reference": "zweites-oesterreichisches-treffen-zur-digitalen-linguistik"
               }
             },
             {
               "discriminant": "news",
               "value": {
-                "title": "ACDH-CH Volontariate Februar 2025",
-                "reference": "acdh-ch-internships-february-2025"
+                "title": "CLARIN Konferenz 2025 in Wien!",
+                "reference": "clarin-conference-2025-vienna"
               }
             }
           ]
