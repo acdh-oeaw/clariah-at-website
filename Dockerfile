@@ -47,6 +47,8 @@ RUN pnpm install --frozen-lockfile --offline
 
 ENV NODE_ENV=production
 
+# to mount secrets which need to be available at build time
+# @see https://docs.docker.com/build/building/secrets/
 RUN --mount=type=secret,id=KEYSTATIC_GITHUB_CLIENT_ID,uid=1000 \
 		--mount=type=secret,id=KEYSTATIC_GITHUB_CLIENT_SECRET,uid=1000 \
 		--mount=type=secret,id=KEYSTATIC_SECRET,uid=1000 \

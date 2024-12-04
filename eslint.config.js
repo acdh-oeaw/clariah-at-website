@@ -42,6 +42,13 @@ const config = [
 		};
 	}),
 	...tailwindcssConfig,
+	{
+		settings: {
+			tailwindcss: {
+				classRegex: "^class(:list)$",
+			},
+		},
+	},
 	...playwrightConfig,
 	{
 		plugins: {

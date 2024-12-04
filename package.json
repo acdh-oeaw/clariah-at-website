@@ -55,7 +55,7 @@
 		"@keystatic/core": "^0.5.42",
 		"@pagefind/default-ui": "^1.2.0",
 		"@shikijs/rehype": "^1.24.0",
-		"astro": "~5.0.2",
+		"astro": "^5.0.2",
 		"astro-icon": "^1.1.4",
 		"astro-tweet": "^0.0.4",
 		"date-fns": "^4.1.0",
@@ -74,7 +74,7 @@
 		"sharp": "^0.33.5",
 		"shiki": "^1.24.0",
 		"solid-js": "^1.9.3",
-		"valibot": "1.0.0-beta.9",
+		"valibot": "^1.0.0-beta.9",
 		"vite": "^6.0.2"
 	},
 	"devDependencies": {

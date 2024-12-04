@@ -34,6 +34,8 @@ ENV NODE_ENV=production
 
 RUN pnpm install --frozen-lockfile --offline
 
+# to mount secrets which need to be available at build time
+# @see https://docs.docker.com/build/building/secrets/
 RUN pnpm run build
 
 # serve

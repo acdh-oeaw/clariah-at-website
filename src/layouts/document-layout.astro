@@ -9,6 +9,7 @@ import { ClientRouter } from "astro:transitions";
 import type { WebSite, WithContext } from "schema-dts";
 
 import Analytics from "@/components/analytics.astro";
+import TailwindIndicator from "@/components/tailwind-indicator.astro";
 import { env } from "@/config/env.config";
 import { defaultLocale, type Locale, locales } from "@/config/i18n.config";
 import { getUnprefixedPathname } from "@/lib/get-unprefixed-pathname";
@@ -127,5 +128,6 @@ const googleSiteVerification = env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 	<body>
 		<slot />
+		<TailwindIndicator />
 	</body>
 </html>
