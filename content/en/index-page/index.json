@@ -15,8 +15,15 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "Sustaining a Digital Humanities Infrastructure and Network for Austria",
-                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
+                "title": "CLARIN Flagship Projects: Call for Proposals",
+                "reference": "cfp-clarin-flagship-projects-2025"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "ÖAW AI Winter School 2025",
+                "reference": "oeaw-ai-winter-school-2025"
               }
             },
             {
@@ -24,6 +31,20 @@
               "value": {
                 "title": "Second Austrian Meeting on Digital Linguistics: Program available",
                 "reference": "zweites-oesterreichisches-treffen-zur-digitalen-linguistik"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Newspapers, Magazines & AI Models: Call for Papers open!",
+                "reference": "conference-newspapers-magazines-aimodels"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Sustaining a Digital Humanities Infrastructure and Network for Austria",
+                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
               }
             },
             {
