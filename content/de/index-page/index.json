@@ -15,8 +15,15 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "Erhaltung einer Infrastruktur und eines Netzwerks für die digitalen Geisteswissenschaften in Österreich",
-                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
+                "title": "Aufruf zur Einreichung von Vorschlägen für CLARIN Flagship Projekte 2025",
+                "reference": "cfp-clarin-flagship-projects-2025"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "ÖAW AI Winter School 2025",
+                "reference": "oeaw-ai-winter-school-2025"
               }
             },
             {
@@ -24,6 +31,20 @@
               "value": {
                 "title": "Zweites Österreichisches Treffen zur Digitalen Linguistik: Programm verfügbar",
                 "reference": "zweites-oesterreichisches-treffen-zur-digitalen-linguistik"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Zeitungen, Zeitschriften & KI-Modelle: Call for Papers offen!",
+                "reference": "conference-newspapers-magazines-aimodels"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Erhaltung einer Infrastruktur und eines Netzwerks für die digitalen Geisteswissenschaften in Österreich",
+                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
               }
             },
             {
