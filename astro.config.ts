@@ -58,6 +58,7 @@ export default defineConfig({
 				],
 			},
 		}),
+		/** Only needed to make the astro jsx runtime work correctly. */
 		mdx(),
 		/**
 		 * @see https://docs.astro.build/en/guides/integrations-guide/solid-js/#combining-multiple-jsx-frameworks
@@ -88,7 +89,6 @@ export default defineConfig({
 	// 	smartypants: false,
 	// 	syntaxHighlight: false,
 	// },
-	output: "hybrid",
 	prefetch: {
 		defaultStrategy: "hover",
 		prefetchAll: true,

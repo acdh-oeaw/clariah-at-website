@@ -5,7 +5,7 @@ import "tailwindcss/tailwind.css";
 import "@/styles/index.css";
 
 import inter from "@fontsource-variable/inter/files/inter-latin-standard-normal.woff2?url";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import type { WebSite, WithContext } from "schema-dts";
 
 import Analytics from "@/components/analytics.astro";
@@ -108,7 +108,7 @@ const googleSiteVerification = env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 		<link as="font" crossorigin href={inter} rel="preload" type="font/woff2" />
 
-		<ViewTransitions />
+		<ClientRouter />
 
 		<script
 			is:inline
