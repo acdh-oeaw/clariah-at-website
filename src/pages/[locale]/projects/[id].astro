@@ -1,5 +1,6 @@
 ---
 import { isNonEmptyArray } from "@acdh-oeaw/lib";
+import { Image } from "astro:assets";
 
 import LinkButton from "@/components/content/link-button.astro";
 import MainContent from "@/components/main-content.astro";
@@ -8,6 +9,7 @@ import PageSection from "@/components/page-section.astro";
 import PageTitle from "@/components/page-title.astro";
 import { locales } from "@/config/i18n.config";
 import PageLayout from "@/layouts/page-layout.astro";
+import { getImageImport } from "@/lib/get-image-import";
 import { createI18n } from "@/lib/i18n";
 import { createCollectionResource } from "@/lib/keystatic/resources";
 
@@ -158,7 +160,7 @@ const { default: Content } = await page.compile(content);
 										return (
 											<li>
 												<figure>
-													<img alt={image.alt} src={image.image} />
+													<Image alt={image.alt} src={getImageImport(image.image)} />
 													<figcaption>{image.license}</figcaption>
 												</figure>
 											</li>

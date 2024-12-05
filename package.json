@@ -36,7 +36,7 @@
 		"validate": "run-p format:check lint:check types:check test test:e2e"
 	},
 	"dependencies": {
-		"@acdh-oeaw/keystatic-lib": "^0.5.0",
+		"@acdh-oeaw/keystatic-lib": "^0.5.3",
 		"@acdh-oeaw/lib": "^0.1.12",
 		"@acdh-oeaw/mdx-lib": "^0.1.2",
 		"@acdh-oeaw/style-variants": "^0.1.0",

@@ -37,7 +37,7 @@ import {
 	VideoPreview,
 } from "@/lib/keystatic/previews";
 
-export const createAvatar = createComponent((assetPath, _locale) => {
+export const createAvatar = createComponent((paths, _locale) => {
 	return {
 		Avatar: wrapper({
 			label: "Avatar",
@@ -47,7 +47,7 @@ export const createAvatar = createComponent((assetPath, _locale) => {
 				src: fields.image({
 					label: "Image",
 					validation: { isRequired: true },
-					...createAssetOptions(assetPath),
+					...createAssetOptions(paths.assetPath),
 				}),
 				alt: fields.text({
 					label: "Image description for screen readers",
@@ -81,7 +81,7 @@ export const createAvatar = createComponent((assetPath, _locale) => {
 	};
 });
 
-export const createDownloadButton = createComponent((assetPath, _locale) => {
+export const createDownloadButton = createComponent((paths, _locale) => {
 	return {
 		DownloadButton: block({
 			label: "Download button",
@@ -95,7 +95,7 @@ export const createDownloadButton = createComponent((assetPath, _locale) => {
 				href: fields.file({
 					label: "File",
 					validation: { isRequired: true },
-					...createAssetOptions(assetPath),
+					...createAssetOptions(paths.downloadPath),
 				}),
 			},
 			ContentView(props) {
@@ -107,7 +107,7 @@ export const createDownloadButton = createComponent((assetPath, _locale) => {
 	};
 });
 
-export const createFigure = createComponent((assetPath, _locale) => {
+export const createFigure = createComponent((paths, _locale) => {
 	return {
 		Figure: wrapper({
 			label: "Figure",
@@ -116,7 +116,7 @@ export const createFigure = createComponent((assetPath, _locale) => {
 				src: fields.image({
 					label: "Image",
 					validation: { isRequired: true },
-					...createAssetOptions(assetPath),
+					...createAssetOptions(paths.assetPath),
 				}),
 				alt: fields.text({
 					label: "Image description for assistive technology",
@@ -141,7 +141,7 @@ export const createFigure = createComponent((assetPath, _locale) => {
 	};
 });
 
-export const createFootnote = createComponent((_assetPath, _locale) => {
+export const createFootnote = createComponent((_paths, _locale) => {
 	return {
 		Footnote: mark({
 			label: "Footnote",
@@ -152,7 +152,7 @@ export const createFootnote = createComponent((_assetPath, _locale) => {
 	};
 });
 
-export const createGrid = createComponent((_assetPath, _locale) => {
+export const createGrid = createComponent((_paths, _locale) => {
 	return {
 		Grid: repeating({
 			label: "Grid",
@@ -200,7 +200,7 @@ export const createGrid = createComponent((_assetPath, _locale) => {
 	};
 });
 
-export const createHeadingId = createComponent((_assetPath, _locale) => {
+export const createHeadingId = createComponent((_paths, _locale) => {
 	return {
 		HeadingId: inline({
 			label: "HeadingId",
@@ -220,18 +220,18 @@ export const createHeadingId = createComponent((_assetPath, _locale) => {
 	};
 });
 
-export const createImageLink = createComponent((assetPath, locale) => {
+export const createImageLink = createComponent((paths, locale) => {
 	return {
 		ImageLink: block({
 			label: "Image link",
 			description: "An image-only link.",
 			icon: <LinkIcon />,
 			schema: {
-				link: createLinkSchema(assetPath, locale),
+				link: createLinkSchema(paths.downloadPath, locale),
 				src: fields.image({
 					label: "Image",
 					validation: { isRequired: true },
-					...createAssetOptions(assetPath),
+					...createAssetOptions(paths.assetPath),
 				}),
 				alt: fields.text({
 					label: "Image description for screen readers",
@@ -253,20 +253,20 @@ export const createImageLink = createComponent((assetPath, locale) => {
 	};
 });
 
-export const createLink = createComponent((assetPath, locale) => {
+export const createLink = createComponent((paths, locale) => {
 	return {
 		Link: mark({
 			label: "Link",
 			icon: <LinkIcon />,
 			schema: {
-				link: createLinkSchema(assetPath, locale),
+				link: createLinkSchema(paths.downloadPath, locale),
 			},
 			tag: "a",
 		}),
 	};
 });
 
-export const createLinkButton = createComponent((assetPath, locale) => {
+export const createLinkButton = createComponent((paths, locale) => {
 	return {
 		LinkButton: block({
 			label: "LinkButton",
@@ -276,7 +276,7 @@ export const createLinkButton = createComponent((assetPath, locale) => {
 					label: "Label",
 					validation: { isRequired: true },
 				}),
-				link: createLinkSchema(assetPath, locale),
+				link: createLinkSchema(paths.downloadPath, locale),
 			},
 			ContentView(props) {
 				const { value } = props;
@@ -287,7 +287,7 @@ export const createLinkButton = createComponent((assetPath, locale) => {
 	};
 });
 
-export const createTweet = createComponent((_assetPath, _locale) => {
+export const createTweet = createComponent((_paths, _locale) => {
 	return {
 		Tweet: wrapper({
 			label: "Tweet",
@@ -308,7 +308,7 @@ export const createTweet = createComponent((_assetPath, _locale) => {
 	};
 });
 
-export const createVideo = createComponent((_assetPath, _locale) => {
+export const createVideo = createComponent((_paths, _locale) => {
 	return {
 		Video: wrapper({
 			label: "Video",

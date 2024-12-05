@@ -1,4 +1,6 @@
-# syntax=docker/dockerfile:1
+# syntax=docker/dockerfile:1.12-labs
+# labs version is needed for `COPY --exclude`.
+# @see https://docs.docker.com/reference/dockerfile/#copy---exclude
 
 # using alpine base image to avoid `sharp` memory leaks.
 # @see https://sharp.pixelplumbing.com/install#linux-memory-allocator
@@ -66,7 +68,7 @@ WORKDIR /app
 USER node
 
 COPY --from=base --chown=node:node /app/node_modules ./node_modules
-COPY --from=build --chown=node:node /app/dist ./
+COPY --from=build --chown=node:node --exclude=client/assets/content/assets/ /app/dist ./
 
 ENV NODE_ENV=production
 ENV HOST=0.0.0.0

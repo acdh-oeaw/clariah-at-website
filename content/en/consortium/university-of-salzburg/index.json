@@ -1,56 +1,56 @@
 {
 	"name": "University of Salzburg",
 	"href": "https://www.plus.ac.at/",
-	"logo": "/assets/content/en/consortium/university-of-salzburg/logo.png",
+	"logo": "/assets/content/assets/en/consortium/university-of-salzburg/logo.png",
 	"institutions": [
 		{
 			"name": "Interdisziplinäres Zentrum für Mittelalter und Frühneuzeit",
 			"href": "https://www.plus.ac.at/izmf-interdisziplinaeres-zentrum-fuer-mittelalter-und-fruehneuzeit/",
-			"logo": "/assets/content/en/consortium/university-of-salzburg/institutions/0/logo.png"
+			"logo": "/assets/content/assets/en/consortium/university-of-salzburg/institutions/0/logo.png"
 		},
 		{
 			"name": "Mitteldeutsche Begriffsdatenbank",
 			"href": "http://mhdbdb.sbg.ac.at",
-			"logo": "/assets/content/en/consortium/university-of-salzburg/institutions/1/logo.gif"
+			"logo": "/assets/content/assets/en/consortium/university-of-salzburg/institutions/1/logo.gif"
 		},
 		{
 			"name": "Institut für Realienkunde des Mittelalters und der frühen Neuzeit",
 			"href": "https://www.imareal.sbg.ac.at/",
-			"logo": "/assets/content/en/consortium/university-of-salzburg/institutions/2/logo.png"
+			"logo": "/assets/content/assets/en/consortium/university-of-salzburg/institutions/2/logo.png"
 		}
 	],
 	"people": [
 		{
 			"name": "Katharina Zeppezauer-Wachauer",
-			"image": "/assets/content/en/consortium/university-of-salzburg/people/0/image.png"
+			"image": "/assets/content/assets/en/consortium/university-of-salzburg/people/0/image.png"
 		},
 		{
 			"name": "Lina Maria Zangerl",
-			"image": "/assets/content/en/consortium/university-of-salzburg/people/1/image.png"
+			"image": "/assets/content/assets/en/consortium/university-of-salzburg/people/1/image.png"
 		},
 		{
 			"name": "Christina Antenhofer",
-			"image": "/assets/content/en/consortium/university-of-salzburg/people/2/image.png"
+			"image": "/assets/content/assets/en/consortium/university-of-salzburg/people/2/image.png"
 		},
 		{
 			"name": "Christoph Kühberger",
-			"image": "/assets/content/en/consortium/university-of-salzburg/people/3/image.png"
+			"image": "/assets/content/assets/en/consortium/university-of-salzburg/people/3/image.png"
 		},
 		{
 			"name": "Ingrid Matschinegg",
-			"image": "/assets/content/en/consortium/university-of-salzburg/people/4/image.png"
+			"image": "/assets/content/assets/en/consortium/university-of-salzburg/people/4/image.png"
 		},
 		{
 			"name": "Peter Färberböck",
-			"image": "/assets/content/en/consortium/university-of-salzburg/people/5/image.png"
+			"image": "/assets/content/assets/en/consortium/university-of-salzburg/people/5/image.png"
 		},
 		{
 			"name": "Eugen Unterberger",
-			"image": "/assets/content/en/consortium/university-of-salzburg/people/6/image.png"
+			"image": "/assets/content/assets/en/consortium/university-of-salzburg/people/6/image.png"
 		},
 		{
 			"name": "Karoline Döring",
-			"image": "/assets/content/en/consortium/university-of-salzburg/people/7/image.png"
+			"image": "/assets/content/assets/en/consortium/university-of-salzburg/people/7/image.png"
 		}
 	]
 }

@@ -4,7 +4,7 @@ import { fields } from "@keystatic/core";
 import type { Locale } from "@/config/i18n.config";
 import { linkKinds } from "@/lib/keystatic/component-options";
 
-export function createLinkSchema(assetPath: `/${string}/`, locale: Locale) {
+export function createLinkSchema(downloadPath: `/${string}/`, locale: Locale) {
 	return fields.conditional(
 		fields.select({
 			label: "Kind",
@@ -15,7 +15,7 @@ export function createLinkSchema(assetPath: `/${string}/`, locale: Locale) {
 			download: fields.file({
 				label: "Download",
 				validation: { isRequired: true },
-				...createAssetOptions(assetPath),
+				...createAssetOptions(downloadPath),
 			}),
 			external: fields.url({
 				label: "URL",

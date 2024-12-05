@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@acdh-oeaw/keystatic-lib':
-        specifier: ^0.5.0
-        version: 0.5.0(@keystatic/core@0.5.42(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        specifier: ^0.5.3
+        version: 0.5.3(@keystatic/core@0.5.42(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@acdh-oeaw/lib':
         specifier: ^0.1.12
         version: 0.1.12
@@ -301,8 +301,8 @@ packages:
       globals: 15.x
       typescript: 5.x
 
-  '@acdh-oeaw/keystatic-lib@0.5.0':
-    resolution: {integrity: sha512-jHZEOwu4qc9X7CjNHYD83/2lx2oMc39l/1yTLnypf+OtHGa0TH5xcmhOObw5I9OBxXJI/Gcya1D51RTdOOcDXg==}
+  '@acdh-oeaw/keystatic-lib@0.5.3':
+    resolution: {integrity: sha512-pxk0GjzetYFczxhqV33UVRjdrr+hPPopXg+dnRo5M6IJ1sd5Do+Ca2dSuigbErrWGGp4PWZ1UdU4J8pokyiY9w==}
     engines: {node: '>=22', pnpm: 9.x}
     peerDependencies:
       '@keystatic/core': 0.x
@@ -5817,7 +5817,7 @@ snapshots:
       - eslint-plugin-import
       - supports-color
 
-  '@acdh-oeaw/keystatic-lib@0.5.0(@keystatic/core@0.5.42(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
+  '@acdh-oeaw/keystatic-lib@0.5.3(@keystatic/core@0.5.42(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
     dependencies:
       '@keystatic/core': 0.5.42(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@sindresorhus/slugify': 2.2.1

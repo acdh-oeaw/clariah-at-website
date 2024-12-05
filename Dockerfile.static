@@ -43,7 +43,7 @@ FROM caddy:2-alpine AS serve
 
 WORKDIR /usr/share/caddy
 
-COPY --from=build /app/dist /usr/share/caddy
+COPY --from=build --exclude=client/assets/content/assets/ /app/dist /usr/share/caddy
 
 EXPOSE 3000
 
