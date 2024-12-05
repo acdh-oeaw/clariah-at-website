@@ -68,6 +68,7 @@ WORKDIR /app
 USER node
 
 COPY --from=base --chown=node:node /app/node_modules ./node_modules
+# exclude assets which should have been optimized with `astro:assets`.
 COPY --from=build --chown=node:node --exclude=client/assets/content/assets/ /app/dist ./
 
 ENV NODE_ENV=production
