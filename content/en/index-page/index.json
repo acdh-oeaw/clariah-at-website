@@ -15,15 +15,22 @@
             {
               "discriminant": "event",
               "value": {
-                "title": "Second Austrian Meeting on Digital Linguistics: Program available",
-                "reference": "zweites-oesterreichisches-treffen-zur-digitalen-linguistik"
+                "title": "ACDH-CH Lecture 11.1 with Torsten Schrade",
+                "reference": "acdh-ch-lecture-11-1"
               }
             },
             {
-              "discriminant": "event",
+              "discriminant": "news",
               "value": {
-                "title": "ACDH-CH Lecture 11.1 with Torsten Schrade",
-                "reference": "acdh-ch-lecture-11-1"
+                "title": "CLARIN Annual Conference 2025: Call for extended Abstracts",
+                "reference": "clarin-annual-conference-2025-call-for-extended-abstracts"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "A retrospective of the ONB Labs Symposium “Newspapers as Datasets”",
+                "reference": "retrospective-onb-labs-symposium-2024"
               }
             },
             {
@@ -45,13 +52,6 @@
               "value": {
                 "title": "Newspapers, Magazines & AI Models: Call for Papers open!",
                 "reference": "conference-newspapers-magazines-aimodels"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Sustaining a Digital Humanities Infrastructure and Network for Austria",
-                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
               }
             }
           ]
