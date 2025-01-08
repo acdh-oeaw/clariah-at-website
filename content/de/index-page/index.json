@@ -15,15 +15,15 @@
             {
               "discriminant": "event",
               "value": {
-                "title": "Zweites Österreichisches Treffen zur Digitalen Linguistik: Programm verfügbar",
-                "reference": "zweites-oesterreichisches-treffen-zur-digitalen-linguistik"
+                "title": "ACDH-CH Lecture 11.1 mit Torsten Schrade",
+                "reference": "acdh-ch-lecture-11-1"
               }
             },
             {
-              "discriminant": "event",
+              "discriminant": "news",
               "value": {
-                "title": "ACDH-CH Lecture 11.1 mit Torsten Schrade",
-                "reference": "acdh-ch-lecture-11-1"
+                "title": "CLARIN Annual Conference 2025: Call for extended Abstracts",
+                "reference": "clarin-annual-conference-2025-call-for-extended-abstracts"
               }
             },
             {
