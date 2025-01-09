@@ -27,6 +27,13 @@
               }
             },
             {
+              "discriminant": "news",
+              "value": {
+                "title": "Ein Rückblick auf das ÖNB Labs Symposium 2024 zum Thema \"Zeitungen als Datensätze\"",
+                "reference": "retrospective-onb-labs-symposium-2024"
+              }
+            },
+            {
               "discriminant": "event",
               "value": {
                 "title": "ÖAW AI Winter School 2025",
@@ -45,13 +52,6 @@
               "value": {
                 "title": "Zeitungen, Zeitschriften & KI-Modelle: Call for Papers offen!",
                 "reference": "conference-newspapers-magazines-aimodels"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Erhaltung einer Infrastruktur und eines Netzwerks für die digitalen Geisteswissenschaften in Österreich",
-                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
               }
             }
           ]
