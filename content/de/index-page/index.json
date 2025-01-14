@@ -13,13 +13,6 @@
           "variant": "fluid",
           "cards": [
             {
-              "discriminant": "event",
-              "value": {
-                "title": "ACDH-CH Lecture 11.1 mit Torsten Schrade",
-                "reference": "acdh-ch-lecture-11-1"
-              }
-            },
-            {
               "discriminant": "news",
               "value": {
                 "title": "CLARIN Annual Conference 2025: Call for extended Abstracts",
@@ -29,8 +22,15 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "Ein Rückblick auf das ÖNB Labs Symposium 2024 zum Thema \"Zeitungen als Datensätze\"",
-                "reference": "retrospective-onb-labs-symposium-2024"
+                "title": "Die CLARIAH-AT-Roadshow: 12 Projekte haben sich vorgestellt",
+                "reference": "clariah-at-roadshow-2024"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Rückblick CLARIAH-AT Summer School 2024",
+                "reference": "retrospective-clariah-at-summerschool2024"
               }
             },
             {
@@ -38,6 +38,13 @@
               "value": {
                 "title": "ÖAW AI Winter School 2025",
                 "reference": "oeaw-ai-winter-school-2025"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Ein Rückblick auf das ÖNB Labs Symposium 2024 zum Thema \"Zeitungen als Datensätze\"",
+                "reference": "retrospective-onb-labs-symposium-2024"
               }
             },
             {
@@ -52,6 +59,20 @@
               "value": {
                 "title": "Zeitungen, Zeitschriften & KI-Modelle: Call for Papers offen!",
                 "reference": "conference-newspapers-magazines-aimodels"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "Workshop zu IIIF in/und Digitale(n) Editionen",
+                "reference": "workshop-iiif-digital-scholarly-editions"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Erhaltung einer Infrastruktur und eines Netzwerks für die digitalen Geisteswissenschaften in Österreich",
+                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
               }
             }
           ]
