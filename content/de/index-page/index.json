@@ -15,8 +15,29 @@
             {
               "discriminant": "news",
               "value": {
+                "title": "DARIAH Annual Event 2025: Call for Papers",
+                "reference": "dariah2025-cfp"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
                 "title": "CLARIN Annual Conference 2025: Call for extended Abstracts",
                 "reference": "clarin-annual-conference-2025-call-for-extended-abstracts"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "Workshop zu IIIF in/und Digitale(n) Editionen",
+                "reference": "workshop-iiif-digital-scholarly-editions"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Ein Rückblick auf das ÖNB Labs Symposium 2024 zum Thema \"Zeitungen als Datensätze\"",
+                "reference": "retrospective-onb-labs-symposium-2024"
               }
             },
             {
@@ -31,48 +52,6 @@
               "value": {
                 "title": "Rückblick CLARIAH-AT Summer School 2024",
                 "reference": "retrospective-clariah-at-summerschool2024"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "ÖAW AI Winter School 2025",
-                "reference": "oeaw-ai-winter-school-2025"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Ein Rückblick auf das ÖNB Labs Symposium 2024 zum Thema \"Zeitungen als Datensätze\"",
-                "reference": "retrospective-onb-labs-symposium-2024"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Aufruf zur Einreichung von Vorschlägen für CLARIN Flagship Projekte 2025",
-                "reference": "cfp-clarin-flagship-projects-2025"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Zeitungen, Zeitschriften & KI-Modelle: Call for Papers offen!",
-                "reference": "conference-newspapers-magazines-aimodels"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "Workshop zu IIIF in/und Digitale(n) Editionen",
-                "reference": "workshop-iiif-digital-scholarly-editions"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Erhaltung einer Infrastruktur und eines Netzwerks für die digitalen Geisteswissenschaften in Österreich",
-                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
               }
             }
           ]
