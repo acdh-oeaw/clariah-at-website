@@ -15,8 +15,29 @@
             {
               "discriminant": "news",
               "value": {
+                "title": "DARIAH Annual Event 2025: Call for Papers",
+                "reference": "dariah2025-cfp"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
                 "title": "CLARIN Annual Conference 2025: Call for extended Abstracts",
                 "reference": "clarin-annual-conference-2025-call-for-extended-abstracts"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "Workshop on IIF in/and Digital Scholarly Editions",
+                "reference": "workshop-iiif-digital-scholarly-editions"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "A retrospective of the ONB Labs Symposium “Newspapers as Datasets”",
+                "reference": "retrospective-onb-labs-symposium-2024"
               }
             },
             {
@@ -31,48 +52,6 @@
               "value": {
                 "title": "Retrospective of the CLARIAH-AT Summer School 2024",
                 "reference": "retrospective-clariah-at-summerschool2024"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "ÖAW AI Winter School 2025",
-                "reference": "oeaw-ai-winter-school-2025"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "A retrospective of the ONB Labs Symposium “Newspapers as Datasets”",
-                "reference": "retrospective-onb-labs-symposium-2024"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "CLARIN Flagship Projects: Call for Proposals",
-                "reference": "cfp-clarin-flagship-projects-2025"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Newspapers, Magazines & AI Models: Call for Papers open!",
-                "reference": "conference-newspapers-magazines-aimodels"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "Workshop on IIF in/and Digital Scholarly Editions",
-                "reference": "workshop-iiif-digital-scholarly-editions"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Sustaining a Digital Humanities Infrastructure and Network for Austria",
-                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
               }
             }
           ]
