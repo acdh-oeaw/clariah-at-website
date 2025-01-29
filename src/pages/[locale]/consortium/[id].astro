@@ -120,7 +120,7 @@ const icons = {
 									<SectionTitle>{t("ConsortiumMemberPage.people")}</SectionTitle>
 									<ul class="grid gap-12" role="list">
 										{people.map(async (person) => {
-											const { default: Content } = await page.compile(description);
+											const { default: Content } = await page.compile(person.description);
 
 											return (
 												<li>
