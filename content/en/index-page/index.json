@@ -15,15 +15,15 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "DARIAH Annual Event 2025: Call for Papers",
-                "reference": "dariah2025-cfp"
+                "title": "CLARIN Annual Conference 2025: Call for extended Abstracts",
+                "reference": "clarin-annual-conference-2025-call-for-extended-abstracts"
               }
             },
             {
-              "discriminant": "news",
+              "discriminant": "event",
               "value": {
-                "title": "CLARIN Annual Conference 2025: Call for extended Abstracts",
-                "reference": "clarin-annual-conference-2025-call-for-extended-abstracts"
+                "title": "CLARIN Café: Project Management in DH",
+                "reference": "clarin-cafe-project-management-in-dh"
               }
             },
             {
@@ -36,8 +36,8 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "A retrospective of the ONB Labs Symposium “Newspapers as Datasets”",
-                "reference": "retrospective-onb-labs-symposium-2024"
+                "title": "DARIAH Annual Event 2025: Call for Papers",
+                "reference": "dariah2025-cfp"
               }
             },
             {
