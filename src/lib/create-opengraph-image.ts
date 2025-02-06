@@ -1,29 +1,24 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-import { isNonEmptyString } from "@acdh-oeaw/lib";
-import type { APIContext } from "astro";
 import satori from "satori";
 import sharp from "sharp";
 
-import { defaultLocale } from "@/config/i18n.config";
+import type { Locale } from "@/config/i18n.config";
 import { withBasePath } from "@/lib/with-base-path";
-
-export const prerender = false;
 
 const width = 1200;
 const height = 630;
 
-export async function GET(context: APIContext): Promise<Response> {
-	const url = new URL(context.request.url);
+interface CreateOpenGraphImageParams {
+	baseUrl: URL;
+	image?: string | null;
+	locale: Locale;
+	title: string;
+}
 
-	const locale = context.params.locale ?? defaultLocale;
-	const title = url.searchParams.get("title");
-	const image = url.searchParams.get("image");
-
-	if (!isNonEmptyString(title)) {
-		return new Response("Missing title.", { status: 400 });
-	}
+export async function createOpenGraphImage(params: CreateOpenGraphImageParams) {
+	const { baseUrl, image, locale, title } = params;
 
 	const interFont = await readFile(
 		join(process.cwd(), "public", "assets", "fonts", "inter-semibold.ttf"),
@@ -66,13 +61,13 @@ export async function GET(context: APIContext): Promise<Response> {
 							children: {
 								type: "img",
 								props: {
-									src: String(new URL(withBasePath(image ?? "/opengraph-image.png"), context.site)),
+									src: String(new URL(withBasePath(image ?? "/opengraph-image.png"), baseUrl)),
 								},
 							},
 							style: {
 								alignItems: "center",
 								display: "flex",
-								flex: 1,
+								flex: 2,
 								justifyContent: "center",
 								padding: 16,
 							},
@@ -97,11 +92,7 @@ export async function GET(context: APIContext): Promise<Response> {
 
 	const png = await sharp(Buffer.from(svg), {}).resize(width, height).png().toBuffer();
 
-	return new Response(png, {
-		headers: {
-			"content-type": "image/png",
-			"content-length": String(png.length),
-			// "cache-control": "public, max-age=31536000, immutable",
-		},
-	});
+	return {
+		png,
+	};
 }
