@@ -1,3 +1,4 @@
+import { createReadStream } from "node:fs";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
@@ -21,6 +22,16 @@ export async function createOpenGraphImage(params: CreateOpenGraphImageParams) {
 	const interFont = await readFile(
 		join(process.cwd(), "public", "assets", "fonts", "inter-semibold.ttf"),
 	);
+
+	const stream = createReadStream(join(process.cwd(), "public", image ?? "opengraph-image.png"));
+	const src = await new Response(
+		/**
+		 * Sharp ensures that we don't pass huge images to satori, which inlines them as
+		 * base64 data uri.
+		 */
+		// @ts-expect-error It's fine.
+		stream.pipe(sharp().resize({ width: (width * 2) / 3, height })),
+	).arrayBuffer();
 
 	const svg = await satori(
 		{
@@ -59,9 +70,7 @@ export async function createOpenGraphImage(params: CreateOpenGraphImageParams) {
 							children: {
 								type: "img",
 								props: {
-									src: await readFile(
-										join(process.cwd(), "public", image ?? "opengraph-image.png"),
-									),
+									src,
 								},
 							},
 							style: {
@@ -90,7 +99,7 @@ export async function createOpenGraphImage(params: CreateOpenGraphImageParams) {
 		},
 	);
 
-	const png = await sharp(Buffer.from(svg), {}).resize(width, height).png().toBuffer();
+	const png = await sharp(Buffer.from(svg), {}).resize({ width, height }).png().toBuffer();
 
 	return {
 		png,
