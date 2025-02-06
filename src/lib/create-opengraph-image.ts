@@ -99,7 +99,10 @@ export async function createOpenGraphImage(params: CreateOpenGraphImageParams) {
 		},
 	);
 
-	const png = await sharp(Buffer.from(svg), {}).resize({ width, height }).png().toBuffer();
+	const png = await sharp(Buffer.from(svg), {})
+		.resize({ width, height, fit: "contain", background: "transparent" })
+		.png()
+		.toBuffer();
 
 	return {
 		png,
