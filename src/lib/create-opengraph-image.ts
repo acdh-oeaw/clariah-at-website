@@ -5,20 +5,18 @@ import satori from "satori";
 import sharp from "sharp";
 
 import type { Locale } from "@/config/i18n.config";
-import { withBasePath } from "@/lib/with-base-path";
 
 const width = 1200;
 const height = 630;
 
 interface CreateOpenGraphImageParams {
-	baseUrl: URL;
 	image?: string | null;
 	locale: Locale;
 	title: string;
 }
 
 export async function createOpenGraphImage(params: CreateOpenGraphImageParams) {
-	const { baseUrl, image, locale, title } = params;
+	const { image, locale, title } = params;
 
 	const interFont = await readFile(
 		join(process.cwd(), "public", "assets", "fonts", "inter-semibold.ttf"),
@@ -61,7 +59,9 @@ export async function createOpenGraphImage(params: CreateOpenGraphImageParams) {
 							children: {
 								type: "img",
 								props: {
-									src: String(new URL(withBasePath(image ?? "/opengraph-image.png"), baseUrl)),
+									src: await readFile(
+										join(process.cwd(), "public", image ?? "opengraph-image.png"),
+									),
 								},
 							},
 							style: {

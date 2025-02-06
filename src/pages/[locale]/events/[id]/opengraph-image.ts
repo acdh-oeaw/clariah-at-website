@@ -1,6 +1,6 @@
 // import { createHash } from "node:crypto";
 
-import { assert, isNonEmptyString } from "@acdh-oeaw/lib";
+import { isNonEmptyString } from "@acdh-oeaw/lib";
 import type { APIContext } from "astro";
 
 import { defaultLocale, type Locale, locales } from "@/config/i18n.config";
@@ -24,8 +24,6 @@ export async function getStaticPaths() {
 }
 
 export async function GET(context: APIContext): Promise<Response> {
-	assert(context.site, "Missing base url.");
-
 	const page = context.props.page as { data: { title: string; image?: string } };
 
 	const locale = (context.params.locale as Locale | undefined) ?? defaultLocale;
@@ -36,7 +34,6 @@ export async function GET(context: APIContext): Promise<Response> {
 	}
 
 	const { png } = await createOpenGraphImage({
-		baseUrl: context.site,
 		locale,
 		title,
 		image,
