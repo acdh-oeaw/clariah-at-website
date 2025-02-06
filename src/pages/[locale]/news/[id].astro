@@ -34,7 +34,7 @@ const documentTitle = title;
 const { default: Content } = await page.compile(content);
 ---
 
-<PageLayout locale={locale} title={documentTitle}>
+<PageLayout locale={locale} openGraphImage={{ title }} title={documentTitle}>
 	<MainContent>
 		<PageSection>
 			<PageCard image={image}>

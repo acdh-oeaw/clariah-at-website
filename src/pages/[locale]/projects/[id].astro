@@ -54,7 +54,7 @@ const endDate = _endDate != null ? new Date(_endDate) : undefined;
 const { default: Content } = await page.compile(content);
 ---
 
-<PageLayout locale={locale} title={documentTitle}>
+<PageLayout locale={locale} openGraphImage={{ title }} title={documentTitle}>
 	<MainContent>
 		<PageSection>
 			<PageCard image={image}>
