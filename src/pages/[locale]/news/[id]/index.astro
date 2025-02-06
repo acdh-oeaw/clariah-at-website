@@ -1,4 +1,6 @@
 ---
+import { createUrl } from "@acdh-oeaw/lib";
+
 import LinkButton from "@/components/content/link-button.astro";
 import MainContent from "@/components/main-content.astro";
 import PageCard from "@/components/page-card.astro";
@@ -23,7 +25,7 @@ export async function getStaticPaths() {
 	).flat();
 }
 
-const { locale } = Astro.params;
+const { id, locale } = Astro.params;
 
 const { page } = Astro.props;
 
@@ -32,9 +34,14 @@ const { t } = await createI18n(locale);
 const { content, date, image, title } = page.data;
 const documentTitle = title;
 const { default: Content } = await page.compile(content);
+
+const openGraphImage = createUrl({
+	baseUrl: Astro.site!,
+	pathname: `/${locale}/news/${id}/opengraph-image`,
+});
 ---
 
-<PageLayout locale={locale} openGraphImage={{ title }} title={documentTitle}>
+<PageLayout locale={locale} openGraphImage={openGraphImage} title={documentTitle}>
 	<MainContent>
 		<PageSection>
 			<PageCard image={image}>

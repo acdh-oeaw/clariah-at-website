@@ -1,5 +1,5 @@
 ---
-import { isNonEmptyArray } from "@acdh-oeaw/lib";
+import { createUrl, isNonEmptyArray } from "@acdh-oeaw/lib";
 import { Image } from "astro:assets";
 
 import LinkButton from "@/components/content/link-button.astro";
@@ -27,7 +27,7 @@ export async function getStaticPaths() {
 	).flat();
 }
 
-const { locale } = Astro.params;
+const { id, locale } = Astro.params;
 
 const { page } = Astro.props;
 
@@ -52,9 +52,14 @@ const documentTitle = title;
 const startDate = _startDate != null ? new Date(_startDate) : undefined;
 const endDate = _endDate != null ? new Date(_endDate) : undefined;
 const { default: Content } = await page.compile(content);
+
+const openGraphImage = createUrl({
+	baseUrl: Astro.site!,
+	pathname: `/${locale}/projects/${id}/opengraph-image`,
+});
 ---
 
-<PageLayout locale={locale} openGraphImage={{ title }} title={documentTitle}>
+<PageLayout locale={locale} openGraphImage={openGraphImage} title={documentTitle}>
 	<MainContent>
 		<PageSection>
 			<PageCard image={image}>

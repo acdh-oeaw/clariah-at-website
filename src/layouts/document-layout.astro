@@ -20,7 +20,7 @@ import { withBasePath } from "@/lib/with-base-path";
 interface Props {
 	description?: string;
 	locale: Locale;
-	openGraphImage?: { title: string };
+	openGraphImage?: URL;
 	robots?: string;
 	title: string;
 }
@@ -33,9 +33,8 @@ const metadata = t("metadata");
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 const manifestUrl = withBasePath("/manifest.webmanifest");
-const openGraphImageUrl = openGraphImage
-	? new URL(withBasePath(`/${locale}/opengraph-image?title=${openGraphImage.title}`), Astro.site)
-	: new URL(withBasePath("/opengraph-image.png"), Astro.site);
+const openGraphImageUrl =
+	openGraphImage ?? new URL(withBasePath("/opengraph-image.png"), Astro.site);
 const sitemapUrl = withBasePath("/sitemap-index.xml");
 const rssUrl = new URL(withBasePath("/feed.xml"), Astro.site);
 

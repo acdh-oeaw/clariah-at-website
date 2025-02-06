@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 	return (
 		await Promise.all(
 			locales.map(async (locale) => {
-				const pages = await createCollectionResource("events", locale).all();
+				const pages = await createCollectionResource("news", locale).all();
 
 				return pages.map((page) => {
 					return { params: { id: page.id, locale }, props: { page } };
