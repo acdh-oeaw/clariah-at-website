@@ -12,14 +12,15 @@ import NavMenuTrigger from "@/components/navigation/nav-menu-trigger.astro";
 import Navigation from "@/components/navigation/navigation.astro";
 import Search from "@/components/search.astro";
 import { defaultLocale, type Locale } from "@/config/i18n.config";
+import { createClient } from "@/lib/content/create-client";
 import { createI18n } from "@/lib/i18n";
 import { getLinkProps } from "@/lib/keystatic/get-link-props";
-import { createSingletonResource } from "@/lib/keystatic/resources";
 import logo from "~/public/assets/images/clariah-at-logo.png";
 
 const locale = (Astro.currentLocale as Locale | undefined) ?? defaultLocale;
 const { t } = await createI18n(locale);
-const navigation = await createSingletonResource("navigation", locale).read();
+const client = await createClient(locale);
+const navigation = await client.getNavigation();
 
 const home = t("WebsiteHeader.links.home");
 ---

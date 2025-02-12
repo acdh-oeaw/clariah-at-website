@@ -4,8 +4,8 @@ import { isNonEmptyString } from "@acdh-oeaw/lib";
 import type { APIContext } from "astro";
 
 import { defaultLocale, type Locale, locales } from "@/config/i18n.config";
+import { createClient } from "@/lib/content/create-client";
 import { createOpenGraphImage } from "@/lib/create-opengraph-image";
-import { createCollectionResource } from "@/lib/keystatic/resources";
 
 export const prerender = true;
 
@@ -13,7 +13,8 @@ export async function getStaticPaths() {
 	return (
 		await Promise.all(
 			locales.map(async (locale) => {
-				const pages = await createCollectionResource("events", locale).all();
+				const client = await createClient(locale);
+				const pages = await client.getEvents();
 
 				return pages.map((page) => {
 					return { params: { id: page.id, locale }, props: { page } };

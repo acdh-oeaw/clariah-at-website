@@ -4,7 +4,7 @@ import type { MDXModule } from "mdx/types";
 
 import type { Locale } from "@/config/i18n.config";
 import { createMdxConfig } from "@/config/mdx.config";
-import { useMDXComponents } from "@/lib/keystatic/mdx-components";
+import { useMDXComponents } from "@/lib/content/mdx-components";
 
 const createMdxProcessor = createMdxProcessors(createMdxConfig);
 
