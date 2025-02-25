@@ -3,8 +3,8 @@ import rss, { type RSSFeedItem } from "@astrojs/rss";
 import type { APIContext } from "astro";
 
 import { type Locale, locales } from "@/config/i18n.config";
+import { createClient } from "@/lib/content/create-client";
 import { createI18n } from "@/lib/i18n";
-import { createCollectionResource } from "@/lib/keystatic/resources";
 
 export function getStaticPaths() {
 	return locales.map((locale) => {
@@ -19,8 +19,9 @@ export async function GET(context: APIContext) {
 
 	const metadata = t("metadata");
 
-	const events = await createCollectionResource("events", locale).all();
-	const news = await createCollectionResource("news", locale).all();
+	const client = await createClient(locale);
+	const events = await client.getEvents();
+	const news = await client.getNews();
 
 	return rss({
 		title: metadata.title,

@@ -10,15 +10,16 @@ import PageTitle from "@/components/page-title.astro";
 import SectionTitle from "@/components/section-title.astro";
 import { type Locale, locales } from "@/config/i18n.config";
 import PageLayout from "@/layouts/page-layout.astro";
+import { createClient } from "@/lib/content/create-client";
 import { getImageImport } from "@/lib/get-image-import";
 import { createI18n } from "@/lib/i18n";
-import { createCollectionResource } from "@/lib/keystatic/resources";
 
 export async function getStaticPaths() {
 	return (
 		await Promise.all(
 			locales.map(async (locale) => {
-				const pages = await createCollectionResource("consortium", locale).all();
+				const client = await createClient(locale);
+				const pages = await client.getConsortiumMembers();
 
 				return pages.map((page) => {
 					return { params: { id: page.id, locale }, props: { page } };

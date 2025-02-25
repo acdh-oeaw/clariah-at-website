@@ -1,5 +1,5 @@
 ---
-import { isNonEmptyArray } from "@acdh-oeaw/lib";
+import { createUrl, isNonEmptyArray } from "@acdh-oeaw/lib";
 import { Image } from "astro:assets";
 
 import LinkButton from "@/components/content/link-button.astro";
@@ -9,15 +9,16 @@ import PageSection from "@/components/page-section.astro";
 import PageTitle from "@/components/page-title.astro";
 import { locales } from "@/config/i18n.config";
 import PageLayout from "@/layouts/page-layout.astro";
+import { createClient } from "@/lib/content/create-client";
 import { getImageImport } from "@/lib/get-image-import";
 import { createI18n } from "@/lib/i18n";
-import { createCollectionResource } from "@/lib/keystatic/resources";
 
 export async function getStaticPaths() {
 	return (
 		await Promise.all(
 			locales.map(async (locale) => {
-				const pages = await createCollectionResource("projects", locale).all();
+				const client = await createClient(locale);
+				const pages = await client.getProjects();
 
 				return pages.map((page) => {
 					return { params: { id: page.id, locale }, props: { page } };
@@ -27,7 +28,7 @@ export async function getStaticPaths() {
 	).flat();
 }
 
-const { locale } = Astro.params;
+const { id, locale } = Astro.params;
 
 const { page } = Astro.props;
 
@@ -52,9 +53,14 @@ const documentTitle = title;
 const startDate = _startDate != null ? new Date(_startDate) : undefined;
 const endDate = _endDate != null ? new Date(_endDate) : undefined;
 const { default: Content } = await page.compile(content);
+
+const openGraphImage = createUrl({
+	baseUrl: Astro.site!,
+	pathname: `/${locale}/projects/${id}/opengraph-image`,
+});
 ---
 
-<PageLayout locale={locale} title={documentTitle}>
+<PageLayout locale={locale} openGraphImage={openGraphImage} title={documentTitle}>
 	<MainContent>
 		<PageSection>
 			<PageCard image={image}>

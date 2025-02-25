@@ -6,11 +6,12 @@ import { mobileNavId } from "@/components/navigation/constants";
 import NavLink from "@/components/navigation/nav-link.astro";
 import Search from "@/components/search.astro";
 import { defaultLocale, type Locale } from "@/config/i18n.config";
+import { createClient } from "@/lib/content/create-client";
 import { getLinkProps } from "@/lib/keystatic/get-link-props";
-import { createSingletonResource } from "@/lib/keystatic/resources";
 
 const locale = (Astro.currentLocale as Locale | undefined) ?? defaultLocale;
-const navigation = await createSingletonResource("navigation", locale).read();
+const client = await createClient(locale);
+const navigation = await client.getNavigation();
 ---
 
 <div class="px-4 pb-6 lg:hidden" data-mobile-nav hidden id={mobileNavId}>
