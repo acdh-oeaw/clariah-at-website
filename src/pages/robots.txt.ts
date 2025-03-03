@@ -17,6 +17,6 @@ Host: ${import.meta.env.SITE}
 
 const robots = env.PUBLIC_BOTS !== "enabled" ? disallow : allow;
 
-export function GET() {
+export function GET(): Response {
 	return new Response(robots, { headers: { "Content-Type": "text/plain; charset=utf-8" } });
 }

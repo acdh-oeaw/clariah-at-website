@@ -1,4 +1,6 @@
 ---
+import { createUrl } from "@acdh-oeaw/lib";
+
 import LinkButton from "@/components/content/link-button.astro";
 import MainContent from "@/components/main-content.astro";
 import PageCard from "@/components/page-card.astro";
@@ -6,14 +8,15 @@ import PageSection from "@/components/page-section.astro";
 import PageTitle from "@/components/page-title.astro";
 import { locales } from "@/config/i18n.config";
 import PageLayout from "@/layouts/page-layout.astro";
+import { createClient } from "@/lib/content/create-client";
 import { createI18n } from "@/lib/i18n";
-import { createCollectionResource } from "@/lib/keystatic/resources";
 
 export async function getStaticPaths() {
 	return (
 		await Promise.all(
 			locales.map(async (locale) => {
-				const pages = await createCollectionResource("news", locale).all();
+				const client = await createClient(locale);
+				const pages = await client.getEvents();
 
 				return pages.map((page) => {
 					return { params: { id: page.id, locale }, props: { page } };
@@ -23,7 +26,7 @@ export async function getStaticPaths() {
 	).flat();
 }
 
-const { locale } = Astro.params;
+const { locale, id } = Astro.params;
 
 const { page } = Astro.props;
 
@@ -32,9 +35,14 @@ const { t } = await createI18n(locale);
 const { content, date, image, title } = page.data;
 const documentTitle = title;
 const { default: Content } = await page.compile(content);
+
+const openGraphImage = createUrl({
+	baseUrl: Astro.site!,
+	pathname: `/${locale}/events/${id}/opengraph-image`,
+});
 ---
 
-<PageLayout locale={locale} title={documentTitle}>
+<PageLayout locale={locale} openGraphImage={openGraphImage} title={documentTitle}>
 	<MainContent>
 		<PageSection>
 			<PageCard image={image}>
@@ -48,13 +56,13 @@ const { default: Content } = await page.compile(content);
 
 				<div class="mt-8 flex items-center gap-x-4">
 					<LinkButton
-						label={t("NewsItemPage.more.news")}
-						link={{ discriminant: "pages", value: "news" }}
+						label={t("EventPage.more.events")}
+						link={{ discriminant: "pages", value: "events" }}
 					/>
 
 					<LinkButton
-						label={t("NewsItemPage.more.events")}
-						link={{ discriminant: "pages", value: "events" }}
+						label={t("EventPage.more.news")}
+						link={{ discriminant: "pages", value: "news" }}
 					/>
 				</div>
 			</PageCard>

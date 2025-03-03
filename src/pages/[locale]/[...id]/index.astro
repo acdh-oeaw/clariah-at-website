@@ -5,13 +5,14 @@ import PageSection from "@/components/page-section.astro";
 import PageTitle from "@/components/page-title.astro";
 import { locales } from "@/config/i18n.config";
 import PageLayout from "@/layouts/page-layout.astro";
-import { createCollectionResource } from "@/lib/keystatic/resources";
+import { createClient } from "@/lib/content/create-client";
 
 export async function getStaticPaths() {
 	return (
 		await Promise.all(
 			locales.map(async (locale) => {
-				const pages = await createCollectionResource("pages", locale).all();
+				const client = await createClient(locale);
+				const pages = await client.getPages();
 
 				return pages.map((page) => {
 					return { params: { id: page.id, locale }, props: { page } };

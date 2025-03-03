@@ -6,13 +6,14 @@ import PageSection from "@/components/page-section.astro";
 import PageTitle from "@/components/page-title.astro";
 import { locales } from "@/config/i18n.config";
 import PageLayout from "@/layouts/page-layout.astro";
+import { createClient } from "@/lib/content/create-client";
 import { createI18n } from "@/lib/i18n";
-import { createCollectionResource } from "@/lib/keystatic/resources";
 
 export async function getStaticPaths() {
 	return Promise.all(
 		locales.map(async (locale) => {
-			const projects = await createCollectionResource("projects", locale).all();
+			const client = await createClient(locale);
+			const projects = await client.getProjects();
 
 			return { params: { locale }, props: { projects } };
 		}),
