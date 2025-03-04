@@ -79,7 +79,8 @@
 			"dha-projects": "more DHA projects"
 		},
 		"responsible-persons": "Responsible persons",
-		"start-date": "Start"
+		"start-date": "Start",
+		"tags": "Tags"
 	},
 	"ProjectsPage": {
 		"meta": {

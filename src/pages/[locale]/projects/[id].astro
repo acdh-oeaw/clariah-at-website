@@ -47,11 +47,17 @@ const {
 	hostingOrganizations,
 	links,
 	responsiblePersons,
+	tags,
 } = page.data;
+
 const documentTitle = title;
 const startDate = _startDate != null ? new Date(_startDate) : undefined;
 const endDate = _endDate != null ? new Date(_endDate) : undefined;
 const { default: Content } = await page.compile(content);
+const taglist = tags.map((tag) => {
+	return `${tag.name} (${tag.tid})`;
+});
+console.log(tags, taglist);
 ---
 
 <PageLayout locale={locale} title={documentTitle}>
@@ -101,6 +107,16 @@ const { default: Content } = await page.compile(content);
 								<dd>
 									<time datetime={endDate.toISOString()}>{dateTime.format(endDate)}</time>
 								</dd>
+							</div>
+						) : null
+					}
+					{
+						isNonEmptyArray(taglist) ? (
+							<div class="grid gap-y-1 text-sm">
+								<dt class="text-xs font-medium uppercase tracking-wider text-neutral-600">
+									{t("ProjectPage.tags")}
+								</dt>
+								<dd>{list.format(taglist)}</dd>
 							</div>
 						) : null
 					}
