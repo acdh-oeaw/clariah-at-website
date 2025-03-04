@@ -1,14 +1,11 @@
 ---
-title: >-
-  Prototype of a Historical-Critical Online Edition based on the Estate
+title: Prototype of a Historical-Critical Online Edition based on the Estate
   Materials of Josef Maria Baernreither
-summary: >-
-  Ziel des Projekts ist es, die Machbarkeit eines RDF-basierten Graphenmodells
-  einer historisch-kritischen Edition zu untersuchen.
+summary: Ziel des Projekts ist es, die Machbarkeit eines RDF-basierten
+  Graphenmodells einer historisch-kritischen Edition zu untersuchen.
 startDate: 2022-09-01
 endDate: 2024-03-31
-image: >-
-  /assets/content/assets/de/projects/prototype-historical-critical-online-edition-based-estate-materials-josef-maria-baernreither/image.png
+image: /assets/content/assets/de/projects/prototype-historical-critical-online-edition-based-estate-materials-josef-maria-baernreither/image.png
 additionalImages: []
 attachments: []
 links:
@@ -22,11 +19,18 @@ responsiblePersons:
   - Kurt Scharr
   - Christof Aichner
 hostingOrganizations:
-  - >-
-    Uni Innsbruck - Institut für Geschichtswissenschaft u. Europäische
-    Ethnologie
+  - Uni Innsbruck - Institut für Geschichtswissenschaft u. Europäische Ethnologie
   - Kommission für Neuere Geschichte Österreichs
   - Austrian Centre for Digital Humanities and Cultural Heritage
+tags:
+  - tid: 178
+    name: digital edition
+  - tid: 150
+    name: TEI
+  - tid: 159
+    name: RDF
+  - tid: 366
+    name: CLARIAH-AT
 ---
 Joseph Maria Bärnreither (1845-1925) war einer der führenden Politiker der Spätphase der Habsburgermonarchie, der sich sowohl mit den sozialen Fragen der Monarchie als auch mit den nationalen Problemen des Vielvölkerstaates intensiv beschäftigte.
 
@@ -48,36 +52,3 @@ Viel Raum nahmen die Überlegungen und die Einigung auf die grafische Darstellun
 
 **Keywords:** Digitale Edition, TEI, RDF
 
----
-
-## Outcomes
-
-Im backend des Projektes läuft Node.js zur Verarbeitung der JS-Scripts und eine GraphDB Instanz als SPARQL-endpoint. Die TEI/XML Primärdaten der Texte sind die einzige Verwendung einer XML-Technik, nach dem Ingest und der Konvertierung in TTL/RDF arbeitet die Anwendung nur mehr mit diesem Datenformat bzw. den daraus entnommenen Daten in JSON. Die TTL/RDF Daten werden mit SPARQL (.rq) abgefragt, die JSON Daten mit JS (.js).
-
-Der Start eines JS-Scripts geschieht mit einem Shell-Script (.sh), das gilt auch für die JS-API der GraphDB.
-
-Die Konvertierung von TEI nach TTL macht aus den XML-Entitäten RDF-Statements, die deren Informationen über Elementnamen, -attributen, -inhalt enthalten und mit einer Positionsangabe ergänzen, die die eindeutige Identifizierung der Stelle des Statements im Text gewährleisten.
-
-Die Register werden in folgendem Prozess erzeugt:
-
-* Generierung der source-Daten (\_tmp.json) aus. Excel Tabellen (.xlsx), Datenbanken (geonames) und den Vorkommnissen in den Texten (\_text.json).
-
-- Konvertierung der source Daten in TEI/XML (zugleich das Ausgabeformat der Register).
-
-* Benützen der vorhandenen TEI to RDF Konvertierung, um aus den XML Daten die RDF Daten der Register zu generieren. Diese Modellierung der RDF Daten ist aus Effizienzgründen gewählt eine andere Modellierung, etwa nach gängigen Ontologien (GND, Wikidata) ist ebenso möglich.
-
-- TTL to JSON Konvertierung erzeugt die JSON Version der Register, mit der mittels JS die Registerdaten auf den HTML Seiten ausgegeben werden können. Andere Ausgabeformate sind durch modifizierte JS-scripts erzielbar.
-
-Die Annotationsebenen sind mit dem [Web Annotation Vocabulary der W3C](https://www.w3.org/TR/2017/REC-annotation-vocab-20170223/) umgesetzt. Das Vocabulary enthält Informationen in RDF über die referenzierten Stellen in den Texten und die damit verbundenen Stellen in anderen Texten oder in den Registern. Ein weiterer Vorteil ist das schnellere Abfragen einzelner Annotationen durch die Angaben der Referenzen in den Texten.
-
-Die Suche basiert auf einem 3-Zeichen breiten Index. Dadurch, dass jedes Token sich durch ein Zeichen vom nächsten unterscheidet, wird jedes Zeichen erfasst und ein Suchen über Wortgrenzen hinaus möglich. Die Suche ist eine Volltext-Suche, die dem Textinhalt nach mit der normalisierten Fassung übereinstimmt. Durch die eindeutige Identifizierung jedes Tokens wird ein Treffer auch in dieser Fassung als einer identifiziert und markiert, wenn eine oder mehrere XML-Entitäten dazwischen liegen. Eine Erweiterung auf eine Suche in der diplomatischen Fassung lässt sich vornehmen.
-
-Der aktuelle Stand der Anwendung ist hier zu sehen: [https://kfngoe.github.io/baernreither-app/index.html](https://kfngoe.github.io/baernreither-app/index.html)
-
-ACHTUNG: das ist eine vorläufige, Beta-Version der Seite, die zeigen soll, dass die wichtigen frontend-Funktionalitäten (Textvergleich, Personenregister, Suche mit eingeschränktem Index, Bsp.: „die aus Gründen“) des Projektes realisiert werden konnten.
-
-Die Entwicklung des Projektes bis zur Release Version konnte auf dieser Webseite verfolgt werden. Danach durchlief sie eine Testphase, in der die Rückmeldungen durch verschiedene Nutzer:innen gesammelt wurden.&#x20;
-
-Die Ergebnisse der Pilotstudie wurden [am 23. Mai 2024 im Parlament präsentiert](https://clariah.at/de/events/projectpresentation-digital-edition-baernreither/). Der Ort wurde deshalb gewählt, weil Baernreither als Abgeordneter und Minister dort einen Großteil seiner politischen Laufbahn verbracht hat; außerdem konnte das Parlamentsarchiv als Projektpartner bei der geplanten Weiterführung der Edition auf der Grundlage im von CLARIAH-AT geförderten Projekt gewonnen werden. Die geplante Fortführung des Projekts durch die Kommission für Neuere Geschichte Österreichs im Verein mit dem Parlamentsarchiv kann neben der erfolgreichen technischen Durchführung des Projekts wohl als wichtigstes Ergebnis der Pilotstudie angesehen werden. In den kommenden Jahren sollen durch die Finanzierung der Kommission alle übrigen Tagebücher (30 Bände) mit der nun erprobten Technik bzw. notwendigen Adaptionen ediert werden.
-
-Mit dem Österreichischen Staatsarchiv konnte hierfür auch eine Grundsatzvereinbarung zur Publikation der Tagebücher in digitaler Form und zur Möglichkeit der digitalen Langzeitsicherung der Daten in ARCHE gefunden werden.

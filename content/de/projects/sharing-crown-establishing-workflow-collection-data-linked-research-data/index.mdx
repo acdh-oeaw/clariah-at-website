@@ -1,15 +1,13 @@
 ---
-title: >-
-  Sharing the CROWN - Einrichtung eines Workflows von Sammlungsdaten zu
+title: Sharing the CROWN - Einrichtung eines Workflows von Sammlungsdaten zu
   verknüpften Forschungsdaten
-summary: >-
-  Das Projekt CROWN, das vom KHM in Wien initiiert wurde, konzentriert sich auf
-  eine umfassende Analyse der Reichskrone des Heiligen Römischen Reiches, die
-  eine interdisziplinäre Untersuchung ihrer verschiedenen Bestandteile umfasst.
+summary: Das Projekt CROWN, das vom KHM in Wien initiiert wurde, konzentriert
+  sich auf eine umfassende Analyse der Reichskrone des Heiligen Römischen
+  Reiches, die eine interdisziplinäre Untersuchung ihrer verschiedenen
+  Bestandteile umfasst.
 startDate: 2023-04-01
 endDate: 2024-03-01
-image: >-
-  /assets/content/assets/de/projects/sharing-crown-establishing-workflow-collection-data-linked-research-data/image.png
+image: /assets/content/assets/de/projects/sharing-crown-establishing-workflow-collection-data-linked-research-data/image.png
 additionalImages: []
 attachments: []
 links:
@@ -23,6 +21,23 @@ responsiblePersons:
 hostingOrganizations:
   - KHM-Museumsverband
   - Institut für Digitale Geisteswissenschaften - Universität Graz
+tags:
+  - tid: 50
+    name: museums
+  - tid: 136
+    name: semantic web
+  - tid: 421
+    name: linked open data
+  - tid: 116
+    name: ontology
+  - tid: 837
+    name: interdisciplinary research
+  - tid: 1056
+    name: research data
+  - tid: 1057
+    name: workflows
+  - tid: 366
+    name: CLARIAH-AT
 ---
 ## Kontext
 
@@ -40,62 +55,3 @@ Im Fall von CROWN kann die relevante Forschungsfrage nach der Herkunft und Datie
 
 **keywords:** Museen, semantic web, linked open data, Ontologie, interdisziplinäre Forschung, Forschungsdaten, Workflows
 
----
-
-## Outcomes
-
-Das Projekt konzentrierte sich auf die Entwicklung eines Workflows zur semantischen Anreicherung und Normalisierung von Forschungsdaten aus dem Museumssystem (TMS) am Beispiel des CROWN Projekts. Der Workflow umfasst die Datenbereinigung, die Domänenmodellierung, die Generierung von RDF-Daten aus einem TMS-Export sowie die Erstellung eines Prototyps in GAMS.
-
-Eine besondere Herausforderung des Forschungsprojektes bestand darin, dass 2470 Objekte (Stand März 2024; weitere Objekte folgen), 669 spezifische und weitere ca. 40 vordefinierte Datenfelder aus TMS in RDF überführt werden müssen. Diese Datenfelder beinhalten hochspezialisierte Informationen wie z.B. die Beschreibung von Bohrlöchern auf Edelsteinen (der Reichskrone) sowie Form, Oberfläche, Farbe von Edelsteinen und durchgeführte Analyseverfahren wie z.B. Ramanspektroskopie. Da es sich um ein laufendes Projekt handelt, bei dem verschiedene Abteilungen zusammenarbeiten und im Laufe der Zeit neue Datenfelder benötigt werden, ist ein erweiterbarer Workflow erforderlich. Im Folgenden werden die wichtigsten Bereiche beschrieben.
-
-* **Dateneingabe**: Im TMS-System durch interdisziplinäre Teams von Fachwissenschaftler:innen, Datenbereinigung und Datennormalisierung.
-
-- **Datentransformation**: Transformation von TMS-Exportdaten in RDF.
-
-* **Datenmodellierung**: Entwicklung eines Datenmodells bzw. einer Ontologie.
-
-- **Datenvisualisierung**: Erstellung eines Prototyps in GAMS.
-
-### Dateneingabe
-
-Die bisherige Datenerhebung wurde erfolgreich bereinigt und normalisiert. Um eine weitere normalisierte Dateneingabe zu gewährleisten, wurden eine Handreichung sowie im Rahmen der Förderzeit Schulungen zur Dateneingabe durchgeführt.
-
-### Datentransformation
-
-Die Dokumentation und Veröffentlichung der Best Practices und Workflows erfolgt in einem [GitHub-Repositorium](https://github.com/DigitalHumanitiesCraft/crown). Das Kernstück bilden mehrere Python-Skripte, welche den CSV-Export aus TMS in RDF umwandeln. Das Mapping wird durch eine detaillierte Auflistung und Definition der UserFields in einem Google Spreadsheet realisiert, was kollaborative Anpassungen der Datenfelder erlaubt. Durch Modifikationen können ähnliche Workflows für andere Datensätze, wie beispielsweise Gemäldedaten aus TMS, erstellt werden, um daraus semantische Forschungsdaten zu generieren.
-
-Implementierte Python-Skripte:
-
-* `excel-to-rdf.py`: Transformiert Excel-Daten nach RDF und führt eine semantische Anreicherung durch (Abgleich ausgewählter Werte; bedingt durch einheitliche Beschreibung in Datenfeldern).
-
-- `index-to-rdf.py`: Erstellung von Indexdateien für Organisationen und Personen, die Verknüpfungen und Querverweise innerhalb des Datensatzes erleichtern. Kann zur Erstellung weiterer projektspezifischer Indizes verwendet werden.
-
-* `thesaurus-to-rdf.py`: Erstellung von SKOS-basierten RDF-Strukturen für die im Projekt verwendeten Terminologien und Thesauri.
-
-### Datenmodellierung
-
-Die projektspezifische Ontologie `crown-ontology.ttl` soll Daten aus Museumssammlungen strukturiert beschreiben. Durch die Integration mit CIDOC CRM wird die Interoperabilität verbessert. Die Ontologie unterstützt detaillierte Eigenschaften von Komponenten der Reichskrone sowie von Zusatzmaterialien, deren Herkunft und Zustand und ist offen für Aktualisierungen und Erweiterungen. Durch den definierten Workflow ist es möglich, eine gemeinsame Dokumentation sowohl für das Mapping als auch für die Generierung der Ontologie zu verwenden.
-
-Implementierte Python-Skripte:
-
-* `datafields-to-ontology.py`: Verwendet lokale JSON-Dateien (Top-Level Class + CIDOC Mapping) und die in Google Spreadsheet definierten Datenfeldinformationen, um die Ontologie zu generieren.
-
-### Datenvisualisierung
-
-Die Daten wurden erfolgreich in die Staging-Umgebung von GAMS integriert und ein Web Prototyp für den Zugriff auf die Daten implementiert.
-
-Darüber hinaus wurde im Rahmen des Best-Practice ein niederschwelliger Zugang zu den Daten und deren Abfrage mittels GraphDB demonstriert, um zu zeigen, dass RDF-Daten auch in anderen Umgebungen genutzt werden können.
-
-* Öffentliches GitHub Repository mit den Best Practices (Tutorial), sowie allen Skripten, Input- und Outputdaten: [https://github.com/DigitalHumanitiesCraft/crown](https://github.com/DigitalHumanitiesCraft/crown)
-
-* Prototyp auf GAMS: Eine erste Version der unveröffentlichten Testinstanz steht bereits zur Verfügung und ist enthalten:
-
-  * Ein Probebeispiel zur Einzelobjektdarstellung (RDF): [https://gams-staging.uni-graz.at/archive/objects/o:crown.object.a\_max\_example\_test/methods/sdef:Ontology/get](https://gams-staging.uni-graz.at/archive/objects/o:crown.object.a_max_example_test/methods/sdef:Ontology/get)
-
-  - Objekt Übersicht (+ Volltextsuche und Filterfunktionalitäten): [https://gams-staging.uni-graz.at/archive/objects/o:crown.thesaurus/methods/sdef:SKOS/get](https://gams-staging.uni-graz.at/archive/objects/o:crown.thesaurus/methods/sdef:SKOS/get)
-
-  * Ein Probebeispiel zur Darstellung eines projektspezifischen Thesaurus (SKOS): [https://gams-staging.uni-graz.at/archive/objects/o:crown.thesaurus/methods/sdef:SKOS/get](https://gams-staging.uni-graz.at/archive/objects/o:crown.thesaurus/methods/sdef:SKOS/get)
-
-  - Personenindex: [https://gams-staging.uni-graz.at/archive/objects/o:crown.index.person/methods/sdef:Ontology/get](https://gams-staging.uni-graz.at/archive/objects/o:crown.index.person/methods/sdef:Ontology/get)
-
-  * Organisationenindex: [https://gams-staging.uni-graz.at/archive/objects/o:crown.index.organisation/methods/sdef:Ontology/get](https://gams-staging.uni-graz.at/archive/objects/o:crown.index.organisation/methods/sdef:Ontology/get)

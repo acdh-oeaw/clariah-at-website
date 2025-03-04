@@ -1,16 +1,13 @@
 ---
-title: >-
-  Developing HuBERT: a Natural Language Processing algorithm for extending the
-  Seshat Global History Databank
-summary: >-
-  This project addresses the challenges of expanding and increasing the
+title: "Developing HuBERT: a Natural Language Processing algorithm for extending
+  the Seshat Global History Databank"
+summary: This project addresses the challenges of expanding and increasing the
   cross-utilization of historical datasets by developing a NLP algorithm that
   can help expand current databases and increase the translatability of data
   across projects.
 startDate: 2023-01-01
 endDate: 2023-01-01
-image: >-
-  /assets/content/assets/de/projects/developing-hubert-nlp-algorithm-extending-seshat-global-history-databank/image.png
+image: /assets/content/assets/de/projects/developing-hubert-nlp-algorithm-extending-seshat-global-history-databank/image.png
 additionalImages: []
 attachments: []
 links:
@@ -24,6 +21,17 @@ responsiblePersons:
   - Maria del Rio-Chanona
 hostingOrganizations:
   - Complexity Science Hub Vienna
+tags:
+  - tid: 844
+    name: digital humanism
+  - tid: 397
+    name: algorithms
+  - tid: 314
+    name: digital infrastructure
+  - tid: 847
+    name: artificial intelligence
+  - tid: 366
+    name: CLARIAH-AT
 ---
 Dieses Projekt befasst sich mit den Herausforderungen, die mit der Erweiterung und der verstärkten Nutzung historischer Datensätze verbunden sind, indem ein Algorithmus für die Verarbeitung natürlicher Sprache (NLP) entwickelt wird, der dazu beitragen kann, die aktuellen Datenbanken zu erweitern und die Übersetzung der Daten in andere Projekte hinweg zu verbessern. Das Projekt umfasst zunächst die Neuorganisation des [Seshat](https://seshatdatabank.info/seshat-projects/)-Literaturrepositoriums, das über 8.000 akademische Artikel und Bücher zu verschiedenen Kulturen und Zivilisationen enthält. Durch diese Umstrukturierung wird das Repositorium für Forscher einfach und automatisch zugänglich gemacht, wodurch die Nutzbarkeit der darin enthaltenen Daten erhöht wird. Zweitens wird im Rahmen des Projekts ein Algorithmus namens HuBERT entwickelt, der das Screening von Dokumenten und die Datenerfassung aus archäologischen und historischen Materialien und bestehenden Datenbanken teilweise automatisiert. Dies trägt dazu bei, die Herausforderungen der langsamen Datenerfassung und der fehleranfälligen manuellen Eingabe zu überwinden, wodurch die Daten projektübergreifend besser übertragbar werden und die Forscher ein breiteres Spektrum von Forschungsfragen beantworten können. Zusätzlich zu diesen Beiträgen umfasst das Projekt Aktualisierungen der Projektwebsite, Anleitungen und andere Ressourcen, um die Daten und den Algorithmus für ein breites Spektrum von Forschern aus verschiedenen Disziplinen zugänglich zu machen.
 
@@ -41,42 +49,3 @@ Die größte Herausforderung bei der Ausweitung und verstärkten Nutzung histori
 3. Pflege und Erweiterung der Dokumentation und Anleitungen.\
    Die Seshat-Datenbank und die Website werden weiterhin aktualisiert und dokumentiert. Datenvisualisierungen und Dokumentationen sowie Tutorials für das Seshat-Literatur-Repositorium und HuBERT werden hinzugefügt.
 
----
-
-## Outcomes
-
-Ziel dieses Projekts war es, die gegenseitige Nutzung historischer Datensätze zu erweitern und zu fördern. Die Seshat-Datenbank wurde erfolgreich erweitert, so dass ihre reichhaltigen Metadaten für eine groß angelegte, automatisierte Analyse angepasst werden können. Dazu gehören die Verknüpfungen zwischen historischen Fakten, ihren Quellen in der Literatur und zusätzlichen Freitexterklärungen, die zusammen einen einzigartigen Datensatz für die Entwicklung und das Training von Lösungen für die Verarbeitung natürlicher Sprache (NLP) bilden. Darüber hinaus konnte bis November 2024 die Finanzierung gesichert werden, um die Bemühungen zur Automatisierung der Datenextraktion durch große Sprachmodelle fortzusetzen.
-
-### Datenerhebung und -bereinigung
-
-Die Seshat-Datenbank wurde ursprünglich mit dem Ziel geschaffen, die quantitative Analyse historischer Daten durch automatisierte Berechnungsmethoden zu ermöglichen. Bislang umfasste sie jedoch nur die Datenpunkte (d. h. die historischen Fakten) selbst, während die entsprechenden Metadaten in einem freien Textformat gespeichert waren. Daher wurde ein Online-Tool entwickelt, das eine effiziente Verarbeitung dieser Metadaten ermöglicht und über 12.000 Zitate mit Zotero-Datenbankobjekten verknüpft. Folglich konnten 140.000 Datenpunkte in der Seshat-Datenbank mit diesen Objekten verknüpft werden. Außerdem konnten in der Seshat-Datenbank 50.000 eindeutige Erklärungen von wissenschaftlichen Mitarbeitern verarbeitet werden. Diese Erklärungen wurden verwendet, um einen Datensatz mit zwei Tabellen zu erstellen:\
-Die erste Tabelle enthält 7.000 Textsegmente aus Quelldokumenten, auf die in den Erklärungen Bezug genommen wurde. Die zweite Tabelle enthält 40.000 der Beschreibungen der Forschungsassistenten, die länger als 50 Zeichen sind. Beide Tabellen enthalten ein oder mehrere Themenetiketten für jedes der Textsegmente sowie weitere Informationen zu den Fakten und den Politiken, auf die sich die Texte beziehen.
-
-|         |          |         |                       |                                                                                   |                                          |
-| ------- | -------- | ------- | --------------------- | --------------------------------------------------------------------------------- | ---------------------------------------- |
-| polity  | variable | value   | reference             | description                                                                       | quote                                    |
-| InGaroL | Weight   | present | Burling, Robbins 1963 | The following seems to indicate that …: "When women cook rice, they measure the … | When women cook rice, they measure the … |
-
-Beispiel für einen Datenpunkt
-
----
-
-### Datenveröffentlichung
-
-Das wichtigste Ergebnis dieses Projekts ist ein Datensatz von Referenzen mit Texterklärungen, die mit historischen Fakten (d. h. Datenpunkten) verknüpft sind. Dieser Datensatz kann wiederverwendet werden, um große Sprachmodelle zu trainieren, insbesondere als beschrifteter Textdatensatz, bei dem ein Text mit den Informationen beschriftet wird, die extrahiert werden können.
-
-Das Datenrepositorium ist via Figshare verfügbar: [https://figshare.com/s/d6c947b89e57b89a272c](https://figshare.com/s/d6c947b89e57b89a272c)
-
-Dieser Datensatz bietet von Experten validierte Fakten in einer speziellen Domäne (z.B. Geschichte) und kann somit als Grundlage für die Entwicklung von LLMs mit domänenspezifischem Wissen oder Modellen dienen, die in der Lage sind, Informationen mit ihren Quellen zu verknüpfen - ein Problem, mit dem aktuelle NLP-basierte Lösungen immer noch zu kämpfen haben. Der aktuelle Datensatz wird laufend aktualisiert, die endgültige Version wird über Zenodo veröffentlicht.
-
-### **Dissemination**
-
-* Präsentation der Ergebnisse bei der Big Historcal Data Conference 2023, Max Planck Institut für Geoanthropologie:\
-  Benam et. al (2023): Enhancing the Seshat Databank: A computationally readable mapping of historical facts to scholarly references. In: Big Historical Data Conference. Meeting Programme & Book of Abstracts, 22. – 25. November 2023, Jena, Germany, p.47.\
-  [https://bhdc.earth/wp-content/uploads/2023/11/Big-Historical-Data-Conference-2023-Book-of-Abstracts.pdf](https://bhdc.earth/wp-content/uploads/2023/11/Big-Historical-Data-Conference-2023-Book-of-Abstracts.pdf)
-
-- aktualisierte Version der Seshat Webpage: [https://seshat-db.com/](https://seshat-db.com/)
-
-### Ausblick
-
-Mit der gesicherten Finanzierung bis November 2024 will das Team i) ein Nature Scientific Data Paper über den NLP-Seshat-Datensatz schreiben, in dem Text mit historischen Informationen verknüpft werden kann, und ii) ein großes Sprachmodell wie BERT trainieren, um die Datenextraktion zu automatisieren. Der Code wird öffentlich gemacht und auf Zenodo hochgeladen.

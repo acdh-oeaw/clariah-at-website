@@ -16,6 +16,20 @@ responsiblePersons:
 hostingOrganizations:
   - Zentrum für Informationsmodellierung - Austrian Centre for Digital
     Humanities (ZIM-ACDH)
-
+tags:
+  - tid: 357
+    name: database
+  - tid: 113
+    name: semantic resource
+  - tid: 412
+    name: semantic representation
+  - tid: 159
+    name: RDF
+  - tid: 116
+    name: ontology
+  - tid: 117
+    name: knowledge base
+  - tid: 421
+    name: linked open data
 ---
 Das Projekt wurde im Zuge der Masterarbeit von Elisabeth Raunig umgesetzt. Als Quelle hat die HTML Version von H. Ruth von Grotefends 'Zeitrechnung des Deutschen Mittelalters und der Neuzeit' gedient. Aus diesen Daten wurden die Einträge aus dem Heiligenverzeichnis und die Diözesan- und Ordenskalender entnommen, in XML ausgezeichnet und nach RDF transformiert. Die RDF-Daten wurden mit Hilfe der in diesem Projekt konzipierten Ontologie "Ontology for the representation of medieval calendar data" erstellt. Die wichtigsten Klassen sind: 'Actor' (mit den Subklassen 'Saint', 'God\_Trinity' und 'SupernaturalBeing'), 'Calendar' (DioceseCalendar, OrderCalendar), 'Source', 'Feast', 'Celebration', 'Diocese', 'Order'. Die Ontologie unterscheidet zwischen 'Feast' und 'Celebration': 'Feast' ist das Fest, welches gefeiert wird (z. B. Translatio des Benedict von Nursia), wohingegen die 'Celebration' Information enthält, wo und wann das Fest gefeiert wird, da ein Fest an unterschiedlichen Orten und an unterschiedlichen Terminen gefeiert werden kann. Jeder Ressource wird eine sprechende URI zugewiesen. Beispielsweise besteht die Uri einer 'Celebration' aus den Informationen, welches Fest, von welchem 'Actor' (zum Beispiel eines Heiligen), in welchem Orden oder welcher Diözese und an welchem Tag gefeiert wird. Dadurch wird jede Ressource eindeutig identifizierbar. Die Daten sind im Linked Open Data Web eingebunden und können so mit weiteren Datensätzen verknüpft werden. Mit der Ontologie können weitere Quellen erschlossen und in RDF repräsentiert werden und so wiederum mit den bestehenden Instanzen vernetzt werden. Die Daten werden im GAMS (Geisteswissenschaftliches Asset Management System) gespeichert und darüber mit Hilfe von SPARQL-Abfragen unterschiedlich disseminiert.

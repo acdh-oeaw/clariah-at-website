@@ -479,6 +479,29 @@ export const createProjects = createCollection("/projects/", (paths, locale) => 
 					},
 				},
 			),
+			tags: fields.array(
+				fields.object(
+					{
+						name: fields.text({
+							label: "Label",
+							validation: { isRequired: true },
+						}),
+						tid: fields.number({
+							label: "ID-Number",
+							validation: { isRequired: true },
+						}),
+					},
+					{
+						label: "Tags",
+					},
+				),
+				{
+					label: "Tags",
+					itemLabel(props) {
+						return props.fields.name.value;
+					},
+				},
+			),
 			content: fields.mdx({
 				label: "Content",
 				options: createContentFieldOptions(paths),
