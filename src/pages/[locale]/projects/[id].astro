@@ -57,7 +57,6 @@ const { default: Content } = await page.compile(content);
 const taglist = tags.map((tag) => {
 	return `${tag.name} (${tag.tid})`;
 });
-console.log(tags, taglist);
 ---
 
 <PageLayout locale={locale} title={documentTitle}>
