@@ -1,14 +1,11 @@
 ---
-title: >-
-  Prototype of a Historical-Critical Online Edition based on the Estate
+title: Prototype of a Historical-Critical Online Edition based on the Estate
   Materials of Josef Maria Baernreither
-summary: >-
-  The project aims to investigate the feasibility of an RDF-based graph model of
-  a Historical-Critical Edition.
+summary: The project aims to investigate the feasibility of an RDF-based graph
+  model of a Historical-Critical Edition.
 startDate: 2022-09-01
 endDate: 2024-03-31
-image: >-
-  /assets/content/assets/en/projects/prototype-historical-critical-online-edition-based-estate-materials-josef-maria-baernreither/image.png
+image: /assets/content/assets/en/projects/prototype-historical-critical-online-edition-based-estate-materials-josef-maria-baernreither/image.png
 additionalImages: []
 attachments: []
 links:
@@ -22,11 +19,18 @@ responsiblePersons:
   - Kurt Scharr
   - Christof Aichner
 hostingOrganizations:
-  - >-
-    Uni Innsbruck - Institut für Geschichtswissenschaft u. Europäische
-    Ethnologie
+  - Uni Innsbruck - Institut für Geschichtswissenschaft u. Europäische Ethnologie
   - Kommission für Neuere Geschichte Österreichs
   - Austrian Centre for Digital Humanities and Cultural Heritage
+tags:
+  - tid: 178
+    name: digital edition
+  - tid: 150
+    name: TEI
+  - tid: 159
+    name: RDF
+  - tid: 366
+    name: CLARIAH-AT
 ---
 Joseph Maria Baernreither (1845–1925) was one of the leading politicians of the late phase of the Habsburg monarchy, who dealt intensively with both the social issues of the monarchy and the national problems of the multinational state.\
 Baernreither recorded and reflected on his work in a diary (19 volumes). Based on these diaries from 1921 on, Baernreither wrote an edited version of the diaries entitled "Fragments of a Political Diary". These have survived for the period from 1897 to 1912 as typescripts in eight volumes. After his death, Josef Redlich and Oskar Mitis published excerpts from these "fragments".
@@ -48,31 +52,3 @@ A great deal of thought and agreement went into the graphical representation of 
 
 **keywords:** digital edition, TEI, RDF
 
----
-
-## **Outcomes**
-
-The backend of the project runs Node.js to process the JS scripts and a GraphDB instance as a SPARQL endpoint. The TEI/XML primary data of the texts are the only use of XML technology; after ingest and conversion to TTL/RDF, the application only works with this data format or the data extracted from it in JSON. The TTL/RDF data is queried with SPARQL (.rq), the JSON data with JS (.js).
-
-A JS script is started with a shell script (.sh); this also applies to the JS API of the GraphDB.
-
-The conversion from TEI to TTL turns the XML entities into RDF statements, which contain their information on element names, attributes and content and are supplemented with a position specification that ensures the unique identification of the position of the statement in the text;
-
-The registers are generated in the following process:
-
-* Generation of the source data (\_tmp.json) from. Excel tables (.xlsx), databases (geonames) and the occurrences in the texts (\_text.json).
-* Conversion of the source data into TEI/XML (also the output format of the registers).
-* Use the existing TEI to RDF conversion to generate the RDF data of the registers from the XML data. This modelling of the RDF data is chosen for reasons of efficiency; other modelling, for example according to common ontologies (GND, Wikidata), is also possible.
-* TTL to JSON conversion generates the JSON version of the registers, with which the register data can be output on the HTML pages using JS. Other output formats can be achieved using modified JS scripts.
-
-The annotation levels are implemented with the [Web Annotation Vocabulary of the W3C](https://www.w3.org/TR/2017/REC-annotation-vocab-20170223/). The vocabulary contains information in RDF about the referenced locations in the texts and the associated locations in other texts or in the registers. A further advantage is the faster retrieval of individual annotations by specifying the references in the texts.
-
-The search is based on a 3-character index. The fact that each token differs from the next by one character means that every character is recorded and it is possible to search beyond word boundaries. The search is a full-text search that matches the normalised version according to the text content. By uniquely identifying each token, a hit is also identified and marked as one in this version if one or more XML entities lie in between. An extension to a search in the diplomatic version can be carried out.
-
-The current status of the application can be accessed at: [https://kfngoe.github.io/baernreither-app/index.html](https://kfngoe.github.io/baernreither-app/index.html)&#x20;
-
-PLEASE NOTE: this is a preliminary beta version of the site, which is intended to show that the important frontend functionalities (text comparison, index of persons, search with restricted index, e.g. "those for reasons") of the project could be realised. The development of the project up to the release version could be followed on this website. It then went through a test phase in which feedback was collected from various users.
-
-The results of the pilot study were presented [on 23 May 2024 in the Austrian Parliament](https://clariah.at/de/events/projectpresentation-digital-edition-baernreither/). The location was chosen because Baernreither spent a large part of his political career there as a member of parliament and minister; in addition, the Parliamentary Archives could be won as a project partner for the planned continuation of the edition on the basis of the CLARIAH-AT-funded project. The planned continuation of the project by the Commission for Modern Austrian History in co-operation with the Parliamentary Archives can be seen as the most important result of the pilot study, alongside the successful technical implementation of the project. In the coming years, all remaining diaries (30 volumes) are to be edited using the technology that has now been trialled and the necessary adaptations made thanks to funding from the Commission.
-
-A basic agreement has also been reached with the Austrian State Archives on the publication of the diaries in digital form and the possibility of long-term digital storage of the data in ARCHE.

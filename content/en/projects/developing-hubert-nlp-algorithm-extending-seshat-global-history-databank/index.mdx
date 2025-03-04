@@ -1,16 +1,13 @@
 ---
-title: >-
-  Developing HuBERT: a Natural Language Processing algorithm for extending the
-  Seshat Global History Databank
-summary: >-
-  This project addresses the challenges of expanding and increasing the
+title: "Developing HuBERT: a Natural Language Processing algorithm for extending
+  the Seshat Global History Databank"
+summary: This project addresses the challenges of expanding and increasing the
   cross-utilization of historical datasets by developing a NLP algorithm that
   can help expand current databases and increase the translatability of data
   across projects.
 startDate: 2023-03-01
 endDate: 2024-12-31
-image: >-
-  /assets/content/assets/en/projects/developing-hubert-nlp-algorithm-extending-seshat-global-history-databank/image.png
+image: /assets/content/assets/en/projects/developing-hubert-nlp-algorithm-extending-seshat-global-history-databank/image.png
 additionalImages: []
 attachments: []
 links:
@@ -22,6 +19,17 @@ responsiblePersons:
   - Maria del Rio-Chanona
 hostingOrganizations:
   - Complexity Science Hub Vienna
+tags:
+  - tid: 844
+    name: digital humanism
+  - tid: 397
+    name: algorithms
+  - tid: 314
+    name: digital infrastructure
+  - tid: 847
+    name: artificial intelligence
+  - tid: 366
+    name: CLARIAH-AT
 ---
 This project addresses the challenges of expanding and increasing the cross-utilization of historical datasets by developing a Natural Language Processing (NLP) algorithm that can help expand current databases and increase the translatability of data across projects. Firstly, the project involves the re-organization of the [Seshat](https://seshatdatabank.info/seshat-projects/) Literature Repository, which contains over 8,000 academic articles and books on various cultures and civilizations. This re-organization makes the repository easily and automatically accessible to researchers, increasing the usability of the data contained within it. Secondly, the project develops an algorithm called HuBERT that partially automates document screening and data collection from archaeological and historical materials and existing databases. This helps overcome the challenges of slow data collection and error-prone manual entry, thus increasing the translatability of data across projects and enabling researchers to answer a wider range of research questions. In addition to these contributions, the project includes updates to the project website, tutorials, and other resources to make the data and algorithm accessible to a broad range of researchers across multiple disciplines.
 
@@ -40,42 +48,3 @@ The main challenge for expanding and increasing the cross-utilization of histori
 3. Maintenance and expansion of documentation and tutorials.\
    We will continue to update and document the Seshat database and the website. We will add data visualizations and documentation, and tutorials for the Seshat Literature Repository and HuBERT.
 
----
-
-## **Outcomes**
-
-This project's goal was to expand and foster the cross-utilization of historical datasets. The Seshat database has been successfully expanded so that its rich metadata is amendable to large-scale, automated analysis. This includes the links between historical facts, their source in the literature, and additional free-text explanations that together provide a unique dataset for developing and training natural language processing (NLP) solutions. Moreover, until November 2024, funding could be secured to continue the efforts to automate data extraction through large language models.
-
-### **Data Collection and Cleaning**
-
-The Seshat databank was originally created with the main goal of allowing the quantitative analysis of historical data by automated computational methods. However, so far this included only the data points (i.e. historical facts) themselves, while the corresponding metadata was stored in a free text format. Hence, an online tool was developed that allowed efficient processing of this metadata, linking over 12,000 citations to Zotero database objects. Consequently, 140,000 data points in the Seshat databank could be linked to these objects. Furthermore, 50,000 unique research assistant explanations could be processed in the Seshat databank. These explanations were used to create a dataset with two tables:\
-The first table contains 7,000 text segments from source documents that were referenced in the explanations. The second table contains 40,000 of the research assistant descriptions that are longer than 50 characters. Both of these tables hold one or more topic labels for each of the text segments and further information on the facts and the polities to which the texts refer.
-
-|         |          |         |                       |                                                                                   |                                          |
-| ------- | -------- | ------- | --------------------- | --------------------------------------------------------------------------------- | ---------------------------------------- |
-| polity  | variable | value   | reference             | description                                                                       | quote                                    |
-| InGaroL | Weight   | present | Burling, Robbins 1963 | The following seems to indicate that …: "When women cook rice, they measure the … | When women cook rice, they measure the … |
-
-Example of a data-point
-
----
-
-### **Data release**
-
-The main result of this project is the dataset of references with text explanations that link to historical facts (i.e. data points). This dataset can be reused to train large language models, in particular as a labeled text dataset, where a text is labeled with the information that can be extracted.
-
-The data repository can be found via Figshare: [https://figshare.com/s/d6c947b89e57b89a272c](https://figshare.com/s/d6c947b89e57b89a272c)
-
-This dataset provides expert-validated facts in a specialized domain (i.e. history), and thus can serve as the basis for devloping LLMs with domain-specifix knowledge or models that are able to link information to their sources, a problem that current NLP-based solutions still struggle with. The current dataset will be updated continuously, the final version will be published via Zenodo.
-
-### **Dissemination**
-
-* Presentation of results at Big Historcal Data Conference 2023, Max Planck Institute of Geoanthropology:\
-  Benam et. al (2023): Enhancing the Seshat Databank: A computationally readable mapping of historical facts to scholarly references. In: Big Historical Data Conference. Meeting Programme & Book of Abstracts, 22. – 25. November 2023, Jena, Germany, p.47.\
-  [https://bhdc.earth/wp-content/uploads/2023/11/Big-Historical-Data-Conference-2023-Book-of-Abstracts.pdf](https://bhdc.earth/wp-content/uploads/2023/11/Big-Historical-Data-Conference-2023-Book-of-Abstracts.pdf)
-
-- updated version of the Seshat webpage: [https://seshat-db.com/](https://seshat-db.com/)
-
-### **Future directions**
-
-With the secured funding until November 2024, the team aims to i) write a Nature Scientific data paper on the NLP-Seshat dataset, where text can be inked to historical information and ii) train a large language model, such as BERT to automate the data extraction. Code will be made public and uploaded to Zenodo.

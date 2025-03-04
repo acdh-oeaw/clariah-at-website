@@ -1,16 +1,13 @@
 ---
-title: >-
-  LadderWeb: A pragmatically annotated web-based corpus query interface for
-  requests and cancellations in Italian L1 and L2
-summary: >-
-  The project aims to provide pragmatically annotated data in under-researched
-  languages (Italian L1/L2, German and Colombian Spanish). Benefits include the
-  professionalisation of pre-service teachers and the self-learning of
-  non-native speakers.
+title: "LadderWeb: A pragmatically annotated web-based corpus query interface
+  for requests and cancellations in Italian L1 and L2"
+summary: The project aims to provide pragmatically annotated data in
+  under-researched languages (Italian L1/L2, German and Colombian Spanish).
+  Benefits include the professionalisation of pre-service teachers and the
+  self-learning of non-native speakers.
 startDate: 2023-04-01
 endDate: 2024-03-31
-image: >-
-  /assets/content/assets/en/projects/ladderweb-pragmatically-annotated-web-based-corpus-query-interface-requests-and-cancellations/image.png
+image: /assets/content/assets/en/projects/ladderweb-pragmatically-annotated-web-based-corpus-query-interface-requests-and-cancellations/image.png
 additionalImages: []
 attachments: []
 links:
@@ -23,9 +20,21 @@ links:
 responsiblePersons:
   - Nicola Brocca
 hostingOrganizations:
-  - >-
-    Department of subject-specific Education/Unit of Language-Education -
+  - Department of subject-specific Education/Unit of Language-Education -
     University of Innsbruck
+tags:
+  - tid: 150
+    name: TEI
+  - tid: 1047
+    name: foreign language education
+  - tid: 1048
+    name: corpus pragmatics
+  - tid: 1049
+    name: corpus query processor
+  - tid: 1045
+    name: IMS Open Corpus Workbench
+  - tid: 366
+    name: CLARIAH-AT
 ---
 Corpus-based research in pragmatics has been limited by the lack of adequate corpora. This is particularly true for languages other than English and for openly available data. However, the production of pragmatically annotated corpora could greatly facilitate research on the interaction of different language levels and enable their use in more applied areas such as language teaching, textbook production or the training of language professionals.
 
@@ -37,58 +46,3 @@ The final product will provide an online platform that allows linguists to searc
 
 **keywords:** TEI, foreign language education, corpus pragmatics, corpus query processor, IMS Open Corpus Workbench
 
----
-
-## **Outcomes**
-
-The data sets were cleaned up and the existing annotation was checked so that the data set could be prepared for AI training and automatic annotation. In addition, the verbal data was transcribed and linked to metadata.\
-A workflow for the training of language models and the subsequent automatic annotation of example sentences has been developed. We are currently testing various tagging algorithms and checking the quality of their results.\
-When using hundreds of data sets, the result is not yet satisfactory, so manual post-processing is required. We are confident that the quality of the automatic annotation will steadily improve with the help of semi-automated annotation and the addition of data sets to the training corpus.
-
-This data will be made publicly available to students, teachers and researchers via Ladder Web, a web application. Other data sets that are not included in the training due to a small number of specific language files are currently being cleaned up and will be archived without annotation together with the annotated data.
-
-The archiving of linguistic datasets on the ÖAW ARCHE platform utilizes TEI/XML and JSON formats, ensuring long-term preservation and accessibility. These formats cater to the complex needs of linguistic research, enabling the detailed representation of texts and annotations. Access to the LADDER (Learners Digital Communication a Dataset for Pragmatic competence in Italian L2) and DisDir (Disdette e atti di rifiuto) corpora is facilitated through dedicated links, providing researchers with rich resources for the analysis of language and discourse.
-
-* LADDER: [https://hdl.handle.net/21.11115/0000-0011-83CC-3](https://hdl.handle.net/21.11115/0000-0011-83CC-3)
-* DisDir: [https://hdl.handle.net/21.11115/0000-0011-83CD-2](https://hdl.handle.net/21.11115/0000-0011-83CD-2)
-
-The LadderWeb App, developed and hosted by the University of Innsbruck, marks a significant advancement in linguistic research tools. It automates the annotation process, enhancing efficiency and accuracy. Available at: [https://ifd-ladderweb.uibk.ac.at/](https://ifd-ladderweb.uibk.ac.at/)
-
-Manual post-processing by students in seminars is planned, especially given the positive feedback received on dissemination formats.
-
-The app's functionality includes managing texts and their metadata (e.g., IDs, content, language, tasks, and speaker information such as age, gender, and linguistic background) and annotations (e.g., modifiers and subacts). The annotation process comprises several steps:
-
-1. Preprocessing: \
-   This includes Unicode normalization, sentence segmentation using Apache NLP, tokenization with RegExp, and lower-casing.
-2. Tagging: \
-   Utilizes a pretrained Apache NLP POS-Tagger for basic tagging, supplemented by binary taggers for each language and token. Training is exclusively conducted on data within the database, a method that has proven effective.
-
-This detailed approach to archiving and analyzing linguistic data underscores the importance of digital tools in advancing language research. LadderWeb, with its innovative application of NLP techniques and user-centric design, exemplifies the potential of technology to refine and expand the boundaries of linguistic analysis.
-
-### Dissemination
-
-The following 4 summaries about the project have been submitted to OASIS:
-
-i) Wallnöfer, V., Brocca, N. (2023). Summary: Linguistic politeness across Austria and Italy: Backing out of an invitation with an instant message. *OASIS Summary* of Brocca, Nuzzo, & Cortés Velásquez et al. ] (2023) in *Journal of Pragmatics* [https](http://about:blank/)[://oasis-database.org](https://oasis-database.org/)
-
-ii) Wallnöfer, V., Brocca, N. (2024). Summary: Exploring request strategies in Austrian Italian learners: Pragmatic transfer insights. *OASIS Summary* of \[ Brocca N., Nuzzo E.] (2024) in \[*Journal of Pragmatics*] [https](http://about:blank/)[://oasis-database.org](https://oasis-database.org/)
-
-iii) Wallnöfer,V, Brocca, N. (2021). Summary: LADDER: un corpus di scritture digitali per l’insegnamento della pragmatica in L2. Un esempio di analisi in disdette in WhatsApp. *OASIS Summary* of Brocca, N. (2021) LADDER: un corpus di scritture digitali per l’insegnamento della pragmatica in L2. Un esempio di analisi in disdette in WhatsApp.  in *ItalianoLinguaDue* [https](http://about:blank/)[://oasis-database.org](https://oasis-database.org/)
-
-iv) Victoria Wallnöfer and together with Nicola Broca I have written  the summary of the article for the OASIS platform. \[Brocca Nicola, Masia Viviana, Garassino Davide] (2024). \[ Empowering critical digital literacy in EFL: Teachers’ evaluation of didactic materials involving the recognition of presupposed information].
-
-The following conference/poster presentation have been hold:
-
-i) Brocca, Nicola; Wang-Kathrein, Joseph: LadderWeb: An AI-based assistant for the pragmatic annotation of cancellations and requests. Forschungszentrum Digital Humanities, Innsbruck, 21.03.2024. ([Weblink](https://www.uibk.ac.at/digital-humanities/veranstaltungen.html))
-
-ii) Brocca, Nicola; Hirzinger-Unterrainer, Eva Maria: LadderWeb: chances for practitioners, learners and researchers. [https://www.uibk.ac.at/digital-humanities/veranstaltungen.html ](https://www.uibk.ac.at/digital-humanities/veranstaltungen.html )
-
-iii) Brocca, Nicola; Hirzinger-Unterrainer, Eva Maria: LadderWeb: chances for practitioners, learners and researchers. CLARIN Café on Computer-Assisted Pragmatic Annotation of Native and Learner Corpora, 12.03.2024 (Online). ([Weblink](https://www.clarin.eu/event/2024/clarin-cafe-computer-assisted-pragmatic-annotation-native-and-learner-corpora))
-
-iv) Brocca, Nicola; Cortés Velásquez, Diego; Nuzzo, Elena; Wang-Kathrein, Joseph: LadderWeb: A WebApp for Intercultural Pragmatic Explorations. Vortragsreihe "Didaktik am Abend", Innsbruck, 18.03.2024. ([Weblink](https://www.uibk.ac.at/de/ifd/sprachen/veranstaltungen/didaktik-am-abend/))
-
-v) Brocca, Nicola; Cortés Velásquez, Diego; Nuzzo, Elena; Wang-Kathrein, Joseph: LadderWeb: an AI-based web app for the pragmatic annotation of cancellations and requests. XI International Symposium on Intercultural, Cognitive and Social Pragmatics (EPICS XI, 22-24 May 2024). [Weblink](https://eventos.upo.es/100773/detail/xi-international-symposium-on-intercultural-cognitive-and-social-pragmatics-epics-xi-22-24-may-2024.html).
-
-**Links**
-
-LADDER. (Predecessor project) description: [https://ladder.hypotheses.org/1](https://ladder.hypotheses.org/1)
