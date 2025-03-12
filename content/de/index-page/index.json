@@ -15,15 +15,8 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "CLARIN Annual Conference 2025: Call for extended Abstracts",
-                "reference": "clarin-annual-conference-2025-call-for-extended-abstracts"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "CLARIN Café: Project Management in DH",
-                "reference": "clarin-cafe-project-management-in-dh"
+                "title": "CLARIAH-AT Summer School: Machine Learning for Digital Scholarly Editions",
+                "reference": "cfp-summerschool2025"
               }
             },
             {
@@ -36,8 +29,15 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "DARIAH Annual Event 2025: Call for Papers",
-                "reference": "dariah2025-cfp"
+                "title": "Summer School \"AI will sort it ... out?\"",
+                "reference": "summerschool2025-uwk"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Rückblick CLARIAH-AT Summer School 2024",
+                "reference": "retrospective-clariah-at-summerschool2024"
               }
             },
             {
@@ -48,10 +48,10 @@
               }
             },
             {
-              "discriminant": "news",
+              "discriminant": "event",
               "value": {
-                "title": "Rückblick CLARIAH-AT Summer School 2024",
-                "reference": "retrospective-clariah-at-summerschool2024"
+                "title": "ACDH-CH Tool Gallery 11.2: Transkribus für Anfänger:innen",
+                "reference": "acdh-ch-tool-gallery-11-2"
               }
             }
           ]
