@@ -15,8 +15,15 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "CLARIAH-AT Summer School: Machine Learning for Digital Scholarly Editions",
-                "reference": "cfp-summerschool2025"
+                "title": "Summer School \"AI will sort it ... out?\"",
+                "reference": "summerschool2025-uwk"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "ACDH-CH Tool Gallery 11.2: Transkribus for Beginners",
+                "reference": "acdh-ch-tool-gallery-11-2"
               }
             },
             {
@@ -29,8 +36,8 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "Summer School \"AI will sort it ... out?\"",
-                "reference": "summerschool2025-uwk"
+                "title": "Sustaining a Digital Humanities Infrastructure and Network for Austria",
+                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
               }
             },
             {
@@ -45,13 +52,6 @@
               "value": {
                 "title": "The CLARIAH-AT-Roadshow: Introduction of 12 DH projects",
                 "reference": "clariah-at-roadshow-2024"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "ACDH-CH Tool Gallery 11.2: Transkribus for Beginners",
-                "reference": "acdh-ch-tool-gallery-11-2"
               }
             }
           ]
