@@ -13,20 +13,6 @@
           "variant": "fluid",
           "cards": [
             {
-              "discriminant": "news",
-              "value": {
-                "title": "Summer School \"AI will sort it ... out?\"",
-                "reference": "summerschool2025-uwk"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "ACDH-CH Tool Gallery 11.2: Transkribus for Beginners",
-                "reference": "acdh-ch-tool-gallery-11-2"
-              }
-            },
-            {
               "discriminant": "event",
               "value": {
                 "title": "Workshop on IIF in/and Digital Scholarly Editions",
@@ -36,8 +22,15 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "Sustaining a Digital Humanities Infrastructure and Network for Austria",
-                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
+                "title": "Summer School \"AI will sort it ... out?\"",
+                "reference": "summerschool2025-uwk"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Retrospective of the ONB Labs Symposium “Newspapers as Datasets”",
+                "reference": "retrospective-onb-labs-symposium-2024"
               }
             },
             {
@@ -45,6 +38,13 @@
               "value": {
                 "title": "Retrospective of the CLARIAH-AT Summer School 2024",
                 "reference": "retrospective-clariah-at-summerschool2024"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Sustaining a Digital Humanities Infrastructure and Network for Austria",
+                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
               }
             },
             {
