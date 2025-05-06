@@ -13,6 +13,13 @@
           "variant": "fluid",
           "cards": [
             {
+              "discriminant": "event",
+              "value": {
+                "title": "Workshop zu IIIF in/und Digitale(n) Editionen",
+                "reference": "workshop-iiif-digital-scholarly-editions"
+              }
+            },
+            {
               "discriminant": "news",
               "value": {
                 "title": "Summer School \"AI will sort it ... out?\"",
@@ -20,17 +27,10 @@
               }
             },
             {
-              "discriminant": "event",
+              "discriminant": "news",
               "value": {
-                "title": "ACDH-CH Tool Gallery 11.2: Transkribus für Anfänger:innen",
-                "reference": "acdh-ch-tool-gallery-11-2"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "Workshop zu IIIF in/und Digitale(n) Editionen",
-                "reference": "workshop-iiif-digital-scholarly-editions"
+                "title": "Rückblick auf das ÖNB Labs Symposium \"Zeitungen als Datensätze\"",
+                "reference": "retrospective-onb-labs-symposium-2024"
               }
             },
             {
