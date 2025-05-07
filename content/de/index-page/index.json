@@ -13,6 +13,13 @@
           "variant": "fluid",
           "cards": [
             {
+              "discriminant": "news",
+              "value": {
+                "title": "Ergebnisse des Kleinprojekt-Calls veröffentlicht",
+                "reference": "small-scale-projects-announced"
+              }
+            },
+            {
               "discriminant": "event",
               "value": {
                 "title": "Workshop zu IIIF in/und Digitale(n) Editionen",
@@ -45,13 +52,6 @@
               "value": {
                 "title": "Rückblick CLARIAH-AT Summer School 2024",
                 "reference": "retrospective-clariah-at-summerschool2024"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Die CLARIAH-AT-Roadshow: 12 Projekte haben sich vorgestellt",
-                "reference": "clariah-at-roadshow-2024"
               }
             }
           ]

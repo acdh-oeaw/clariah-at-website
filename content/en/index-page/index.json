@@ -13,6 +13,13 @@
           "variant": "fluid",
           "cards": [
             {
+              "discriminant": "news",
+              "value": {
+                "title": "Results from Call for small-scale Projects announced",
+                "reference": "small-scale-projects-announced"
+              }
+            },
+            {
               "discriminant": "event",
               "value": {
                 "title": "Workshop on IIF in/and Digital Scholarly Editions",
@@ -45,13 +52,6 @@
               "value": {
                 "title": "Retrospective of the CLARIAH-AT Summer School 2024",
                 "reference": "retrospective-clariah-at-summerschool2024"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "The CLARIAH-AT-Roadshow: Introduction of 12 DH projects",
-                "reference": "clariah-at-roadshow-2024"
               }
             }
           ]
