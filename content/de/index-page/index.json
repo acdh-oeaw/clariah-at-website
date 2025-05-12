@@ -20,13 +20,6 @@
               }
             },
             {
-              "discriminant": "event",
-              "value": {
-                "title": "Workshop zu IIIF in/und Digitale(n) Editionen",
-                "reference": "workshop-iiif-digital-scholarly-editions"
-              }
-            },
-            {
               "discriminant": "news",
               "value": {
                 "title": "Summer School \"AI will sort it ... out?\"",
@@ -43,15 +36,22 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "Erhaltung einer Infrastruktur und eines Netzwerks für die digitalen Geisteswissenschaften in Österreich",
-                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
+                "title": "Rückblick CLARIAH-AT Summer School 2024",
+                "reference": "retrospective-clariah-at-summerschool2024"
               }
             },
             {
               "discriminant": "news",
               "value": {
-                "title": "Rückblick CLARIAH-AT Summer School 2024",
-                "reference": "retrospective-clariah-at-summerschool2024"
+                "title": "CLARIAH-AT-Roadshow: 12 Projekte haben sich vorgestellt",
+                "reference": "clariah-at-roadshow-2024"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Erhaltung einer Infrastruktur und eines Netzwerks für die digitalen Geisteswissenschaften in Österreich",
+                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
               }
             }
           ]
