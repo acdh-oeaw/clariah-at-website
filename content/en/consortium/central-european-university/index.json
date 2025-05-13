@@ -3,5 +3,28 @@
   "href": "https://www.ceu.edu/",
   "logo": "/assets/content/assets/en/consortium/central-european-university/logo.jpg",
   "institutions": [],
-  "people": []
+  "people": [
+    {
+      "name": "Alíz Horváth",
+      "image": "/assets/content/assets/en/consortium/central-european-university/people/0/image.jpg",
+      "links": [
+        {
+          "kind": "mastodon",
+          "href": "https://fedihum.org/@alizhorvathaliz"
+        },
+        {
+          "kind": "bluesky",
+          "href": "https://bsky.app/profile/alizhorvathaliz.bsky.social"
+        },
+        {
+          "kind": "website",
+          "href": "https://sites.google.com/view/alizhorvathphd"
+        },
+        {
+          "kind": "podcast",
+          "href": "https://humanistathepodcast.com/"
+        }
+      ]
+    }
+  ]
 }
