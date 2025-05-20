@@ -97,9 +97,11 @@
 		"skip-to-main-content": "Skip to main content"
 	},
 	"WebsiteFooter": {
-		"bmbwf": "Bundesministerium Bildung, Wissenschaft und Forschung",
+		"bmfwf": "Federal Ministry of Women, Science and Research",
+		"bmfwf-link": "https://www.bmfwf.gv.at/en.html",
+		"bmfwf-logo": "BMFWF_Logo_srgb_EN.svg",
 		"contact": "Contact",
-		"funded-by": "Gefördert von",
+		"funded-by": "Funded by",
 		"links": {
 			"imprint": "Imprint"
 		}

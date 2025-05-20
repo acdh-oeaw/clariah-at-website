@@ -39,15 +39,15 @@ const imprint = t("WebsiteFooter.links.imprint");
 					</div>
 					<div class="inline-flex items-center gap-x-2">
 						<dt>
-							<span class="sr-only">Twitter:</span>
-							<Icon aria-hidden="true" class="size-4.5" name="lucide:twitter" />
+							<span class="sr-only">LinkedIn:</span>
+							<Icon aria-hidden="true" class="size-4.5" name="simple-icons:linkedin" />
 						</dt>
 						<dd>
 							<a
 								class="underline decoration-dotted underline-offset-4 hover:no-underline"
-								href="https://twitter.com/AtClariah"
+								href="https://www.linkedin.com/company/clariah-at/"
 							>
-								@AtClariah
+								CLARIAH-AT
 							</a>
 						</dd>
 					</div>
@@ -73,10 +73,15 @@ const imprint = t("WebsiteFooter.links.imprint");
 				<div>
 					<a
 						class="underline decoration-dotted underline-offset-4 hover:no-underline"
-						href="https://www.bmbwf.gv.at"
+						href={t("WebsiteFooter.bmfwf-link")}
 					>
-						<span class="sr-only">{t("WebsiteFooter.bmbwf")}</span>
-						<img alt="" class="h-20" loading="lazy" src="/assets/images/bmbwf-logo.png" />
+						<span class="sr-only">{t("WebsiteFooter.bmfwf")}</span>
+						<img
+							alt=""
+							class="h-24"
+							loading="lazy"
+							src={`/assets/images/${t("WebsiteFooter.bmfwf-logo")}`}
+						/>
 					</a>
 				</div>
 			</div>
