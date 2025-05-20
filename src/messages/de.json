@@ -97,7 +97,9 @@
 		"skip-to-main-content": "Zum Hauptinhalt springen"
 	},
 	"WebsiteFooter": {
-		"bmbwf": "Bundesministerium Bildung, Wissenschaft und Forschung",
+		"bmfwf": "Bundesministerium Frauen, Wissenschaft und Forschung",
+		"bmfwf-link": "https://www.bmfwf.gv.at/",
+		"bmfwf-logo": "BMFWF_Logo_srgb.png",
 		"contact": "Kontakt",
 		"funded-by": "Gefördert von",
 		"links": {
