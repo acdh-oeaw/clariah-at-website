@@ -15,6 +15,13 @@
             {
               "discriminant": "news",
               "value": {
+                "title": "DHd2026: Call for Papers open!",
+                "reference": "dhd2026-call-for-papers"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
                 "title": "Results from Call for small-scale Projects announced",
                 "reference": "small-scale-projects-announced"
               }
@@ -29,8 +36,8 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "Retrospective of the ONB Labs Symposium “Newspapers as Datasets”",
-                "reference": "retrospective-onb-labs-symposium-2024"
+                "title": "CLARIAH-AT-Roadshow: Introduction of 12 DH projects",
+                "reference": "clariah-at-roadshow-2024"
               }
             },
             {
@@ -38,13 +45,6 @@
               "value": {
                 "title": "Retrospective of the CLARIAH-AT Summer School 2024",
                 "reference": "retrospective-clariah-at-summerschool2024"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "CLARIAH-AT-Roadshow: Introduction of 12 DH projects",
-                "reference": "clariah-at-roadshow-2024"
               }
             },
             {
