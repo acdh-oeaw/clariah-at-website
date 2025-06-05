@@ -15,6 +15,13 @@
             {
               "discriminant": "news",
               "value": {
+                "title": "Ferialanstellung bei den „ÖNB Labs“ – Digitale Kunstwerke",
+                "reference": "art-internship-2025-oenb-labs"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
                 "title": "DHd2026 in Wien: Call for Papers offen!",
                 "reference": "dhd2026-call-for-papers"
               }
@@ -45,13 +52,6 @@
               "value": {
                 "title": "Rückblick CLARIAH-AT Summer School 2024",
                 "reference": "retrospective-clariah-at-summerschool2024"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Erhaltung einer Infrastruktur und eines Netzwerks für die digitalen Geisteswissenschaften in Österreich",
-                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
               }
             }
           ]

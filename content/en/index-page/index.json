@@ -15,6 +15,13 @@
             {
               "discriminant": "news",
               "value": {
+                "title": "Art Internship ÖNB Labs in summer holidays - Digital Artworks",
+                "reference": "art-internship-2025-oenb-labs"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
                 "title": "DHd2026 in Vienna: Call for Papers open!",
                 "reference": "dhd2026-call-for-papers"
               }
@@ -45,13 +52,6 @@
               "value": {
                 "title": "Retrospective of the CLARIAH-AT Summer School 2024",
                 "reference": "retrospective-clariah-at-summerschool2024"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Sustaining a Digital Humanities Infrastructure and Network for Austria",
-                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
               }
             }
           ]
