@@ -13,6 +13,13 @@
           "variant": "fluid",
           "cards": [
             {
+              "discriminant": "event",
+              "value": {
+                "title": "Einladung zum Release von MUSIL ONLINE",
+                "reference": "release-musil-online"
+              }
+            },
+            {
               "discriminant": "news",
               "value": {
                 "title": "Ferialanstellung bei den „ÖNB Labs“ – Digitale Kunstwerke",
@@ -45,13 +52,6 @@
               "value": {
                 "title": "CLARIAH-AT-Roadshow: 12 Projekte haben sich vorgestellt",
                 "reference": "clariah-at-roadshow-2024"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Rückblick CLARIAH-AT Summer School 2024",
-                "reference": "retrospective-clariah-at-summerschool2024"
               }
             }
           ]
