@@ -13,10 +13,10 @@
           "variant": "fluid",
           "cards": [
             {
-              "discriminant": "event",
+              "discriminant": "news",
               "value": {
-                "title": "Invitation to the Release of MUSIL ONLINE",
-                "reference": "release-musil-online"
+                "title": "Interface: Medieval Studies. Collaborations in Medieval Research in the Digital Age",
+                "reference": "OA-Sammelband-Schnittstelle-Mediaevistik"
               }
             },
             {
