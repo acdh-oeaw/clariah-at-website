@@ -22,6 +22,13 @@
             {
               "discriminant": "news",
               "value": {
+                "title": "Call for Papers: Third Austrian Meeting on Digital Linguistics",
+                "reference": "cfp-drittes-oesterreichisches-treffen-zur-digitalen-linguistik"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
                 "title": "Art Internship ÖNB Labs in summer holidays - Digital Artworks",
                 "reference": "art-internship-2025-oenb-labs"
               }
@@ -38,13 +45,6 @@
               "value": {
                 "title": "Results from Call for small-scale Projects announced",
                 "reference": "small-scale-projects-announced"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Summer School \"AI will sort it ... out?\"",
-                "reference": "summerschool2025-uwk"
               }
             },
             {
