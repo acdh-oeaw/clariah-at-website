@@ -13,10 +13,10 @@
           "variant": "fluid",
           "cards": [
             {
-              "discriminant": "event",
+              "discriminant": "news",
               "value": {
-                "title": "Einladung zum Release von MUSIL ONLINE",
-                "reference": "release-musil-online"
+                "title": "Schnittstelle Mediävistik. Kollaborationen der Mittelalterforschung im digitalen Zeitalter",
+                "reference": "OA-Sammelband-Schnittstelle-Mediaevistik"
               }
             },
             {
