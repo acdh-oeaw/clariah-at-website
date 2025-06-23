@@ -15,6 +15,13 @@
             {
               "discriminant": "news",
               "value": {
+                "title": "Österreich aus der Luft",
+                "reference": "oesterreich-aus-der-luft"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
                 "title": "Schnittstelle Mediävistik. Kollaborationen der Mittelalterforschung im digitalen Zeitalter",
                 "reference": "OA-Sammelband-Schnittstelle-Mediaevistik"
               }
@@ -45,13 +52,6 @@
               "value": {
                 "title": "Ergebnisse des Kleinprojekt-Calls veröffentlicht",
                 "reference": "small-scale-projects-announced"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "CLARIAH-AT-Roadshow: 12 Projekte haben sich vorgestellt",
-                "reference": "clariah-at-roadshow-2024"
               }
             }
           ]

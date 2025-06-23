@@ -15,6 +15,13 @@
             {
               "discriminant": "news",
               "value": {
+                "title": "Austria from the Air",
+                "reference": "oesterreich-aus-der-luft"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
                 "title": "Interface: Medieval Studies. Collaborations in Medieval Research in the Digital Age",
                 "reference": "OA-Sammelband-Schnittstelle-Mediaevistik"
               }
@@ -45,13 +52,6 @@
               "value": {
                 "title": "Results from Call for small-scale Projects announced",
                 "reference": "small-scale-projects-announced"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "CLARIAH-AT-Roadshow: Introduction of 12 DH projects",
-                "reference": "clariah-at-roadshow-2024"
               }
             }
           ]
