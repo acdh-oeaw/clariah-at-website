@@ -13,6 +13,13 @@
           "variant": "fluid",
           "cards": [
             {
+              "discriminant": "event",
+              "value": {
+                "title": "Hack The Pool",
+                "reference": "hack-the-pool"
+              }
+            },
+            {
               "discriminant": "news",
               "value": {
                 "title": "Österreich aus der Luft",
@@ -45,13 +52,6 @@
               "value": {
                 "title": "Ergebnisse des Kleinprojekt-Calls veröffentlicht",
                 "reference": "small-scale-projects-announced"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Infrastruktur & Netzwerk für die digitalen Geisteswissenschaften in Österreich",
-                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
               }
             }
           ]
