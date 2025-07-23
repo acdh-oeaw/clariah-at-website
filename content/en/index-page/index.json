@@ -13,6 +13,13 @@
           "variant": "fluid",
           "cards": [
             {
+              "discriminant": "event",
+              "value": {
+                "title": "Hack The Pool",
+                "reference": "hack-the-pool"
+              }
+            },
+            {
               "discriminant": "news",
               "value": {
                 "title": "Austria from the Air",
@@ -45,13 +52,6 @@
               "value": {
                 "title": "Results from Call for small-scale Projects announced",
                 "reference": "small-scale-projects-announced"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Sustaining a Digital Humanities Infrastructure and Network for Austria",
-                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
               }
             }
           ]
