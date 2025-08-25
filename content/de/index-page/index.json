@@ -10,20 +10,20 @@
         "discriminant": "cardsSection",
         "value": {
           "title": "auf einen Blick",
-          "variant": "fluid",
+          "variant": "two-columns",
           "cards": [
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "\"Österreich aus der Luft\" interaktiv erkunden",
+                "reference": "oesterreich-aus-der-luft-interaktiv"
+              }
+            },
             {
               "discriminant": "event",
               "value": {
                 "title": "Hack The Pool",
                 "reference": "hack-the-pool"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Österreich aus der Luft",
-                "reference": "oesterreich-aus-der-luft"
               }
             },
             {
@@ -38,20 +38,6 @@
               "value": {
                 "title": "Call for Papers: Drittes Österreichisches Treffen zur Digitalen Linguistik",
                 "reference": "cfp-drittes-oesterreichisches-treffen-zur-digitalen-linguistik"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "DHd2026 in Wien: Call for Papers offen!",
-                "reference": "dhd2026-call-for-papers"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Ergebnisse des Kleinprojekt-Calls veröffentlicht",
-                "reference": "small-scale-projects-announced"
               }
             }
           ]
