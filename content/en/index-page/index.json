@@ -10,7 +10,7 @@
         "discriminant": "cardsSection",
         "value": {
           "title": "at one glimpse",
-          "variant": "fluid",
+          "variant": "two-columns",
           "cards": [
             {
               "discriminant": "event",
@@ -22,8 +22,8 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "Austria from the Air",
-                "reference": "oesterreich-aus-der-luft"
+                "title": "Dicover 'Austria In Aerial Views' with the interactive map!",
+                "reference": "oesterreich-aus-der-luft-interaktiv"
               }
             },
             {
@@ -38,20 +38,6 @@
               "value": {
                 "title": "Call for Papers: Third Austrian Meeting on Digital Linguistics",
                 "reference": "cfp-drittes-oesterreichisches-treffen-zur-digitalen-linguistik"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "DHd2026 in Vienna: Call for Papers open!",
-                "reference": "dhd2026-call-for-papers"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Results from Call for small-scale Projects announced",
-                "reference": "small-scale-projects-announced"
               }
             }
           ]
