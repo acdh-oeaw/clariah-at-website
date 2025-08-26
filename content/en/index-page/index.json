@@ -10,13 +10,13 @@
         "discriminant": "cardsSection",
         "value": {
           "title": "at one glimpse",
-          "variant": "two-columns",
+          "variant": "three-columns",
           "cards": [
             {
               "discriminant": "event",
               "value": {
-                "title": "Hack The Pool",
-                "reference": "hack-the-pool"
+                "title": "OCR/HTR Workshop for Under-resourced and Under-represented Languages",
+                "reference": "ocr-htr-workshop"
               }
             },
             {
@@ -24,6 +24,13 @@
               "value": {
                 "title": "Dicover 'Austria In Aerial Views' with the interactive map!",
                 "reference": "oesterreich-aus-der-luft-interaktiv"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "Hack The Pool",
+                "reference": "hack-the-pool"
               }
             },
             {
@@ -38,6 +45,20 @@
               "value": {
                 "title": "Call for Papers: Third Austrian Meeting on Digital Linguistics",
                 "reference": "cfp-drittes-oesterreichisches-treffen-zur-digitalen-linguistik"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Results from Call for small-scale Projects announced",
+                "reference": "small-scale-projects-announced"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Sustaining a DH Infrastructure & Network for Austria",
+                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
               }
             }
           ]
