@@ -20,17 +20,17 @@
               }
             },
             {
-              "discriminant": "event",
-              "value": {
-                "title": "Hack The Pool",
-                "reference": "hack-the-pool"
-              }
-            },
-            {
               "discriminant": "news",
               "value": {
                 "title": "Dicover 'Austria In Aerial Views' with the interactive map!",
                 "reference": "oesterreich-aus-der-luft-interaktiv"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "Hack The Pool",
+                "reference": "hack-the-pool"
               }
             },
             {
