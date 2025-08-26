@@ -53,13 +53,6 @@
                 "title": "Ergebnisse des Kleinprojekt-Calls veröffentlicht",
                 "reference": "small-scale-projects-announced"
               }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Infrastruktur & Netzwerk für die DH in Österreich",
-                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
-              }
             }
           ]
         }
