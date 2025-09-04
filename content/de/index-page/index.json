@@ -20,6 +20,20 @@
               }
             },
             {
+              "discriminant": "news",
+              "value": {
+                "title": "Call for Papers: Drittes Österreichisches Treffen zur Digitalen Linguistik",
+                "reference": "cfp-drittes-oesterreichisches-treffen-zur-digitalen-linguistik"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "Hack The Pool",
+                "reference": "hack-the-pool"
+              }
+            },
+            {
               "discriminant": "event",
               "value": {
                 "title": "OCR/HTR Workshop for Under-resourced and Under-represented Languages",
@@ -34,24 +48,10 @@
               }
             },
             {
-              "discriminant": "event",
-              "value": {
-                "title": "Hack The Pool",
-                "reference": "hack-the-pool"
-              }
-            },
-            {
               "discriminant": "news",
               "value": {
                 "title": "Schnittstelle Mediävistik. Kollaborationen der Mittelalterforschung im digitalen Zeitalter",
                 "reference": "OA-Sammelband-Schnittstelle-Mediaevistik"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Call for Papers: Drittes Österreichisches Treffen zur Digitalen Linguistik",
-                "reference": "cfp-drittes-oesterreichisches-treffen-zur-digitalen-linguistik"
               }
             }
           ]
