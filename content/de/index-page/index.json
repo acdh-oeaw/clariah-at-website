@@ -27,17 +27,17 @@
               }
             },
             {
-              "discriminant": "event",
-              "value": {
-                "title": "Hack The Pool",
-                "reference": "hack-the-pool"
-              }
-            },
-            {
               "discriminant": "news",
               "value": {
                 "title": "Call for Papers: Drittes Österreichisches Treffen zur Digitalen Linguistik",
                 "reference": "cfp-drittes-oesterreichisches-treffen-zur-digitalen-linguistik"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "Hack The Pool",
+                "reference": "hack-the-pool"
               }
             },
             {
