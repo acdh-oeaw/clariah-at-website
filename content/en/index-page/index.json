@@ -20,6 +20,13 @@
               }
             },
             {
+              "discriminant": "event",
+              "value": {
+                "title": "from historical Data to AI",
+                "reference": "von-historischen-daten-zu-ki"
+              }
+            },
+            {
               "discriminant": "news",
               "value": {
                 "title": "Call for Papers: Third Austrian Meeting on Digital Linguistics",
@@ -45,13 +52,6 @@
               "value": {
                 "title": "Dicover 'Austria In Aerial Views' with the interactive map!",
                 "reference": "oesterreich-aus-der-luft-interaktiv"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Interface: Medieval Studies. Collaborations in Medieval Research in the Digital Age",
-                "reference": "OA-Sammelband-Schnittstelle-Mediaevistik"
               }
             }
           ]
