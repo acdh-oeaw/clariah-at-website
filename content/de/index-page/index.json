@@ -13,20 +13,6 @@
           "variant": "three-columns",
           "cards": [
             {
-              "discriminant": "event",
-              "value": {
-                "title": "Context matters. Opportunities and challenges when working with artificial intelligence and cultural heritage data",
-                "reference": "context-matters-opportunities-challenges-ai-ch-data"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "von historischen Daten zu KI",
-                "reference": "von-historischen-daten-zu-ki"
-              }
-            },
-            {
               "discriminant": "news",
               "value": {
                 "title": "Call for Papers: Drittes Österreichisches Treffen zur Digitalen Linguistik",
@@ -36,8 +22,15 @@
             {
               "discriminant": "event",
               "value": {
-                "title": "Hack The Pool",
-                "reference": "hack-the-pool"
+                "title": "Von historischen Daten zu KI",
+                "reference": "von-historischen-daten-zu-ki"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "ACDH Tool Gallery 11.3",
+                "reference": "acdh-tool-gallery-11-3"
               }
             },
             {
@@ -52,6 +45,13 @@
               "value": {
                 "title": "\"Österreich aus der Luft\" interaktiv erkunden",
                 "reference": "oesterreich-aus-der-luft-interaktiv"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Schnittstelle Mediävistik. Kollaborationen der Mittelalterforschung im digitalen Zeitalter",
+                "reference": "OA-Sammelband-Schnittstelle-Mediaevistik"
               }
             }
           ]
