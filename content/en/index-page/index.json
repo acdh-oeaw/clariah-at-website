@@ -13,6 +13,13 @@
           "variant": "three-columns",
           "cards": [
             {
+              "discriminant": "event",
+              "value": {
+                "title": "Machine Learning and Scholarly Editing - A Contradiction or an exciting Partnership?",
+                "reference": "machine-learning-and-scholarly-editing-a-contradiction-or-an-exciting-partnership"
+              }
+            },
+            {
               "discriminant": "news",
               "value": {
                 "title": "Call for Papers: Third Austrian Meeting on Digital Linguistics",
@@ -45,13 +52,6 @@
               "value": {
                 "title": "Dicover 'Austria In Aerial Views' with the interactive map!",
                 "reference": "oesterreich-aus-der-luft-interaktiv"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Interface: Medieval Studies. Collaborations in Medieval Research in the Digital Age",
-                "reference": "OA-Sammelband-Schnittstelle-Mediaevistik"
               }
             }
           ]
