@@ -15,15 +15,8 @@
             {
               "discriminant": "event",
               "value": {
-                "title": "Machine Learning and Scholarly Editing - A Contradiction or an exciting Partnership?",
-                "reference": "machine-learning-and-scholarly-editing-a-contradiction-or-an-exciting-partnership"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Call for Papers: Third Austrian Meeting on Digital Linguistics",
-                "reference": "cfp-drittes-oesterreichisches-treffen-zur-digitalen-linguistik"
+                "title": "ACDH Tool Gallery 11.3",
+                "reference": "acdh-tool-gallery-11-3"
               }
             },
             {
@@ -31,13 +24,6 @@
               "value": {
                 "title": "From historical Data to AI",
                 "reference": "von-historischen-daten-zu-ki"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "ACDH Tool Gallery 11.3",
-                "reference": "acdh-tool-gallery-11-3"
               }
             },
             {
@@ -52,6 +38,20 @@
               "value": {
                 "title": "Dicover 'Austria In Aerial Views' with the interactive map!",
                 "reference": "oesterreich-aus-der-luft-interaktiv"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Interface: Medieval Studies. Collaborations in Medieval Research in the Digital Age",
+                "reference": "OA-Sammelband-Schnittstelle-Mediaevistik"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Sustaining a Digital Humanities Infrastructure and Network for Austria",
+                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
               }
             }
           ]
