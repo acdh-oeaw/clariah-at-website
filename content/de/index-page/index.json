@@ -15,6 +15,13 @@
             {
               "discriminant": "event",
               "value": {
+                "title": "Kontrolliertes Vokabular mit Vocabs",
+                "reference": "kontrolliertes-vokabular-mit-vocabs"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
                 "title": "ACDH Tool Gallery 11.3",
                 "reference": "acdh-tool-gallery-11-3"
               }
@@ -34,24 +41,17 @@
               }
             },
             {
-              "discriminant": "news",
+              "discriminant": "event",
               "value": {
-                "title": "\"Österreich aus der Luft\" interaktiv erkunden",
-                "reference": "oesterreich-aus-der-luft-interaktiv"
+                "title": "DH Fest an der CEU: CLARIAH-AT Roadshow",
+                "reference": "clariah-at-roadshow-at-CEU"
               }
             },
             {
               "discriminant": "news",
               "value": {
-                "title": "Schnittstelle Mediävistik. Kollaborationen der Mittelalterforschung im digitalen Zeitalter",
-                "reference": "OA-Sammelband-Schnittstelle-Mediaevistik"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Infrastruktur und Netzwerk für die digitalen Geisteswissenschaften in Österreich nachhaltig sichern",
-                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
+                "title": "Erfahrungsbericht über die CLARIAH-AT Summer School 2025",
+                "reference": "report-clariah-at-summer-school-2025"
               }
             }
           ]

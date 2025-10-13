@@ -1,0 +1,65 @@
+---
+title: >-
+  Report on the CLARIAH-AT Summer School 2025: Machine Learning for Digital
+  Scholarly Editions
+date: 2025-10-13
+image: /assets/content/assets/en/news/report-clariah-at-summer-school-2025/image.jpg
+summary: >-
+  In this report, Giada Pantana provides insights into her experiences of the
+  CLARIAH-AT Summer School 2025, dedicated to "Machine Learning for Digital
+  Scholarly Editions"
+---
+## Report on the CLARIAH-AT Summer School 2025: Machine Learning for Digital Scholarly Editions
+
+by [Giada Pantana](https://lingue.unige.it/giada.pantana%40edu.unige.it) (Dipartimento di lingue e culture moderne, Universitá di Genova)
+
+Read here the full report about her experiences at the [CLARIAH-AT Summer School on Machine Learning for Digital Scholarly Editions](https://dhgraz.github.io/clariah2025-dse-ml/):
+
+## Introduction
+
+The summer school for “Machine Learning for Digital Scholarly Editions” took place during the second week of September (8-12) in Graz, Austria. The summer school was hosted by the Department of Digital Humanities of the University of Graz in collaboration with the Know Center Graz, and funded by CLARIAH-AT. The summer school was structured to give students and researchers a comprehensive, practical introduction to applying ML techniques in the context of digital scholarly editing and historical text analysis. 
+
+## Topic modelling
+
+The program of the school was specifically built around the popular Python library BERTopic for topic modelling. Over the course of the week, we moved step-by-step through the computational workflow, covering essential components such as text preparation, embeddings, dimensionality reduction, clustering, tokenisation and weighting, and topic fine-tuning. At the end of the school we were able to build our own BERTopic pipeline. 
+
+**Topic modelling** is an **unsupervised Machine Learning** (ML) technique used in Natural Language Processing (NLP) to discover hidden thematic structure—the main topics—within large collections of texts. Its main strength is that it turns unstructured textual data into actionable and meaningful data. This technique can be used for different tasks in NLP, for example:
+
+* **Information retrieval**: instead of using single keywords (exact term matching), you can explore wide collections of textual documents by semantically similar contents. Q\&A or summarisation are two example of information retrieval tasks. 
+* **Recommender systems**: by creating topic-related user profiles, these systems are more accurate in their recommendations.
+
+- **Explore textual collections**: in Digital Humanities we often need to explore very wide collections of texts to answer our research questions, which usually are too wide to read from top to bottom (“close reading”), so we use topic modelling to understand the topic distribution of our corpus. This is called “distant reading” (Moretti, 2000). 
+
+## BERTopic
+
+[BERTopic](https://bertopic.com/) is a Python library developed by Maarten Grootendorst that exploits transformer-based embeddings to understand the semantics of textual documents. BERTopic can be viewed as a sequence of steps to create its topic representations. 
+
+<Grid layout="two-columns" alignment="stretch">
+  <GridItem alignment="stretch">
+    <Figure src="/assets/content/assets/en/news/report-clariah-at-summer-school-2025/images-5.png" alignment="center">
+
+    </Figure>
+  </GridItem>
+
+  <GridItem alignment="stretch">
+    The pipeline starts from choosing the right model for **embeddings**, which is to “translate” natural language into a machine-readable vector that carries the maximum amount of information possible, including semantics and context. SBERT in this case is the standard pre-trained language model. The next step is **dimensionality reduction**, which reduces the information-dense embeddings to a lower dimension for improved accuracy and speed. Then, we have the **clustering** algorithm, which groups similar documents into clusters of information, automatically determining the number of topics. After that, the algorithm uses a **tokeniser** and **weighting scheme** to arrive to a topic representation that can be then visualised. **Visualisation** can be bent to our needs, for example with a Dynamic view, where you see the evolution of topics over the years, or the Hierarichial view, where topics are linked together if similar to each other.  
+
+    The strength of BERTopic is that the pipeline and the algorithm of the model can be customised to our own needs, and it can also be fine-tuned with our own dataset. 
+  </GridItem>
+</Grid>
+
+## Conclusions
+
+The CLARIAH-AT Summer School was far more than a week of lessons and workshops; it was a full-fledged experience that successfully bridged the world of digital scholarship and advanced computational methods.
+
+Reflecting on my time in Graz, the school delivered significant value because it provided the essential practical formation I needed to incorporate these powerful tools into my own research workflow. This was enriched by the precious contribution of the keynote speeches by Clemens Neudecker and Ulrike Henny-Krahmer that helped grounding the discourse within a broader debate in the Humanities. The environment also fostered genuine intellectual exchange with a diverse group of students and researchers specialising in different fields of Digital Scholarly Editions, included enjoyable and convivial moments like the excursion to the Buschenschank. For these reasons and for an impeccable organisation of the event, I wanted to thank Martina Scholger, Roman Bleier, and the whole Department of Digital Humanities at the University of Graz for hosting us. 
+
+This was also an opportunity to present the poster of my PhD work, which you can find in open access in the dedicated [Zenodo link](https://zenodo.org/records/17130421). 
+
+For any further inquiry, don’t hesitate to contact me at [giada.pantana.gp@edu.unige.it](mailto:giada.pantana.gp@edu.unige.it). 
+
+#### **References**
+
+Moretti, Franco (2000). “[Conjectures on World Literature](https://warwick.ac.uk/fac/arts/english/currentstudents/undergraduates/modules/fulllist/special/globalnovel/moretti-conjectures-nlr_1.pdf)“. *New Left Review*. 1.
+
+<LinkButton label="Report on DH PhD (Blog)" link={{"discriminant":"external","value":"https://dhphd.hypotheses.org/6330"}} />
