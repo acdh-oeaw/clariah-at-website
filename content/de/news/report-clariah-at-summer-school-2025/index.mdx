@@ -1,0 +1,74 @@
+---
+title: >-
+  Erfahrungsbericht über die CLARIAH-AT Summer School 2025: Machine Learning for
+  Digital Scholarly Editions
+date: 2025-10-13
+image: /assets/content/assets/de/news/report-clariah-at-summer-school-2025/image.jpg
+summary: >-
+  In diesem Bericht gibt Giada Pantana Einblicke in ihre Erfahrungen bei der
+  CLARIAH-AT Summer School 2025, die dem Thema „Machine Learning for Digital
+  Scholarly Editions“ gewidmet war.
+---
+## Erfahrungsbericht über die CLARIAH-AT Summer School 2025: Machine Learning for Digital Scholarly Editions
+
+von [Giada Pantana](https://lingue.unige.it/giada.pantana%40edu.unige.it) (Dipartimento di lingue e culture moderne, Universitá di Genova)
+
+Lesen Sie hier den vollständigen Bericht über ihre Erfahrungen bei der [CLARIAH-AT Summer School on Machine Learning for Digital Scholarly Editions](https://dhgraz.github.io/clariah2025-dse-ml/):
+
+## Einleitung
+
+Die Summer School „Machine Learning for Digital Scholarly Editions“ fand in der zweiten Septemberwoche (8.–12.) in Graz, Österreich, statt. Gastgeber war das Institut für Digital Humanities der Universität Graz in Zusammenarbeit mit dem Know Center Graz, finanziert durch CLARIAH-AT. Ziel der Summer School war es, Studierenden und Forschenden eine umfassende und praxisorientierte Einführung in den Einsatz von Machine-Learning-Techniken im Kontext der digitalen Editorik und der historischen Textanalyse zu bieten.
+
+## Topic modelling
+
+Das Programm der Summer School war gezielt um die populäre Python-Bibliothek **BERTopic** für Topic Modelling aufgebaut. Im Verlauf der Woche arbeiteten wir uns Schritt für Schritt durch den gesamten rechnergestützten Workflow und behandelten zentrale Komponenten wie Textvorbereitung, Embeddings, Dimensionsreduktion, Clustering, Tokenisierung und Gewichtung sowie die Feinanpassung von Topics. Am Ende der Woche waren wir in der Lage, unsere eigene BERTopic-Pipeline zu erstellen.
+
+**Topic Modelling** ist eine **unüberwachte Machine-Learning-Technik** (ML), die im Bereich der *Natural Language Processing* (NLP) eingesetzt wird, um verborgene thematische Strukturen – also Hauptthemen – innerhalb großer Textsammlungen zu entdecken. Ihre Hauptstärke besteht darin, unstrukturierte Textdaten in aussagekräftige, handlungsrelevante Informationen zu überführen. Diese Technik kann für verschiedene Aufgaben im NLP genutzt werden, beispielsweise:
+
+* **Information Retrieval**: Anstatt einzelne Schlüsselwörter zu verwenden (exakte Begriffssuche), können große Textsammlungen nach semantisch ähnlichen Inhalten durchsucht werden. Frage-Antwort-Systeme oder Textzusammenfassungen sind Beispiele für Informationsretrieval-Aufgaben.
+
+
+* **Empfehlungssysteme**: Durch die Erstellung themenbezogener Nutzerprofile können Empfehlungen präziser und relevanter gestaltet werden.
+
+
+* **Erforschung von Textsammlungen**: In den Digital Humanities besteht häufig die Notwendigkeit, sehr umfangreiche Textkorpora zu analysieren, um Forschungsfragen zu beantworten, die zu breit gefasst sind, um sie durch „Close Reading“ zu bearbeiten. Topic Modelling ermöglicht hier ein Verständnis der thematischen Verteilung des Korpus – eine Methode, die als „Distant Reading“ bezeichnet wird (Moretti, 2000).
+
+## BERTopic
+
+[BERTopic](https://bertopic.com/) ist eine von **Maarten Grootendorst** entwickelte Python-Bibliothek, die transformerbasierte Embeddings nutzt, um die semantische Struktur von Textdokumenten zu erfassen. BERTopic kann als eine Abfolge von Schritten verstanden werden, die zur Erstellung einer thematischen Repräsentation führen.
+
+<Grid layout="two-columns" alignment="stretch">
+  <GridItem alignment="stretch">
+    <Figure src="/assets/content/assets/de/news/report-clariah-at-summer-school-2025/images-5.png" alignment="center">
+
+    </Figure>
+  </GridItem>
+
+  <GridItem alignment="stretch">
+    Der Workflow beginnt mit der Wahl des passenden Modells für die **Embeddings** – also der „Übersetzung“ natürlicher Sprache in einen maschinenlesbaren Vektor, der möglichst viele Informationen, einschließlich Semantik und Kontext, enthält. In der Regel wird hierfür das vortrainierte Sprachmodell **SBERT** verwendet.\
+    Der nächste Schritt ist die **Dimensionsreduktion**, die die informationsreichen Embeddings auf eine niedrigere Dimension überführt, um Genauigkeit und Geschwindigkeit zu verbessern. Anschließend erfolgt das **Clustering**, bei dem ähnliche Dokumente automatisch zu Informationsclustern – also Themen – gruppiert werden. Danach nutzt der Algorithmus eine **Tokenisierung** und ein **Gewichtungsschema**, um eine Themenrepräsentation zu erzeugen, die anschließend visualisiert werden kann.\
+    Die **Visualisierung** lässt sich flexibel anpassen, z. B. als dynamische Ansicht, in der die Entwicklung von Themen über die Jahre hinweg dargestellt wird, oder als hierarchische Ansicht, in der ähnliche Themen miteinander verknüpft werden.
+
+    Die Stärke von BERTopic liegt in der Anpassungsfähigkeit: Sowohl die Pipeline als auch der Algorithmus können auf spezifische Forschungsanforderungen zugeschnitten und mit eigenen Datensätzen feinjustiert werden.
+  </GridItem>
+</Grid>
+
+## Fazit
+
+Die CLARIAH-AT Summer School war weit mehr als nur eine Woche voller Vorträge und Workshops – sie war eine umfassende Erfahrung, die die Welt der digitalen Geisteswissenschaften erfolgreich mit modernen rechnergestützten Methoden verknüpfte.
+
+Im Rückblick bot die Woche in Graz einen erheblichen Mehrwert, da sie die grundlegenden praktischen Kompetenzen vermittelte, die ich benötige, um diese leistungsstarken Werkzeuge in meinen eigenen Forschungsworkflow zu integrieren. Bereichernd war zudem der wertvolle Beitrag der Keynotes von **Clemens Neudecker** und **Ulrike Henny-Krahmer**, die halfen, die Diskussion in einen breiteren geisteswissenschaftlichen Kontext einzuordnen.
+
+Darüber hinaus förderte die Veranstaltung den intellektuellen Austausch mit einer vielfältigen Gruppe von Studierenden und Forschenden aus verschiedenen Bereichen der digitalen Editorik – einschließlich angenehmer gemeinsamer Momente wie dem Ausflug zum Buschenschank.
+
+Aus all diesen Gründen – und aufgrund der hervorragenden Organisation – möchte ich **Martina Scholger**, **Roman Bleier** und dem gesamten Team des Instituts für Digital Humanities der Universität Graz herzlich danken.
+
+Diese Woche bot mir zudem die Gelegenheit, das Poster meiner Dissertation zu präsentieren, das im Open Access über den folgenden [Zenodo-Link](https://zenodo.org/records/17130421) verfügbar ist.
+
+Für weitere Fragen können Sie mich gerne unter [giada.pantana.gp@edu.unige.it](mailto:giada.pantana.gp@edu.unige.it) kontaktieren.
+
+#### **Literatur**
+
+Moretti, Franco (2000). “[Conjectures on World Literature](https://warwick.ac.uk/fac/arts/english/currentstudents/undergraduates/modules/fulllist/special/globalnovel/moretti-conjectures-nlr_1.pdf)“. *New Left Review*. 1.
+
+<LinkButton label="Report on DH PhD (Blog)" link={{"discriminant":"external","value":"https://dhphd.hypotheses.org/6330"}} />
