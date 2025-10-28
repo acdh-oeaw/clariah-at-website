@@ -15,34 +15,6 @@
             {
               "discriminant": "event",
               "value": {
-                "title": "Controlled Vocabulary with Vocabs",
-                "reference": "kontrolliertes-vokabular-mit-vocabs"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "ACDH Tool Gallery 11.3",
-                "reference": "acdh-tool-gallery-11-3"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "From historical Data to AI",
-                "reference": "von-historischen-daten-zu-ki"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "ACDH Lecture 11.2",
-                "reference": "acdh-lecture-11-2"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
                 "title": "DH Festival at CEU: CLARIAH-AT Roadshow",
                 "reference": "clariah-at-roadshow-at-CEU"
               }
@@ -52,6 +24,13 @@
               "value": {
                 "title": "Report on the CLARIAH-AT Summer School 2025",
                 "reference": "report-clariah-at-summer-school-2025"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "ACDH Lecture 11.3",
+                "reference": "acdh-lecture-11-3"
               }
             }
           ]
