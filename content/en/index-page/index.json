@@ -15,13 +15,6 @@
             {
               "discriminant": "event",
               "value": {
-                "title": "DH Festival at CEU: CLARIAH-AT Roadshow",
-                "reference": "clariah-at-roadshow-at-CEU"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
                 "title": "ACDH Lecture 11.3",
                 "reference": "acdh-lecture-11-3"
               }
@@ -31,6 +24,34 @@
               "value": {
                 "title": "Call for Contributions for the Digital History Conference 2026 ",
                 "reference": "call-for-contributions-digital-history-tagung-2026"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "EURALEX 2026: Call for Papers",
+                "reference": "euralex2026-call-for-papers"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "DARIAH 2026: Call for Papers",
+                "reference": "dariah2026-call-for-papers"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Report on the CLARIAH-AT Summer School 2025",
+                "reference": "report-clariah-at-summer-school-2025"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Sustaining a Digital Humanities Infrastructure and Network for Austria",
+                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
               }
             }
           ]
