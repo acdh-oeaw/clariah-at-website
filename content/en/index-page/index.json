@@ -41,17 +41,17 @@
               }
             },
             {
-              "discriminant": "news",
+              "discriminant": "event",
               "value": {
-                "title": "Report on the CLARIAH-AT Summer School 2025",
-                "reference": "report-clariah-at-summer-school-2025"
+                "title": "Third Austrian Meeting on Digital Linguistics (ÖLT 2025): Programme announced!",
+                "reference": "drittes-oesterreichisches-treffen-zur-digitalen-linguistik-oelt-2025"
               }
             },
             {
               "discriminant": "news",
               "value": {
-                "title": "Sustaining a Digital Humanities Infrastructure and Network for Austria",
-                "reference": "sustaining-a-digital-humanities-infrastructure-and-network-for-austria"
+                "title": "Report on the CLARIAH-AT Summer School 2025",
+                "reference": "report-clariah-at-summer-school-2025"
               }
             }
           ]
