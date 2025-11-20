@@ -15,29 +15,15 @@
             {
               "discriminant": "event",
               "value": {
+                "title": "Workshop \"re-late – re-use – re-vise\"",
+                "reference": "workshop-re-late-re-use-re-vise"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
                 "title": "ACDH Lecture 11.3",
                 "reference": "acdh-lecture-11-3"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Call for Contributions for the Digital History Conference 2026 ",
-                "reference": "call-for-contributions-digital-history-tagung-2026"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "EURALEX 2026: Call for Papers",
-                "reference": "euralex2026-call-for-papers"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "DARIAH 2026: Call for Papers",
-                "reference": "dariah2026-call-for-papers"
               }
             },
             {
@@ -50,8 +36,22 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "Report on the CLARIAH-AT Summer School 2025",
-                "reference": "report-clariah-at-summer-school-2025"
+                "title": "Call for Contributions for the Digital History Conference 2026 ",
+                "reference": "call-for-contributions-digital-history-tagung-2026"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "DARIAH 2026: Call for Papers",
+                "reference": "dariah2026-call-for-papers"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "EURALEX 2026: Call for Papers",
+                "reference": "euralex2026-call-for-papers"
               }
             }
           ]
