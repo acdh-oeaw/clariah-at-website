@@ -15,6 +15,20 @@
             {
               "discriminant": "event",
               "value": {
+                "title": "Workshop \"re-late – re-use – re-vise\"",
+                "reference": "workshop-re-late-re-use-re-vise"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "Drittes Österreichisches Treffen zur Digitalen Linguistik (ÖLT 2025): Programm online!",
+                "reference": "drittes-oesterreichisches-treffen-zur-digitalen-linguistik-oelt-2025"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
                 "title": "ACDH Lecture 11.3",
                 "reference": "acdh-lecture-11-3"
               }
@@ -29,29 +43,15 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "EURALEX 2026: Call for Papers",
-                "reference": "euralex2026-call-for-papers"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
                 "title": "DARIAH 2026: Call for Papers",
                 "reference": "dariah2026-call-for-papers"
               }
             },
             {
-              "discriminant": "event",
-              "value": {
-                "title": "Drittes Österreichisches Treffen zur Digitalen Linguistik (ÖLT 2025): Programm online!",
-                "reference": "drittes-oesterreichisches-treffen-zur-digitalen-linguistik-oelt-2025"
-              }
-            },
-            {
               "discriminant": "news",
               "value": {
-                "title": "Erfahrungsbericht zur CLARIAH-AT Summer School 2025",
-                "reference": "report-clariah-at-summer-school-2025"
+                "title": "EURALEX 2026: Call for Papers",
+                "reference": "euralex2026-call-for-papers"
               }
             }
           ]
