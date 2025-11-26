@@ -53,6 +53,13 @@
                 "title": "EURALEX 2026: Call for Papers",
                 "reference": "euralex2026-call-for-papers"
               }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Report on the CLARIAH-AT Summer School 2025: Machine Learning for Digital Scholarly Editions",
+                "reference": "report-clariah-at-summer-school-2025"
+              }
             }
           ]
         }

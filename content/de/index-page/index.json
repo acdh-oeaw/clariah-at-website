@@ -27,13 +27,6 @@
               }
             },
             {
-              "discriminant": "event",
-              "value": {
-                "title": "ACDH Lecture 11.3",
-                "reference": "acdh-lecture-11-3"
-              }
-            },
-            {
               "discriminant": "news",
               "value": {
                 "title": "Call for Contributions für die Digital-History-Tagung 2026",
@@ -52,6 +45,13 @@
               "value": {
                 "title": "EURALEX 2026: Call for Papers",
                 "reference": "euralex2026-call-for-papers"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Erfahrungsbericht über die CLARIAH-AT Summer School 2025: Machine Learning for Digital Scholarly Editions",
+                "reference": "report-clariah-at-summer-school-2025"
               }
             }
           ]
