@@ -1,11 +1,9 @@
-/** @typedef {import("typescript-eslint").Config} Config */
-
 import baseConfig from "@acdh-oeaw/eslint-config";
 import astroConfig from "@acdh-oeaw/eslint-config-astro";
 import playwrightConfig from "@acdh-oeaw/eslint-config-playwright";
 import reactConfig from "@acdh-oeaw/eslint-config-react";
-import solidJsConfig from "@acdh-oeaw/eslint-config-solid";
 import tailwindcssConfig from "@acdh-oeaw/eslint-config-tailwindcss";
+import { defineConfig } from "eslint/config";
 import gitignore from "eslint-config-flat-gitignore";
 // @ts-expect-error Missing type declaration.
 import checkFilePlugin from "eslint-plugin-check-file";
@@ -23,25 +21,19 @@ const reactFiles = [
 	"**/keystatic/**/*.@(ts|tsx)",
 ];
 
-/** @type {Config} */
-const config = [
+const config = defineConfig(
 	gitignore({ strict: false }),
-	...baseConfig,
-	...astroConfig,
-	...reactConfig.map((config) => {
-		return {
-			...config,
-			files: reactFiles,
-		};
-	}),
-	...solidJsConfig.map((config) => {
-		return {
-			...config,
-			files: ["**/components/**/*.@(ts|tsx)", "**/ui/**/*.@(ts|tsx)"],
-			ignores: reactFiles,
-		};
-	}),
-	...tailwindcssConfig,
+	baseConfig,
+	{
+		extends: [astroConfig],
+		ignores: reactFiles,
+	},
+	{
+		extends: [reactConfig],
+		files: reactFiles,
+	},
+	// @ts-expect-error It's fine.
+	tailwindcssConfig,
 	{
 		settings: {
 			tailwindcss: {
@@ -49,7 +41,7 @@ const config = [
 			},
 		},
 	},
-	...playwrightConfig,
+	playwrightConfig,
 	{
 		plugins: {
 			// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -110,6 +102,6 @@ const config = [
 			"astro/sort-attributes": "error",
 		},
 	},
-];
+);
 
 export default config;
