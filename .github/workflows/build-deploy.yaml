@@ -2,7 +2,7 @@ name: Build and deploy
 
 concurrency:
   group: "${{ github.workflow }}-${{ github.ref }}-build-deploy"
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 on:
   workflow_call:
@@ -11,7 +11,7 @@ on:
 jobs:
   env:
     name: Generate environment variables
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Derive environment from git ref
         id: environment
@@ -40,7 +40,7 @@ jobs:
   vars:
     name: Generate public url
     needs: [env]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     environment:
       name: "${{ needs.env.outputs.environment }}"
     steps:
@@ -60,7 +60,7 @@ jobs:
   build:
     name: Build and push docker image
     needs: [env, vars]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
       packages: write
@@ -69,7 +69,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Ensure astro build artefacts folder exists
         run: mkdir -p node_modules/.astro
@@ -78,8 +78,8 @@ jobs:
         uses: actions/cache@v4
         with:
           path: node_modules/.astro/
-          key: ${{ runner.os }}-astro-22.x-${{ github.run_id }}
-          restore-keys: ${{ runner.os }}-astro-22.x
+          key: ${{ runner.os }}-astro-24.x-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-astro-24.x
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
