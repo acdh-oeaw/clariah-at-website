@@ -45,7 +45,7 @@ ARG PUBLIC_REDMINE_ID
 # disable validation for runtime environment variables
 ENV ENV_VALIDATION=public
 
-RUN pnpm install --frozen-lockfile --offline
+RUN pnpm install --frozen-lockfile --prefer-offline
 
 ENV NODE_ENV=production
 
