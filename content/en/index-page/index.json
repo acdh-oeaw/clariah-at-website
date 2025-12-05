@@ -13,27 +13,6 @@
           "variant": "three-columns",
           "cards": [
             {
-              "discriminant": "event",
-              "value": {
-                "title": "Workshop \"re-late – re-use – re-vise\"",
-                "reference": "workshop-re-late-re-use-re-vise"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "Third Austrian Meeting on Digital Linguistics (ÖLT 2025): Programme announced!",
-                "reference": "drittes-oesterreichisches-treffen-zur-digitalen-linguistik-oelt-2025"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "ACDH Lecture 11.3",
-                "reference": "acdh-lecture-11-3"
-              }
-            },
-            {
               "discriminant": "news",
               "value": {
                 "title": "Call for Contributions for the Digital History Conference 2026 ",
@@ -52,13 +31,6 @@
               "value": {
                 "title": "EURALEX 2026: Call for Papers",
                 "reference": "euralex2026-call-for-papers"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Report on the CLARIAH-AT Summer School 2025: Machine Learning for Digital Scholarly Editions",
-                "reference": "report-clariah-at-summer-school-2025"
               }
             }
           ]
