@@ -32,6 +32,13 @@
                 "title": "EURALEX 2026: Call for Papers",
                 "reference": "euralex2026-call-for-papers"
               }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Digitale Edition \"Kofler Aural\" ",
+                "reference": "digitale-edition-kofler-aural"
+              }
             }
           ]
         }
