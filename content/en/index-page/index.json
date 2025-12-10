@@ -39,6 +39,13 @@
                 "title": "Digital Edition \"Kofler Aural\"",
                 "reference": "digitale-edition-kofler-aural"
               }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "ACDH Lecture 12.1",
+                "reference": "acdh-lecture-12-1"
+              }
             }
           ]
         }
