@@ -46,6 +46,13 @@
                 "title": "ACDH Lecture 12.1",
                 "reference": "acdh-lecture-12-1"
               }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Report on the CLARIAH-AT Summer School 2025: Machine Learning for Digital Scholarly Editions",
+                "reference": "report-clariah-at-summer-school-2025"
+              }
             }
           ]
         }
