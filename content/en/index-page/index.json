@@ -13,17 +13,24 @@
           "variant": "three-columns",
           "cards": [
             {
-              "discriminant": "news",
+              "discriminant": "event",
               "value": {
-                "title": "Call for Contributions for the Digital History Conference 2026 ",
-                "reference": "call-for-contributions-digital-history-tagung-2026"
+                "title": "ACDH Lecture 12.1",
+                "reference": "acdh-lecture-12-1"
               }
             },
             {
               "discriminant": "news",
               "value": {
-                "title": "DARIAH 2026: Call for Papers",
-                "reference": "dariah2026-call-for-papers"
+                "title": "ACDH-ARCHE re-certified as CLARIN B-Centre",
+                "reference": "acdh-arche-re-certified-as-clarin-b-centre"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "CLARIN2026: Call for Papers open!",
+                "reference": "clarin-2026-call-for-papers"
               }
             },
             {
@@ -36,22 +43,15 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "Digital Edition \"Kofler Aural\"",
-                "reference": "digitale-edition-kofler-aural"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "ACDH Lecture 12.1",
-                "reference": "acdh-lecture-12-1"
+                "title": "Report on the CLARIAH-AT Summer School 2025: Machine Learning for Digital Scholarly Editions",
+                "reference": "report-clariah-at-summer-school-2025"
               }
             },
             {
               "discriminant": "news",
               "value": {
-                "title": "Report on the CLARIAH-AT Summer School 2025: Machine Learning for Digital Scholarly Editions",
-                "reference": "report-clariah-at-summer-school-2025"
+                "title": "Digital Edition \"Kofler Aural\"",
+                "reference": "digitale-edition-kofler-aural"
               }
             }
           ]
