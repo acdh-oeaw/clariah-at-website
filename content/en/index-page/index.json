@@ -53,6 +53,20 @@
                 "title": "Digital Edition \"Kofler Aural\"",
                 "reference": "digitale-edition-kofler-aural"
               }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Call for Contributions: Historical Labour Markets in Text",
+                "reference": "call-for-contributions-historical-labour-markets-in-text"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "ÖAW AI Winter School 2026",
+                "reference": "oeaw-ai-winter-school-2026"
+              }
             }
           ]
         }
