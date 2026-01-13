@@ -22,6 +22,13 @@
             {
               "discriminant": "news",
               "value": {
+                "title": "Call for Contributions: Historical Labour Markets in Text",
+                "reference": "call-for-contributions-historical-labour-markets-in-text"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
                 "title": "ACDH-ARCHE re-certified as CLARIN B-Centre",
                 "reference": "acdh-arche-re-certified-as-clarin-b-centre"
               }
@@ -34,24 +41,17 @@
               }
             },
             {
+              "discriminant": "event",
+              "value": {
+                "title": "ÖAW AI Winter School 2026",
+                "reference": "oeaw-ai-winter-school-2026"
+              }
+            },
+            {
               "discriminant": "news",
               "value": {
                 "title": "EURALEX 2026: Call for Papers",
                 "reference": "euralex2026-call-for-papers"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Report on the CLARIAH-AT Summer School 2025: Machine Learning for Digital Scholarly Editions",
-                "reference": "report-clariah-at-summer-school-2025"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Digital Edition \"Kofler Aural\"",
-                "reference": "digitale-edition-kofler-aural"
               }
             }
           ]
