@@ -53,6 +53,13 @@
                 "title": "ACDH-ARCHE rezertifiziert als CLAIN B-Centre",
                 "reference": "acdh-arche-re-certified-as-clarin-b-centre"
               }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Call for Papers: PressMint Workshop at LREC2026",
+                "reference": "cfp-pressmint-workshop-lrec2026"
+              }
             }
           ]
         }
