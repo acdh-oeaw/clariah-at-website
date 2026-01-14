@@ -29,8 +29,8 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "ACDH-ARCHE rezertifiziert als CLAIN B-Centre",
-                "reference": "acdh-arche-re-certified-as-clarin-b-centre"
+                "title": "Ten annoying things about digitizing under-resourced and under-represented languages - And what might help fixing them",
+                "reference": "ocr-htr-workshop-zine-out-now"
               }
             },
             {
@@ -38,13 +38,6 @@
               "value": {
                 "title": "CLARIN2026: Call for Papers offen!",
                 "reference": "clarin-2026-call-for-papers"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "ÖAW AI Winter School",
-                "reference": "oeaw-ai-winter-school-2026"
               }
             },
             {
@@ -57,8 +50,8 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "Ten annoying things about digitizing under-resourced and under-represented languages - And what might help fixing them",
-                "reference": "ocr-htr-workshop-zine-out-now"
+                "title": "ACDH-ARCHE rezertifiziert als CLAIN B-Centre",
+                "reference": "acdh-arche-re-certified-as-clarin-b-centre"
               }
             }
           ]
