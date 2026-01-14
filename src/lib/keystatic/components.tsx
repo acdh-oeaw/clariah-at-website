@@ -31,6 +31,7 @@ import {
 	GridItemPreview,
 	GridPreview,
 	HeadingIdPreview,
+	ImageGridPreview,
 	ImageLinkPreview,
 	LinkButtonPreview,
 	TweetPreview,
@@ -215,6 +216,39 @@ export const createHeadingId = createComponent((_paths, _locale) => {
 				const { value } = props;
 
 				return <HeadingIdPreview>{value.id}</HeadingIdPreview>;
+			},
+		}),
+	};
+});
+
+export const createImageGrid = createComponent((paths, _locale) => {
+	return {
+		ImageGrid: block({
+			label: "Image grid",
+			description: "An image grid.",
+			icon: <ImageIcon />,
+			schema: {
+				images: fields.array(
+					fields.object({
+						src: fields.image({
+							label: "Image",
+							validation: { isRequired: true },
+							...createAssetOptions(paths.assetPath),
+						}),
+					}),
+					{
+						label: "Images",
+						validation: { length: { min: 1 } },
+						itemLabel(props) {
+							return props.fields.src.value?.filename ?? "Image";
+						},
+					},
+				),
+			},
+			ContentView(props) {
+				const { value } = props;
+
+				return <ImageGridPreview images={value.images} />;
 			},
 		}),
 	};

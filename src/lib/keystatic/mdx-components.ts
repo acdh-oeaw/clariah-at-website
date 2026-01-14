@@ -5,6 +5,7 @@ import DownloadButton from "@/components/content/download-button.astro";
 import Figure from "@/components/content/figure.astro";
 import Grid from "@/components/content/grid.astro";
 import GridItem from "@/components/content/grid-item.astro";
+import ImageGrid from "@/components/content/image-grid.astro";
 import ImageLink from "@/components/content/image-link.astro";
 import Img from "@/components/content/img.astro";
 import Link from "@/components/content/link.astro";
@@ -21,6 +22,7 @@ const components = {
 	Grid,
 	GridItem,
 	img: Img,
+	ImageGrid,
 	ImageLink,
 	Link,
 	LinkButton,

@@ -155,6 +155,24 @@ export function HeadingIdPreview(props: HeadingIdPreviewProps): ReactNode {
 	);
 }
 
+interface ImageGridPreviewProps {
+	images: ReadonlyArray<{
+		src: UseObjectUrlParams | null;
+	}>;
+}
+
+export function ImageGridPreview(props: ImageGridPreviewProps): ReactNode {
+	const { images } = props;
+
+	return (
+		<NotEditable className="grid grid-cols-[repeat(auto-fill,minmax(min(16rem,100%),1fr))] gap-4">
+			{images.map((image, index) => {
+				return <ImagePreview key={index} alt="" src={image.src} />;
+			})}
+		</NotEditable>
+	);
+}
+
 interface ImageLinkPreviewProps {
 	alt?: string;
 	link: LinkSchema;
@@ -165,15 +183,26 @@ interface ImageLinkPreviewProps {
 export function ImageLinkPreview(props: ImageLinkPreviewProps): ReactNode {
 	const { alt = "", link: _link, src, text: _text } = props;
 
+	return (
+		<NotEditable>
+			<ImagePreview alt={alt} src={src} />
+		</NotEditable>
+	);
+}
+
+interface ImagePreviewProps {
+	alt?: string;
+	src: UseObjectUrlParams | null;
+}
+
+function ImagePreview(props: ImagePreviewProps): ReactNode {
+	const { alt = "", src } = props;
+
 	const url = useObjectUrl(src);
 
 	if (url == null) return null;
 
-	return (
-		<NotEditable>
-			<img alt={alt} className="overflow-hidden rounded-md" src={url} />
-		</NotEditable>
-	);
+	return <img alt={alt} className="overflow-hidden rounded-md" src={url} />;
 }
 
 interface LinkButtonPreviewProps {
