@@ -29,6 +29,13 @@
             {
               "discriminant": "news",
               "value": {
+                "title": "Call for Papers: PressMint Workshop at LREC2026",
+                "reference": "cfp-pressmint-workshop-lrec2026"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
                 "title": "Ten annoying things about digitizing under-resourced and under-represented languages - And what might help fixing them",
                 "reference": "ocr-htr-workshop-zine-out-now"
               }
@@ -38,13 +45,6 @@
               "value": {
                 "title": "CLARIN2026: Call for Papers open!",
                 "reference": "clarin-2026-call-for-papers"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "EURALEX 2026: Call for Papers",
-                "reference": "euralex2026-call-for-papers"
               }
             },
             {
