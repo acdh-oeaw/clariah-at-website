@@ -34,6 +34,13 @@
               }
             },
             {
+              "discriminant": "event",
+              "value": {
+                "title": "Tag der guten Daten 2026",
+                "reference": "tag-der-guten-daten-2026"
+              }
+            },
+            {
               "discriminant": "news",
               "value": {
                 "title": "CLARIN2026: Call for Papers offen!",
@@ -45,13 +52,6 @@
               "value": {
                 "title": "ACDH-ARCHE rezertifiziert als CLAIN B-Centre",
                 "reference": "acdh-arche-re-certified-as-clarin-b-centre"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "EURALEX 2026: Call for Papers",
-                "reference": "euralex2026-call-for-papers"
               }
             }
           ]
