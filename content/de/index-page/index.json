@@ -13,13 +13,6 @@
           "variant": "three-columns",
           "cards": [
             {
-              "discriminant": "event",
-              "value": {
-                "title": "ACDH Lecture 12.1",
-                "reference": "acdh-lecture-12-1"
-              }
-            },
-            {
               "discriminant": "news",
               "value": {
                 "title": "Call for Contributions: Historical Labour Markets in Text",
@@ -52,6 +45,13 @@
               "value": {
                 "title": "ACDH-ARCHE rezertifiziert als CLAIN B-Centre",
                 "reference": "acdh-arche-re-certified-as-clarin-b-centre"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "EURALEX 2026: Call for Papers",
+                "reference": "euralex2026-call-for-papers"
               }
             }
           ]
