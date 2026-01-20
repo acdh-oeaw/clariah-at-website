@@ -41,17 +41,17 @@
               }
             },
             {
-              "discriminant": "news",
+              "discriminant": "event",
               "value": {
-                "title": "CLARIN2026: Call for Papers open!",
-                "reference": "clarin-2026-call-for-papers"
+                "title": "ÖNB Labs Jupyter Notebooks Workshop",
+                "reference": "oenb-labs-jupyter-notebooks-workshop"
               }
             },
             {
               "discriminant": "news",
               "value": {
-                "title": "ACDH-ARCHE re-certified as CLARIN B-Centre",
-                "reference": "acdh-arche-re-certified-as-clarin-b-centre"
+                "title": "CLARIN2026: Call for Papers open!",
+                "reference": "clarin-2026-call-for-papers"
               }
             }
           ]
