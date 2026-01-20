@@ -1,4 +1,6 @@
 ---
+import Img from '@/components/content/img.astro';
+
 interface Props {
 	images: Array<{
 		alt?: string;
@@ -16,7 +18,7 @@ const { images } = Astro.props;
 
 			return (
 				<a href={src}>
-					<img alt={alt} class="overflow-hidden rounded-md" src={src} />
+					<Img alt={alt} class="overflow-hidden rounded-md" src={src} />
 				</a>
 			);
 		})
