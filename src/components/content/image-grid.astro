@@ -1,5 +1,7 @@
 ---
-import Img from "@/components/content/img.astro";
+import { Image } from "astro:assets";
+
+import { getImageImport } from "@/lib/get-image-import";
 
 interface Props {
 	images: Array<{
@@ -13,13 +15,11 @@ const { images } = Astro.props;
 
 <div class="grid grid-cols-[repeat(auto-fill,minmax(min(16rem,100%),1fr))] gap-4 not-prose my-6">
 	{
-		images.map((image) => {
+		images.map( (image) => {
 			const { alt = "", src } = image;
 
 			return (
-				<a href={src}>
-					<Img alt={alt} class="overflow-hidden rounded-md" src={src} />
-				</a>
+				<Image alt={alt} class="overflow-hidden rounded-md" layout="constrained" src={getImageImport(src)} />
 			);
 		})
 	}
