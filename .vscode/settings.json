@@ -4,7 +4,7 @@
 	"editor.codeActionsOnSave": {
 		"source.fixAll": "explicit"
 	},
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.defaultFormatter": "prettier.prettier-vscode",
 	"editor.formatOnSave": true,
 	"editor.inlayHints.enabled": "offUnlessPressed",
 	"editor.linkedEditing": true,
@@ -25,6 +25,7 @@
 	"less.validate": false,
 	"mdx.server.enable": true,
 	"prettier.documentSelectors": ["**/*.astro"],
+	"prettier.enable": false,
 	"scss.validate": false,
 	"stylelint.enable": true,
 	"stylelint.snippet": ["astro", "css", "postcss", "tailwindcss"],
