@@ -5,7 +5,6 @@ import reactConfig from "@acdh-oeaw/eslint-config-react";
 import tailwindcssConfig from "@acdh-oeaw/eslint-config-tailwindcss";
 import { defineConfig } from "eslint/config";
 import gitignore from "eslint-config-flat-gitignore";
-// @ts-expect-error Missing type declaration.
 import checkFilePlugin from "eslint-plugin-check-file";
 import nodePlugin from "eslint-plugin-n";
 
@@ -44,7 +43,6 @@ const config = defineConfig(
 	playwrightConfig,
 	{
 		plugins: {
-			// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 			"check-file": checkFilePlugin,
 		},
 		rules: {
