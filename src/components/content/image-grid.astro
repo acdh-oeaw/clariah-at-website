@@ -15,11 +15,16 @@ const { images } = Astro.props;
 
 <div class="grid grid-cols-[repeat(auto-fill,minmax(min(16rem,100%),1fr))] gap-4 not-prose my-6">
 	{
-		images.map( (image) => {
+		images.map((image) => {
 			const { alt = "", src } = image;
 
 			return (
-				<Image alt={alt} class="overflow-hidden rounded-md" layout="constrained" src={getImageImport(src)} />
+				<Image
+					alt={alt}
+					class="overflow-hidden rounded-md"
+					layout="constrained"
+					src={getImageImport(src)}
+				/>
 			);
 		})
 	}
