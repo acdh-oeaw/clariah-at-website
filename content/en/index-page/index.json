@@ -15,29 +15,8 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "Call for Contributions: Historical Labour Markets in Text",
-                "reference": "call-for-contributions-historical-labour-markets-in-text"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Call for Papers: PressMint Workshop at LREC2026",
-                "reference": "cfp-pressmint-workshop-lrec2026"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Ten annoying things about digitizing under-resourced and under-represented languages - And what might help fixing them",
-                "reference": "ocr-htr-workshop-zine-out-now"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "Tag der guten Daten 2026",
-                "reference": "tag-der-guten-daten-2026"
+                "title": "Impressions of the DH Festival",
+                "reference": "impressions-of-the-dh-festival"
               }
             },
             {
@@ -50,8 +29,29 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "CLARIN2026: Call for Papers open!",
-                "reference": "clarin-2026-call-for-papers"
+                "title": "Ten annoying things about digitizing under-resourced and under-represented languages - And what might help fixing them",
+                "reference": "ocr-htr-workshop-zine-out-now"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Call for Contributions: Historical Labour Markets in Text",
+                "reference": "call-for-contributions-historical-labour-markets-in-text"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Call for Papers: PressMint Workshop at LREC2026",
+                "reference": "cfp-pressmint-workshop-lrec2026"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "Tag der guten Daten 2026",
+                "reference": "tag-der-guten-daten-2026"
               }
             }
           ]
