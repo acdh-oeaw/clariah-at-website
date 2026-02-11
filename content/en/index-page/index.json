@@ -29,6 +29,13 @@
             {
               "discriminant": "news",
               "value": {
+                "title": "Call for Papers: PressMint Workshop at LREC2026",
+                "reference": "cfp-pressmint-workshop-lrec2026"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
                 "title": "Impressions of the DH Festival",
                 "reference": "impressions-of-the-dh-festival"
               }
