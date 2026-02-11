@@ -15,15 +15,15 @@
             {
               "discriminant": "event",
               "value": {
-                "title": "Tag der guten Daten 2026",
-                "reference": "tag-der-guten-daten-2026"
+                "title": "ÖNB Labs Jupyter Notebooks Workshop",
+                "reference": "oenb-labs-jupyter-notebooks-workshop"
               }
             },
             {
-              "discriminant": "event",
+              "discriminant": "news",
               "value": {
-                "title": "ÖNB Labs Jupyter Notebooks Workshop",
-                "reference": "oenb-labs-jupyter-notebooks-workshop"
+                "title": "Stakeholder Forum 2026: Call for Interest",
+                "reference": "stakeholder-forum-2026-call-for-interest"
               }
             },
             {
