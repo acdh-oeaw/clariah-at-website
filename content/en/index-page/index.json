@@ -15,13 +15,6 @@
             {
               "discriminant": "event",
               "value": {
-                "title": "Tag der guten Daten 2026",
-                "reference": "tag-der-guten-daten-2026"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
                 "title": "ÖNB Labs Jupyter Notebooks Workshop",
                 "reference": "oenb-labs-jupyter-notebooks-workshop"
               }
@@ -29,8 +22,8 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "Call for Papers: PressMint Workshop at LREC2026",
-                "reference": "cfp-pressmint-workshop-lrec2026"
+                "title": "Stakeholder Forum 2026: Call for Interest",
+                "reference": "stakeholder-forum-2026-call-for-interest"
               }
             },
             {
