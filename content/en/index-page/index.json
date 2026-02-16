@@ -27,17 +27,17 @@
               }
             },
             {
-              "discriminant": "news",
+              "discriminant": "event",
               "value": {
-                "title": "Call for Papers: PressMint Workshop at LREC2026",
-                "reference": "cfp-pressmint-workshop-lrec2026"
+                "title": "ACDH Lecture 12.2",
+                "reference": "acdh-lecture-12-2"
               }
             },
             {
               "discriminant": "news",
               "value": {
-                "title": "Ten annoying things about digitizing under-resourced and under-represented languages - And what might help fixing them",
-                "reference": "ocr-htr-workshop-zine-out-now"
+                "title": "Call for Papers: PressMint Workshop at LREC2026",
+                "reference": "cfp-pressmint-workshop-lrec2026"
               }
             },
             {
@@ -48,10 +48,10 @@
               }
             },
             {
-              "discriminant": "event",
+              "discriminant": "news",
               "value": {
-                "title": "ACDH Lecture 12.2",
-                "reference": "acdh-lecture-12-2"
+                "title": "Ten annoying things about digitizing under-resourced and under-represented languages - And what might help fixing them",
+                "reference": "ocr-htr-workshop-zine-out-now"
               }
             }
           ]
