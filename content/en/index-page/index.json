@@ -36,13 +36,6 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "Impressions of the DH Festival",
-                "reference": "impressions-of-the-dh-festival"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
                 "title": "Ten annoying things about digitizing under-resourced and under-represented languages - And what might help fixing them",
                 "reference": "ocr-htr-workshop-zine-out-now"
               }
@@ -52,6 +45,13 @@
               "value": {
                 "title": "CLARIN2026: Call for Papers open!",
                 "reference": "clarin-2026-call-for-papers"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "ACDH Lecture 12.2",
+                "reference": "acdh-lecture-12-2"
               }
             }
           ]
