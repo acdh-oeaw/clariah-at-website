@@ -13,17 +13,17 @@
           "variant": "three-columns",
           "cards": [
             {
-              "discriminant": "event",
-              "value": {
-                "title": "ÖNB Labs Jupyter Notebooks Workshop",
-                "reference": "oenb-labs-jupyter-notebooks-workshop"
-              }
-            },
-            {
               "discriminant": "news",
               "value": {
                 "title": "Stakeholder Forum 2026: Call for Interest",
                 "reference": "stakeholder-forum-2026-call-for-interest"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "Music and Digital Humanities",
+                "reference": "music-and-digital-humanities"
               }
             },
             {
