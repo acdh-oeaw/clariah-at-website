@@ -27,17 +27,17 @@
               }
             },
             {
+              "discriminant": "news",
+              "value": {
+                "title": "ARTEMIS Summer School 2026 – Call for Applications",
+                "reference": "artemis-summer-school-2026-call-for-applications"
+              }
+            },
+            {
               "discriminant": "event",
               "value": {
                 "title": "ACDH Lecture 12.2",
                 "reference": "acdh-lecture-12-2"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Call for Papers: PressMint Workshop at LREC2026",
-                "reference": "cfp-pressmint-workshop-lrec2026"
               }
             },
             {
