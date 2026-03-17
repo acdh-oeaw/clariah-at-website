@@ -13,17 +13,24 @@
           "variant": "three-columns",
           "cards": [
             {
-              "discriminant": "news",
+              "discriminant": "event",
               "value": {
-                "title": "Stakeholder Forum 2026: Call for Interest",
-                "reference": "stakeholder-forum-2026-call-for-interest"
+                "title": "Music and Digital Humanities",
+                "reference": "music-and-digital-humanities"
               }
             },
             {
               "discriminant": "event",
               "value": {
-                "title": "Music and Digital Humanities",
-                "reference": "music-and-digital-humanities"
+                "title": "Introduction to Digital Humanities",
+                "reference": "introduction-dh-sose26"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "CLARIN2026: Call for Papers open!",
+                "reference": "clarin-2026-call-for-papers"
               }
             },
             {
@@ -34,17 +41,10 @@
               }
             },
             {
-              "discriminant": "event",
-              "value": {
-                "title": "ACDH Lecture 12.2",
-                "reference": "acdh-lecture-12-2"
-              }
-            },
-            {
               "discriminant": "news",
               "value": {
-                "title": "CLARIN2026: Call for Papers open!",
-                "reference": "clarin-2026-call-for-papers"
+                "title": "Report on DHd 2026",
+                "reference": "rueckblick-zur-dhd2026"
               }
             },
             {
