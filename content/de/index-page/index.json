@@ -13,6 +13,27 @@
           "variant": "three-columns",
           "cards": [
             {
+              "discriminant": "news",
+              "value": {
+                "title": "CLARIN2026: Call for Papers offen!",
+                "reference": "clarin-2026-call-for-papers"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Rückblick zur DHd 2026",
+                "reference": "rueckblick-zur-dhd2026"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Call for Participation: DH Data Sprint",
+                "reference": "cfp-dh-data-sprint"
+              }
+            },
+            {
               "discriminant": "event",
               "value": {
                 "title": "Music and Digital Humanities",
@@ -29,29 +50,8 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "CLARIN2026: Call for Papers offen!",
-                "reference": "clarin-2026-call-for-papers"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "ARTEMIS Summer School 2026 – Call for Applications",
-                "reference": "artemis-summer-school-2026-call-for-applications"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Rückblick zur DHd 2026",
-                "reference": "rueckblick-zur-dhd2026"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Ten annoying things about digitizing under-resourced and under-represented languages - And what might help fixing them",
-                "reference": "ocr-htr-workshop-zine-out-now"
+                "title": "uwk",
+                "reference": "DAC-summer-school-2026-UWK"
               }
             }
           ]
