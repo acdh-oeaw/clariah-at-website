@@ -15,15 +15,15 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "Report on DHd 2026",
-                "reference": "rueckblick-zur-dhd2026"
+                "title": "Call for Participation: DH Data Sprint",
+                "reference": "cfp-dh-data-sprint"
               }
             },
             {
               "discriminant": "news",
               "value": {
-                "title": "Call for Participation: DH Data Sprint",
-                "reference": "cfp-dh-data-sprint"
+                "title": "Report on DHd 2026",
+                "reference": "rueckblick-zur-dhd2026"
               }
             },
             {
