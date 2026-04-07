@@ -15,13 +15,6 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "CLARIN2026: Call for Papers open!",
-                "reference": "clarin-2026-call-for-papers"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
                 "title": "Report on DHd 2026",
                 "reference": "rueckblick-zur-dhd2026"
               }
@@ -52,6 +45,13 @@
               "value": {
                 "title": "Summer School \"Who Cares: Collecting, preserving, and curating in museums, archives, and organizations\"",
                 "reference": "DAC-summer-school-2026-UWK"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "OCR-HTR-Workshop: Zine out now!",
+                "reference": "ocr-htr-workshop-zine-out-now"
               }
             }
           ]
