@@ -15,15 +15,15 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "Call for Participation: DH Data Sprint",
-                "reference": "cfp-dh-data-sprint"
+                "title": "Neue Jupyter Notebooks in den ÖNB Labs – jetzt ausprobieren!",
+                "reference": "new-oenb-labs-jupyter-notebooks"
               }
             },
             {
               "discriminant": "news",
               "value": {
-                "title": "Rückblick zur DHd 2026",
-                "reference": "rueckblick-zur-dhd2026"
+                "title": "Call for Participation: DH Data Sprint",
+                "reference": "cfp-dh-data-sprint"
               }
             },
             {
@@ -31,6 +31,13 @@
               "value": {
                 "title": "Music and Digital Humanities",
                 "reference": "music-and-digital-humanities"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Rückblick zur DHd 2026",
+                "reference": "rueckblick-zur-dhd2026"
               }
             },
             {
@@ -45,13 +52,6 @@
               "value": {
                 "title": "Summer School \"Who Cares: Collecting, preserving, and curating in museums, archives, and organizations\"",
                 "reference": "DAC-summer-school-2026-UWK"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "OCR-HTR-Workshop: Zine out now!",
-                "reference": "ocr-htr-workshop-zine-out-now"
               }
             }
           ]
