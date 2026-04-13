@@ -27,17 +27,17 @@
               }
             },
             {
-              "discriminant": "news",
-              "value": {
-                "title": "Report on DHd 2026",
-                "reference": "rueckblick-zur-dhd2026"
-              }
-            },
-            {
               "discriminant": "event",
               "value": {
                 "title": "Music and Digital Humanities",
                 "reference": "music-and-digital-humanities"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Report on DHd 2026",
+                "reference": "rueckblick-zur-dhd2026"
               }
             },
             {
