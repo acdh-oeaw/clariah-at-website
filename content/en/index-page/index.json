@@ -15,6 +15,13 @@
             {
               "discriminant": "news",
               "value": {
+                "title": "New Jupyter Notebooks in the ÖNB Labs – try them out now!",
+                "reference": "new-oenb-labs-jupyter-notebooks"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
                 "title": "Call for Participation: DH Data Sprint",
                 "reference": "cfp-dh-data-sprint"
               }
@@ -45,13 +52,6 @@
               "value": {
                 "title": "Summer School \"Who Cares: Collecting, preserving, and curating in museums, archives, and organizations\"",
                 "reference": "DAC-summer-school-2026-UWK"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "OCR-HTR-Workshop: Zine out now!",
-                "reference": "ocr-htr-workshop-zine-out-now"
               }
             }
           ]
