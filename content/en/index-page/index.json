@@ -15,22 +15,15 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "New Jupyter Notebooks in the ÖNB Labs – try them out now!",
-                "reference": "new-oenb-labs-jupyter-notebooks"
+                "title": "Call for applications: CLARIAH-AT Summer School 2026",
+                "reference": "cfp-clariah-at-summer-school-machine-learning-for-digital-scholarly-editions"
               }
             },
             {
               "discriminant": "news",
               "value": {
-                "title": "Call for Participation: DH Data Sprint",
-                "reference": "cfp-dh-data-sprint"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "Kulturpool Stakeholder Forum 2026",
-                "reference": "kulturpool-stakeholder-forum-2026"
+                "title": "New Jupyter Notebooks in the ÖNB Labs – try them out now!",
+                "reference": "new-oenb-labs-jupyter-notebooks"
               }
             },
             {
@@ -52,6 +45,13 @@
               "value": {
                 "title": "Introduction to Digital Humanities",
                 "reference": "introduction-dh-sose26"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Retrospective on the DHd2026",
+                "reference": "rueckblick-zur-dhd2026"
               }
             }
           ]
