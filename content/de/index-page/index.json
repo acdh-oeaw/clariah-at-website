@@ -15,8 +15,8 @@
             {
               "discriminant": "news",
               "value": {
-                "title": "Call for Applications: CLARIAH-AT Summer School 2026",
-                "reference": "cfp-clariah-at-summer-school-machine-learning-for-digital-scholarly-editions"
+                "title": "Feedback zum Kulturpool Visuell",
+                "reference": "feedback-kulturpool-visuell"
               }
             },
             {
@@ -24,6 +24,13 @@
               "value": {
                 "title": "Neue Jupyter Notebooks in den ÖNB Labs – jetzt ausprobieren!",
                 "reference": "new-oenb-labs-jupyter-notebooks"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "CLARIAH-AT Summer School 2026",
+                "reference": "summerschool2026"
               }
             },
             {
@@ -45,13 +52,6 @@
               "value": {
                 "title": "Einführung in die Digital Humanities",
                 "reference": "introduction-dh-sose26"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Rückblick zur DHd2026",
-                "reference": "rueckblick-zur-dhd2026"
               }
             }
           ]
