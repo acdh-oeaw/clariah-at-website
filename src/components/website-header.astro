@@ -15,7 +15,7 @@ import { defaultLocale, type Locale } from "@/config/i18n.config";
 import { createI18n } from "@/lib/i18n";
 import { getLinkProps } from "@/lib/keystatic/get-link-props";
 import { createSingletonResource } from "@/lib/keystatic/resources";
-import logo from "~/public/assets/images/clariah-at-logo.png";
+import logo from "~/public/assets/images/logo.svg";
 
 const locale = (Astro.currentLocale as Locale | undefined) ?? defaultLocale;
 const { t } = await createI18n(locale);
@@ -32,7 +32,7 @@ const home = t("WebsiteHeader.links.home");
 			<NavMenuLink class="-ml-4 inline-flex shrink-0 items-center gap-x-2" href={`/`}>
 				<Image
 					alt=""
-					class="block h-16 w-auto"
+					class="block h-9 w-auto"
 					fetchpriority="high"
 					loading="eager"
 					sizes="200px"
