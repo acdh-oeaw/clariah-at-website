@@ -5,7 +5,7 @@ import { Icon } from "astro-icon/components";
 import Link from "@/components/navigation/nav-link.astro";
 import type { Locale } from "@/config/i18n.config";
 import { createI18n } from "@/lib/i18n";
-import logo from "~/public/assets/images/clariah-at-logo.png";
+import logo from "~/public/assets/images/logo.svg";
 
 const { t } = await createI18n(Astro.currentLocale as Locale | undefined);
 
@@ -23,7 +23,7 @@ const imprint = t("WebsiteFooter.links.imprint");
 			<div class="grid gap-y-2">
 				<div class="font-medium">CLARIAH-AT</div>
 				<div>
-					<Image alt="" class="block h-20 w-auto" loading="lazy" src={logo} />
+					<Image alt="" class="block h-9 w-auto" loading="lazy" src={logo} />
 				</div>
 				<dl class="grid gap-y-2">
 					<div class="inline-flex items-center gap-x-2">
