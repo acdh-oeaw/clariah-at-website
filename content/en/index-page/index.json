@@ -13,6 +13,13 @@
           "variant": "three-columns",
           "cards": [
             {
+              "discriminant": "event",
+              "value": {
+                "title": "Call for Contributions",
+                "reference": "interacting-with-the-dead-in-antiquity-and-the-middle-ages"
+              }
+            },
+            {
               "discriminant": "news",
               "value": {
                 "title": "Feedback Kulturpool Visuell",
@@ -31,13 +38,6 @@
               "value": {
                 "title": "CLARIAH-AT Summer School 2026",
                 "reference": "summerschool2026"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Summer School \"Who Cares: Collecting, preserving, and curating in museums, archives, and organizations\"",
-                "reference": "DAC-summer-school-2026-UWK"
               }
             },
             {
