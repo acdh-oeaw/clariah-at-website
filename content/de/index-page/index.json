@@ -36,6 +36,13 @@
             {
               "discriminant": "event",
               "value": {
+                "title": "CLARIAH-AT summer school",
+                "reference": "summerschool2026"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
                 "title": "Music and Digital Humanities",
                 "reference": "music-and-digital-humanities"
               }
