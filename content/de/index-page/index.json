@@ -15,13 +15,6 @@
             {
               "discriminant": "event",
               "value": {
-                "title": "DHInfra",
-                "reference": "digital-humanities-infrastructure-in-austria-presenting-the-results-of-dh-infra-at"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
                 "title": "Call for Contributions",
                 "reference": "interacting-with-the-dead-in-antiquity-and-the-middle-ages"
               }
@@ -38,6 +31,13 @@
               "value": {
                 "title": "Neue Jupyter Notebooks in den ÖNB Labs – jetzt ausprobieren!",
                 "reference": "new-oenb-labs-jupyter-notebooks"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "CLARIAH-AT summer school",
+                "reference": "summerschool2026"
               }
             },
             {
