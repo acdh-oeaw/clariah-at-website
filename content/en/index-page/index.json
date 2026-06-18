@@ -13,13 +13,6 @@
           "variant": "three-columns",
           "cards": [
             {
-              "discriminant": "event",
-              "value": {
-                "title": "Call for Contributions",
-                "reference": "interacting-with-the-dead-in-antiquity-and-the-middle-ages"
-              }
-            },
-            {
               "discriminant": "news",
               "value": {
                 "title": "Feedback Kulturpool Visuell",
@@ -38,20 +31,6 @@
               "value": {
                 "title": "Summer School",
                 "reference": "summerschool2026"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "Music and Digital Humanities",
-                "reference": "music-and-digital-humanities"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "Introduction to Digital Humanities",
-                "reference": "introduction-dh-sose26"
               }
             }
           ]
