@@ -6,8 +6,6 @@ import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import type { Locale } from "@/config/i18n.config";
 import { createCollectionResource } from "@/lib/keystatic/resources";
 
-export const prerender = false;
-
 interface ProjectItemData {
 	title?: string | undefined;
 	shortTitle?: string | undefined;
