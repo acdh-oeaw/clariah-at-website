@@ -13,6 +13,20 @@
           "variant": "three-columns",
           "cards": [
             {
+              "discriminant": "event",
+              "value": {
+                "title": "ACDH Tool Gallery",
+                "reference": "acdh-tool-gallery-12-2"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "Hack the Pool 2026",
+                "reference": "hack-the-pool-2026"
+              }
+            },
+            {
               "discriminant": "news",
               "value": {
                 "title": "Feedback zum Kulturpool Visuell",
@@ -31,6 +45,13 @@
               "value": {
                 "title": "CLARIAH-AT summer school",
                 "reference": "summerschool2026"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "interacting with the dead",
+                "reference": "interacting-with-the-dead-in-antiquity-and-the-middle-ages"
               }
             }
           ]
