@@ -29,6 +29,13 @@
             {
               "discriminant": "news",
               "value": {
+                "title": "MHDBD next",
+                "reference": "mhdbdb-next-forschen-ohne-datenbankserver"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
                 "title": "Feedback Kulturpool Visuell",
                 "reference": "feedback-kulturpool-visuell"
               }
@@ -45,13 +52,6 @@
               "value": {
                 "title": "Summer School",
                 "reference": "summerschool2026"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "interacting with the dead",
-                "reference": "interacting-with-the-dead-in-antiquity-and-the-middle-ages"
               }
             }
           ]
