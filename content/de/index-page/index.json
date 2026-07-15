@@ -27,6 +27,13 @@
               }
             },
             {
+              "discriminant": "event",
+              "value": {
+                "title": "PressMint",
+                "reference": "press-mint-interoperable-corpora-of-historical-newspapers"
+              }
+            },
+            {
               "discriminant": "news",
               "value": {
                 "title": "MHDBD next",
@@ -45,13 +52,6 @@
               "value": {
                 "title": "Neue Jupyter Notebooks in den ÖNB Labs – jetzt ausprobieren!",
                 "reference": "new-oenb-labs-jupyter-notebooks"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "CLARIAH-AT summer school",
-                "reference": "summerschool2026"
               }
             }
           ]
