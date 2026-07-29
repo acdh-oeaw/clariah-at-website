@@ -13,6 +13,13 @@
           "variant": "three-columns",
           "cards": [
             {
+              "discriminant": "news",
+              "value": {
+                "title": "clariah roadshow save the date",
+                "reference": "clariah-at-roadshow-2026"
+              }
+            },
+            {
               "discriminant": "event",
               "value": {
                 "title": "digiHist 2026",
@@ -45,13 +52,6 @@
               "value": {
                 "title": "Feedback zum Kulturpool Visuell",
                 "reference": "feedback-kulturpool-visuell"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Neue Jupyter Notebooks in den ÖNB Labs – jetzt ausprobieren!",
-                "reference": "new-oenb-labs-jupyter-notebooks"
               }
             }
           ]
