@@ -14,8 +14,14 @@ image: >-
 additionalImages: []
 attachments: []
 links:
-  - label: Middle High German Conceptual Database (MHDBDB)
-    url: https://mhdbdb.sbg.ac.at/#/
+  - label: MHDBDB Next
+    url: https://dhcraft.org/mhdbdb-tei-only/
+  - label: MHDBDB Graph
+    url: https://mhdbdb.plus.ac.at/graph/
+  - label: MHDBDB Old
+    url: https://mhdbdb-old.sbg.ac.at/
+  - label: Contribute to the MHDBDB
+    url: https://dhcraft.org/mhdbdb-tei-only/hilfe-belege-beitragen.html
 responsiblePersons:
   - Katharina Zeppezauer-Wachauer
   - Julia Hintersteiner
@@ -24,20 +30,23 @@ hostingOrganizations:
   - University of Salzburg
 tags: []
 ---
-The [**Middle High German Conceptual Database (MHDBDB)**](https://mhdbdb.sbg.ac.at/#/) is a key digital resource for the study of Middle High German language and literature. Since its creation in the 1990s, it has supported researchers worldwide in the analysis and evaluation of historical texts. With financial support from CLARIAH-AT, the database has undergone a comprehensive modernization: in addition to a new user interface, it has been migrated to an **RDF-based data structure**, ensuring sustainable use and connectivity within the **Semantic Web**.\
-The **“Users First”** project builds [on this relaunch](projects/digital-sustainability-relaunch-mhdbdb/) with the goal of further enhancing the accessibility, user-friendliness, and reach of the MHDBDB—in line with the FAIR principles and the Open Science strategy of the Digital Humanities.
+The [**Middle High German Conceptual Database (MHDBDB)**](https://mhdbdb.sbg.ac.at/) is a central digital resource for the study of Middle High German language and literature. Since its inception in the 1990s, it has supported researchers worldwide in analyzing and evaluating historical texts. With financial support from CLARIAH-AT, the database underwent a fundamental modernization: in addition to a new user interface, the system was migrated to an **RDF-based data foundation**, enabling sustainable use and integration within the **Semantic Web**.\
+The project **"Users First"** builds on [this relaunch](https://oeaw.academic-ai.at/general-chat/projects/digital-sustainability-relaunch-mhdbdb/) and aims to further enhance the accessibility, user-friendliness, and reach of the MHDBDB – in line with the FAIR principles and the open science strategy of the Digital Humanities.
 
-## Project Information
+## About the Project
 
-The project focuses on four key areas of work:
+The project was deliberately conducted on two tracks. On the one hand, the **stabilization** and **optimization** of the existing RDF-based MHDBDB, developed during the CLARIAH-AT project, were carried out – now publicly available as "**MHDBDB Graph**." Performance optimizations, bug fixes in the Angular frontend, security measures, and a modular API serving as an intermediary layer between the GraphDB and frontends were implemented. This has made the database more stable, secure, and structured for reuse in external applications.
 
-1. **Optimization of User Experience (UX) and User Interface (UI)**\
-   Planned improvements include a personalized login area, extended search and download options, note-taking and commenting functions, and accessible design for different devices. Power users will have tools for complex live SPARQL queries and automated data processes. In addition, the platform will be translated into English to reach an international user base.
-2. **Crowdsourcing and Knowledge Transfer**\
-   A newly developed browser-based crowdsourcing tool will actively involve the community in data collection. Users will be able to annotate texts, verify automatically generated data, or contribute complex morphological analyses. The collected data will be made available as open research data and will also feed into innovative applications such as the *ParzivAI* chatbot.
-3. **Technical Support and Project Management**\
-   A dedicated part-time position will coordinate project progress, ensure communication among all participants, and facilitate smooth operations.
-4. **Sustainable RDF Integration**\
-   In the long term, MHDBDB data will be integrated into a trusted repository such as the [**Humanities Asset Management System (GAMS)**](https://gams.uni-graz.at/) at the University of Graz to ensure interoperability and long-term availability.
+On the other hand, a complete redevelopment of the next generation of the MHDBDB was undertaken, based on **TEI-annotated full texts** – now publicly available as "**MHDBDB Next**." An entity-relationship model, a TEI maximal dataset, and extensive data wrangling, validation, and testing processes were developed. The client-based **Playground** allows for complex combined queries, contextualized citation searches, and flexible exploration paths, while also serving as the foundation for **AI-supported workflows**. The client-side architecture reduces coupling and dependencies, significantly lowering long-term operational costs. The user experience has been qualitatively improved through the new, accessible frontend. Contributions to the dataset have also been made easier for the community, paving the way for the **expansion** of the database:
 
-Through these measures, the MHDBDB will be further developed not only technically and functionally but also strengthened as an open, collaborative, and future-oriented platform in the Digital Humanities.
+<LinkButton label="Contribute to the MHDBDB" link={{"discriminant":"external","value":"https://dhcraft.org/mhdbdb-tei-only/hilfe-belege-beitragen.html"}} />
+
+
+
+As a result of the project, the MHDBDB is now available through three coordinated research interfaces:&#x20;
+
+* **MHDBDB Next** – TEI-based research and exploration platform: [https://dhcraft.org/mhdbdb-tei-only/](https://dhcraft.org/mhdbdb-tei-only/)
+* **MHDBDB Graph** – Semantic Web/RDF implementation with Linked Open Data access: [https://mhdbdb.plus.ac.at/graph/](https://mhdbdb.plus.ac.at/graph/)
+* **MHDBDB Old** – original relational interface, legacy interface, operational until the end of 2026: [https://mhdbdb-old.sbg.ac.at/](https://mhdbdb-old.sbg.ac.at/)
+
+These measures have not only further developed the MHDBDB technically and functionally but have also strengthened it as an open, collaborative, and future-proof platform in the Digital Humanities.
