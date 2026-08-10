@@ -1,0 +1,29 @@
+---
+title: >-
+  SALTA: Open-Source-Tool und Database zur Segmentierung multimodaler
+  Performances
+summary: >-
+  Das Projekt SALTA entwickelt ein Open‑Source‑Werkzeug und eine zugehörige
+  Dateninfrastruktur zur quantitativen Segmentierung multimodaler Performances,
+  das Performances anhand von Beschleunigungssensoren, kostengünstiger
+  2D‑Video‑Motion‑Capture und Audiodaten analysiert und segmentiert. 
+startDate: 2025-10-15
+endDate: 2026-12-31
+image: >-
+  /assets/content/assets/de/projects/salta-open-source-tool-und-database/image.png
+additionalImages: []
+attachments: []
+links: []
+responsiblePersons:
+  - Adrián Artacho
+hostingOrganizations:
+  - Universität für Musik und darstellende Kunst Wien (mdw)
+tags: []
+---
+Das Projekt SALTA entwickelt ein Open‑Source‑Werkzeug und eine zugehörige Dateninfrastruktur zur quantitativen Segmentierung multimodaler Performances, das Performances anhand von Beschleunigungssensoren, kostengünstiger 2D‑Video‑Motion‑Capture und Audiodaten analysiert und segmentiert. Das Vorhaben adressiert insbesondere Forscher:innen und Künstler:innen, die keinen Zugang zu hochspezialisierter MOCAP‑Laborinfrastruktur haben, und schafft damit neue, vergleichbare und reproduzierbare Möglichkeiten zur empirischen Untersuchung performativer Praktiken . Darüber hinaus integriert SALTA Aspekte von Open Science und ethisch verantworteter KI‑Entwicklung im Bereich der Digital Humanities, indem Code und Dokumentation offen lizenziert und Datenzugänge standardisiert werden sollen . 
+
+## Über das Projekt 
+
+Kernziel von SALTA ist die Erstellung eines webbasierten, benutzerfreundlichen Tools zur flexiblen, parametrisierten Segmentierung performativer Handlungen. Nutzer:innen können dabei auswählen, welche Parameter, beispielsweise zu analysierende Körperteile, Modalitäten oder minimale Segmentdauern, die Segmentierung steuern, um so verschiedene analytische Perspektiven vergleichbar zu machen. Technisch umfasst die geplante Umsetzung drei zentrale Bausteine: die Portierung der lokal betriebenen Software in eine webbasierte Plattform mit intuitiver GUI und Tutorials, der Aufbau einer DSGVO‑konformen Open‑Access‑Datenbank zur Speicherung anonymisierter Performancedaten und Segmentierungsanalysen sowie Community‑Maßnahmen zur Vernetzung und Weiterentwicklung des Tools (Workshops, Konferenzen, Kooperationen). 
+
+Methodisch verbindet SALTA datengetriebene Ansätze mit partizipativen Formaten: Die Datenbank soll als Grundlage für zukünftige Machine‑Learning‑Modelle dienen, die auf diversen Datensätzen trainiert werden können, um semantische Segmentierungen zunehmend zu automatisieren und zu präzisieren . Auf Infrastrukturebene plant das Projekt eine containerbasierte Deployment‑Architektur (Docker/Kubernetes) mit einem Python‑Backend (Django), API‑Zugängen und CI/CD‑Pipelines zur nachhaltigen Entwicklung und Bereitstellung der Anwendung . Sicherheits‑ und Betriebsaspekte sind berücksichtigt: Der Datenbankzugriff soll nicht direkt öffentlich erfolgen, sondern über token‑geschützte API‑Endpunkte des Django‑Backends; Domain‑ und SSL‑Konfigurationen sowie Monitoring‑ und Backup‑Strategien sind Teil des Implementierungsplans . Die Implementierungsdauer nach Genehmigung ist mit etwa 6–8 Wochen für die erste Umsetzungsphase veranschlagt; die initiale Infrastrukturarbeit wurde bereits im Rahmen universitätsinterner Leistungen vorbereitet. 
