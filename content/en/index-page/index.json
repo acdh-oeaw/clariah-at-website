@@ -53,6 +53,27 @@
                 "title": "Pressmint",
                 "reference": "press-mint-interoperable-corpora-of-historical-newspapers"
               }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "ACDH TG 12.3",
+                "reference": "acdh-tool-gallery-12-3"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "MHDBD Next",
+                "reference": "mhdbdb-next-forschen-ohne-datenbankserver"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "Kulturpool Visuell",
+                "reference": "feedback-kulturpool-visuell"
+              }
             }
           ]
         }
