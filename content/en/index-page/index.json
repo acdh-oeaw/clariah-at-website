@@ -29,8 +29,8 @@
             {
               "discriminant": "event",
               "value": {
-                "title": "hack the pool",
-                "reference": "hack-the-pool-2026"
+                "title": "ACDH TG 12.3",
+                "reference": "acdh-tool-gallery-12-3"
               }
             },
             {
@@ -50,22 +50,15 @@
             {
               "discriminant": "event",
               "value": {
-                "title": "Pressmint",
-                "reference": "press-mint-interoperable-corpora-of-historical-newspapers"
+                "title": "hack the pool",
+                "reference": "hack-the-pool-2026"
               }
             },
             {
               "discriminant": "event",
               "value": {
-                "title": "ACDH TG 12.3",
-                "reference": "acdh-tool-gallery-12-3"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "MHDBD Next",
-                "reference": "mhdbdb-next-forschen-ohne-datenbankserver"
+                "title": "Pressmint",
+                "reference": "press-mint-interoperable-corpora-of-historical-newspapers"
               }
             },
             {
@@ -73,6 +66,13 @@
               "value": {
                 "title": "Kulturpool Visuell",
                 "reference": "feedback-kulturpool-visuell"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "ACDH Lecture 12.3",
+                "reference": "acdh-lecture-12-3"
               }
             }
           ]
