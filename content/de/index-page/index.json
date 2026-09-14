@@ -20,9 +20,9 @@
               }
             },
             {
-              "discriminant": "news",
+              "discriminant": "event",
               "value": {
-                "title": "clariah roadshow save the date",
+                "title": "Roadshow 2026",
                 "reference": "clariah-at-roadshow-2026"
               }
             },
