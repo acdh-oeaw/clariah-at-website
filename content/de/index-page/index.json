@@ -13,13 +13,6 @@
           "variant": "three-columns",
           "cards": [
             {
-              "discriminant": "news",
-              "value": {
-                "title": "GLAM Innovation Lab",
-                "reference": "glam-innovation-lab"
-              }
-            },
-            {
               "discriminant": "event",
               "value": {
                 "title": "Roadshow 2026",
@@ -27,31 +20,10 @@
               }
             },
             {
-              "discriminant": "event",
-              "value": {
-                "title": "ACDH Lecture 12.3",
-                "reference": "acdh-lecture-12-3"
-              }
-            },
-            {
               "discriminant": "news",
               "value": {
-                "title": "CFP Dig Ling",
-                "reference": "cfp-viertes-oesterreichisches-treffen-zur-digitalen-linguistik"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "digiHist 2026",
-                "reference": "digital-history-doing-cultural-heritage"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "Hack the Pool 2026",
-                "reference": "hack-the-pool-2026"
+                "title": "GLAM Innovation Lab",
+                "reference": "glam-innovation-lab"
               }
             },
             {
@@ -64,8 +36,15 @@
             {
               "discriminant": "event",
               "value": {
-                "title": "ACDH TG 12.3",
-                "reference": "acdh-tool-gallery-12-3"
+                "title": "ACDH Lecture 12.3",
+                "reference": "acdh-lecture-12-3"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "digiHist 2026",
+                "reference": "digital-history-doing-cultural-heritage"
               }
             },
             {
