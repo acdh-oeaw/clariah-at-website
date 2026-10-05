@@ -32,27 +32,6 @@
                 "title": "Pressmint",
                 "reference": "press-mint-interoperable-corpora-of-historical-newspapers"
               }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "ACDH Lecture 12.3",
-                "reference": "acdh-lecture-12-3"
-              }
-            },
-            {
-              "discriminant": "event",
-              "value": {
-                "title": "DigiHist 2026",
-                "reference": "digital-history-doing-cultural-heritage"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "Kulturpool Visuell",
-                "reference": "feedback-kulturpool-visuell"
-              }
             }
           ]
         }
