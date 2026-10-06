@@ -15,6 +15,20 @@
             {
               "discriminant": "event",
               "value": {
+                "title": "DH infra launch",
+                "reference": "dhinfra-public-launch-event"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "PressMint",
+                "reference": "press-mint-interoperable-corpora-of-historical-newspapers"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
                 "title": "Roadshow 2026",
                 "reference": "clariah-at-roadshow-2026"
               }
@@ -29,8 +43,15 @@
             {
               "discriminant": "event",
               "value": {
-                "title": "PressMint",
-                "reference": "press-mint-interoperable-corpora-of-historical-newspapers"
+                "title": "ÖNB Labs Symposium",
+                "reference": "oenb-labs-symposium-2026"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "CRASH",
+                "reference": "crash-hackathon-2026"
               }
             }
           ]
