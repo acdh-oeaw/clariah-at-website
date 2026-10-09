@@ -28,7 +28,5 @@ const isCurrent = pathname === Astro.url.pathname;
 	aria-current={isCurrent ? "page" : undefined}
 	data-astro-reload={reload}
 	download={download}
-	href={localisedHref}
+	href={localisedHref}><slot /></a
 >
-	<slot />
-</a>
