@@ -32,6 +32,27 @@
                 "title": "CRASH",
                 "reference": "crash-hackathon-2026"
               }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "ÖNB Symposium KI und Kulturerbe",
+                "reference": "ki-kulturerbe-symposium-oenb-2026"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "4 Neue JYNBs",
+                "reference": "jupyter-notebooks-oenb-labs"
+              }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "MHDBD Next",
+                "reference": "mhdbdb-next-forschen-ohne-datenbankserver"
+              }
             }
           ]
         }
