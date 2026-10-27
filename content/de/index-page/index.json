@@ -46,6 +46,13 @@
                 "title": "4 Neue JYNBs",
                 "reference": "jupyter-notebooks-oenb-labs"
               }
+            },
+            {
+              "discriminant": "news",
+              "value": {
+                "title": "MHDBD Next",
+                "reference": "mhdbdb-next-forschen-ohne-datenbankserver"
+              }
             }
           ]
         }
