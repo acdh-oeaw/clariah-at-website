@@ -20,6 +20,20 @@
               }
             },
             {
+              "discriminant": "news",
+              "value": {
+                "title": "4 Neue JYNBs",
+                "reference": "jupyter-notebooks-oenb-labs"
+              }
+            },
+            {
+              "discriminant": "event",
+              "value": {
+                "title": "4. Treffen zur dig Ling",
+                "reference": "viertes-oesterreichisches-treffen-zur-digitalen-linguistik-oelt-2026"
+              }
+            },
+            {
               "discriminant": "event",
               "value": {
                 "title": "ÖNB Labs Symposium",
@@ -38,20 +52,6 @@
               "value": {
                 "title": "ÖNB Symposium KI und Kulturerbe",
                 "reference": "ki-kulturerbe-symposium-oenb-2026"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "4 Neue JYNBs",
-                "reference": "jupyter-notebooks-oenb-labs"
-              }
-            },
-            {
-              "discriminant": "news",
-              "value": {
-                "title": "MHDBD Next",
-                "reference": "mhdbdb-next-forschen-ohne-datenbankserver"
               }
             }
           ]
